@@ -1,0 +1,651 @@
+\documentclass[12pt]{article}
+\usepackage{epsfig}
+\input epsf
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+
+\textwidth  6.5in
+\textheight 9.in
+\topmargin -0.15 in
+\headheight 0.2in
+\headsep 0.2in
+\oddsidemargin 0in
+\evensidemargin 0in
+\parsep 0 in
+\pagenumbering{arabic}
+
+%
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\zh}{z}
+\newcommand{\xbj}{x_{\scriptscriptstyle B}}
+%
+\newcommand{\Epgb}{$\vec ep~\rightarrow~ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Epgl}{$\vec e\vec p~\rightarrow~ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Eppiz}{$ep~\rightarrow~ep\pi^0~$}
+\newcommand{\Enpip}{$ep~\rightarrow~en\pi^+~$}
+\newcommand{\EppiD}{$ep~\rightarrow~e\pi \Delta~$}
+\newcommand{\Epeta}{$ep~\rightarrow~ep\eta~$}
+\newcommand{\Epr}{$ep~\rightarrow~ep\rho~$}
+\newcommand{\EpX}{$ep\rightarrow epX~$}
+\newcommand{\EpKY}{$ep~\rightarrow~eKY~$}
+\newcommand{\vEpg}{$\vec ep~\rightarrow~ep\gamma~$}
+\newcommand{\xidef}{$\xi=x_B\frac{1+\frac{Delta^2}{2Q^2}}{2-x_B+x_B\frac{Delta^2}{2Q^2}}$}
+\def\gevc2{(GeV/c)$^2$}
+\newcommand{\EpgX}{$ep~\rightarrow~ep\gamma X~$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\topfraction}{0.75}
+\renewcommand{\bottomfraction}{0.75}
+\renewcommand{\textfraction}{0.2}
+\renewcommand{\floatpagefraction}{0.7}
+%\includeonly{dvcs_3, targ_asymm, correct}
+%
+\begin{document}
+\pagestyle{plain}
+
+\begin{titlepage}
+% title
+
+{\center \large\bf The Longitudinal Spin Structure of the Nucleon\\}
+{\center A 12 GeV Research Proposal to Jefferson Lab (PAC 30)\\}
+
+\vspace*{9mm}
+
+% authors
+
+{\center Moskov Amarian, Stephen B\"ultmann, Gail Dodge, Nevzat Guler, 
+Henry Juengst, Sebastian Kuhn$^{\dagger *}$,  
+Lawrence Weinstein \\}
+\vspace{-8pt}
+{\center \small  \it  Old Dominion University \\}
+
+{\center Harut Avakian, Peter Bosted, Volker Burkert, Alexandre Deur$^{\dagger}$, 
+Vipuli Dharmawardane$^{\dagger}$\\}
+\vspace{-8pt}
+{\center \small \it  Jefferson Lab \\}
+
+{\center Keith Griffioen$^{\dagger}$ \\}
+\vspace{-8pt}
+{\center \small \it  The College of William and Mary \\}
+
+%{\center Marco Anghinolfi, Marco Battaglieri, 
+%Raffaella De Vita,
+%Michail Osipenko, Marco Ripani, Mauro Taiuti \\}
+%\vspace{-8pt}
+%{\center \small \it  Istituto Nazionale di Fisica Nucleare, Genova, Italy \\}
+%
+{\center Hovanes Egiyan,  Maurik Holtrop$^{\dagger}$ \\}
+\vspace{-8pt}
+{\center \small \it  University of New Hampshire \\}
+
+{\center Stanley Kowalski, Yelena Prok$^{\dagger}$ \\}
+\vspace{-8pt}
+{\center \small \it Massachusetts Institute of Technology \\}
+
+{\center Don Crabb$^{\dagger}$, Karl Slifer \\}
+\vspace{-8pt}
+{\center \small \it University of Virginia \\}
+
+{\center Tony Forest$^{\dagger}$ \\}
+\vspace{-8pt}
+{\center \small \it Louisiana Tech \\}
+
+{\center Angela Biselli \\}
+\vspace{-8pt}
+{\center \small \it Fairfield University \\}
+
+{\center Kyungseon Joo \\}
+\vspace{-8pt}
+{\center \small \it University of Connecticut \\}
+
+{\center Mahbub Khandaker \\}
+\vspace{-8pt}
+{\center \small \it Norfolk State University \\}
+
+{\center Elliot Leader \\}
+\vspace{-8pt}
+{\center \small \it Imperial College, London, England \\}
+
+{\center Aleksander V. Sidorov \\}
+\vspace{-8pt}
+{\center \small \it Bogoliubov Theoretical Laboratory, JINR Dubna, Russia \\}
+
+{\center Dimiter B. Stamenov \\}
+\vspace{-8pt}
+{\center \small \it Inst. for Nuclear Research and Nuclear Energy,
+Bulgarian Academy of Sciences, Sofia, Bulgaria \\}
+
+{\center \large A CLAS collaboration proposal\\}
+
+
+
+\vspace*{12 pt}
+{\small $^{\dagger}$ Co-spokesperson}
+{\small $^*$ Contact: Sebastian Kuhn, Department of Physics, Old Dominion University,
+Norfolk VA 23529. Email: skuhn@odu.edu}
+
+\end{titlepage}
+\newpage
+\pagebreak
+\clearpage
+
+{\center \large \bf  Collaborators' commitment to the 12 GeV upgrade of Jefferson Lab}
+
+\begin{itemize}
+
+\item
+The Old Dominion University group (Prof. Amarian, B\"ultmann, Dodge, Kuhn and Weinstein)
+is actively involved in
+this proposal, as well as two other proposal using CLAS12.  Other  members of
+our group are pursuing a proposal for Hall A, but their contributions  are not included here.
+Among CLAS12 baseline equipment, the group intends to
+take responsibility for the design, prototyping, construction and  testing
+of the Region 1 Drift Chamber. Five faculty (including one research  faculty)
+and one technician are likely to work at least part time on this
+project in the next few years. Funding for the group is from DOE and  from
+the university (75\% of research faculty salary + one regular faculty  summer salary
++ 50\% of the technician).
+The university has also provided 6000 square feet of high bay  laboratory space with
+clean room capabilities for our use.  We will seek other sources of  funding as appropriate.
+Gail Dodge is the chair of the CLAS12 Steering Committee and the user  coordinator
+for the CLAS12 tracking technical working group.
+Beyond the baseline equipment, the group is also
+interested in exploring improvements to the BoNuS detector and
+a future RICH detector for CLAS12. 
+
+\item
+The UNH group is committed to significant contributions in the  development of the CLAS12 software. 
+Maurik Holtrop is currently chair  of the CLAS12 GEANT4 simulation group to which our post-doc 
+Hovanes  Egiyan is also contributing. Since currently the main software  efforts for CLAS12 are in
+ the area of simulation we are also part of  and contributing to the general CLAS12 Software group. 
+ Current man  power commitments to this effort are 0.15 FTE of a faculty and 0.4  FTE of one post-doc. 
+ We expect to increase this effort as our CLAS  activities wind down and our CLAS12 activities pick up 
+ and we expect  to attract some talented undergraduate students to this project.  
+ These efforts are funded from our current grant with DOE.
+In addition to the software efforts the UNH group is planning to  contribute to the prototyping and 
+ construction of the silicon vertex  detector. No formal agreements have been made on this effort yet 
+ and  no addition grants have been written yet. However, it is expected  that we will be able to attract 
+ additional funding for this project  with which we will fund an additional post-doc and one or two  
+ undergraduate students. One of the faculty from the UNH Space Science  Center, Jim Connel, 
+ a cosmic ray experimentalist with a background in  nuclear physics, is very interested in joining 
+ the vertex detector  project. He has considerable experience with silicon detectors for  space observations. 
+
+\item
+The UConn group has made a commitment to help build the CLAS12 high threshold cerenkov counter
+ (HTCC) with Youri Sharabian and the RPI group. Early this year our group got funding of \$65,000 
+(\$32,500 from UConn and \$32,500 from JLab) to build a HTCC prototype. Also UConn is providing 
+1/2 postdoctoral support for Maurizio Ungaro for the next two years and commits to support 1/2 graduate 
+student for 1 year for the CLAS12 upgrade efforts.  Our group of one PI, one postdoc and 4 graduate 
+students will provide substantial manpower towards the 12 GeV upgrade.
+Recently we got a DOE STTR Phase I grant to build a software framework for data archiving and data 
+analysis for nuclear physics experiment with one UCon computer science professor and a local software company. 
+With this grant, we expect to contribute to software development for the 12 GeV upgrade.
+
+\item
+The College of William and Mary group is actively involved in this  proposal, as
+well as several other proposals using CLAS12.  Other members of our  group are also
+pursuing a proposal for Hall A, but their contributions are not  included here.
+Among CLAS12 baseline equipment, the group is committed
+to building part of the forward tracking system, but the exact
+tasks have not yet been determined.  At least one faculty member, two
+graduate students, half a post-doc and several undergraduates are
+likely to work at least part time on this project in the next
+few years.  Funding for the group is from the DOE and from the NSF.
+Additional funding will be sought for building the base equipment.
+Facilities at William and Mary include a clean room suitable for  drift-chamber
+construction, and, on the time scale of a few years in the future,  ample space
+for detector construction and testing.
+
+\item
+The University of Virginia Polarized Target Group is actively involved in this
+proposal as well as other proposals using CLAS12. Some members of the group
+are also involved in proposals for Hall C.
+The group's contribution to the CLAS12 baseline equipment will be the
+design, construction and testing of the longitudinal polarized target
+discussed in this proposal. The target  will use a horizontal  $^{4}$He
+evaporation refrigerator with a conventional design and similar to ones built
+and operated in the past. The refrigerator will be constructed in the Physics
+Department workshop; the workshop staff have experience with building such
+devices. Testing will be done in our lab where all the necessary
+infrastructure is on hand. 
+Two Research Professors (75\% of salary from UVA, 17\% from DOE), two Post-Docs
+and two graduate students, all supported by DOE, will spend their time as
+needed on this project. Other funding will be pursued as necessary.
+Outside the base equipment considerations one member of the group (DGC) has started
+working with Oxford Instruments on a design for an optimized transverse target
+magnet to be used for transverse polarization measurements with CLAS12.
+
+\end{itemize}
+
+\newpage
+\pagebreak
+\clearpage
+
+\begin{abstract}
+We are proposing a comprehensive program to map out the $x$- and $Q^2$-dependence 
+of the helicity structure of the nucleon in the region of moderate to very large $x$ where
+presently the experimental uncertainties are still large. The experiment will use the upgraded
+CLAS12 detector, 11 GeV highly polarized electron beam, and longitudinally polarized
+solid ammonia targets (NH$_3$ and ND$_3$). 
+Thanks to the large acceptance of CLAS12, we will cover a large
+kinematical region simultaneously. We will detect both the scattered electrons and leading
+hadrons from the hadronization of the struck quark, allowing us to gain information on
+its flavor. 
+Using both inclusive and semi-inclusive data,
+we will separate the contribution from up and down valence and sea quarks in the
+region $0.1 \leq x \leq 0.8$. These results will unambiguously test various models of
+the helicity structure of the nucleon as $x \rightarrow 1$.
+A combined Next-to-Leading Order (NLO) pQCD analysis
+of our expected data together with
+the existing world data will significantly improve our knowledge of all polarized parton
+distribution functions, including for the gluons (through $Q^2$--evolution). High
+statistics data on the deuteron in the region of moderate $x$ 
+and with a fairly large range in $Q^2$ are crucial for this purpose.
+Finally, we will be able to improve significantly the precision of various moments
+of spin structure functions at moderate $Q^2$, which will allow us to 
+study duality and higher-twist contributions.
+
+We request 30 days of running on NH$_3$ and 50 days of running on ND$_3$
+(or possibly $^6$LiD), including
+about 20\% overhead for target anneals, polarization reversal, and auxiliary measurements.
+\end{abstract}
+\newpage
+\pagebreak
+\clearpage
+
+\tableofcontents
+\newpage
+\pagebreak
+\clearpage
+
+\section{Introduction}
+\input{Intro.tex} %Sebastian
+
+\section{Physics Motivation and Existing Data}
+In the following, we will outline the main topics addressed by the
+proposed experiment and explain how new data can significantly 
+improve upon the present state of knowledge.
+
+\subsection{Nucleon Helicity Structure at Large $x$}%Vipuli, Sebastian
+\input{EG12_A1.tex}
+
+\subsection{Flavor Decomposition of the Proton Helicity Structure} %Tony, Peter, Harut, Kyungseon
+\input{SIDIS.tex}
+
+%\subsection{NLO Fits and Parton Distribution Functions} %Sebastian, Vipuli
+%\subsubsection{Intro}
+%\subsubsection{NLO technique}
+%\subsubsection{Existing Data}
+
+\subsection{Sum Rules, Higher Twist and Duality} %Alexandre
+\input{Moments.tex}
+
+\section{Experimental Details}
+\subsection{CLAS12}
+\input{CLAS12.tex} %to be taken from similar write up for other proposals
+
+\subsection{Polarized Target}
+\input{target_clas12.tex}  %Don Crabb, Yelena Prok
+
+\subsection{Running Conditions}
+\input{RunCon.tex}  %Don Crabb, Yelena Prok
+
+\subsection{Analysis}
+\input{Analysis.tex} %Sebastian
+
+\section{Expected Results}
+\subsection{Simulation} 
+\input{Simulation.tex} %Maurik, Hovanes, Harut, Angela, Yelena
+
+\subsection{Statistical and systematic errors}
+\input{Errors.tex} %Maurik, Hovanes, Harut, Angela, Yelena
+
+\subsection{Inclusive Spin Structure Functions}
+\input{DISresults.tex} %Sebastian, Keith, Vipuli
+
+\subsection{Semi-inclusive Results} 
+\input{SIDISresults.tex}%Tony, Peter, Harut, Kyungseon
+
+\subsection{Integrals and Sum Rules} 
+\input{Momentresults.tex}%Alexandre
+
+\section{Summary and Request}
+\input{Summary.tex}
+
+\begin{thebibliography}{99}
+\addtocontents{toc}{\vspace*{12pt}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Intro begin
+%------ DATA FROM----------------------
+\bibitem{AAC}
+AAC Collaboration, hep-ph/0603213.
+
+\bibitem{E130g1p}
+G. Baum {\it et~al.} [E130 Collaboration],
+Phys. Rev. Lett. {\bf 51}, 1135 (1983).
+
+\bibitem{EMCfinal}
+J. Ashman {\it et~al.} [EMC Collaboration],
+Nucl. Phys. {\bf B328}, 1 (1989).
+
+%\cite{Adams:1997hc}
+\bibitem{Adams:1997hc}
+  D.~Adams {\it et al.}  [Spin Muon Collaboration (SMC)],
+  %``The spin-dependent structure function g1(x) of the deuteron from  polarized
+  %deep-inelastic muon scattering,''
+  Phys.\ Lett.\  {\bf B396}, 338 (1997).
+  %%CITATION = PHLTA,B396,338;%%
+
+%\cite{Adeva:1997is}
+\bibitem{Adeva:1997is}
+  B.~Adeva {\it et al.}  [Spin Muon Collaboration (SMC)],
+  %``The spin-dependent structure function g1(x) of the proton from  polarized
+  %deep-inelastic muon scattering,''
+  Phys.\ Lett.\  {\bf B412}, 414 (1997).
+  %%CITATION = PHLTA,B412,414;%%
+
+%\cite{Abe:1998wq}
+\bibitem{Abe:1998wq}
+  K.~Abe {\it et al.}  [E143 collaboration],
+  %``Measurements of the proton and deuteron spin structure functions g1  and
+  %g2,''
+  Phys.\ Rev.\ D {\bf 58}, 112003 (1998)
+  [arXiv:hep-ph/9802357].
+  %%CITATION = HEP-PH 9802357;%%
+
+%\cite{Abe:1997cx}
+\bibitem{Abe:1997cx}
+  K.~Abe {\it et al.}  [E154 Collaboration],
+  %``Precision determination of the neutron spin structure function g1(n),''
+  Phys.\ Rev.\ Lett.\  {\bf 79}, 26 (1997)
+  [arXiv:hep-ex/9705012].
+  %%CITATION = HEP-EX 9705012;%%
+
+%\cite{Anthony:2000fn}
+\bibitem{Anthony:2000fn}
+  P.~L.~Anthony {\it et al.}  [E155 Collaboration],
+  %``Measurements of the Q**2 dependence of the proton and neutron spin
+  %structure functions g1(p) and g1(n),''
+  Phys.\ Lett.\  {\bf B493}, 19 (2000)
+  [arXiv:hep-ph/0007248].
+  %%CITATION = HEP-PH 0007248;%%
+  
+%\cite{Airapetian:2004zf} - HERMES
+\bibitem{Airapetian:2004zf}
+  A.~Airapetian {\it et al.}  [HERMES Collaboration],
+  %``Quark helicity distributions in the nucleon for up, down, and strange
+  %quarks from semi-inclusive deep-inelastic scattering,''
+  Phys.\ Rev.\ D {\bf 71}, 012003 (2005)
+  [arXiv:hep-ex/0407032].
+  %%CITATION = HEP-EX 0407032;%%      
+
+ \bibitem{EG1a_p}
+R. Fatemi {\it et~al.} [CLAS Collaboration],
+Phys. Rev. Lett. {\bf 91}, 222002 (2003).
+
+\bibitem{EG1a_d}
+J. Yun  {\it et~al.} [CLAS Collaboration],
+Phys. Rev. C {\bf 67}, 055204 (2003).
+
+%\cite{Zheng:2004ce}
+\bibitem{Zheng:2004ce}
+  X.~Zheng {\it et al.}  [Jefferson Lab Hall A Collaboration],
+  %``Precision measurement of the neutron spin asymmetries and  spin-dependent
+  %structure functions in the valence quark region,''
+  Phys.\ Rev.\ C {\bf 70}, 065207 (2004)
+  [arXiv:nucl-ex/0405006].
+  %%CITATION = NUCL-EX 0405006;%%
+%
+
+ %\cite{Ageev:2005gh}
+\bibitem{Ageev:2005gh}
+  E.~S.~Ageev {\it et al.}  [COMPASS Collaboration],
+  %``Measurement of the spin structure of the deuteron in the DIS region,''
+  Phys.\ Lett.\  {\bf B612}, 154 (2005)
+  [arXiv:hep-ex/0501073].
+  %%CITATION = HEP-EX 0501073;%%    
+  
+\bibitem{RHIC}
+S.~S. Adler {\it et al.} [Phenix Collaboration],
+Phys.Rev.Lett. {\bf 93}, 202002 (2004).
+
+%\cite{Dharmawardane:2006zd}
+\bibitem{Dharmawardane:2006zd}
+  K.~V.~Dharmawardane, S.~E.~Kuhn, P.~Bosted and Y.~Prok  [the CLAS
+                  Collaboration],
+  %``Measurement of the $x$- and $Q^2$-Dependence of the Asymmetry $A_1$ on the
+  %Nucleon,''
+  to be published in Phys. Lett., arXiv:nucl-ex/0605028.
+  %%CITATION = NUCL-EX 0605028;%%
+
+%Intro end
+
+%A1motivation begin
+
+\bibitem{Isgur} N. Isgur, Phys. Rev. D {\bf 59}, 34013 (1999).
+%
+
+\bibitem{HFpert} N. Isgur, G. Karl and R. Koniuk, Phys. Rev. Lett. {\bf 41},
+1269 (1978); N. Isgur, G. Karl and R. Koniuk, Phys. Rev. Lett. {\bf 45}, 1738
+(1980).
+%
+
+\bibitem{CloseWally} F. E. Close and  W. Melnitchouk, Phys. Rev. C {\bf 68},
+  035210 (2003).
+% 
+
+%\cite{Close:1988br}
+\bibitem{Close:1988br}
+  F.~E.~Close and A.~W.~Thomas,
+  %``The Spin And Flavor Dependence Of Parton Distribution Functions,''
+  Phys.\ Lett.\  {\bf B212}, 227 (1988).
+  %%CITATION = PHLTA,B212,227;%%
+%\cite{Gluck:2000dy}
+
+\bibitem{Farrar} G. R. Farrar and D. R. Jackson, Phys. Rev. Lett. {\bf 35}, 
+1416 (1975); G. R. Farrar, Phys. Lett.  {\bf B70}, 346 (1977).
+%\cite{Brodsky:1994kg}
+
+\bibitem{Brodsky:1994kg}
+  S.~J.~Brodsky, M.~Burkardt and I.~Schmidt,
+  %``Perturbative QCD constraints on the shape of polarized quark and gluon
+  %distributions,''
+  Nucl.\ Phys.\  {\bf B441}, 197 (1995)
+  [arXiv:hep-ph/9401328].
+  %%CITATION = HEP-PH 9401328;%%%
+
+\bibitem{Gluck:2000dy}
+  M.~Gluck, E.~Reya, M.~Stratmann and W.~Vogelsang,
+  %``Models for the polarized parton distributions of the nucleon,''
+  Phys.\ Rev.\ D {\bf 63}, 094005 (2001)
+  [arXiv:hep-ph/0011215].
+  %%CITATION = HEP-PH 0011215;%
+%\cite{Leader:2005ci}
+
+\bibitem{Leader:2005ci}
+  E.~Leader, A.~V.~Sidorov and D.~B.~Stamenov,
+  %``Longitudinal polarized parton densities updated,''
+  Phys.\ Rev.\ D {\bf 73}, 034023 (2006)
+  [arXiv:hep-ph/0512114].
+  %%CITATION = HEP-PH 0512114;%%
+
+\bibitem{Bluemlein}
+ J.~Bluemlein and H.~Boettcher, arXiv:hep-ph/0203155.
+%\cite{Hirai:2003pm}
+
+\bibitem{Hirai:2003pm}
+  M.~Hirai, S.~Kumano and N.~Saito  [Asymmetry Analysis Collaboration],
+  %``Determination of polarized parton distribution functions and their
+  %uncertainties,''
+  Phys.\ Rev.\ D {\bf 69}, 054021 (2004)
+  [arXiv:hep-ph/0312112].
+  %%CITATION = HEP-PH 0312112;%
+%
+
+\bibitem{DGLAP} V. N. Gribov and L. N. Lipatov, Sov. J. Nucl. Phys. {\bf 15},
+138 (1972); Y. L. Dokahitzer, Sov. Phys. JETP. {\bf 16}, 161 (1977); G.
+Altarelli and G. Parisi, Nucl. Phys.  {\bf B126}, 298 (1977).
+%
+
+%\cite{Hirai:2006sr}
+%\bibitem{Hirai:2006sr}
+%  M.~Hirai, S.~Kumano and N.~Saito,
+  %``Determination of polarized parton distribution functions with recent data
+  %on polarization asymmetries,''
+%  arXiv:hep-ph/0603213.
+  %%CITATION = HEP-PH 0603213;%%
+  
+%\cite{Leader:2005ci}
+%\cite{Bourrely:2001du}
+\bibitem{Bourrely:2001du}
+  C.~Bourrely, J.~Soffer and F.~Buccella,
+  %``A statistical approach for polarized parton distributions,''
+  Eur.\ Phys.\ J.\  {\bf C23}, 487 (2002)
+  [arXiv:hep-ph/0109160].
+  %%CITATION = HEP-PH 0109160;%%
+%
+
+%\bibitem{privatecomm_LSS} D.~B.~Stamenov, Private communications.
+
+%\cite{Close:1977qx}
+%\bibitem{Close:1977qx}
+%  F.~E.~Close and D.~W.~Sivers,
+  %``Whirlpools In The Sea: Polarization Of Anti-Quarks In A Spinning Proton,''
+%  Phys.\ Rev.\ Lett.\  {\bf 39}, 1116  (1977).
+  %%CITATION = PRLTA,39,1116;%%
+  
+%A1motivation end
+
+%SIDIS begin
+
+\bibitem{LOI} H. Avakian {\it et al.}, ``Semi-Inclusive Pion Production with a Longitudinally
+Polarized Target at 12 GeV'',
+Letter of Intent to Jefferson Lab PAC 30, (2006).
+
+\bibitem{Frankfurt1989} L. L. Frankfurt {\it et al.}, Phys. Lett. {\bf B230}, 141 (1989).
+
+\bibitem{SMC98} B. Adeva {\it et al}, Phys. Lett. {\bf B420}, 180-190 (1998).
+
+\bibitem{HermesDeltaD} A. Airapetian, Phys. Rev. D {\bf 71}, 012003 (2005) (hep-ex/0407032).
+
+\bibitem{PEPSI}
+L. Mankiewicz, A. Schafer, and M. Veltri, 
+Comput. Phys. Commun. {\bf 71}, 305 (1992).
+
+\bibitem{Ackerstaff98}K. Ackerstaff {\it et al.} Phys. Rev. Lett. {\bf 81}, 5519 (1998).    
+
+\bibitem{ChristovaLeader99} E. Christova {\it et al.}, Phys. Lett. {\bf B468},  299 (1999).
+
+\bibitem{ChristovaLeader00} E. Christova and E. Leader, Nucl. Phys. {\bf B607}, 369 (2001).
+
+\bibitem{Florian96} D. de. Florian, C. A. Garcia Canal,
+R. Sassot, Nucl. Phys. {\bf B470},195 (1996).
+
+\bibitem{Graudenz94} D. Graudenz, Nucl. Phys. {\bf B432}, 351 (1994).
+
+\bibitem{COMPASS05}V. Alexhakin {\it et al.} Phys. Rev. Lett. {\bf 94}, 202002
+(2005).
+
+ %hep-ph/9907265} 
+
+%SIDIS end
+
+%Moments begin
+\bibitem{rev_mom}
+J.-P. Chen, A. Deur, Z.-E. Meziani, Mod. Phys. Lett. \textbf{A20}, 2745 (2005);
+M. Osipenko {\it et al.}, Phys. Rev. D {\bf 71}, 054007 (2005).
+
+\bibitem{Bj}
+J. D. Bjorken, Phys. Rev. \textbf{148}, 1467 (1966).
+
+\bibitem{GDH}
+S. D. Drell and
+A. C. Hearn, Phys. Rev. Lett. \textbf{16}, 908 (1966);
+S. Gerasimov, Sov. J. Nucl. Phys. \textbf{2}, 430 (1966).
+
+\bibitem{JiSR}
+X. Ji and J. Osborne, J. Phys. {\bf G27} 127 (2001).
+
+%Moments end
+
+\bibitem {mckee} P. McKee, Nucl. Instrum. Meth. {\bf A526}, 60 (2004).
+
+\bibitem{dulya}
+C. Dulya {\it et al.,}
+Nucl. Instr. and Meth. {\bf  354}, 249 (1995).
+
+\bibitem{cdk} C. Keith, Nucl. Instrum. Meth. {\bf A501}, 327 (2003).
+
+%\bibitem{pdg}
+%Particle Data Group; D. E. Groom {\it et al.,} Eur. Phys. J. {\bf C15}, 1  (2000).
+
+%Analysis begin
+\bibitem{Kukhto}
+T.~V. Kukhto and N.~M. Shumeiko,
+Nucl. Phys. {\bf B219},
+412 (1983).
+
+\bibitem{Tsai}
+Y.-S. Tsai,
+Rev. Mod. Phys. {\bf 46},
+815 (1974).
+%Analysis end
+
+%Results begin
+%\bibitem{HallADeltaD} X. Zheng, Phys. Rev. C {\bf 70}, 065207 (2004) (nucl-ex/0405006).
+
+\bibitem{WallyduRatio} W. Melnitchouk and A.W. Thomas, Acta Phys. Polon. {\bf B27},
+1407 (1996) (nucl-th/9603021).
+
+\bibitem{christy} M.E. Christy http://www.jlab.org/\textasciitilde{}christy/cs\_fits/cs\_fits.html.
+
+\bibitem{NMC} R. Arneodo {\it et al.} Phys. Lett. {\bf B364}, 107 (1995).%AD
+
+
+\bibitem{R1998} K. Abe {\it et al.} Phys. Lett. {\bf B452}, 194 (1999).%AD
+
+\bibitem{QFS} J. W. Lightbody, Jr. and J. S. O'Connell, Computers in Physics {\bf 2}, 57 (1988).
+
+\bibitem{g1p} S. Simula\emph{ et al.} Phys. Rev. D \textbf{65}, 034017 (2002).
+
+\bibitem{BT}
+N. Bianchi and E. Thomas, Nucl. Phys. Proc. Suppl. \textbf{82}, 256 (2000).
+
+\bibitem{HERMES}
+HERMES collaboration: A. Airapetian \emph{et al.}, 
+Eur. Phys. J. {\bf C26}, 527 (2003).
+
+\bibitem{E143}
+E143 collaboration: K. Abe \emph{et al.},
+Phys. Rev. Lett. \textbf{78}, 815 (1997); 
+K. Abe \emph{et al.}, 
+Phys. Rev. D {\bf58}, 112003 (1998).
+
+\bibitem{E155}
+P.L. Anthony {\it et al.,} Phys. Lett. {\bf B493}, 19 (2000).
+
+\bibitem{AO}
+V. D. Burkert and B. L. Ioffe,
+Phys. Lett. \textbf{B296}, 223 (1992);
+J. Exp. Theor. Phys. {\bf 78}, 619 (1994).
+
+\bibitem{RSS} 
+JLab E01-006, O. Rondon and M. Jones spokespersons.
+See also, e.g., K. Slifer,  ``The Hall C Spin Program at JLab'',
+to be published in  Czech. J. Phys., (2006).
+
+\bibitem{E155x} Anthony {\it et al.} Phys. Lett. {\bf B553}, 18 (2003);
+Anthony {\it et al.} Phys. Lett. {\bf B458}, 529 (1999).%AD
+
+%
+\bibitem{bjht} A. Deur {\it et al.} Phys. Rev. Lett.%AD
+{\bf 93}, 212001 (2004).
+
+% Results end
+
+\end{thebibliography}
+
+\end{document}

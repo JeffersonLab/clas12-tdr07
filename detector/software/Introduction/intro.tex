@@ -1,0 +1,51 @@
+\section{Introduction}
+
+The goal of the offline software is to provide tools to the collaboration 
+that allow design, simulation, and data analysis to proceed in an efficient, 
+repeatable, and understandable way.  The process should be set up to minimize 
+errors and to allow cross-checks of results.  As much as possible, 
+software-engineering related details should be hidden from collaborators,
+allowing them to concentrate on the physical processes and experimental 
+effects they are studying.  If the process is efficient in terms of time 
+invested by the experimenter, it will likely be efficient in terms of resource 
+use (cpu, storage, network) as well.  Also, when the time invested is 
+minimized, it allows the process to be repeated with variations in 
+assumptions or parameters. These repeated investigations result in a more 
+robust scientific results.
+
+Our hope is that by encouraging communication of ideas with multiple 
+discussion formats (meetings with remote access, email lists, websites, 
+wikis), we can make most major design decisions as a collaboration and avoid 
+unnecessary repetition of effort.  We see consensus decision making and good 
+documentation as keys to achieving this goal.
+
+Large-scale computing efforts are common in nuclear and high-energy physics, 
+and there are several standard components in all of them.  High-bandwidth data 
+acquisition and network capability, mass storage, sophisticated reconstruction 
+algorithms leading to high cpu requirements, data volume reduction schemes, 
+generic and experiment-specific software analysis tools, detailed simulation 
+software, and calibration and run parameter management, are all areas that 
+need to be addressed.  In this section we present our ideas on the aspects of 
+the problem directly related to software development.  There is a separate 
+effort at the Lab to characterize and cost the hardware computing 
+infrastructure necessary to support the entire JLab 12-GeV program.
+
+The {\tt CLAS12} software system is being developed around a {\it service 
+oriented architecture} over a distributed network.  Details of the 
+architecture will be given in the following sections.  Core functions of 
+reconstruction, simulation, and analysis are packaged into discrete units or 
+{\it services}, distributed over a network, and loosely coupled and combined 
+to develop analysis applications.  Communication is achieved by passing data 
+between services, and coordinated through a central process.
+
+Within the high-energy and nuclear physics community, there is currently an 
+expanding suite of services globally available.  The {\it OpenScienceGrid} 
+(OSG) project~\cite{ref:OSG} is a consortium of about 80 National 
+Laboratories, Universities, and Institutions working together to provide a 
+national computing infrastructure for science.  The consortium is funded by 
+the National Science Foundation and the US Department of Energy's Office of 
+Science.  An example of distributed computing over the OSG is given by 
+Fermilab's D0 experiment~\cite{ref:D0}.  Another example is the 
+{\it Large Hadron Collider (LHC) Computing Grid Project}
+\cite{ref:LHC,ref:LHC2}, being developed for the various LHC experiments.
+

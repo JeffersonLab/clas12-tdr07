@@ -1,0 +1,414 @@
+\contentsline {part}{I\hspace {1em}Physics}{16}
+\contentsline {chapter}{\numberline {1}Executive Summary}{17}
+\contentsline {chapter}{\numberline {2}GPDs and Quark Distributions in Transverse Space}{22}
+\contentsline {section}{\numberline {2.1}Introduction}{22}
+\contentsline {section}{\numberline {2.2}Present Experimental Results on Hard Exclusive Processes}{28}
+\contentsline {subsection}{\numberline {2.2.1}GPD Measurements with Jefferson Laboratory at 12 GeV}{29}
+\contentsline {section}{\numberline {2.3}GPD Studies with a Transversely Polarized Target}{31}
+\contentsline {section}{\numberline {2.4}Summary}{33}
+\contentsline {chapter}{\numberline {3}Parton Distributions at Large $x$}{38}
+\contentsline {section}{\numberline {3.1}Parton Distributions}{38}
+\contentsline {section}{\numberline {3.2}Global Fit of Polarized Parton Distributions}{40}
+\contentsline {section}{\numberline {3.3}Moments of Structure Functions}{41}
+\contentsline {subsection}{\numberline {3.3.1}The GDH Sum Rule}{45}
+\contentsline {subsection}{\numberline {3.3.2}Moments of $F_2$ and the Precise Determination of $\alpha _s(M_Z)$}{45}
+\contentsline {subsection}{\numberline {3.3.3}Quark-Hadron Duality}{47}
+\contentsline {chapter}{\numberline {4}SIDIS and the Transverse Structure of the Nucleon}{49}
+\contentsline {section}{\numberline {4.1}Introduction}{49}
+\contentsline {section}{\numberline {4.2}Present Experimental Results on Spin-Azimuthal Asymmetries}{52}
+\contentsline {section}{\numberline {4.3}TMD Measurements with JLab at 12 GeV}{56}
+\contentsline {section}{\numberline {4.4}Summary}{61}
+\contentsline {chapter}{\numberline {5}Properties of QCD from the Nuclear Medium}{62}
+\contentsline {section}{\numberline {5.1}Introduction}{62}
+\contentsline {subsection}{\numberline {5.1.1}$p_T$ Broadening and the Lifetime of Deconfined Quarks}{63}
+\contentsline {subsection}{\numberline {5.1.2}Color Transparency and the Time Evolution of $q\mathaccentV {bar}016{q}$ Pairs}{65}
+\contentsline {section}{\numberline {5.2}Hadron Attenuation and the Formation Time of Color Fields}{68}
+\contentsline {subsection}{\numberline {5.2.1}$D(e,e'p_s)$ and the Quark Structure of Neutrons in a Cold Dense Medium}{69}
+\contentsline {section}{\numberline {5.3}$x>1$ and the Properties of Cold Dense Matter}{72}
+\contentsline {subsection}{\numberline {5.3.1}The Polarized EMC Effect and the Quark Structure of Nuclei}{73}
+\contentsline {chapter}{\numberline {6}Spectroscopy}{74}
+\contentsline {section}{\numberline {6.1}Introduction}{74}
+\contentsline {section}{\numberline {6.2}Physics Motivation}{75}
+\contentsline {section}{\numberline {6.3}Meson Spectroscopy}{77}
+\contentsline {subsection}{\numberline {6.3.1}Coherent Photoproduction on Light Nuclei}{78}
+\contentsline {subsection}{\numberline {6.3.2}Electroproduction on the Proton at Very Small Q$^2$}{79}
+\contentsline {section}{\numberline {6.4}Baryon Spectroscopy and Structure}{79}
+\contentsline {subsection}{\numberline {6.4.1}Cascades}{80}
+\contentsline {section}{\numberline {6.5}Summary}{82}
+\contentsline {chapter}{\numberline {7}Baryon Form Factors}{83}
+\contentsline {section}{\numberline {7.1}Introduction}{83}
+\contentsline {section}{\numberline {7.2}Context and Motivation}{83}
+\contentsline {section}{\numberline {7.3}Form Factor Measurements}{88}
+\contentsline {subsection}{\numberline {7.3.1}Nucleon Elastic Form Factors}{89}
+\contentsline {subsection}{\numberline {7.3.2}Electromagnetic Transition Form Factors}{90}
+\contentsline {chapter}{\numberline {8}PAC Reviewed 12-GeV Proposal Overview}{93}
+\contentsline {part}{II\hspace {1em}Detector}{101}
+\contentsline {chapter}{\numberline {1}Design Overview}{102}
+\contentsline {section}{\numberline {1.1}System Description}{102}
+\contentsline {section}{\numberline {1.2}Upgrade Hall B System Requirements}{103}
+\contentsline {section}{\numberline {1.3}Technical Approach to Meet the Upgrade Hall B System Requirements}{103}
+\contentsline {subsection}{\numberline {1.3.1}Introduction}{103}
+\contentsline {subsection}{\numberline {1.3.2}Design Solutions to Fulfill the Requirements}{105}
+\contentsline {subsubsection}{Improved M{\o }ller Electron Shielding}{105}
+\contentsline {subsubsection}{Drift Chamber Geometry}{106}
+\contentsline {section}{\numberline {1.4}Superconducting Torus and Solenoid Magnets}{109}
+\contentsline {subsection}{\numberline {1.4.1}The {\tt CLAS12} Toroid}{111}
+\contentsline {subsection}{\numberline {1.4.2}The {\tt CLAS12} Solenoid}{112}
+\contentsline {chapter}{\numberline {2}Tracking Systems -- Drift Chambers \& Vertex Tracker}{117}
+\contentsline {section}{\numberline {2.1}Physics Requirements for {\tt CLAS12} Tracking}{117}
+\contentsline {section}{\numberline {2.2}Tracking System Design}{119}
+\contentsline {subsection}{\numberline {2.2.1}Forward Tracking Design}{120}
+\contentsline {subsection}{\numberline {2.2.2}Central Tracking Design}{122}
+\contentsline {section}{\numberline {2.3}Silicon Vertex Tracker for {\tt CLAS12}}{122}
+\contentsline {subsection}{\numberline {2.3.1}Overview}{122}
+\contentsline {subsection}{\numberline {2.3.2}Configuration}{123}
+\contentsline {subsection}{\numberline {2.3.3}Rate Estimates}{123}
+\contentsline {subsection}{\numberline {2.3.4}Forward Silicon Tracker (FST)}{125}
+\contentsline {subsection}{\numberline {2.3.5}Barrel Silicon Tracker (BST)}{126}
+\contentsline {subsection}{\numberline {2.3.6}Dicing Layout}{127}
+\contentsline {subsection}{\numberline {2.3.7}Module and Strip Layout}{128}
+\contentsline {section}{\numberline {2.4}Mechanical}{131}
+\contentsline {subsection}{\numberline {2.4.1}Support Structure}{131}
+\contentsline {subsection}{\numberline {2.4.2}Detector Element Deflection}{132}
+\contentsline {subsection}{\numberline {2.4.3}Detector Element Heat Removal}{132}
+\contentsline {section}{\numberline {2.5}Electronics}{134}
+\contentsline {subsection}{\numberline {2.5.1}Readout}{134}
+\contentsline {subsection}{\numberline {2.5.2}High and Low Voltage}{141}
+\contentsline {subsection}{\numberline {2.5.3}Slow Controls}{144}
+\contentsline {subsection}{\numberline {2.5.4}Data Acquisition}{146}
+\contentsline {section}{\numberline {2.6}Research \& Development}{152}
+\contentsline {section}{\numberline {2.7}SVT Commissioning and Operation}{156}
+\contentsline {section}{\numberline {2.8}{\tt CLAS12} Drift Chambers}{157}
+\contentsline {subsection}{\numberline {2.8.1}Overview}{157}
+\contentsline {subsection}{\numberline {2.8.2}Mechanical Design}{161}
+\contentsline {subsubsection}{Wire Layout: Cells, Layers, Superlayers}{162}
+\contentsline {subsubsection}{Endplates and Box Assembly}{163}
+\contentsline {subsubsection}{Wires, Feedthroughs, Crimp Pins}{163}
+\contentsline {subsubsection}{Attachment Points}{166}
+\contentsline {subsubsection}{Survey, Alignment, and Magnetic Field Mapping}{167}
+\contentsline {subsection}{\numberline {2.8.3}Electronic Readout}{167}
+\contentsline {subsubsection}{On-Chamber PCBs and Cables}{167}
+\contentsline {subsubsection}{Post-Amplifiers, Discriminators, Multiplexers, TDCs}{169}
+\contentsline {subsection}{\numberline {2.8.4}Gas System}{169}
+\contentsline {subsection}{\numberline {2.8.5}Drift Chamber Construction}{170}
+\contentsline {subsubsection}{Inspection and Cleaning}{170}
+\contentsline {subsubsection}{Box Assembly}{170}
+\contentsline {subsubsection}{Internal Survey}{171}
+\contentsline {subsubsection}{Stringing}{172}
+\contentsline {subsubsection}{Mounting Electronics Boards}{173}
+\contentsline {subsubsection}{Positional Error Budget}{173}
+\contentsline {subsubsection}{Quality Assurance}{174}
+\contentsline {subsection}{\numberline {2.8.6}Drift Chamber Operation}{175}
+\contentsline {subsubsection}{Alignment}{175}
+\contentsline {section}{\numberline {2.9}Expected Tracking System Performance}{176}
+\contentsline {section}{\numberline {2.10}Charged Particle Tracking}{178}
+\contentsline {subsection}{\numberline {2.10.1}Event Generation}{179}
+\contentsline {subsection}{\numberline {2.10.2}The Kalman Filter Algorithm}{179}
+\contentsline {paragraph}{Application for Central Tracking:}{181}
+\contentsline {subsection}{\numberline {2.10.3}Central Tracking}{181}
+\contentsline {subsubsection}{BST Design}{181}
+\contentsline {subsubsection}{Track Finding and Track Fitting}{182}
+\contentsline {paragraph}{Track Finding:}{182}
+\contentsline {paragraph}{Track Fitting:}{184}
+\contentsline {subsubsection}{Tracking Performance}{184}
+\contentsline {subsubsection}{Effect of the Background}{186}
+\contentsline {subsubsection}{Misalignments}{187}
+\contentsline {subsection}{\numberline {2.10.4}Forward Tracking}{189}
+\contentsline {subsubsection}{DC and FST Design}{189}
+\contentsline {subsubsection}{Tracking in the DC}{190}
+\contentsline {paragraph}{Cluster and Track Finding:}{190}
+\contentsline {paragraph}{Road Finding:}{192}
+\contentsline {paragraph}{Track Fitting:}{193}
+\contentsline {subsubsection}{Matching with the FST}{194}
+\contentsline {subsubsection}{Tracking Performance}{195}
+\contentsline {subsubsection}{Misalignments}{197}
+\contentsline {subsection}{\numberline {2.10.5}Conclusion}{199}
+\contentsline {section}{\numberline {2.11}Expected Physics Performance}{199}
+\contentsline {section}{\numberline {2.12}Safety and Quality Assurance Issues}{200}
+\contentsline {subsection}{\numberline {2.12.1}Safety}{200}
+\contentsline {subsubsection}{Drift Chamber}{200}
+\contentsline {subsubsection}{SVT}{204}
+\contentsline {subsection}{\numberline {2.12.2}Quality Assurance}{205}
+\contentsline {subsubsection}{Drift Chambers}{205}
+\contentsline {subsubsection}{SVT}{207}
+\contentsline {subsection}{\numberline {2.12.3}Conformance with JLab ES\&H Manual}{208}
+\contentsline {chapter}{\numberline {3}High Threshold {\v C}erenkov Detector}{209}
+\contentsline {section}{\numberline {3.1}Introduction}{209}
+\contentsline {subsection}{\numberline {3.1.1}Optical Requirements}{212}
+\contentsline {subsection}{\numberline {3.1.2}Physical Environment}{212}
+\contentsline {subsection}{\numberline {3.1.3}Overall Design}{214}
+\contentsline {section}{\numberline {3.2}Optical Design and Construction}{216}
+\contentsline {subsection}{\numberline {3.2.1}Mirror Prototyping}{220}
+\contentsline {subsection}{\numberline {3.2.2}Light Collection Cones}{231}
+\contentsline {section}{\numberline {3.3}DAQ for HTCC}{233}
+\contentsline {section}{\numberline {3.4}HTCC Gas System Overview}{237}
+\contentsline {section}{\numberline {3.5}Simulations of Detector Performance}{238}
+\contentsline {subsection}{\numberline {3.5.1}Optical Properties of Physical Components}{238}
+\contentsline {subsubsection}{Radiator Gas}{238}
+\contentsline {subsubsection}{Photomultiplier Tubes}{240}
+\contentsline {subsection}{\numberline {3.5.2}Distributions of Photons Incident on the PMT Faces}{241}
+\contentsline {subsection}{\numberline {3.5.3}Background Rates}{244}
+\contentsline {subsection}{\numberline {3.5.4}Timing Parameters}{246}
+\contentsline {section}{\numberline {3.6}PMT Studies}{248}
+\contentsline {subsection}{\numberline {3.6.1}PMT Magnetic Shielding Studies}{248}
+\contentsline {subsection}{\numberline {3.6.2}Magnetic Shielding Test Stand}{249}
+\contentsline {subsection}{\numberline {3.6.3}PMT Laboratory Studies}{256}
+\contentsline {subsubsection}{Introduction}{256}
+\contentsline {subsubsection}{{\v C}erenkov Light Detection}{257}
+\contentsline {subsubsection}{Cosmic Ray Stand}{261}
+\contentsline {subsubsection}{Calibration of the ADC Scale}{262}
+\contentsline {subsubsection}{{\v C}erenkov Light Test Results}{264}
+\contentsline {section}{\numberline {3.7}Mechanical Design}{272}
+\contentsline {subsection}{\numberline {3.7.1}Main Structure}{274}
+\contentsline {subsection}{\numberline {3.7.2}PMT Mount}{274}
+\contentsline {subsection}{\numberline {3.7.3}Mirror Positioning and Alignment}{275}
+\contentsline {subsection}{\numberline {3.7.4}Upstream and Entry}{275}
+\contentsline {subsection}{\numberline {3.7.5}Exit Scheme}{276}
+\contentsline {section}{\numberline {3.8}HTCC System Quality Assurance Procedures}{277}
+\contentsline {subsection}{\numberline {3.8.1}QA Procedures for the Combined Mirror Construction}{277}
+\contentsline {subsection}{\numberline {3.8.2}PMT Quality Control}{278}
+\contentsline {subsection}{\numberline {3.8.3}QA for Magnetic Shielding}{279}
+\contentsline {section}{\numberline {3.9}HTCC System Safety Issues}{279}
+\contentsline {chapter}{\numberline {4}Central TOF Detector}{282}
+\contentsline {section}{\numberline {4.1}Introduction}{282}
+\contentsline {section}{\numberline {4.2}Counter Prototyping and Reference Measurements}{287}
+\contentsline {subsection}{\numberline {4.2.1}Time Resolution Measurements with R2083 PMT Triplets}{289}
+\contentsline {subsection}{\numberline {4.2.2}Time Resolution Measurements with a Burle 85011 PMT}{293}
+\contentsline {subsection}{\numberline {4.2.3}Measurements with Fine-Mesh Photomultipliers}{297}
+\contentsline {section}{\numberline {4.3}Review of Modern Photo-Detectors}{299}
+\contentsline {subsection}{\numberline {4.3.1}Ordinary Dynode PMTs}{300}
+\contentsline {subsection}{\numberline {4.3.2}Micro-Channel Plate Photomultipliers}{300}
+\contentsline {subsection}{\numberline {4.3.3}Fine-Mesh and Metal-Channel Photomultipliers}{303}
+\contentsline {paragraph}{Fine-Mesh PMTs:}{303}
+\contentsline {paragraph}{Metal-Channel Photomultipliers:}{305}
+\contentsline {subsection}{\numberline {4.3.4}Silicon Photomultipliers}{305}
+\contentsline {subsection}{\numberline {4.3.5}Avalanche PhotoDiodes}{307}
+\contentsline {section}{\numberline {4.4}Pilot Design with Conventional R2083 PMTs}{307}
+\contentsline {subsection}{\numberline {4.4.1}Detector Specification and Design Criteria}{307}
+\contentsline {subsubsection}{Scintillator Dimensions}{308}
+\contentsline {subsubsection}{Dimensions of the PMT Housing}{311}
+\contentsline {subsubsection}{Dimensions of the PMT Photocathode}{311}
+\contentsline {subsection}{\numberline {4.4.2}Light Guides}{311}
+\contentsline {subsection}{\numberline {4.4.3}Downstream Light Guides}{313}
+\contentsline {section}{\numberline {4.5}PMT Magnetic Shields}{313}
+\contentsline {subsection}{\numberline {4.5.1}Ferromagnetic Shielding}{317}
+\contentsline {subsubsection}{Finite Element Analysis}{317}
+\contentsline {subsubsection}{Hybrid Magnetic Shield with Compensating Coil}{322}
+\contentsline {section}{\numberline {4.6}Optical Tests of Acrylic}{322}
+\contentsline {subsection}{\numberline {4.6.1}Practical Transmittance Measurements}{325}
+\contentsline {subsection}{\numberline {4.6.2}Bulk Attenuation Length and Surface Quality}{326}
+\contentsline {subsubsection}{Absolute Measurements}{328}
+\contentsline {subsection}{\numberline {4.6.3}Relative Measurements}{328}
+\contentsline {subsection}{\numberline {4.6.4}Surface Quality Measurements}{329}
+\contentsline {paragraph}{Practical Transmittance After Polishing:}{330}
+\contentsline {paragraph}{Practical Transmittance After Painting with Lacquer:}{330}
+\contentsline {subsection}{\numberline {4.6.5}Future Applications}{330}
+\contentsline {section}{\numberline {4.7}Studies with Monte Carlo Calculations}{331}
+\contentsline {subsection}{\numberline {4.7.1}Effect of Trapezoidal Shape of Scintillator on Light Propagation}{331}
+\contentsline {subsection}{\numberline {4.7.2}Effect of Coupling Angles Between Light Guides and Scintillators}{332}
+\contentsline {subsection}{\numberline {4.7.3}Effect of Bending}{332}
+\contentsline {subsection}{\numberline {4.7.4}Effect of Up and Down Mirrors of Light Guides}{332}
+\contentsline {subsection}{\numberline {4.7.5}Light Guide Transmission Efficiency vs. Refractive Index}{332}
+\contentsline {subsection}{\numberline {4.7.6}Matching of the Light Guide to the PMT Entrance Window}{334}
+\contentsline {subsection}{\numberline {4.7.7}Effect of the Photocathode Diameter}{334}
+\contentsline {subsection}{\numberline {4.7.8}Effect of Light Guide Length}{334}
+\contentsline {subsection}{\numberline {4.7.9}Light Guides to Metal-Channel Photomultipliers}{335}
+\contentsline {section}{\numberline {4.8}Estimations of $\sigma _{TOF}$ for Different CTOF Designs}{336}
+\contentsline {paragraph}{Resolution with 1-m Long Light Guides:}{336}
+\contentsline {paragraph}{Resolution with 1.5-m Long Light Guides:}{337}
+\contentsline {paragraph}{Resolution with Metal-Channel PMTs H8500 and Light Guides:}{337}
+\contentsline {section}{\numberline {4.9}Pilot Design with FM/MC Photomultipliers}{337}
+\contentsline {section}{\numberline {4.10}Pilot Design with Micro-Channel Plate PMTs}{340}
+\contentsline {section}{\numberline {4.11}Outlook}{340}
+\contentsline {paragraph}{CTOF Counter with Conventional R2083 PMTs:}{342}
+\contentsline {paragraph}{CTOF Counter with MCP PMTs:}{342}
+\contentsline {paragraph}{CTOF Counter with Fine-Mesh/Metal-Channel PMTs:}{342}
+\contentsline {section}{\numberline {4.12}Construction}{343}
+\contentsline {section}{\numberline {4.13}CTOF System Quality Assurance Procedures}{345}
+\contentsline {paragraph}{Scintillators, light guides, and reflecting materials:}{345}
+\contentsline {paragraph}{Magnetic shields and light guide handling:}{345}
+\contentsline {paragraph}{Detector testing:}{346}
+\contentsline {paragraph}{Installation:}{346}
+\contentsline {section}{\numberline {4.14}Personnel Safety Issues}{346}
+\contentsline {section}{\numberline {4.15}CTOF System Safety Issues}{347}
+\contentsline {section}{\numberline {4.16}Conclusions}{347}
+\contentsline {chapter}{\numberline {5}FTOF System}{349}
+\contentsline {section}{\numberline {5.1}FTOF System Overview}{349}
+\contentsline {section}{\numberline {5.2}Design Requirements}{353}
+\contentsline {section}{\numberline {5.3}FTOF System Description}{357}
+\contentsline {subsection}{\numberline {5.3.1}Geometry}{358}
+\contentsline {subsection}{\numberline {5.3.2}Scintillation Material}{358}
+\contentsline {subsection}{\numberline {5.3.3}Light Guides}{360}
+\contentsline {subsection}{\numberline {5.3.4}Photomultiplier Tubes}{360}
+\contentsline {subsection}{\numberline {5.3.5}Voltage Dividers}{361}
+\contentsline {subsection}{\numberline {5.3.6}Assembly}{362}
+\contentsline {subsection}{\numberline {5.3.7}Magnetic Shielding}{365}
+\contentsline {subsection}{\numberline {5.3.8}Laser Calibration System}{366}
+\contentsline {subsection}{\numberline {5.3.9}Electronics}{367}
+\contentsline {subsubsection}{Cables}{368}
+\contentsline {subsubsection}{High-Voltage Supplies}{369}
+\contentsline {section}{\numberline {5.4}Simulations and Reconstruction}{369}
+\contentsline {section}{\numberline {5.5}FTOF System Quality Assurance Procedures}{372}
+\contentsline {section}{\numberline {5.6}FTOF System Safety Issues}{374}
+\contentsline {section}{\numberline {5.7}Collaboration}{375}
+\contentsline {chapter}{\numberline {6}Pre-Shower Calorimeter}{376}
+\contentsline {section}{\numberline {6.1}Overview and Physics Requirements}{376}
+\contentsline {section}{\numberline {6.2}Conceptual Design}{378}
+\contentsline {section}{\numberline {6.3}Mechanical Design}{381}
+\contentsline {section}{\numberline {6.4}Signal Readout and Triggering}{384}
+\contentsline {section}{\numberline {6.5}Prototyping and Component Testing}{387}
+\contentsline {subsection}{\numberline {6.5.1}Setup}{389}
+\contentsline {subsection}{\numberline {6.5.2}Determination of the Number of Photo-electrons}{392}
+\contentsline {subsection}{\numberline {6.5.3}Determination of the Absolute Light Yield}{392}
+\contentsline {subsection}{\numberline {6.5.4}Light Yield with Single-Fiber Readout}{394}
+\contentsline {subsection}{\numberline {6.5.5}More Measurements}{398}
+\contentsline {subsection}{\numberline {6.5.6}Multiple Fiber Readout}{400}
+\contentsline {subsection}{\numberline {6.5.7}Summary of the Test Measurements}{402}
+\contentsline {subsection}{\numberline {6.5.8}Prototype of the PCAL Module}{404}
+\contentsline {section}{\numberline {6.6}Construction}{409}
+\contentsline {section}{\numberline {6.7}PCAL Quality Assurance}{411}
+\contentsline {section}{\numberline {6.8}PCAL Safety Issues}{411}
+\contentsline {section}{\numberline {6.9}Collaboration}{412}
+\contentsline {chapter}{\numberline {7}Beamline Elements}{414}
+\contentsline {section}{\numberline {7.1}Longitudinally Polarized Solid Target}{414}
+\contentsline {subsection}{\numberline {7.1.1}Physics Requirements}{414}
+\contentsline {subsection}{\numberline {7.1.2}Polarized Target Design}{415}
+\contentsline {subsubsection}{Polarizing Magnet and the Cryostat}{415}
+\contentsline {subsubsection}{Target Insert, Cells, $\mu $-waves, and NMR}{417}
+\contentsline {subsubsection}{Heat Load and Pumping Requirements}{420}
+\contentsline {subsection}{\numberline {7.1.3}Expected Performance}{421}
+\contentsline {section}{\numberline {7.2}M{\o }ller Polarimeter}{424}
+\contentsline {subsection}{\numberline {7.2.1}Physics Requirements and Polarimeter Design}{424}
+\contentsline {subsection}{\numberline {7.2.2}Collaboration and Responsibilities}{426}
+\contentsline {section}{\numberline {7.3}Other Beamline Devices}{426}
+\contentsline {chapter}{\numberline {8}Additional Equipment Required for Physics Program}{428}
+\contentsline {section}{\numberline {8.1}Transversely Polarized Target}{428}
+\contentsline {subsection}{\numberline {8.1.1}Standard Transversely Polarized Target}{428}
+\contentsline {subsection}{\numberline {8.1.2}Transversely Polarized HD Frozen-Spin Target}{430}
+\contentsline {section}{\numberline {8.2}The BoNuS Radial Time Projection Chamber}{432}
+\contentsline {section}{\numberline {8.3}Ring Imaging {\v C}erenkov for {\tt CLAS12}}{435}
+\contentsline {section}{\numberline {8.4}Central Electromagnetic Calorimeter}{437}
+\contentsline {subsection}{\numberline {8.4.1}Overview}{437}
+\contentsline {subsection}{\numberline {8.4.2}Requirements}{437}
+\contentsline {subsubsection}{Scintillating Fiber/Tungsten Powder Calorimeter Design}{438}
+\contentsline {subsubsection}{Expected Performance}{439}
+\contentsline {subsubsection}{Prototyping and Simulations}{443}
+\contentsline {chapter}{\numberline {9}Data Acquisition and Trigger}{445}
+\contentsline {section}{\numberline {9.1}Overview and Requirements}{445}
+\contentsline {subsection}{\numberline {9.1.1}Requirements}{445}
+\contentsline {subsection}{\numberline {9.1.2}Current DAQ System Analysis}{445}
+\contentsline {subsubsection}{Front-End Electronics: ADCs}{445}
+\contentsline {subsubsection}{Front-End Electronics: TDCs and Discriminators}{446}
+\contentsline {subsubsection}{Front-End Electronics: TDCs and ADBs in Drift Chambers}{446}
+\contentsline {subsubsection}{Trigger System}{447}
+\contentsline {subsubsection}{Online Monitoring}{447}
+\contentsline {subsubsection}{Online Calibration}{447}
+\contentsline {subsection}{\numberline {9.1.3}`Free-Running' vs. Traditional DAQ Systems}{448}
+\contentsline {subsection}{\numberline {9.1.4}SVT Readout}{448}
+\contentsline {section}{\numberline {9.2}Hardware Design}{448}
+\contentsline {subsection}{\numberline {9.2.1}Overview}{448}
+\contentsline {subsection}{\numberline {9.2.2}Front-End for Fast Detectors}{448}
+\contentsline {subsection}{\numberline {9.2.3}Front-End for the Drift Chambers}{450}
+\contentsline {subsection}{\numberline {9.2.4}{\tt CLAS12} Trigger}{453}
+\contentsline {subsubsection}{Trigger Efficiency Study}{453}
+\contentsline {subsubsection}{Trigger System Timing and Layout}{454}
+\contentsline {subsubsection}{Level-1 Trigger}{454}
+\contentsline {subsubsection}{Level-2 Trigger}{455}
+\contentsline {subsubsection}{Level-1/Level-2 Timing Diagram}{457}
+\contentsline {subsection}{\numberline {9.2.5}Readout Controllers}{459}
+\contentsline {subsection}{\numberline {9.2.6}Computing and Network}{459}
+\contentsline {section}{\numberline {9.3}Software}{460}
+\contentsline {subsection}{\numberline {9.3.1}CODA Data Acquisition System}{460}
+\contentsline {subsection}{\numberline {9.3.2}{\tt CLAS12}-Specific Components Running as CODA Extensions}{461}
+\contentsline {subsection}{\numberline {9.3.3}Level-3 Trigger}{462}
+\contentsline {subsection}{\numberline {9.3.4}Online Monitoring}{462}
+\contentsline {subsection}{\numberline {9.3.5}Online Calibration}{463}
+\contentsline {section}{\numberline {9.4}Conclusion}{464}
+\contentsline {chapter}{\numberline {10}Infrastructure}{465}
+\contentsline {section}{\numberline {10.1}Overview}{465}
+\contentsline {section}{\numberline {10.2}Permanent Platforms}{466}
+\contentsline {subsection}{\numberline {10.2.1}Space Frame}{466}
+\contentsline {subsection}{\numberline {10.2.2}Forward Carriage}{468}
+\contentsline {section}{\numberline {10.3}Tooling for Detector Installation and Maintenance}{468}
+\contentsline {subsection}{\numberline {10.3.1}The HTCC Lifting Fixture}{468}
+\contentsline {subsection}{\numberline {10.3.2}Drift Chamber Tooling}{470}
+\contentsline {subsection}{\numberline {10.3.3}Forward Time-of-Flight}{470}
+\contentsline {subsection}{\numberline {10.3.4}Low Threshold {\v C}erenkov Counter}{470}
+\contentsline {subsection}{\numberline {10.3.5}Pre-Shower Calorimeter}{472}
+\contentsline {subsection}{\numberline {10.3.6}Solenoid}{472}
+\contentsline {subsection}{\numberline {10.3.7}SVT}{473}
+\contentsline {section}{\numberline {10.4}Permanent Support Devices}{473}
+\contentsline {subsection}{\numberline {10.4.1}Torus Support}{473}
+\contentsline {subsection}{\numberline {10.4.2}Drift Chambers}{474}
+\contentsline {subsection}{\numberline {10.4.3}PCAL}{474}
+\contentsline {subsection}{\numberline {10.4.4}Panel-2 FTOF}{474}
+\contentsline {subsection}{\numberline {10.4.5}LTCC Arms}{475}
+\contentsline {subsection}{\numberline {10.4.6}CTOF Supports}{475}
+\contentsline {section}{\numberline {10.5}Carts}{475}
+\contentsline {subsection}{\numberline {10.5.1}Central Detector Cart}{475}
+\contentsline {subsection}{\numberline {10.5.2}HTCC Beam Line Cart}{475}
+\contentsline {subsection}{\numberline {10.5.3}Polarized Target Cart}{477}
+\contentsline {section}{\numberline {10.6}Utilities}{478}
+\contentsline {subsection}{\numberline {10.6.1}Cryogenic Distribution Can and U-tubes}{478}
+\contentsline {subsection}{\numberline {10.6.2}HVAC Cooling Power}{478}
+\contentsline {subsection}{\numberline {10.6.3}LCW}{478}
+\contentsline {subsection}{\numberline {10.6.4}Electrical Service}{478}
+\contentsline {subsection}{\numberline {10.6.5}SVT and IC Cooling}{479}
+\contentsline {subsection}{\numberline {10.6.6}Cable Trays}{479}
+\contentsline {section}{\numberline {10.7}Survey}{479}
+\contentsline {section}{\numberline {10.8}Safety}{479}
+\contentsline {chapter}{\numberline {11}Offline Software}{480}
+\contentsline {section}{\numberline {11.1}Introduction}{480}
+\contentsline {section}{\numberline {11.2}Service-Oriented Architecture}{481}
+\contentsline {section}{\numberline {11.3}CLaRa}{484}
+\contentsline {subsection}{\numberline {11.3.1}Introduction}{484}
+\contentsline {subsection}{\numberline {11.3.2}The Problem Statement}{484}
+\contentsline {subsubsection}{Physics Data Processing Environment}{485}
+\contentsline {subsubsection}{Design Requirements}{485}
+\contentsline {subsection}{\numberline {11.3.3}SOA}{486}
+\contentsline {subsubsection}{Design Strategies}{487}
+\contentsline {subsubsection}{Classification of the Services}{487}
+\contentsline {subsubsection}{Performance Measurements}{487}
+\contentsline {subsection}{\numberline {11.3.4}Web Services}{488}
+\contentsline {section}{\numberline {11.4}Services}{488}
+\contentsline {subsection}{\numberline {11.4.1}Authentication}{488}
+\contentsline {subsection}{\numberline {11.4.2}Detector Geometry}{489}
+\contentsline {subsection}{\numberline {11.4.3}Event Display}{489}
+\contentsline {subsection}{\numberline {11.4.4}Data and Algorithm Services}{491}
+\contentsline {subsubsection}{Basic Types of Data Services}{491}
+\contentsline {subsection}{\numberline {11.4.5}Magnetic Field}{492}
+\contentsline {section}{\numberline {11.5}Simulation}{495}
+\contentsline {subsection}{\numberline {11.5.1}Parametric Monte Carlo}{495}
+\contentsline {subsection}{\numberline {11.5.2}{\tt CLAS} Software with the {\tt CLAS12} Geometry}{497}
+\contentsline {subsection}{\numberline {11.5.3}GEANT4 Object-Oriented Detector Simulation}{497}
+\contentsline {paragraph}{Geometry}{497}
+\contentsline {paragraph}{{\tt CLAS12} Geometry Implementation}{498}
+\contentsline {paragraph}{Generator}{500}
+\contentsline {paragraph}{Hit Definition}{500}
+\contentsline {paragraph}{Hit Process Factory}{500}
+\contentsline {paragraph}{Elements Identity}{502}
+\contentsline {paragraph}{Output}{502}
+\contentsline {paragraph}{Doxygen Documentation}{503}
+\contentsline {paragraph}{Results}{503}
+\contentsline {subsection}{\numberline {11.5.4}The {\tt CLAS12} Fast Monte Carlo}{504}
+\contentsline {subsubsection}{{\tt CLAS12} Acceptance}{505}
+\contentsline {subsection}{\numberline {11.5.5}{\tt CLAS12} Momentum and Angular Smearing}{506}
+\contentsline {section}{\numberline {11.6}Event Reconstruction}{507}
+\contentsline {subsection}{\numberline {11.6.1}Socrat}{508}
+\contentsline {subsection}{\numberline {11.6.2}Tracking in Java (jSocrat)}{509}
+\contentsline {section}{\numberline {11.7}On-Line Software}{511}
+\contentsline {section}{\numberline {11.8}Code Development and Distribution}{511}
+\contentsline {subsection}{\numberline {11.8.1}Code Management}{511}
+\contentsline {subsection}{\numberline {11.8.2}Code Release}{512}
+\contentsline {subsection}{\numberline {11.8.3}Software Tracking}{512}
+\contentsline {section}{\numberline {11.9}Quality Assurance}{513}
+\contentsline {section}{\numberline {11.10}Computing Resources}{513}
+\contentsline {chapter}{\numberline {12}Commissioning the Experimental Equipment}{515}
+\contentsline {section}{\numberline {12.1}Checkout \& Quality Assurance Before Detector Installation}{515}
+\contentsline {subsection}{\numberline {12.1.1}Objectives}{515}
+\contentsline {section}{\numberline {12.2}Checkout with Beam}{518}
+\contentsline {subsection}{\numberline {12.2.1}Objectives}{518}
+\contentsline {subsection}{\numberline {12.2.2}Beam Line Operation}{519}
+\contentsline {subsection}{\numberline {12.2.3}{\tt CLAS12} Operation}{519}
+\contentsline {chapter}{\numberline {13}Collaboration Responsibilities}{521}
+\contentsline {section}{\numberline {13.1}Technical Participation of Research Groups to the Hall B 12-GeV Upgrade}{521}

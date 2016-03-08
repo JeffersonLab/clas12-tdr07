@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+%\documentclass{elsart}
+%%\bibliographystyle{elsevier}
+\usepackage{fancyhdr}
+\topmargin -0.2in
+\headheight 0.0in
+\headsep 0.4in
+\textheight 9.4in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+\renewcommand{\baselinestretch}{1.4}
+\usepackage{epsfig}
+\input epsf
+\usepackage[dvips]{color}
+\usepackage{lscape}
+\usepackage{longtable}
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+
+\pagenumbering{arabic}	
+
+
+
+
+\input{newcomm.tex}
+
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+%
+
+\begin{document}
+
+
+\thispagestyle{empty}
+\begin{center}
+{\Huge \bf DAQ and Trigger Systems for the CLAS12 detector}
+\end{center}
+\vspace{2cm}
+
+%%\begin{figure}[ht]
+%%\begin{center}
+%%\vspace{1cm}
+%%\epsfig{file=pcal_all_6.eps,width=14cm}
+%%\end{center}
+%%\end{figure}
+
+\begin{center}
+\Large Version 1.2
+\end{center}
+
+
+\pagestyle{empty}
+
+\input{title.tex}
+
+
+
+
+\thispagestyle{empty}
+
+\begin{abstract}
+
+Document contains section `The CLAS12 detector Data Aquisition and
+Trigger System' included into set of documents for July 2008 CD3 review.
+
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 1.2 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries DAQ and Trigger}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../daq_trigger/main.tex}
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,2621 @@
+\documentclass[12pt]{article}
+\input epsf
+
+\usepackage{fullpage}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{subfig}     % Neccessary for subfigures, needs to be installed
+\usepackage{hyphenat}
+%\usepackage{color,fancyvrb}
+\usepackage{setspace}
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+
+\textwidth  6.5in
+\textheight 8.5in
+\topmargin 0. in
+\oddsidemargin 0in
+\evensidemargin 0in
+\pagenumbering{arabic}
+%
+\newcommand{\Thgg}{$\theta_{\gamma^*\gamma}~$}
+\newcommand{\Phgg}{$\phi_{\gamma^*\gamma}~$}
+\newcommand{\Epg}{$ep~\rightarrow~ep\gamma~$}
+\newcommand{\Eppiz}{$ep~\rightarrow~ep\pi^o~$}
+\newcommand{\Enpip}{$ep~\rightarrow~en\pi^+~$}
+\newcommand{\EppiD}{$ep~\rightarrow~e\pi \Delta~$}
+\newcommand{\Epeta}{$ep~\rightarrow~ep\eta~$}
+\newcommand{\Epr}{$ep~\rightarrow~ep\rho~$}
+\newcommand{\EpX}{$ep~\rightarrow~epX~$}
+\newcommand{\EpKY}{$ep~\rightarrow~eKY~$}
+\newcommand{\vEpg}{$\vec ep~\rightarrow~ep\gamma~$}
+\def\gevc2{(GeV/c)$^2$}
+\begin{document}
+\pagestyle{plain}
+%\indent
+%\input{central_introduction.tex}
+%\input{central_solenoid.tex}
+%\input{central_tracker.tex}
+%\input{central_tof.tex}%
+%\input{central_ec.tex}%
+%\begin{thebibliography}{99}
+%\input{bibl.tex}
+%\end{thebibliography}
+\title
+{
+\vspace{-1.4cm}
+\begin{flushright}
+\normalsize{CLAS-NOTE 2008-034}
+%\normalsize{Draft; source file /u/home/baturin/DocCVS/12gev/TDR/TDR2007/main/detector/central/ctof/ctofmagshield310108.tex}
+\bigskip 
+\bigskip
+%\bigskip CLAS-NOTE 2008-034
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\nopagebreak
+\end{flushright}
+\bigskip
+Dynamic Magnetic Shields for the {\tt CLAS12} Central {\tt TOF} Detector.}
+\author
+{
+%{}\\
+%{}\\
+%{}\\
+{}\\
+{}\\
+\mbox
+{V.Baturin, V.Burkert, D.Carman, L.Elouadrhiri, W.Kim,}\\
+{ F.Landry, T.Madlem, R.Newcomb}\\
+{and}\\
+{B.Wieland.}
+%{N.Harrison, F.Landry, T.Madlem, R.Newcomb,B.Wieland}
+{}  \\
+{}  \\
+%{} \\
+\mbox
+{}\\
+{}\\
+%{}\\
+%{}\\
+%{}\\
+}
+\maketitle
+\begin{abstract}
+The Central Time Of Flight detector ({\tt CTOF}) 
+is being designed at JLab with the  
+ordinary  PMTs  requiring a robust magnetic shield from the  main
+5~T solenoid fringe fields of 500-1000~G. 
+Theoretical consideration of a  ferromagnetic cylinder in axial field  
+has demonstrated  that its  shielding capacity  decrease  with  increasing length,
+ i.e. long cylinder does not work efficiently. This observation
+has been confirmed with Final Element Analysis using  POISSON models.
+ Several shields  composed of  coaxial cylinders has been studied.
+All  difficulties caused by  saturation effects  were overcame with 
+a novel dynamical shield, which utilize  compensating solenoids between shielding cylinders.
+Basic dynamical shields for ordinary  and metal channel PMTs were  
+designed. Their performances were tested both in models and  experimentally, 
+at different external fields and compensating currents. Thus designed  
+shields meet the performance requirements.  
+\end{abstract}
+%\begin{flushleft}
+%\end{flushleft}
+\newpage 
+\tableofcontents
+\newpage
+\listoftables
+\newpage
+\listoffigures
+\newpage
+\section{Introduction.}
+The Central Time Of Flight detector ({\tt CTOF}) is being designed at JLab with 
+the  best timing PMTs coupled to the scintillators via focusing light guides, constructed of acrylic rods.
+Conventional R2083 or metal channel H8500 PMTs will be used due to their perfect timing 
+characteristics\footnote{We anticipate that regular PMTs
+may be replaced with much slower (rise time of 3~ns) fine mesh PMTs 
+which may operate at 5000-8000~G without shielding.}. 
+Both PMTs  exhibit the  transition time spread of 370~ps and  the   
+rise time of 0.7~ns, which is close to the rise time of fast scintillators.  
+
+The layout of PMTs,  focusing light guides and scintillators  is shown 
+in Fig.~{\ref{barrel2}}. The  corresponding field map of the  solenoid with 
+indicated  locations of PMTs is shown in  Fig.~\ref{fig:mmap1}.
+%
+The nominal field of the solenoid  is 5T; therefore 
+very long, straight  or bent, light guides are used for  
+delivering light to an area outside of the  solenoid where 
+associated fields are of 500-1000~G. 
+Since neither of these timing PMTs can operate 
+in these magnitudes of external magnetic fields, robust magnetic shields are included into the design. 
+With this design  we are aiming at the time-of-flight resolution of 
+$50-60ps$ using a double-sided readout.
+
+%
+%Fig.{\ref{barrel}} and 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=0.7\textwidth]{CLASTOF.ps}
+%\caption{\small{The design of the {\tt CLAS12} central TOF
+%detector.}}
+%\label{barrel}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{figure}[htbp]%0001
+%\centering
+%%\includegraphics[width=0.8\textwidth]{HTCC_CTOF_STUDY_060507_WRAP.eps}
+%\includegraphics[width=8cm,clip=true,bb= 465 150 2100 1360]{HTCC_CTOF_STUDY_060507_WRAP.eps}
+%\caption{\small{The layout of the {\tt CLAS12} central TOF detector.
+%A-downstream PMTs, B-Upstream PMTs, 1-4 PMTs of the High Threshold Cherenkov Counter(HTCC)  
+%The 50 bent scintillators form a barrel,
+%66-cm long with an inner radius 25~cm. 
+%At the upstream and downstream ends, 50-mm diameter focusing light guides are 
+%included 1.4 and  1.6~m long, respectively.
+%Conventional PMTs
+%may be replaced with magnetic-field-immune photo detectors with
+%twice shorter  light guides.}}
+%\label{barrel2}
+%\end{figure}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]%0001
+%\centering
+%%\includegraphics[width=0.8\textwidth]{HTCC_CTOF_STUDY_060507_WRAP.eps}
+%\includegraphics[width=8cm,clip=true,bb= 465 150 2100 1360]{HTCC_CTOF_STUDY_060507_WRAP.eps}
+%\caption{\small{The layout of the {\tt CLAS12} central TOF detector.
+%A-downstream PMTs, B-Upstream PMTs, 1-4 PMTs of the High Threshold Cherenkov Counter(HTCC)  
+%The 50 bent scintillators form a barrel,
+%66-cm long with an inner radius 25~cm. 
+%At the upstream and downstream ends, 50-mm diameter focusing light guides are 
+%included 1.4 and  1.6~m long, respectively.
+%Conventional PMTs
+%may be replaced with magnetic-field-immune photo detectors with
+%twice shorter  light guides.}}
+%\label{barrel2}
+%\end{figure}
+%%%%%
+%%%%%%fig#3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]%0002
+%\centering
+%%\includegraphics[width=0.9\textwidth]{mmap1.eps}
+%\includegraphics[width=8cm,clip=true,bb= 00 0 700 700]{mmap1.eps}
+%\caption{\small{A quarter of the axial symmetric field map of 
+%the central {\tt CLAS12} solenoid. Locations of both upstream and downstream
+%photo cathodes  are shown with cross-hairs.}}
+%\label{fig:mmap1}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\subfloat[CTOF design.]
+{\includegraphics[height=5.75cm,clip=true,bb= 465 150 2100 1360]{HTCC_CTOF_STUDY_060507_WRAP.eps}
+\label{barrel2}}
+\qquad
+\subfloat[Field map of the main solenoid.]
+{\includegraphics[height=5.75cm,clip=true,bb= 150 50 345 200]{mmap1.eps}
+\label{fig:mmap1}}
+\caption{\small{CTOF design and field map of the main solenoid. 
+(a)-The layout of the {\tt CLAS12} central TOF detector.
+A-downstream PMTs, B-Upstream PMTs, 1-4 PMTs of the High Threshold Cerenkov Counter(HTCC)  
+The 50 bent scintillators form a barrel,
+66-cm long with an inner radius 25~cm. 
+At the upstream and downstream ends, 50-mm diameter focusing light guides are 
+included 1.4 and  1.6~m long, respectively.
+(b)-{A quarter of the axial symmetric field map of 
+the central {\tt CLAS12} solenoid. Locations of both upstream and downstream
+photo cathodes  are shown with cross-hairs.}
+\label{fig:ctofmap}}}
+\end{figure}
+%
+The $R\&D$ for the {\tt CTOF} magnetic shields is reported in the following sections.
+The Final Element Analysis (FEA) and simulations of shield performance
+with POISSON program  have been used for 
+design of the magnetic shields for both R2083 and H8500 PMTs.
+As a further step  we  plan to  measure the maximum tolerating fields and thus 
+designed shields with 5T solenoid.  It is believed that with a robust magnetic shielding of both PMT  models, it may be possible to operate at significantly higher fields. Therefore, shorter light guides may  be implemented, which improves the time resolution of the PMT.
+%
+%This will allow us to  optimize  the length of 
+%light guides for  a  better time resolution.
+
+
+
+\section{Design constrains and shield dimensions.}
+
+\paragraph{External field.}
+The  field map of the main Solenoid is shown in  Fig.~\ref{fig:mmap1}, as well as  the 
+locations of PMT photo cathodes, indicated with cross-hairs.
+%It is seen  from this figure that 
+The   upstream and downstream light guides  are  1.4m and 1.6m long, respectively.   
+The corresponding values of magnetic  field in the vicinity of the photo cathodes  
+are of $\leq 250$G and $\leq 500$G. 
+For  redundancy  we double the design specifications for maximum sustainable field.
+\paragraph{PMT inner field.}
+Our basic  PMT is  the R2083 from Hamamatsu, which
+features a short rise-time of 0.7~ns  and a low transition time spread (TTS) of 370ps.
+The diameter of its photo cathode is $46mm$. 
+
+As is common of most timing PMTs, the R2083 has a spherical photo cathode. 
+Such shape is helpful to  equalize travel distances of primary photo electrons. 
+%Due to the spherical shape of the photo cathode, at any orientation of PMT relative to external
+%magnetic field, the accelerating  electrical field has  a  component perpendicular to  a magnetic field.
+%Therefore, timing PMTs  are more  sensitive to fringe  magnetic fields.
+Due to the spherical shape of the photo cathode, the accelerating electrical field has a component perpendicular to a magnetic field at any orientation of the PMT relative to the external
+magnetic field. As a result, timing PMTs are more sensitive to fringe  magnetic fields.
+
+
+
+The design of the R2083  is similar to the XP4312
+with the photo cathode  $76mm$ in diameter. Therefore, the XP4312 is more sensitive to magnetic 
+fields. This PMT was studied as a candidate to the CLAS TOF detectors by J.Flint
+and E.Smith in 1993. It was shown that it    
+manifests  an  additional time smearing of $\leq30ps$  at magnetic fields 
+between  $0.2-0.4G$\footnote{See a corresponding field map in Fig.13 of  CLAS Note 94-008}.
+Since our main PMT is similar in design, we can admit these values as
+the maximum susceptible field at the photo cathode\footnote{The optional metal channel PMTs H8500 has a similar  
+rise time, but it  may operate at 200-500~G  without magnetic shielding.}.
+ However, we aim to lower fields of $\leq0.1G$, for redundancy.
+%It will be clear from the further consideration  that in the 3 layer shielding with a thin
+%high permeability inner layer, the field at the photo cathode may be reduced to practical zero.
+%%%%%fig#3%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\begin{figure}[htbp]%0002
+%\centering
+%%\includegraphics[width=0.9\textwidth]{mmap1.eps}
+%\includegraphics[width=8cm,clip=true,bb= 00 0 700 700]{mmap1.eps}
+%\caption{\small{A quarter of the axial symmetric field map of 
+%the central {\tt CLAS12} solenoid. Locations of both upstream and downstream
+%photo cathodes  are shown with cross-hairs.}}	
+%\label{fig:mmap1}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  $\approx 30/300~mT$ respectively is  required.
+%However, we anticipate that  at
+% the final stage of designing  the regular PMTs may be replaced
+%with fine mesh PMTs, which are insensitive to magnetic fields up to 700mT.
+%  Due to their  different sense areas($S_a$) and
+%tolerated magnetic fields $(B_m)$ the corresponding
+%light guides has various  transmission lengths($L_t$) and diameters.
+%The time being we consider %, as the most realistic candidates,
+%the following PMTs\footnote{Unfortunately, recently
+% Hamamatsu has discontinued   the most appropriate
+%fine mesh PMT R6504 with the photo cathode diameter $51mm$}:
+%However, the more efficient is the shield
+%the shorter may be light guides, thus the better may be  the time resolution.
+%The main  goal of this note is to
+% estimate  a  possible shield's   dimensions and  tolerated fields
+%using  simple methods suggested by different manufacturers of magnetic shields.
+\paragraph{Shield diameter.}
+Under the current design of the {\tt CTOF}, shown in Fig.\ref{barrel2},
+both the downstream and upstream PMTs are arranged in a 
+circular patterns while  the corresponding light guides forms a  kind of ``wigwam''. 
+Such design constrains the radial coordinate $r_{50}$  of 50 adjacent  shields. 
+Thus, the most critical shield  parameter, its diameter $D_{sm}$,  
+is also constrained
+\footnote{To avoid this constrain a more complex design with a  radial 
+stagger may be used at the upstream side.}:
+%
+\begin{equation}
+%D_{sm}=2\frac{r_{50}}{(ctg(3.6^o)-1)} =134.277\times r_{50}.
+D_{sm}=2\frac{r_{50}}{sin(3.6^o)} =134.27\times r_{50}.
+\label{eq776}
+\end{equation}
+%
+\paragraph{Design specifications.}
+The relevant characteristics of PMTs are listed in Table~\ref{descon}.
+%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}  \hline
+PMT         &$D_{pm}$& $S_a$  & $L_{m}$  &$B_{t}$  & $M$       &$r_{50}$&$D_{sm}$&$L_{LG}$& $B_{o}$   \\
+            &$mm$     & $mm^2$ & $mm$     &$G$     & $Kg$      & $mm$   &        &  mm    & $G$     \\ \hline
+%
+%%%R2083-u   &54       &1662    &120       &0.1      & $\approx5$    & 826    & 110.9  & 1580  &          \\
+%`fig:ctofmap
+R2083-u     &54       &1662    &120       &0.1      & $\approx10$    & 826    &  86  & 1400   & $\leq250$      \\
+R2083-d     &-        &  -     & -        &  -      & $5-10$    & 1090   & $146.4$  & 1600   & $\leq500$     \\ \hline
+H8500-u     &72       &2400    &15        &$\leq200$  &$\approx10$&  596   &  80.1  & 945    & 2000     \\
+H8500-d     & -       &  -     & -        &  -       &$\approx10$& 890    & 119.5  & 945    & 3000     \\ \hline
+\end{tabular}
+\end{center}
+\caption{
+$D_{pm}$ is the nominal  diameter of PMT,
+$S_a$ - PMT sensitive area,
+$L_{m}$ - maximum length to protect against the magnetic field,
+$B_{t}$ - maximum tolerated field by ``naked'' PMT,
+$M$       - expected  shielding mass,
+$r_{50}$  - radial coordinate according to the current design,
+$D_{sm}$  - maximum possible diameter of PMT shield via  Eq.\ref{eq776},
+$L_{LG}$  - shortest possible light guide length in current design,
+$B_{o}$   - magnetic field at the PMT location at specified light guide length. 
+\label{descon} }
+\end{table}
+%
+According to this table, the upstream R2083 shield has to withstand 
+against
+\footnote{For ordinary PMTs we double the tolerating field, for redundancy} 
+of $\leq 500G$, provided the light guide length is $1400mm$. 
+%In such case the diameter of the magnetic shield has to be below $86mm$.
+In such case the diameter of the magnetic shield must be less than $86mm$.
+
+
+The downstream R2083 meets a significantly higher magnetic field.
+Provided the  length of  light guides  is 1600mm, the maximum field would
+be $\leq 1000G$. Thus, the downstream  shield may be as thick as $146mm$.
+Most likely  R2083 PMTs will be used in the assembly H2431, in which the R2083 is 
+enclosed into the $\mu$-metal shielding. The sizes of this shield are
+$0.8mm$ thick, $60mm$ in external diameter and $200mm$ long.
+We plan to ask Hamamatsu to increase the length in order to provide an overhung 
+of $30-60mm$ from  the photo cathode side as it is required for a 
+efficient shielding of the photo cathode\footnote{The internal field 
+drops significantly at the depth of one radius of the shield.}.
+%\verb|http://www.mushield.com/design-guide.shtm|
+
+% Unclear sentence of "Most likely R2083 PMTs will be used in the assembly H2431, in which R2083 is enclosed in the $\mu$-metal shielding."
+
+\section{ Principles of shield performance and design.}
+
+The PMT shield may be active or passive.
+Active shielding makes use of  magnetic fields produced by a  solenoids  around a PMT to
+cancel the internal  field. We do not plan to use active shielding for the following reasons: firstly, in this intance, the interfering fringe field is not perfectly solenoidal; secondly, the shield design would be complex and costly; finally, active shielding may cause electronic interference in nearby systems.
+%We do not plan to use active shielding
+%because, firstly, in our case the  interfering  fringe  field
+%is  not solenoidal, secondly,  such shield  will be  complex and costly,
+%thirdly, it may be a source of  electronic pickup.
+
+
+In a passive shielding system, the diamagnetic properties
+of superconducting cylinder could be used to block the magnetic field inside a shield.
+Such kind of shielding looks very complex and expensive, as it requires the use of cryogenic equipment.
+
+We plan to study the  traditional approach  based on the  properties of 
+ferromagnetic cylinders.
+In such a shield, magnetic field lines are concentrated in the bulk of a
+ferromagnetic, reducing the fringing fields inside the cylinder.
+However, its effectiveness in high magnetic fields is limited by the
+maximum possible magnetization of the ferromagnetic.
+This is also known as the saturating field, which is considered the most critical parameter affecting shield performance.
+%Added "considered" to last line.
+
+%
+%Unfortunately, the ferromagnetic shield around PMTs
+%need holes in both ends.
+%These holes allow the shield to be slid onto the PMT,
+%Active shielding makes use of the magnetic field
+%produced by a  coil to cancel the
+%fringing magnetic field in the PMT's area.
+%Active shielding may be  relatively light weight,
+% compared to ferromagnetic shielding.
+%
+%\subsection{Ferromagnetic shielding.}
+\subsection{Qualitative consideration of  shield performance.}
+%%%%%%%%%%%%%%%%%%%%%%%\paragraph{Practical formulas.}
+\paragraph{Transverse fields.}
+The problem of the infinite hollow ferromagnetic cylinders in the uniform
+transverse magnetic fields has been  solved analytically\footnote{See the  Gluex-doc-843 Jul-17 by E.Smith}, as well as the
+ problem  for ellipsoids in axial fields.  Therefore,  the following formulas
+\footnote{Recommended by  the Magnetic Shield
+ Corporation.\\
+{\verb |http://www.magnetic-shield.com/dynamics/works.html|}}
+ are available for estimating  the magnetic shield parameters:
+\begin{equation}
+S=\frac{B_o}{B_{in}}\approx \mu({B_m})\frac{t}{D_+}~~~;~~~B_m\approx B_o\frac{D_+}{0.8t}~~~;~~~t\approx B_o\frac{D_+}{0.8B_m}
+\label{eq000}
+\end{equation}
+where $S$ stands for the shielding factor of a cylinder,
+$\mu(B_m)$ - the permeability in function  on the field in the shielding material $B_m$,
+$B_o$ - the external  field, 
+$B_{in}$ - the field inside ferromagnetic,
+$D_+$ - the external diameter of the cylinder and
+$t=D_+-D_-$ - the thickness of a shielding material, where $D_-$ 
+is the internal diameter. 
+For a multilayer shielding of $n$ coaxial cylinders, separated by $\approx 1mm$ by radius,
+the resulting shielding factor is:
+%
+\begin{equation}
+S=S_1 \times S_2 \times...\times S_n
+\label{eq777}
+\end{equation}
+%
+where $S_i,i=1,...,n$ are shielding factors for
+$i$-cylinder,  estimated via Eq.\ref{eq000}.
+\paragraph{Axial fields.}
+Although the above formulas are recommended  for rough estimations
+in perpendicular fields they may be also used in case of  
+axial field, provided the
+cylinder lengths exceeds  four  diameters.
+
+
+
+Let's consider a simple  model for a PMT  magnetic shield, 
+i.e. a ferromagnetic ($\mu>>1$) cylinder of outer   diameters $D_+$ , inner diameter $D_-$ , the corresponding 
+thickness $t=\frac{1}{2}(D_+-D_-)$ and finite length $L\approx 4D_+$.  Assume that the cylinder is  
+placed into a uniform axial  field $B_o$ created
+inside an infinitely long thin  solenoid of  diameter  $2D_+$.
+Magnetic flux conservation in the median plane of  such system implicates:
+\begin{equation}
+4B_o \pi D_+^2 \approx 4B_{in} \pi D_+^2 + (B_m-B_{in}) \pi (D_+^2-D_-^2),
+\label{eq004}
+\end{equation}
+where  $B_m$ is the  field in the ferromagnetic media, $B_{in}$ - the field  inside  the shielding cylinder.
+Neglecting $B_{in}$ compared $B_o$ one can relate   the field in the media, $B_m$, to the field inside the 
+shielding, $B_{in}$, as follows:
+ \begin{equation}
+B_m  \approx B_0\frac{D+}{t}=\mu B_{in}~~~;~~~B_{in}= B_0\frac{D+}{t\mu},
+\label{eq003}
+\end{equation}
+where the permeability $\mu$  has to be determined  from the ferromagnetic  magnetization curve $B(H)$ at
+the  magnetic flux density  $B_m$. 
+These formulas  are  in agreement to the practical  formulas in Eq.\ref{eq000}.
+
+
+%Hence,  our shielding  will be composed of 2-3  coaxial
+%cylinders,  fabricated from different  ferromagnetic  materials.
+
+
+
+
+\subsection{Ferromagnetic materials.}
+Available ferromagnetic materials have either a high-saturation or a high-permeability. 
+%Available ferro-magnetics come in two types: those with high saturation and
+%those with high permeability.
+%, in other words,
+%there is always trade-off.
+High-permeability materials are useful in small fields.
+Therefore,  high permeability materials have been used to ``wrap '' PMTs.  
+One of such materials is Co-Netic, which contains 80.6\% Ni and 14\% Fe and is in the 
+same family metallurgically as Mu-metal. 
+%Conetic may be  used for the inner  shield layer around PMTs.
+ 
+In higher fields, materials with high saturation should be used
+since a low saturation material would need to be excessively thick.
+The  silicon steel (2.25\% Si, 0.40\% Al, balance Fe) may be implemented as 
+external shielding. It has been  widely used  in  industry for relays and motors.
+%specifically Allegheny Ludlum Relay Steel #5.
+%The composition of silicon steel is 2.25\% Si, 0.40\% Al, balance Fe
+It is easy to shape and  has moderately high saturation of $1.56/1.96T$
+\footnote{For a  non-oriented/oriented grain makes, respectively}.
+The more advanced and expensive Netic alloy saturates at $2.14T$.
+
+In  moderate fields, a higher permeability material, namely Hiperm-49, may be used as intermediate layer after the external layer of shielding.
+%In  moderate fields after the external layer of shielding another  higher
+%permeability material Hiperm-49 may be used as intermediate layer.
+
+The magnetization curves for Netic and Co-Netic are given in Fig.~\ref{muneco}.
+and  in Fig.~\ref{hiperm49} for Hiperm-49.
+%%%%%%%
+%\clearpageactually
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=7cm,clip=true,bb= 0 0 500 700]{./Netic-conetic.ps.gz}
+%\end{center}
+%\caption{Permeability of NETIC and CO-NETIC from the Magnetic Shield Corp.
+%\label{muneco}}
+%\end{figure}
+%%%%%%%
+%\clearpage
+%\pagebreak
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=7cm,clip=true,bb= 0 0 500 700]{./hiperm49prmtab_picture.ps.gz}
+%\end{center}
+%\caption{Permeability of Hiperm-49 from the Carpenter Company.
+%\label{hiperm49}}
+%\end{figure}
+%
+\begin{figure}[htbp]
+\centering
+\subfloat[Magnetization of Netic and Co-Netic.]
+{\includegraphics[width=6.5cm,clip=true,bb= 0 0 500 700]{./Netic-conetic.ps.gz}
+\label{muneco}}
+\qquad
+\subfloat[Magnetization curve for Hiperm-49.]
+{\includegraphics[width=6.5cm,clip=true,bb= 0 0 500 700]{./hiperm49prmtab_picture.ps.gz}
+\label{hiperm49}}
+\caption{\small{
+CTOF design and field map of the main solenoid. 
+(a)- Magnetization curve $B(H)$ for Netic and Co-Netic. B in logarithmic scale ranges from  $10~G$ to $10^5~G$.
+Lines at $45^0$ are indicated with the  corresponding permeability. 
+(b)-  Magnetization curve $B(H)$ for Hiperm-49 from the Carpenter Company. Vertical scale - $B$ in Gauss, 
+horizontal scale - $H$ in Oersted. 
+}
+\label{fig:permeab}}}
+\end{figure}
+%
+%\clearpage
+%\verb|http://www.mushield.com/design-guide.shtml|
+\subsection{Preliminary estimations of shielding factor.}
+For a qualitative  evaluation of  
+shield design  and performance,  we  use Eq.\ref{eq000}.
+The reference   design  of the  R2083 shield is shown in Fig.\ref{VBT3CY}.
+A detailed FEA calculations will be  reported in the following  Section-\ref{FEA}.
+%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.5\textwidth]{R2083-3000-ph.eps}
+\caption{\small{Pilot design of  3-layer  magnetic shield for R2083. 
+The  PMT  will be placed  inside the inner cylinder 
+ at the distance of one diameter from its rightmost end.}}
+\label{VBT3CY}
+\end{figure}
+%%%%%%%%%%%
+\paragraph{Shielding factor}
+The procedure of estimation is as follows.
+Initially we set the external magnetic field $B_o$ to be 
+tolerated by the shield.
+The field inside the ferromagnetic $B_m$ is estimated, then the value of $\mu(B_m)$ is read from Fig.~\ref{muneco}. 
+%First we estimate the field inside the ferromagnetic $B_m$.
+%Then  we read the value of $\mu(B_m)$ from the Fig.~\ref{muneco}.
+Finally,  we  determine the magnetic field inside the shield, $B_{in}$.
+This  procedure will be repeated recursively starting from the outer layer 
+with  $B_o=B_{in}$ from the previous step.
+
+The stages of such estimation are listed in Table~\ref{ca001}.
+In this table, the initial external field was  set $3000~G$.
+Although the field inside the ferromagnetic $(B_m)$ is close to saturation,
+the internal field $(B_{in})$ after the first layer is only $27.4~G$. 
+In such low field the permeability of the second layer of the same ferromagnetic 
+is 3300, that results in $0.4~G$ field inside the second layer. 
+Unexpectedly, these rough estimates are in qualitative agreement to the FEA
+calculations ($0.23~G$) performed for us by the Mu-shield company (see Fig.~\ref{shieldGrilli}).
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]%#1
+\begin{center}
+\includegraphics[width=10cm,clip=true,bb=0 0 500 500]{./magshieldGrilli-2.ps.gz}
+\end{center}
+\caption{\small{
+FEA of the magnetic flux density $B$ inside of two 
+coaxial cylinders at transverse  field $3000~G$. Vertical scale -  $B(G)$. Horizontal 
+- radial distance $D(in)$; $D=5.04$ corresponds to the axis.
+The outer shield is a Netic cylinder $136~mm$ external diameter, 1'' thick and  
+$250~mm$ long. The second layer is a Hiperm-49 cylinder $84~mm$ in outer  diameter. 
+%1/16''$1.6mm$ thick. Minimum $B$ inside this shield $\approx0.23~G$. 
+This figure was kindly presented by David Grilli from the Mu-Shield Company.}
+\label{shieldGrilli}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}$ & $D_+$ & $D_-$ & $t$ & $B_m$& $\approx\mu$&$S$      &$B_{in}$     & $Fm$   \\
+$n$ &  $G$  & $mm$  & $mm$  & $mm$  & $G$ &           &         &$G$         &     \\ \hline
+1 &3000     &  136  &   86  & 25    & 18462&      600  & 110     & 27.4        & Netic   \\ \hline
+2 &27.4     &   84  &   80.8& 1.6   & 1797 &     3300  &  63     & 0.4         & Netic   \\ \hline
+3 &0.4      &  61.6 &  60   & 0.8   &  11  &    250000 &3300     &$\leq0.001$  & E989-05 \\ \hline
+\end{tabular}
+\end{center}
+\caption{\small{R2083  shielding  at maximum
+field inside  the ferromagnetic $18462~G$.
+($n$)~-~layer number starting from the external layer,
+($B_{o}$)~-~external field,
+($D_+$)~-~external diameter,
+($t$)~-~ferromagnetic thickness, %from   Eq.\ref{eq000},
+($B_m$)~-~fields in the ferromagnetic,% from Eq.\ref{eq000},
+($\mu$)~-~permeability, 
+%% from Fig.\ref{muneco},
+($S$)~-~shielding factor,
+($B_{in}$)~-~fields inside the shield,% external field for a next layer,
+($Fm$)~-~ferromagnetic material.
+\label{ca001}}}
+\end{table}
+%\clearpage
+
+Two shield  configurations for the H8500 metal channel PMT are evaluated 
+ in Table~\ref{H8500at17600}.
+Depending on the  magnetic flux density in the  ferromagnetic,
+the external shield diameter may vary from  124~mm to 128~mm.  
+In further  FEA simulation, described in Section~\ref{FEA},
+ shield diameter  was  optimized to  110-120~mm.
+%
+%Another possibility of reducing the outer dimension 
+%is to use a rectangular pipe
+%for shielding.  Magnetic shield companies advertise 
+%such  designs. This option has to be studied
+%via  FEA calculations, as well.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}$& $D_+$ & $D_-$ & $t$  & $B_m$  & $\mu$   & $S$    &$B_{in}$         & Fm \\
+$n$&$G$    & $mm$  & $mm$  & $mm$ & $G$   &         &        &$G$             &       \\ \hline  
+1 &3000    &  128  &  74   & 27   &  17600 &  1000   &  214   &  14             & Netic \\
+2 &14      &  74   &  70.8 & 1.6  &  810   &  1800   &  39    & 0.4             & Netic  \\ \hline \hline
+1&3000     &   124 &  74   & 25   & 18560  & 600     & 120    & 24.8            & Netic \\ 
+2&24.8     & 73.6  &  72   & 0.8  & 2868   & 4500    & 48.6   & 0.5             & Netic \\ \hline
+% 2&14     &   -   &   -   &   -  &   -    &  300000 & $10^4$ & 1.5\times10^{-3}& Conetic \\
+% 3&0.2    &  61.6 &  60   & 0.8  &   329  &  150000 &$1935$  & 0.1\times10^{-3}& E989-05 \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{\small{H8500 shielding  vs  $3000G$  at maximum
+field inside  ferromagnetics  $B_m=17600,18500G$.
+($n$)~-~layer number starting from the external layer,
+($B_{o}$)~-~external field,
+($D_+$)~-~external diameter,
+($t$)~-~ferromagnetic thickness,% determined  via   Eq.\ref{eq000}(1-st layer at given $B_m$),
+($B_m$)~-~fields in the ferromagnetic, % determined via  Eq.\ref{eq000}(2-nd layer)
+($\mu$)~-~permeability,%  from Fig.\ref{muneco},
+($S$)~-~shielding factor,% determined via  Eq.\ref{eq000},
+($B_{in}$)~-~fields inside the shield,%i external field for a next layer.
+($Fm$)~-~ferromagnetic material.} \label{H8500at17600} }
+\end{table}
+%\clearpage
+
+In Table~\ref{cal2} we evaluate several 2-3 layer  shields 
+at 3000, 2000, 1000 and 500~G. As seen from this table,  
+the outer cylinder contributes the most in decreasing the internal magnetic field.
+%the outer cylinder makes the major part of work. 
+After the outer cylinder reduces the external field to $10-20G$, the remaining magnetic influence is easily reduced by a high permeability cylinder, such as E989-05, which is the standard R2083 shielding in the H2431 assembly.
+%After it reduces the external field  to $10-20G$, the rest of work may  
+%be easily done  by a high permeability
+%cylinder, such as E989-05, which is the standard R2083 shielding in the H2431 assembly. 
+In combination with Netic cylinder, 115~mm in diameter,  it may 
+reduce the $3000~G$ field to pratically zero.
+
+%Of course,  FEA simulations and optimization  in inhomogeneous magnetic field 
+%has to be performed.
+%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|r|c|c|c|c|c|c|c|c|c|} \hline
+  Shld&$B_{o}$&$D_+$&$D_-$&$t$   &$B_m$  &$\approx\mu$&$S$   &$B_{in}$         & $Fm$    \\
+  -cyl&  $G$  &$mm$ &$mm$ &$mm$  &$G$   &            &      &$G$            &          \\ \hline 
+01-1    &3000 & 126.7 & 72  & 27.3   & 10900 & 4500       & 1200 & 2.5             & Netic    \\ \hline
+ 2    &2.5  &61.6 &  60 & 0.8  & 140   & 120000     & 1920 &$8\times10^{-4}$  & Co-Netic \\ \hline
+ 3    &0.2  &61.6 &  60 & 0.8  & 11    & 250000     & 6000 &$\leq\times10^{-4}$& Co-Netic \\ \hline\hline  
+%02-1    & 3000& 105 & 74  & 15.2 & 17600 & 1000       & 180  & 17              & Netic    \\  \hline
+% 2    & 17  & 74  & 71  & 1.6  & 980   & 2000       & 54   & .32             & Netic    \\ \hline \hline 
+%03-1    & 3000& 115 & 66  & 24.5 & 17600 & 1000       & 213  & 14              & Netic    \\  \hline
+% 2    & 14  & 60  & 58.4& 0.8  & 1312  & 300000     & 4000 & .0035           & E989-05 \\ \hline \hline
+03-1    & 3000& 100 &  73.2 & 12.9  &20000 & 250        & 40 &  74           & Netic \\ \hline
+%2    & 63.7& 64  & 63.4&  0.8 & 6370  &   80000    &  1000&  0.064          &  Conetic      \\
+%2    & 63.7& 64  & 60.8&  1.6 & 3185  &  450000    & 11000&  0.007          &  Conetic      \\ \hline
+ 2    & 74 & 67.2  &64 & 1.6  &  2760 & 4500       & 134  &  0.5            & Netic       \\ \hline
+% 3    & 0.064& 60  &58.4 &0.8    &    6  & 60000     &  800 &      0            & E989-05  \\ \hline
+% 3    & 0.7 &  60 &58.4 &  0.8  &  60  & 80000      & 1000 &7\times10^{-4} & E989-05      \\ \hline
+ 3    & 0.5 &   60 &58.4 &  0.8  &  52  &  200      & 3.3  & 0.15 & Netic      \\ \hline \hline
+05-1    & 2000& 92  & 66  & 13.1 & 17600 & 1000       & 142  & 14               & Netic    \\ \hline
+% 2    & 14  & 64  & 63.4& 0.8  & 1400  & 350000     & 4375 & .004             & Conetic  \\ \hline
+   2    & 14  & 64  & 63.4& 0.8  & 1400  & 3500       & 44   & .4               & Netic    \\ \hline \hline
+%%
+ 06-1    & 1000& 86  & 66  & 9.94 & 10800 & 5000       & 872  & 1.2    & Netic    \\ \hline
+    2    & 1.2 & 64  & 63.4& 0.8  &  120  & 100000     & 1250 & 0.001  & E989-05  \\ \hline \hline
+ 07-1    & 500 & 74.6& 66  & 4.3  & 10800 & 5000       & 250  & 2.0    & Netic    \\ \hline
+    2    & 2.0 & 60  & 58.4& 0.8  & 187   & 150000     & 2000 & 0.001  & E989-05  \\ \hline
+\end{tabular}
+\end{center}
+\caption{Estimates of R2083 multilayer  shielding effectiveness at
+ external fields  $3000$, $2000$, $1000$, $500~G$.
+ $n$
+-layer number starting from the external layer,
+ $B_{o}$
+-external field,
+$D_+$
+-external diameter,
+$t$
+-ferromagnetic thickness,
+$B_m$
+ -fields in the ferromagnetic, 
+%determined via Eq.\ref{eq000},
+$\mu$
+-permeability,
+% determined via Fig.\ref{muneco},
+$S$
+-shielding factor, 
+% determined via Eq.\ref{eq000} ,
+$B_{in}$
+-fields inside the shielding,
+$Fm$
+-ferromagnetic material.
+\label{cal2}}
+\end{table}
+%\clearpage
+%Another sample of magnetic shield dynamics  is listed  in Table~\ref{htcc} for the
+%HTCC detector. The nominal design includes 3
+% layers of ferromagnetic. According to this table 
+%fields below  $0.01G$ may be achieved with only two layers of Netic and Conetic.
+%
+
+%In the current  {\tt CTOF} design there
+%is  enough space for such  wide shield, it is very likely that a three  
+%layer shielding $\approx120$mm in diameter and $15-20~mm$ thick will be sufficient. 
+%Perhaps, the light guides may be shorter $\approx 120cm$ long, only.
+From this simplified consideration, we conclude the following.
+%we conclude that 
+Since the length of each shielding cylinder
+will be compatible to its diameter, we expect 3-4 times reduced  
+shield capacity in terms of external field.
+Hence, our shield will  have  at least three layers.
+The diameter of the external thick cylinder may  range within  
+$110-130~mm$ while its thickness may be between $15-20~mm$.
+ 
+In  the following Section-\ref{ednmics} we study the electrodynamics of  
+ferromagnetic cylinders  in an axial field. From this theoretical 
+consideration  we learn that shielding dynamics  is very  different from 
+the transverse case and that longitudinal dimensions are of a crucial importance. 
+Therefore, a detailed FEA calculations with several 
+shield  models were performed and we discuss these studies in Section-\ref{FEA}.
+
+
+
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+%Cyl&$B_{o}       $ & $D_+$ &  $D_-$ & $t$     &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm.    \\
+%\# &      $G$     & $mm$  &  $mm$  & $mm$    &   $G$ &              &       & $G$              &          \\ \hline  
+%%1& 50             & 164.75& 156.75 &   4     &  2578  &   4500       & 110   &  0.46             & Netic    \\ \hline
+%%2& 0.46           & 151.37& 149.77 &  0.4    &  2185  &   400000     & 530   &  0.001            & Conetic  \\
+%%3& 0.001          & 144.0 &  142.4 &  0.4    &   3185 &  450000      & 11000 &  0.007            &          \\ \hline
+%1& 50              & 161.5 & 158.75 & 3.175   &  3179  &   4500       &  88   &  0.57             & Netic    \\ \hline
+%%1& 50             & 161.5 & 158.75 & 3.175   &  3179 &   450000      &8800   &  0.0057           & Conetic  \\ \hline
+%2&     0.57        & 153.41& 151.37 &  1.02   &  107.2 &   400        & 2.65  &  0.2              & Netic    \\
+%2&     0.57        & 153.41& 151.37 &  0.51   &  214.4 &  120000      & 398   &  0.0014           & Conetic  \\ \hline
+%3& 0.2             & 145.2 &  144.0 &  0.51   &   71   &  80000       & 280   &  0.0007           & Conetic  \\ \hline
+%\end{tabular}                                                      
+%\end{center}
+%\caption{HTCC  shield  against of  $50G$. \label{htcc}}
+%\end{table}
+
+
+\pagebreak
+\newpage
+\section{Electrodynamics of   magnetic shields  and Final Element Analysis.}
+\label{ednmics}
+%The most powerful Final Element Analysis
+Final Element Analysis of shield models in external field  is the most appropriate method for shield developing.
+However, an unambiguous interpretation of  FEA results  is impossible without clear  conception of  the    
+electrodynamics of a ferromagnetic  cylinder in axial field.
+
+Ferromagnetic properties of materials may be reproduced assuming that its  
+inner space is filled with  randomly oriented  dipoles, or current loops, responsible for 
+a local  magnetization. The external  field simply aligns internal current loops along 
+field  direction. As a result, the inner fields are amplified by  
+orders of magnitude. However, outside the ferromagnetic, the resulting field  
+drops, since in this region the  common field of  current loops  
+is opposite to the original  field. 
+%Starting from  this  point one may forget about the ferromagnetic media.  
+%It is   replaces  now with  a field of current loops in vacuum. 
+This is considered to be the basic mechanics of magnetic shielding.
+%That's the basic mechanism of magnetic shielding.
+
+
+\subsection{Ferromagnetic cylinder in axial field.}
+Effectively, only surface currents protect the inner space of a shielding cylinder, since 
+internal  currents cancel each other in the bulk of the ferromagnetic.
+Due to a cylindrical symmetry, the surface  currents  run in $\phi$-directions,
+in which connection  currents over the inner surface of a cylinder
+will be opposite to that of  outer surface. Therefore, our shield  
+may be approximated by two  thin coaxial solenoids with opposite currents.
+The outer solenoid has the diameter $D_+$, while the inner diameter is
+$D_-=D_+-t$, where $t$ is the thickness of the original ferromagnetic cylinder.
+%Starting from  this  point one may forget about the ferromagnetic media.  
+%It is   replaces  now with  a field of current loops in vacuum.
+
+According  to a  known formula for a field  of a  finite  solenoid, the magnetic field   $B_+(z)$ 
+at the axis $z$, induced by the outer surface of our shield  yields:
+%
+\begin{equation}
+ B_{+}(z)=+\mu_o j_s(Cos~\alpha^+(z)-Cos~\beta^+(z)~)
+\label{eq31}
+\end{equation}
+%
+where 
+$j_s$ is the absolute value of surface current density,
+$\alpha_^+(z)$ and $\beta_^+(z)$ are  the two  angles between 
+$z$-axis and two  vectors between   point $z$ and corresponding 
+butts of a cylinder.
+Due to  opposite direction of  the inner currents the corresponding field is also 
+opposite:
+%
+\begin{equation}
+%B_-=-\mu_o j_s \frac{L}{\sqrt{L^2+D_-^2}}
+B_-(z)=-\mu_o j_s(Cos~\alpha^-(z) - Cos~\beta^-(z)~)
+\label{eq32}
+\end{equation}
+%
+Thus, the resulting vacuum field inside the shield, $B_{in}$ , may be evaluated as
+%
+\begin{equation}
+%B_{in}(z)=B_o + B_+ - B_-\approx B_o-\mu_o j_s \frac{t}{L}
+B_{in}-B_o = B_+ - B_-
+\approx - \mu_o j_s
+\small{(Sin(\frac{\alpha^++\alpha^-}{2})(\alpha^+-\alpha^-)
+-Sin(\frac{\beta^++\beta^-}{2})(\beta^+-\beta^-))}
+\label{eq1}
+\end{equation}
+%
+%where  factor
+%$g(z)\approx 2(Sin^2(\alpha_1)Cos(\alpha_1)-Sin^2(\alpha_2)Cos(\alpha_2))$%
+%$g(z)\approx
+% Sin(\frac{\alpha^+ + \alpha^-}{2})(\alpha^+-\alpha^-)
+%-Sin(\frac{ \beta^+ +  \beta^-}{2})( \beta^+- \beta^-)$.
+From this equation we make an unexpected  observation
+that at infinitely increasing length  $B_{in}->B_o$, 
+since all angles direct at zero.
+In other words, a very long shield does not work. 
+This conclusion contrast with the traditional logic implicated by a well known 
+dynamics of shields in transverse fields. 
+
+Let us now estimate the field in the center of the ferromagnetic cylinder($z=0$).
+Evaluating the trigonometrical functions in  Eq.~\ref{eq1} and assuming  $t<<D$
+we find:
+%
+\begin{equation}
+%B_{in}(z)=B_o + B_+ - B_-\approx B_o-\mu_o j_s \frac{t}{L}
+B_{in}-B_o = B_+ - B_- \approx - \mu_o j_s  \frac{t}{D} \frac{4x^2} {(1+x^2)^{\frac{3}{2}}}
+= - \mu_o j_s \frac{t}{D} g(x)
+\label{eq101}
+\end{equation}
+where we define  $g(x)$ in  function of  $x=\frac{D}{L}$.
+%%%%%%%%%%%%
+In the Eq.~\ref{eq101} the inner field $B_{in}$
+links to the  ferromagnetic properties 
+via surface current density  $j_s$. With this 
+relation we note that in  the Maxwell equation
+\begin{equation}
+rot~\textbf{H} = \textbf{j} ~
+\label{eqHJ}
+\end{equation}
+$\textbf{j}$ %=$\textbf{j_{ext}}$+$\textbf{j_s}$
+is the sum of external-$\textbf{j}_e$-  and
+surface   currents -$\textbf{j}_s$.
+Integrating Eq.\ref{eqHJ} over a rectangular loop, enclosing the inner surface element 
+in the $middle$ of the solenoid, we find\footnote{Radial components are canceled due to the mirror symmetry.}:
+%
+\begin{equation}
+                  H_m^z =H_{is}^z+j_s
+\label{eqBJ1}
+\end{equation}
+%
+where $H_m^z$ is   z-component  in the bulk of   ferromagnetic,
+$H_{in}^z$ is the field at the  axis, 
+%close proximity to the
+%inner surface of the shield 
+$j_s$ is the $\phi$ component of the surface current density.
+Thus,  we obtain the following  relation:
+%
+\begin{equation}
+B_m = B_{in}+\mu_o j_s=\mu(B_m)B_{in}   %%%\approx \mu(B_m)\kappa B_{in}
+\label{eqBJ}
+\end{equation}
+%
+where $\mu(B_m)>>1$ is the corresponding permeability  of a  ferromagnetic.
+Using  Eq.\ref{eqBJ}  to exclude  the term  %$\mu_o \j_s$ 
+$\mu_o j_s$ from the Eq.\ref{eq101} we find:
+%
+\begin{equation}
+B_{in}\approx B_o - \mu(B_m)  \frac{g(x)t}{D}  B_{in}
+\label{eq11}
+\end{equation}
+%
+Then we find:
+%
+\begin{equation}
+B_{o}\approx
+\mu(B_m)\frac{g(x)t}{D} B_{in}=
+\frac{g(x)t}{D}B_{m}~~~, ~~ => ~~~B_{m}=B_o\frac{D}{g(x)t}
+\label{eq12}
+\end{equation}
+%
+The final relation between external and internal fields is given by
+%
+\begin{equation}
+B_o \approx \mu\bigg(B_o 
+\frac{D}{g(x)t}\bigg) \frac{g(x)t }{D} B_{in}=S \times B_{in} ,
+\label{eqfinal}
+\end{equation}
+%
+where $S$ stands for a shielding factor.
+Note that  the function
+%
+\begin{equation}
+ g(x)=\frac{4x^2}{(1+x^2)^{\frac{3}{2}}},
+\label{sf01}
+\end{equation}
+%where  $x=\frac{D}{L}$,
+%  Function $g(x)$ 
+has a maximum at $x=\sqrt2$. Therefore, one may  expect the maximum of shield
+effectiveness at $D \approx \sqrt2L$.  We have verified this prediction  with 
+FEA calculations in Section-\ref{FEA}.
+
+
+An important practical advice may be ruled out from Eq.\ref{eqBJ}.
+% which
+% relates the internal ferromagnetic field to the surface currents.
+Assume  that  a  tiny piece of ferromagnetic, a probe, is in close contact to the inner
+surface of our  ferromagnetic cylinder.  External field induce 
+corresponding surface currents in both materials.
+In  case of close contact,  the  surface currents must  be  identical, 
+otherwise it would  be contradictory to the charge conservation law. Therefore,  
+the  magnetization of the probe must  be  equal to that of the  
+ferromagnetic layer.
+Thus, we  conclude  that  in order to provide  independent performance of 
+different coaxial layers according to Eq.\ref{eq777}, contacts between  
+layers must  be avoided.
+
+
+
+
+
+%\clearpage
+%\begin{figure}[htbp]%#1
+%\begin{center}
+%\includegraphics[width=16cm,clip=true,bb= 0 0 500 700]{./neticprmtab_picture.ps.gz}
+%\end{center}
+%\caption{Permeability of NETIC from the Magnetic Shield Corp.
+%\label{muneco}}
+%\end{figure}
+%\clearpage
+
+%\clearpage
+%\newpage
+\subsection{Gradient forces.}
+In this paragraph we estimate the effect of a magnetic field gradients.
+Due to a significant non-uniformity's  of magnetic fields in the PMT area,
+the magnetic shield anticipates a  force \textbf{F}, caused
+by  gradients of the magnetic field energy density:
+\begin{equation}
+\textbf{F}=grad_rW(r) = grad_r \int d^3 \textbf{x}
+\frac
+{ \textbf{B_m}^2({\textbf{x}+\textbf{r}})  }
+{ 2\mu_{o}\mu( {\textbf{x}+\textbf{r}}  )  },
+\label{eq024}
+\end{equation}
+where  integration has to be  done over  internal coordinates of
+ferromagnetic(\textbf{x}), \textbf{r}- stands for external coordinates
+of ferromagnetic shield, $B_m$ - is the magnetic flux density inside the
+ferromagnetic.
+%
+Taking into account the  relations from Eq.\ref{eq000},
+one can estimate the upper limit of  the integral from Eq.\ref{eq024} as 
+%
+\begin{equation}
+{F_{max}= \frac{\pi l D^3}{t\mu_{o}\mu_{min}}
+B_{o}^{max} ( \frac {dB_o} {dx})_{max}}~~~~~~~~~~~
+\label{eq034}
+\end{equation}
+where 
+$B_o^{max}\approx0.3~T$ - maximum  possible external field  in the shield area,
+$(\frac{dB_o}{dx})_{max}\approx0.1~T\times(0.05~m)^{-1}=2~Tm^{-1}$ -   maximum 
+possible gradient of external field, according to the  field map in the shield  area,
+$\mu_{min}\approx250$ -   minimum possible permeability
+from Table~\ref{cal2},
+ $l=0.3m, t=0.025m, D=0.12m$ - length,  thickness
+and diameter of the ferromagnetic cylinder,
+$\mu_o = 4\pi 10^{-7}N·A^{-2}$  -  permeability of vacuum.
+Using these numbers  we find:
+%
+\begin{equation}
+F_{max}= \frac{\pi \cdot 0.3 \cdot m
+\cdot (0.12 \cdot m)^3 }{0.025\cdot m \cdot
+4 \pi 10^{-7}\cdot N \cdot A^{-2} \cdot 600} \cdot
+0.3 \cdot T \cdot 2 \cdot T\cdot m^{-1}= 124.4 \cdot N
+\label{eq035}
+\end{equation}
+%$\mu_o = 4\pi 10^{-7} N·A^{-2}$.
+Thus,  the maximum attractive   force
+%, which may attract the ferromagnetic 
+%shielding to the solenoid,
+does not exceed the  shield  weight.
+We plan  to  address  gradient forces in future   FEA simulation.
+
+
+
+
+\subsection{Final Element Analysis~(FEA) of coaxial cylinders.}
+\label{FEA}
+
+In the following  sections we describe our  FEA studies of coaxial ferromagnetic cylinders.
+Our goal is to develop a  robust
+magnetic shields for both  R2083 and H8500 PMTs. 
+In our  studies we aim at inner PMT fields  of $0.1~G$ and $200~G$ for the ordinary R2083 and
+metal channel  H8500, respectively.   We also  verify the predictions of our 
+simplified theory, which was found to be successful in  interpretations of sometimes surprising FEA results.
+
+With this purpose in mind, magnetic field maps have  been calculated
+inside various magnetic shields at varying external fields.
+Field maps inside different shields have been  obtained with 
+the POISSON-Superfish  program,  which performs two-dimensional net calculations 
+in  limited space.  This program  simulates an axial symmetric 
+field map in the free space of a model, as well as in the 
+bulk of a ferromagnetic. An external field of required magnitude has been
+created by a thin solenoid with the sizes larger of the model.
+%Reword this sentence: An external field of required magnitude has been created by a thin solenoid with the sizes larger of the model.
+The boundary conditions enforced the field lines to be parallel to the borders.
+Thus, one may consider both the shield and the solenoid as being
+confined inside a large diamagnetic box.
+ 
+%In our further studies we aim at inner PMT fields  of $0.1~G$ and $200~G$ for the ordinary R2083 and
+%metal channel  H8500, respectively.
+%Such  shields will allow us to reduce the 
+%length of light guides below $\approx 1.4m$ in the  design with R2083.
+%In case of H8500 the length may be reduced to $\approx 0.9m$.
+% This could result in  a   substentialy improved time resolution of the detector.
+%
+%In addition such calculations may be  important for the designing
+%of the main Solenoid, since the expected total weight of PMT shielding ~1 metric 
+%tonn is compartible to the total mass of a possible return yoke.
+
+
+
+
+
+\section{Single Layer Shield for H8500.}
+The metal channel Hamamatsu H8500 PMT has been 
+considered due to its ability to operate in magnetic fields up to 200~G.
+Thus, the shielding factor may be as low as 10-20 in order to tolerate
+ fields of $2000-2500$G. Therefore, this shield may be a  single  ferromagnetic cylinder.  
+This simple shield  was  the first candidate to be analyzed  with POISSON and  it
+was  tested for some predictions of the  theory described in  Section-\ref{ednmics}.
+
+Various potential solutions for the H8500 magnetic shielding for both  
+downstream and upstream PMTs were also tested.
+After  the POISSON calculations several  records of  magnetic field values were taken 
+at specific  points: 
+(1)- at the surface of the photo-cathode with  coordinates  (5,5) and (5,30),
+(2)- at the entry to the inner space -(30,5) and (30,30), 
+(3)-inside the ferromagnetic - (5,40) and (30,40). 
+The last two points (5,40) and (30,40) were been used 
+ to probe the saturation effects within the ferromagnetic. All points are given in 
+(r,z) form in mm.
+%\1end{document}
+
+\subsection{Upstream Shield  and  effects of  shield dimensions.}
+\label{emsdimen}
+POISSON calculations were used to verify the predictions of our 
+simplified theory developed in Section-\ref{ednmics}.
+That was an important step in understanding the shield performance, 
+which was surprising in many cases.
+The  unexpected prediction of this  simple theory yields  from  
+Eq.~\ref{eqfinal}, which  relates the shield
+effectiveness to the dimensions of a ferromagnetic cylinder. 
+Due to this formula,  at constant permeability, the shield effectiveness has a
+maximum at $D =\sqrt{2}\times L$.  Therefore,  unlimited increasing of  
+the shield   lengths  at given diameter results in  ``collapse'' 
+ of shield performance.
+
+In order to verify this prediction
+the dependence of the shield effectiveness upon its length at a constant diameter 
+86~mm was tested with POISSON.  The  corresponding test  shield is 
+shown in Fig.~\ref{Upstream_PMT_Design}. This  shield is not a 
+perfect cylinder. The curvature on the front of the shield provided more uniform 
+field across the ferromagnetic.
+Therefore,  the internal magnetic field is also more uniform
+\footnote{Ideally, the shield would
+be an ellipse, but due to spacing required for the light guide to
+be placed partly inside the shielded region to reach the PMT, 
+this is not possible.}.
+%
+\begin{figure}%[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{H8500_Upstream_NETIC_6mmThick_69mmLength.eps}
+\caption{\small{Field map for H8500 magnetic shield.}}
+\label{Upstream_PMT_Design}
+\end{figure}
+%
+%\newpage
+% \clearpage
+
+%\2end{document}
+\begin{figure}[ht]
+\centering
+\subfloat[PMT inner field]
+	{\includegraphics[width=7cm]{H8500_Upstream_SingleIron_6mm_Thick_PMT_Region.eps}
+\label{Upstream_Iron_6mm_PMT_Region}}
+\qquad
+\subfloat[Shield inner field]
+{\includegraphics[width=7cm]{H8500_Upstream_SingleIron_6mm_Thick_Shield_Region.eps}
+\label{Upstream_Iron_6mm_Shield_Region}}
+\caption{\small{Iron shield: 
+(a) Magnetic fields within the 
+PMT region surrounded by 6mm thick iron cylinder. 
+(b) Fields inside  of iron.}
+\label{Upstream_SingleIron_6mm}}
+\end{figure}
+%
+%
+The calculated  shield  effectiveness  in function on shield length is shown in
+Fig.~\ref{Upstream_Iron_6mm_PMT_Region}. It is seen from this figure,
+that there is a pronounced minimum 
+%in the central  magnetic field 
+at $50-60$~mm which agrees   
+to the prediction. This helps to confirm both Eq.~\ref{eqfinal} and the model, 
+and is certainly cause for further study, as well as aiding in the 
+designing of the {\tt CTOF} Shields. 
+%It also helps to avoid some   confusions 
+%in negotiations with manufacturers.
+
+Using higher saturation Netic provided some  better  performance over the use of iron
+and Netic was thus tested in place
+of the iron, as shown in Fig.~\ref{Upstream_NETIC_6mm_PMT_Region}.
+%
+\begin{figure}[ht]
+\centering
+\subfloat[PMT inner field]
+	{\includegraphics[width=7cm]{H8500_Upstream_SingleNETIC_6mm_Thick_PMT_Region.eps}\label{Upstream_NETIC_6mm_PMT_Region}}
+\qquad
+\subfloat[Shield inner field]
+	{\includegraphics[width=7cm]{H8500_Upstream_SingleNETIC_6mm_Thick_Shield_Region.eps}\label{Upstream_NETIC_6mm_Shield_Region}}
+\caption{\small{Netic  shield: (a) Magnetic field within the  PMT region
+ surrounded by 6mm thick of Netic. (b) Internal  field of Netic.}}
+\label{Upstream_SingleNETIC_6mm}
+\end{figure}   
+%
+
+Due to the higher permeability of Netic compared to the soft iron, all test points 
+within the PMT region are well below the 200 G toleration.
+% This is due to the higher permeability of NETIC compared to the soft iron.
+%\4end{document}
+
+
+\subsection{Upstream Shield performance at high external  fields.}
+The upstream PMT shielding has much more restrictive specifications based 
+upon the current design, allowing for a shield diameter no wider than 86~mm for both types of PMTs.
+To meet these specifications, the thickness of the shield shown in Fig.~\ref{Upstream_PMT_Design} 
+was reduced to 4~mm.
+This shield was tested using both iron and Netic. 
+As seen in Fig.~\ref{Upstream_Iron_4mm_PMT_Region}  and Fig.~\ref{Upstream_NETIC_4mm_PMT_Region} 
+respectively yet neither of them  were capable of reaching the 1000~G safety buffer. 
+However, the iron shield reached the 200~G tolerance at approximately 
+750~G while the Netic shield met it at 800~G. Both values are acceptable.
+%
+\begin{figure}[ht]
+\centering
+\subfloat[PMT Region]
+	{\includegraphics[width=7cm]{H8500_Upstream_SingleIron_4mm_Thick_PMT_Region.eps}\label{Upstream_Iron_4mm_PMT_Region}}
+\qquad
+\subfloat[Shield Region]
+	{\includegraphics[width=7cm]{H8500_Upstream_SingleIron_4mm_Thick_Shield_Region.eps}\label{Upstream_Iron_4mm_Shield_Region}}
+\caption{\small{Magnetic Field within the H8500 PMT and shield regions using a 4~mm thick iron shield at varying external magnetic fields.}}\label{Upstream_Iron_4mm}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\subfloat[PMT Region]
+	{\includegraphics[width=7cm]{H8500_Upstream_NETIC_4mm_PMT_Region.eps}\label{Upstream_NETIC_4mm_PMT_Region}}
+\qquad
+\subfloat[Shield Region]
+	{\includegraphics[width=7cm]{H8500_Upstream_NETIC_4mm_Shield_Region.eps}\label{Upstream_NETIC_4mm_Shield_Region}}
+\caption{\small{Magnetic Field within the H8500 PMT and shield regions using a 4~mm thick Netic shield at varying external magnetic fields.}}\label{Upstream_NETIC_4mm}
+\end{figure}
+%
+Thus, the limitations by the current design, 
+that permit a shield no thicker than 4~mm, is not too restrictive for the expected 
+external magnetic field of 800~G.
+
+
+
+\subsection{Downstream Shielding in high  external fields.}
+
+The downstream H8500 PMT may be required to operate at significantly 
+higher fields of $2000$G or higher.  Such fields may be tolerated with  a single  soft 
+iron cylinder 21~mm thick. The design and a field map sample are  shown on 
+Fig.~\ref{Single_Iron_21mm_Shield}. 
+As seen from further analysis, shown in  Fig.~\ref{Single_Iron_21mm_PMT_Region},
+this design  will sufficiently protect the H8500 up to an external field of 2500~G.  
+
+Similar shields of both iron and
+Netic 31~mm thick  were tested, but neither gave substantial increase in 
+performance. When tested at a thickness of 11~mm, a single shield of iron
+permitted the PMT to operate up to 1750~G, which is unacceptable for the current design.
+However, the Netic shield of equal thickness was within acceptable limits up to 2000~G.
+
+It should be also  noted that several shield configurations were additionally tested:
+(1) two-layer shield with two layers of iron,(2) a layer of Netic over a layer of Co-Netic, and 
+(3) an iron-Netic combination was also tested, but the results were not 
+comparable to the 21~mm thick single iron or Netic shield.
+
+%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{Iron_21mm_Shield.eps}
+\caption{\small{Magnetic shield  of the 21~mm thick iron  for the downstream
+H8500 PMT at an external field of 2500~G.}}
+\label{Single_Iron_21mm_Shield}
+\end{figure}
+%
+For comparison, the same shield using Netic instead of iron results in more robust
+behavior shown in Figs.~\ref{Single_NETIC_21mm_PMT_Region}
+and \ref{Single_NETIC_21mm_Shield_Region}.
+According to these figures, a single Netic shield of equal thickness 
+allows the PMT to operate in a higher magnetic fields up to  2600~G. 
+\begin{figure}[htbp]
+\centering
+\subfloat[PMT inner fields]
+	{\includegraphics[width=7cm]{H8500_SingleIron_21mm_Thick_PMT_Region.eps}\label{Single_Iron_21mm_PMT_Region}}
+\qquad
+\subfloat[Iron  inner field]
+	{\includegraphics[width=7cm]{H8500_SingleIron_21mm_Thick_Shield_Region.eps}\label{Single_Iron_21mm_Shield_Region}}
+\caption{\small{Iron H8500 shield. (a) Magnetic Field within the PMT; (b)
+field inside  a 21~mm thick iron shield at varying external magnetic fields. 
+This shield is recommended for use in the downstream region of the CTOF counter in 
+conjunction with the H8500.}}
+\label{Upstream_Iron_21mm}
+\end{figure}
+%
+%
+
+
+
+\begin{figure}[ht]
+\centering
+\subfloat[PMT inner fields]
+	{\includegraphics[width=7cm]{H8500_SingleNETIC_21mm_Thick_PMT_Region.eps}\label{Single_NETIC_21mm_PMT_Region}}
+\qquad
+\subfloat[Netic inner field]
+	{\includegraphics[width=7cm]{H8500_SingleNETIC_21mm_Thick_Shield_Region.eps}\label{Single_NETIC_21mm_Shield_Region}}
+\caption{\small{Netic shield for H8500.(a) Magnetic field within the PMT;
+ (b) Field inside  a 21~mm thick Netic shield at varying external 
+magnetic fields.}}
+\label{Upstream_NETIC_21mm}
+\end{figure}
+%As seen in Fig.~\ref{Single_NETIC_21mm_PMT_Region}, the 
+Thus, Netic shield presents little difference
+in performance. In terms of cost, weight, and ease of manufacturing, 
+the iron shield is a much more viable selection for the downstream PMT shielding. 
+Therefore, an iron shield at a thickness
+of 21~mm, an inner radius of 32~mm and an outer radius of 65~mm will be 
+considered for use as 
+the shield for the downstream H8500 PMT.
+\clearpage
+%\newpage
+\subsection{Proposed PMT Shielding  in use with the H8500.}%%
+
+\paragraph{Upstream shield}
+If the CTOF design is modified to allow 
+the upstream PMTs to be aligned in a staggered configuration, 
+it will provide an additional few mm of shielding. 
+This modification will allow the upstream H8500 to operate well at
+a 1000~G external field. 
+
+The proposed design
+is shown  in Fig.~\ref{Upstream_PMT_Design}. This  shield has
+a thickness of 6~mm, with an inner diameter of 76~mm and an outer 
+diameter of 88~mm to the horizontal. This shield  was tested 
+in Section-\ref{emsdimen} using both iron and Netic at a constant
+external magnetic field of 1000~G and varying lengths.
+
+\paragraph{Downstream shield}
+The proposed shield for  downstream PMTs is shown in
+Fig.~\ref{Single_Iron_21mm_Shield}. 
+This single layer shield of iron with 
+a thickness of 21~mm and an inner diameter of 68~mm will sufficiently protect 
+the H8500 up to an external  field of 2500~G. 
+%In Fig.~\ref{Single_NETIC_21mm_PMT_Region}, it is shown that
+% NETIC will give an additional 5\% in tolerance, allowing the shielded 
+%H8500 to operate in an external magnetic field of 2600 Gauss. However,
+% this additional shielding is not required, as the downstream H8500 will
+% be located in a region where the magnetic field is no greater than
+% 2000 Gauss
+%\newpage
+\section{Triple Layer Ferromagnetic Shield for R2083 PMT.}
+\label{tlfs}
+%Under current methods of magnetic shielding design for PMTs,
+Preliminary consideration with  methods recommended by manufacturers
+hints that a triple shield with thick outer layer may  sufficiently reduce 
+the inner PMT  fields below 0.1G  in both  upstream and downstream R2083 PMTs.
+Since the upstream side is more critical, we have started our analysis with the 
+downstream  side. Due to restrictions by the  PMT manufacturer, the inner layer 
+is of a fixed size and material: 0.8mm thick 
+high permeability mu-metal, similar to  Co-Netic. 
+The outermost shield has a maximum of thickness of 1.7~cm due to 
+the design constraints. It may be either soft iron or Netic.
+
+
+\subsection{Downstream Shield. Limitations and  optimising.}
+
+The initial design of  the  downstream  shield  is 
+shown  in Fig.~\ref{R2083_Initial}.
+This shield  was  tested for its ability to reduce the external magnetic field of 1000~G 
+to within the tolerance of $0.1G$. Field maps inside the multilayer shield have been 
+calculated with  the POISSON-Superfish  program, which performs two-dimensional net 
+calculations in a limited space. A given axial field inside the cylindrical shield  
+area has been created by a thin solenoid with  significantly larger sizes.
+The boundary conditions enforced that the field lines be parallel to the borders.
+ 
+The corresponding field map at 1000G is  also shown  in Fig.~\ref{R2083_Initial}. 
+%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{R2083_NETIC_hiperm49_CONETIC_standardDesign.eps}
+\caption{\small{Initial design of a triple layer magnetic shielding for the R2083.}}
+\label{R2083_Initial}
+\end{figure}
+%
+Shown in this figure is actually  a quarter of the full axis-symmetric configuration
+with the bottom-left corner being the center of the setup. 
+The PMT  occupies a box with coordinate (0,0) and (4.5,2.3)~cm,  while the  photo 
+cathode is located at  z=4.5~cm. 
+
+According to this map, the central  field  inside of this  three layer assembly 
+is  below $0.5$G. 
+However, field  increase towards open ends of the shield, due to a
+penetrating  axial field lines
+\footnote{An example of such  field line will be shown  in Fig.\ref{VBT3CYUS2}}. 
+At the photo cathode the field  is as high as  $0.8$G.  
+
+As we have admitted,  the fringe  fields  of $0.2-0.5$~G are 
+critical  for  timing PMTs. Therefore, in order to achieve fields  below $0.1$G in 
+the region of the PMT dynode system, a further optimization was performed.  
+We describe that  in  Section-\ref{R2083_Triple_No_Coil}.  
+Within shield design limitations, varying sizes 
+for the middle layer of the shield were tested, as well as the utilization of both Netic and 
+iron in the outer layer.
+
+% in hopes that some
+%combination would prove effective. 
+%The initial shield design is shown in
+% Fig.~\ref{R2083_Initial}
+%In all of the R2083 models, the models were analized in 
+%a cylindrical coordinate system. 
+%\subsection{Doubstream Shield perofrmance at  varying  external field}% In 
+%order to determine the saturation of each layer of shielding, the
+% collected data points were modified to (0,0), (0,5), (2.3,0), (2.3,5)
+% in the PMT region, while the points (2.9,0), (2.9,5) describe the
+% inner CONETIC shielding, the points (3.8,0),(3.8,5) describe the
+% middle hiperm49 shielding, and the points (5.5,0), (5.5,5) describe
+% the outermost shield layer.
+%
+%\subsection{Example of FEA of  the  ordinary   R2083 shield.}
+%The pilot design of a 3-layer shield for R2083  is shown in Fig.~\ref{VBT3CY}.
+%A  high saturation Netic or Soft Iron may  be used for the external layer.
+%For the middle layer, the  Hiperm-49 may be used, since it has higher permeability
+%at lower fields.  For the inner shielding,  
+%a very soft Co-Netic or similar material  will be considered.
+%The dimensions and design  will be further optimized via FEA calculations.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.6\textwidth]{VBT3CYLSHIELDNUB02.eps}
+%\caption{\small{
+%Sample of a field map for the 3-layer PMT shield 
+%in the 1000~G external field.  
+%The field in the center is 0.5~G. 
+%Axial line is vertical;  radial line is horizontal ; 
+%dimensions are given in cm.
+%}}
+%\label{VBT3CYFM}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{R2083 Shield in homogeneous magnetic fields.}
+%The pilot  design  for the   R2083 shield is shown in Fig.\ref{VBT3CY}
+%As one can see from these calculations the magnetic field inside the
+%3 layer shielding does not exceed $0.5G$.
+%With this  calculations in hands
+%we plan  to purchase  a prototype from the Mu-Shield company, as soon as possible,  and measure the
+%internal magnetic field  at various outside fields.
+%After that  the second sample will be purchased and the time resolution
+% will be determined in the environments of magnetic fields with  one prototyping counter.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=1.0\textwidth]{R2083-3000-ph.eps}
+%\caption{The R2083 3 layer  shield design(3R2083l280r732a180).
+%The thisckness of the outer cylinder is $a=15mm$, the inner radius is $73.2mm$
+%All
+%layers are made of Netic ferromagnetic.
+%The magnetization curve for this material is shown in Fig.\ref{muneco}.}
+%\label{barrel}
+%\end{figure}
+%\clearpage
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Downstream Shield  in varying field.} 
+\label{R2083_Triple_No_Coil}
+In the initial shield design in Fig.~\ref{R2083_Initial}, the middle shielding 
+layer is composed of 0.3~cm of Hiperm49, while the outermost layer is composed
+of 1.5~cm thick of either iron or Netic. Both outer shield materials were
+tested at varying magnetic fields, from 250~G to 1250~G, in increments of 250~G.
+In our tests we  monitor the following  points inside PMT:
+ (0,0) and (2.3,0) at  the median plane where the  first PMT dynode is situated;
+ (0,5) and (2.3,5) at  the PMT entry window.
+In order to avoid  saturation effects we monitor the bulk of ferromagnetics at points:
+ (2.9,0) and (2.9,5) - inner layer; 
+ (3.8,0) and (3.8,5) - middle layer; 
+(5.5,0) and (5.5,5)  - outer layer.
+All points are given in (r,z) form and are expressed in centimeters.
+\paragraph{Calculations and results}
+ As seen in Fig.~\ref{R2083_Initial_Iron_PMT_Region},
+the  magnetic field of 700~G  was depressed up to 0.4-0.9~G in the inner space  of  the
+iron shield.
+ Inside the Netic shield, residual fields range from 0.4~G to 0.9~G at a higher external field of
+850G. That  may be  seen  in Fig.~\ref{R2083_Initial_NETIC_PMT_Region}.
+
+The inner PMT fields in both cases are significantly higher of the required values even 
+at twice lower external fields. Moreover, the outer shield layer has already  reached  its maximum 
+thickness as allowed by the current CTOF design.  Thus, the effectiveness  of both shields is not sufficient. 
+
+We have tried to  improve  performance  by increasing the thickness 
+of the middle layer  from 0.3~cm to the maximum allowed by the design 
+of 0.8~cm. The result is shown in  Fig.~\ref{R2083_Triple_0.8cm_PMT_Region}.  It is seen from this figure 
+that even with an outer layer of Netic at 1.5~cm thick,
+the maximum allowed by the current CTOF design, and a middle layer 
+of Hiperm49 at 0.8~cm thick, it is not possible to decrease the internal
+magnetic field to below 0.1~G. 
+%
+\begin{figure}[ht]
+\centering
+\subfloat[PMT inner field]
+	{\includegraphics[width=7cm]{R2083_Iron_hiperm49_CONETIC_0.3mm_PMT_Region.eps}\label{R2083_Initial_Iron_PMT_Region}}
+\qquad
+\subfloat[Ferromagnetic magnetization in the external layer.]
+{\includegraphics[width=7cm]{R2083_Iron_hiperm49_CONETIC_0.3mm_Outer_Region.eps}\label{R2083_Initial_Iron_Outer_Region}}
+\qquad
+\subfloat [Magnetization of the middle  layer.]
+{\includegraphics[width=7cm]{R2083_Iron_hiperm49_CONETIC_0.3mm_Middle_Region.eps}\label{R2083_Initial_Iron_Middle_Region}}
+\qquad
+\subfloat[Magnetization of the inner  layer.]
+{\includegraphics[width=7cm]{R2083_Iron_hiperm49_CONETIC_0.3mm_Inner_Region.eps}\label{R2083_Initial_Iron_Inner_Region}}
+\caption{\small{Magnetic fields in the PMT and shield regions using a triple layer Iron-Hiperm49-Co-Netic shield at varying external magnetic fields for the R2083. The middle layer of Hiperm49 is 0.3~mm thick.}}\label{R2083_Initial_Iron}
+\end{figure}
+%\clearpage
+%\newpage
+%% Figures for NETIC R2083 initial start here
+\begin{figure}[ht]
+\centering
+\subfloat[PMT Region]
+	{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.3mm_PMT_Region.eps}\label{R2083_Initial_NETIC_PMT_Region}}
+\qquad
+\subfloat[ Magnetization of the external layer]
+{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.3mm_Outer_Region.eps}\label{R2083_Initial_NETIC_Outer_Region}}
+\qquad
+\subfloat[Middle layer magnetization.]
+{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.3mm_Middle_Region.eps}\label{R2083_Initial_NETIC_Middle_Region}}
+\qquad
+\subfloat[Inner layer magnetization.]
+	{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.3mm_Inner_Region.eps}\label{R2083_Initial_NETIC_Inner_Region}}
+\caption{\small{Magnetic fields in the R2083 PMT and shield regions using 
+a triple layer Netic\&Hiperm-49 (3mm) \&Co-Netic shield at 
+varying external magnetic fields.}}
+\label{R2083_Initial_NETIC}
+\end{figure}
+%\clearpage
+%\newpage
+\begin{figure}[ht]
+\centering
+\subfloat[PMT Region]
+	{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.8mm_PMT_Region.eps}
+\label{R2083_Triple_0.8cm_PMT_Region}}
+\qquad
+\subfloat[Outer Shield Region]
+{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.8mm_Outer_Shielding_Region.eps}
+\label{R2083_Triple_0.8cm_Outer}}
+\qquad
+\subfloat[Middle Shield Region]
+{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.8mm_Middle_Shielding_Region.eps}
+\label{R2083_Triple_0.8cm_Middle}}
+\qquad
+\subfloat[Inner Shield Region]
+{\includegraphics[width=7cm]{R2083_NETIC_hiperm49_CONETIC_0.8mm_Inner_Shielding_Region.eps}
+\label{R2083_Triple_0.8cm_Inner}}
+\caption{\small{Magnetic fields in the PMT and shield regions using a 
+triple layer Netic\&Hiperm-49 (8mm) \&Co-Netic shield at 
+varying external magnetic fields. 
+}}
+\label{R2083_Initial_Thick_NETIC}
+\end{figure}
+\clearpage
+%\newpage
+%\subsubsection{Performance limit and 
+We conclude that  a  triple shielding  is  not  
+sufficient for the R2083 in the environments of the CTOF detector.
+It seems as though the last resort of ferromagnetic shields is exhausted under the
+%It looks like  the last resort of ferromagnetic shields is  exhausted  under the 
+burden of design constrains.
+However, we have succeeded to find a new  approach described in the 
+following Section-\ref{novelle}, in which we also  
+have  developed a novel  hybrid ferromagnetic shield. 
+Such shield allows  to attain fields below 0.1G in both  upstream and
+downstream PMTs at nominal external fields.
+\pagebreak
+\newpage
+\section{Novel Dynamical Magnetic Shields with Compensating Coil.}
+\label{novelle}
+As it was shown in the previous sections the inner field of a shielding cylinder
+is determined by the magnetization of a ferromagnetic material.  The last is sensitive to
+%fabrication technologies and 
+the applied magnetic field.
+Our main idea is to control the magnetization of shield cylinder
+using active elements such as coils or solenoids, wound around the 
+ferromagnetic components of the shield, i.e. active elements is placed outside the 
+shielding cylinder.  The current through the external solenoid  is set to 
+reduce the  magnetization of the ferromagnetic. Thus, the field inside the cylinder 
+is also reduced due to  boundary conditions.
+
+We call this combination of passive and active shielding elements a "hybrid shield" or 
+"dynamical shield." In the following sections, we show that with such shields it is possible to  
+obtain internal fields below 0.1~G at high external fields.
+
+It is important to notice that if the coil is placed $inside$ the cylinder, 
+than the  effect may be even opposite to expectations. The reason is that the   
+additional  magnetization of a ferromagnetic cylinder,  caused by  the inner solenoid, 
+is opposite to the field inside the coil. 
+Therefore, decreasing magnetization of the external  cylinder is accompanied with increasing field inside the
+solenoid, i.e. in the PMT area.  Thus, two opposite fields  does not allow a stable compromise.
+ 
+%With the purpose of attaining fields below 0.1G we suggest to use a
+%\subsection{Dynamical shield  design.}
+
+On Fig.~\ref{VBT3CYUS1} we present the  design and the corresponding field map  
+for the Hybrid magnetic shield with a compensating solenoid inside the shield assembly. 
+The coil is placed between  middle and  inner layers. The detailed magnetic field map  is 
+shown in Fig.~\ref{VBT3CYUS2}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As seen from this figure the field inside the PMT area is far below  0.1G,  
+while the  external field is as high as 400G. 
+% 
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.5\textwidth]{VBTUPST3CY1COREF0001.eps}
+%%\includegraphics[width=.6\textwidth]{HyMagSh400G.eps}
+%\caption{\small{ Field map inside the Hybrid Magnetic Shield for R2083
+%with the compensating coil. The coil has ~100 winds around  the H2431 assembly.
+%At   the 400~G external field the inner PMT field  is far  below $0.1$G.}}
+%\label{VBT3CYUS1}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.5\textwidth]{VBTUPST3CY1COREF0002.eps}
+%\caption{\small{  ``Zoomed in'' field map inside the R2083 Hybrid Magnetic Shield.
+%with the compensating solenoid around H2431 assembly. External field is 400G.
+%The length of arrows indicate the magnitude of magnetic field. 
+%The maximum field corresponding to the longest arrow  is $\approx$1G.
+%In the region of the  PMT photo cathode ($z=4cm$)  the inner PMT field
+%is far  below  0.1G.}}
+%\label{VBT3CYUS2}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[ht]%001
+\centering
+\subfloat[Hybrid Magnetic Shield.]
+	{\includegraphics[width=7cm]{VBTUPST3CY1COREF0001.eps}
+\label{VBT3CYUS1}}
+\qquad
+\subfloat[Field map in the PMT area.]
+{\includegraphics[width=7cm]{VBTUPST3CY1COREF0002.eps}
+\label{INSIDEPMT}}
+\caption{\small{Iron shield. 
+(a)~Field map inside the Hybrid Magnetic Shield 
+with the compensating coil. External field is 400~G.
+The coil has ~100 winds around  the H2431(R2083) assembly.
+(b)~Zoomed in field map in the PMT area.
+The length of arrows indicate the  field magnitude. 
+The maximum field corresponding to the longest arrow  is $\approx$1G.
+In the region of the  PMT photo cathode ($z=4cm$)  the inner PMT field is far below 0.1~G.}
+\label{VBT3CYUS2}}
+\end{figure}
+
+
+
+
+\subsection{Upstream dynamical shield for R2083.}
+%As seen from  the Fig.~\ref{VBT3CYUS2} the inner  PMT field is  far  below 0.1G,  
+%while the  external field is as high as 400G. 
+The  shield shown in Fig.~\ref{VBT3CYUS1}  may be used at the 
+upstream side of the CTOF detector, since it tolerates fields of 400~G. 
+% It tolerates the nominal  value of external field. 
+%According to the model  shown in Fig.\ref{VBT3CYUS1}
+%a relatively small  current
+%below  1A  in   ~1mm thick wire is enough
+%to reduce the inner PMT  field  below 0.1G.
+%This conclusion is of high  practical importance since the
+%DC is limited by $~/approx2A$ per mm^2.
+%In the  model shown in Fig.\ref{VBT3CYUS1}
+ At such external field the total current  through all winds of  compensating  coil 
+is $\approx100A$, while  the coil is  $\approx200mm$ long.
+Therefore,  the coil  may consist of  200 winds  of 1mm thick wire  with a small current of .5A through the wire, which results in a very low power dissipation.
+%Therefore,  the coil  may consist of  200 winds  of 1mm thick wire  with a small current of .5A through the wire 
+%That  means a very low power dissipation.  
+This conclusion is of high practical importance, since 
+the  current   below  $~\approx 2A$ per mm$^2$ prevents coils from  overheating.
+Certainly,  higher fields may be  exterminated with a higher currents in the  coil, 
+provided that the ferromagnetic does not saturate.
+
+Thus, Hybrid Magnetic Shield looks very promising. Therefore
+we have further developed and  prototyped  such shields.
+Below we describe our first practical tests with two dynamical shield prototypes.
+% of the hybrid magnetic shields.
+
+\subsection{Prototyping and Testing.}
+In this section we describe two prototypes for the inner active layer of the hybrid
+magnetic shield.  Both  prototypes are a ferromagnetic cylinders wound  
+with ~1mm thick wires forming the external compensating coils.
+The ferromagnetic properties of  prototypes are  different. Their performance was studied  
+at  magnetic fields below 100~G.  Such low fields  are  
+expected  after two  external layers of a triple shield.
+The almost uniform external field was produced by the Helmholtz Coils 2m in diameter. 
+The Gauss-meter was placed in the center of the shield.  In our tests, we observed the 
+inner field  varying the current in the compensation coil at given  external field.
+\paragraph{Measurements with Hiperm-49 prototype.}
+The first prototype is the Hiperm-49 200~mm long tube. It is 1.6~mm thick with an inner radius of 
+75mm. The compensating coil consists of 108 turns of $~1$mm thick wire wound around the 
+ferromagnetic tube. The internal field of this  prototype vs the coil current 
+was tested at external field 75~G  produced by Helmholtz coils. 
+The result is shown  in Fig.~\ref{hypermdysh}. As one can see from this figure, the 
+inner field drops to zero at a current of 0.5~A through the wire, then increases with  
+a significantly lower rate.
+\paragraph{Measurements with $\mu$-metal prototype.}
+The second prototype is the $\mu$-metal cylinder  150~mm in inner  diameter and 0.8~mm  thick.
+The external compensating coil consists 2mm thick wire wrapped around the tube 50 times.
+%The external compensating coil consists of 50 winds of 2mm thick wire.
+The inner field in function on the coil current at 35~G  external field  is
+shown  in Fig.~\ref{mumedysh}. Zero inner field has been achieved at   
+$\approx$~0.9A through the wire, then it climbs with the same rate.  
+Hence, due to a higher permeability and, perhaps, significantly  lower  
+Hysteresis effects,  the $\mu$-metal exhibits more regular behavior than  Hiperm-49.
+\paragraph{}
+Thus, our first practical tests show the vitality of
+the idea of using compensating coils. The practical realization of such 
+shielding looks easy, since in order to exterminate fields of 50-100~G,
+only one layer of winding is required, while the current through the wires
+is as low as 1~A. 
+The shield  shown in Fig.~\ref{VBT3CYUS1} has a compensating coil wound around the innermost cylinders and
+has demonstrated good performance in simulations and experimental tests.
+%The shield  shown in Fig.~\ref{VBT3CYUS1} has a compensating coil wind around the innermost cylinders.
+%This shield has demonstrated a good performance in simulations and experimental tests.
+Therefore, it is considered as a prototype for the Upstream R2083 shield.
+
+%xxxxxxx
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.5\textwidth]{75.6_gauss.eps}
+%%\includegraphics[width=.6\textwidth]{HyMagSh400G.eps}
+%\caption{\small{Performance of the inner layer of  Magnetic Shield for R2083
+%with the compensating coil. Zero inner field has been  achieved at $I\approx0.5$A }}
+%\label{hypermdysh}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.5\textwidth]{35_gauss_run1.eps}
+%\caption{\small{Inner $\mu$-metal layer of  magnetic shield 
+%with the compensating coil. Zero  field has been  achieved at $I\approx0.9$A}}
+%\label{mumedysh}
+%\end{figure}
+%XXXXXXXXXXXXX%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{figure}[ht]%002
+\centering
+\subfloat[Hiperm-49 dynamical shield.]
+	{\includegraphics[width=7cm]{75.6_gauss.eps}
+\label{hypermdysh}}
+\qquad
+\subfloat[Mu-metal dynamical shield]
+{\includegraphics[width=7cm]{35_gauss_run1.eps}
+\label{mumedysh}}
+\caption{\small{Performance of the inner layer of the dynamical  Magnetic Shield
+with the compensating coil.
+(a)~ Hyperm-49 cylinder 3~mm thick; zero inner field was  achieved at $I\approx0.5$A. 
+(b)~ $\mu$-metal cylinder 0.8~mm thick; zero  field  corresponds to  $I\approx0.9$~A 
+through the wire.}
+\label{innergauss}}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Downstream Tapered  Shield for R2083.}
+In our previous calculations, it was observed that the 
+internal B-field  in the outermost shielding layer was 
+non-uniform across the length of the shield, becoming greater
+towards the median of the cylinder.
+This effect may be seen from any calculated field map as follows.
+For example, in Fig. \ref{R2083_Initial}
+we observe that field lines are captured  by the outer cylinder almost perpendicular
+to its surface. Then, due to a very high permeability, all field lines
+run  almost parallel to the axis. Therefore,  magnetic flux density 
+increased roughly linearly towards the median of the cylinder. 
+Thus, the  most critical  place, where the  effect of  ferromagnetic saturation is first noticable, is just the median plane. In the vicinity of the median plane, 
+the external field lines are almost perpendicular. 
+Therefore they efficiently penetrate through a "hole" created by a 
+saturated ferromagnetic into the PMT area, which explains the shield performance
+collapse at high shield length. 
+
+In order to make magnetization more uniform across the ferromagnetic and avoid such saturation effects,
+we suggest an improved design. This design involves the use of a tapered outer cylinder,
+the thickness of which linearly increases towards the median plane.
+
+\paragraph{Design}
+The design with tapered outer cylinder, in combination with the correction coil between
+two innermost layers, is shown in  Fig.~\ref{Tapered_Shield_Design}.
+Due to its availability by the manufacturer, Netic can not be used  for the outermost shield, as it 
+is available only in sheets with maximum thickness of 4-6~mm. 
+%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.55\textwidth]{R2083_Iron_hiperm49_CONETIC_TaperedShieldDesign.eps}
+\caption{\small{Initial design of tapered shield with correction coil. 
+The outermost shield is made of iron while the middle shield is made 
+of Hiperm-49, approximately 3 mm thick. The external magnetic field is set at 1000~G and the
+graph here is shown when the correction coil is set to 25 A.}}
+\label{Tapered_Shield_Design}
+\end{figure}
+%
+Therefore, the outermost  shield is composed of Soft Iron, beginning with a thickness of 1.0~cm and 
+slowly thickening to 1.7~cm thick. 
+The middle layer is made of Hiperm-49 3~mm thick while  the inner layer is Co-Netic 
+0.8~mm thick.
+%and the external magnetic field is kept constant at 1000~G.
+%Initially, this design was tested with a middle layer of 0.5~cm
+%thick of hiperm49.
+% Figure \ref{Tapered_Shield_0.5cm_PMT_Region} depicts the internal
+%magnetic field, 
+%while Figs.~\ref{Tapered_Shield_0.5cm_Outer_Region}
+%~\ref{Tapered_Shield_0.5cm_Middle_Region},
+% and~\ref{Tapered_Shield_0.5cm_Inner_Region} shows the
+%saturation inside the three layers of
+% shielding. The POISSON models show that it is possible
+%to bring the entire PMT region to below
+% 0.1~G when the correction coil curent is set at
+%$\approx 27$~A. It is interesting to observe
+% that as the current increases, the saturation
+%inside the innermost CONETIC layer decreases,
+% which is counter to previous studies.
+%Following the successful testing of this 
+%esign, the thickness of the middle layer was reduced
+% from 0.5 cm thick to 0.3 cm thick  for the purpose of weight and cost.
+\paragraph{Performance}
+The performance of this  shield, as a candidate to the downstream R2083 shield, 
+was studied at constant external field 1000G and varying current through the 
+compensating coil. 
+As in our previous tests,  we  monitor field values inside the PMT in the following  points:
+ (0,0) and (2.3,0) at  the median plane with the  first PMT dynode;
+           (0,5) and (2.3,5) at  the PMT entry window.
+We also monitor the bulk of the ferromagnetics for possible saturation:
+(2.9,0) and (2.9,5) - inner layer; 
+  (4,0) and (4,5) - middle layer; 
+(5.5,0) and (5.5,5)  - outer layer.
+These points are given in (r,z) form and are expressed in centimeters.
+
+
+The resulting fields in function upon the coil current 
+are shown in  Fig.~\ref{Tapered_Shield_0.3cm_PMT_Region}.
+It is observed that the internal magnetic field of the PMT region is below 0.05 G 
+when the correction coil current
+\footnote{This is a total current through the (r,z) plane. The wire current is of 100 times lower}
+is set between 
+$25-30$~A.
+It is also of interest to note that at this high magnetic field,
+none of the three ferromagnetic cylinders have reached saturation, as depicted in 
+Fig.~\ref{Tapered_Shield_0.3cm_Outer_Region} 
+Fig.~\ref{Tapered_Shield_0.3cm_Middle_Region},
+and Fig.~\ref{Tapered_Shield_0.3cm_Inner_Region}, 
+respectively.
+ Additionally, the magnetic flux density within the PMT region is much more uniform
+than previously observed.
+
+Thus, the dynamical shield described in this section is an  excellent candidate 
+to R2083 shield in the downstream region of the CTOF detector.
+
+
+
+%\begin{figure}[ht]
+%\centering
+%\subfloat[PMT Region]
+	%{\includegraphics[width=7cm]{R2083_Tapered_0.5cmMiddle_PMT_Region.eps}\label{Tapered_Shield_0.5cm_PMT_Region}}
+%\qquad
+% \subfloat[Outer Shield Region]
+	%{\includegraphics[width=7cm]{R2083_Tapered_0.5cmMiddle_Outer_Shielding_Region.eps}\label{Tapered_Shield_0.5cm_Outer_Region}}
+%\qquad
+%\subfloat[Middle Shield Region]
+	%{\includegraphics[width=7cm]{R2083_Tapered_0.5cmMiddle_Middle_Shielding_Region.eps}\label{Tapered_Shield_0.5cm_Middle_Region}}
+%\qquad
+%\subfloat[Inner Shield Region]
+	%{\includegraphics[width=7cm]{R2083_Tapered_0.5cmMiddle_Inner_Shielding_Region.eps}\label{Tapered_Shield_0.5cm_Inner_Region}}
+%\caption{\small{Magnetic fields in the R2083 PMT and shield regions using a tapered shield design, consisting of iron-hiperm49-CONETIC layers at a constant 1000 G external field and varying correction coil currents. The outermost layer of iron begins at 1.0~cm thick and slowly thickens to 1.7~cm. The middle layer of hiperm49 is a constant 0.5~cm thick. As seen here, the internal magnetic field is below the 0.1 G tolerance for the R2083 when the correction coil current is $\approx$25 A.}}\label{Tapered_Shield_0.5cm}
+%\end{figure}
+%\clearpage
+%\newpage
+
+% Figures for 0.3cm hiperm49 shielding
+%
+\begin{figure}[htbp]%[ht]%
+\centering
+\subfloat[PMT inner field.]
+	{\includegraphics[width=7cm]{R2083_Tapered_0.3cmMiddle_PMT_Region.eps}\label{Tapered_Shield_0.3cm_PMT_Region}}
+\qquad
+\subfloat[Outer cylinder magnetization.]
+	{\includegraphics[width=7cm]{R2083_Tapered_0.3cmMiddle_Outer_Shielding_Region.eps}\label{Tapered_Shield_0.3cm_Outer_Region}}
+\qquad
+\subfloat[Middle cylinder magnetization.]
+	{\includegraphics[width=7cm]{R2083_Tapered_0.3cmMiddle_Middle_Shielding_Region.eps}\label{Tapered_Shield_0.3cm_Middle_Region}}
+\qquad
+\subfloat[Inner cylinder magnetization.]
+	{\includegraphics[width=7cm]{R2083_Tapered_0.3cmMiddle_Inner_Shielding_Region.eps}\label{Tapered_Shield_0.3cm_Inner_Region}}
+\caption{\small{Magnetic fields in the R2083 PMT and shield regions using a tapered shield design,
+consisting of iron, Hiperm49 and  Co-Netic layers at a  1000~G external field and varying 
+coil currents. The outermost layer of iron begins at 1.0~cm thick and slowly thickens to 1.7~cm. 
+The middle layer of Hiperm-49 is  0.3~cm thick.}}
+\label{Tapered_Shield_0.3cm}
+\end{figure}
+%
+%\subsection{Proposed Changes to the Downstream PMT Configuration for use with the R2083}
+%
+%\begin{figure}[htbp]%#1
+%\begin{center}
+%\includegraphics[width=16cm,clip=true,bb=  100 100 500 500]{}
+%\end{center}
+%\caption{ Magnetization curve of the shield Netic-Hyperm-Conetic}
+%\label{}}
+%\end{figure}
+%\clearpage
+%\newpage
+%
+%\begin{figure}[htbp]%#1
+%\begin{center}
+%\includegraphics[width=16cm,clip=true,bb=  100 100 500 500]{}
+%\end{center}
+%\caption{ Magnetization curve of the shield Steel-Hyperm-Conetic}
+%\label{}}
+%\end{figure}
+%\clearpage
+%\newpage
+%
+%\begin{figure}[htbp]%#1
+%\begin{center}
+%\includegraphics[width=16cm,clip=true,bb=  100 100 500 500]{}
+%\end{center}
+%\caption{Magnetization curve of the shield Steel-conetic-conetic }
+%\label{FEAR2083saclay3}}
+%\end{figure}
+%\clearpage
+%\newpage
+\section{Conclusion and outlook.}
+In Section-\ref{ednmics} of this paper we have developed a 
+simple theory of ferromagnetic  shield in axial fields.
+%With this simple theory the  interpretation of  FEA calculations, which manifest 
+%many unexpected effects, such as shield performance  collaps at increasing  length,
+%is unambiguous.
+Numerous FEA calculations were also  performed for various shields for both upstream and 
+downstream regions of the CTOF detector. These calculations 
+have demonstrated that the dynamics of coaxial   ferromagnetic cylinders is very
+complex. Some  unexpected effects were manifested by the models, such as  performance  
+collapse with increasing  length.  This effect was predicted  by our simple   theory.
+Hence, this  simple theory allows a  clear and unambiguous   interpretation of  
+FEA calculations, sometimes surprising, in relation to the  designing of real shields.
+
+With the  help of the POISSON program we have designed a  single layer  ferromagnetic 
+shield which  sufficiently protects  metal channel PMTs H8500 up to 2000-2500G 
+external fields.   
+                                                        
+Given the restrictions from the  design with R2083 PMTs in Section-\ref{R2083_Triple_No_Coil}, 
+the best possible configuration for the triple ferromagnetic  shield was found. 
+However, even such an exotic and expensive shield 
+will only be effective to satisfy the stringent 0.4~G tolerance.
+
+%with the res
+%Such shield consists of the 
+%outer cylinder of NETIC 1.5~cm thick,  a middle
+% cylinder of Hiperm49  0.8~cm thick  and 
+%the innermost layer of Co-NETIC, whose thickness is fixed at 
+%0.08~cm by the  manufacturer. trictions imposed by the
+%manufacturer and the detector  design,  
+%will not be effective enough to satisfy the
+%stringent 0.1~G tolerance. 
+%Thus, we conclude that the triple shield  
+%with the restrictions imposed by the
+%manufacturer and the CTOF  specifications  
+In order to  attain fields below 0.1~G we have developed a novel 
+Dynamical Magnetic Shield which consists  of ferromagnetics layers 
+and  solenoids  between the layers. 
+Such shield was tested within  POISSON models and  
+and experimentally.  The dynamical layers  has demonstrated  excellent  performance.   
+%Experimental tests shows that a thin (0.8mm) single layer dynamical shield 
+%is capable to cancel  fields of 30-70G to practical zero at very low currents($\approx$0.5A)
+%through the wire.  
+%With such dynamical layer, included into the POISSON model, 
+%the inner PMT field has been reduced  to $\leq$0.05G at 1000G external field
+%permitting the R2083 to operate with high timing resolution.
+Additional advantage of more uniform field inside a PMT has been achieved by
+a tapered design of the external cylinder. 
+Due to  all that  the most heavy and expensive outer layer may be fabricated of soft 
+iron which is a commonly used material. 
+
+Thus, basic designs of both upstream and downstream shields for R2083 and
+H8500 PMTs are completed. These shields are designed to tolerate 
+external fields 500~G and 1000~G respectively. These values are twice as high as the nominal values
+from the main Solenoid field map. The inner PMT field in both shields will be below 0.1~G due to 
+the dynamical components of shields.
+ 
+We plan further tests with  POISSON models. Firstly, 
+%the inner PMT field will be studied in function on the external field at different currents. 
+the performance limit will be determined in terms of power dissipation in the compensating coils.  
+Secondly, the effect of deviation from standard magnetization curves of basic ferromagnetics  will be addressed. 
+We also plan further prototyping of  dynamical shields  and testing their performance with the 5T solenoid.
+
+\paragraph{Acknowledgements}We appreciate Dr. E.~Choudakov for helping in   
+POISSON model setup  and valuable advices. 
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%*
+%*
+%*
+%*
+%*
+%*
+%*
+%As seen in Fig.~\ref{R2083_Triple_0.8cm_PMT_Region}
+% and with the saturation curves shown in Fig.~\ref{R2083_Triple_0.8cm_Outer},
+% Fig.~\ref{R2083_Triple_0.8cm_Middle},
+% and Fig.~\ref{R2083_Triple_0.8cm_Inner}, the triple shield design
+% with the restrictions imposed by the
+% manufacturer and the CTOF counter design specifications will not be
+% effective enough to satisfy the stringent
+% 0.1~G tolerance required by the R2083.
+%Given the restrictions from the current CTOF counter design, 
+%the triple shield design with an outer shield of iron at 1.7~cm thick,
+% a middle shield of hiperm49 at 0.3~cm thick, and an inner most layer of CONETIC whose 
+%thickness is fixed at 0.08~cm by the manufacturer.
+
+%To further reduce the magnetic field within acceptable tolerances, a novelle 
+%hybrid magnetic shielding was developed
+%using a correction coil and a tapered outer shield of iron. 
+%From Fig.~\ref{Tapered_Shield_0.3cm_PMT_Region},
+
+\section{12345Measurements with the prototype of the Hybrid Magnetic Shield for R2083.}
+
+The inner field strongly
+depends on the ferromagnetic properties which are very sensible to
+fabrication technologies.
+\subsection{Hiperm 49 with compensating coil}
+\subsection{Big shield with compensating coil}
+
+\subsection{Soft Iron shield for R2083 from Hamamatsu}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1\textwidth]{soft_iron_r2083.eps}
+\caption{\small{Performance of the soft iron shield for the CTOF under 0 to 75G external field}}
+\label{R2083_Soft_Iron}
+\end{figure}
+\subsection{Thick soft iron without coil}
+
+
+
+
+
+%>>>>>>> 1.10
+
+
+
+
+
+\begin{figure}[htbp]%#1
+\begin{center}
+\includegraphics[width=16cm,clip=true,bb=  100 100 500 500]{}
+\end{center}
+\caption{Magnetization curve of the  Steel shield.}
+\label{FEAR2083saclay3}}
+\end{figure}
+%\clearpage
+%\newpage
+
+
+
+
+\begin{figure}[htbp]%#1
+\begin{center}
+\includegraphics[width=16cm,clip=true,bb=  100 100 500 500]{}
+\end{center}
+\caption{Magnetization curve of the  Netic shield.}
+\label{FEAR2083saclay3}}
+\end{figure}
+%\clearpage
+%\newpage
+
+
+
+\begin{figure}[htbp]%#1
+\begin{center}
+\includegraphics[width=16cm,clip=true,bb=  100 100 500 500]{}
+\end{center}
+\caption{Shield effectiveness vs the length of the shield.}
+\label{FEAR2083saclay3}}
+\end{figure}
+%\clearpage
+%\newpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%THEEND%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+\subsection{H8500 Shield in homogeneous magnetic field 3000 G}
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ &  $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\  &      $G$     & $mm$  &  $mm$  & $mm$   &   $G$ &              &       & $G$              &       \\ \hline
+1& 50              & 164.75& 158.75(6.25'') &   3.175(0.125'')    &  2578  &   4500       & 110   &  0.46             & Net
+%1& 50              & 164.75& 156.75 &   4    &  2578  &   4500       & 110   &  0.46             & Netic \\ \hline
+2& 0.46            & 153.41 & 151.37  &  1.02(0.04'')   &  2185  &   400000     & 530   &  0.001            & Netic
+%2& 0.46            & 151.37& 149.77 &  0.4   &  2185  &   400000     & 530   &  0.001            & Conetic      \\
+%3& 0.001           & 144.0 &  142.4 &  0.76   &   3185 &  450000      & 11000 &  0.007            &       \\ \hline
+3& 0.001            & 144.0 &  142.4 &  0.51(0.02'')   &   3185 &  450000      & 11000 &  0.007
+\end{tabular}
+\end{center}
+\caption{HTCC  shield  against of  $50G$. \label{htcc}}
+\end{tablemu250}
+
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ &  $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\  &      $G$     & $mm$  &  $mm$  & $mm$   &   $G$ &              &       & $G$              &       \\ \hline
+1& 2000              & 106& 74 &  16  & 16600  & 1600  & 241   &  8.3        & Netic
+1& 2000              & 106& 74 &  16  & 16600  & 160   & 24    &  83         & Carp BF \\ \hline
+2&  17               &  74& 70 &  1.6 &   982  & 1-2e3 & 20-40 & 0.4-0.8     & Netic x 0.01 conetic
+2&  160              &  74& 70 &  1.6 &  7400  & 1-2e5 & 2-4e3 & 0.04-0.08   & Hyperm-49
+%2& 0.46            & 151.37& 149.77 &  0.4   &  2185  &   400000     & 530   &  0.001            & Conetic      \\
+%3& 0.001           & 144.0 &  142.4 &  0.76   &   3185 &  450000      & 11000 &  0.007            &       \\ \hline
+3& 0.001            & 144.0 &  142.4 &  0.51(0.02'')   &   3185 &  450000      & 11000 &  0.007
+\end{tabular}
+\end{center}
+\caption{R2083  shield  against of  $2000G$. Comparison of the  Carpenter and Netic alloys.
+Conetic is 10 times more efficient at 16600 G field inside the material. Therefore it is safer to use
+Netic as a first layer. The second layer may be Co-Netic  even 0.8mm thick
+ \label{htcc}}
+\end{tablemu250}
+
+
+
+
+
+
+
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}$ &$D_+$  &$D_-$   & $t$   &  $B_m$ &$\approx\mu$&  $S$  & $B_{in}$          & Comm. \\
+   & $G$   &$mm$   &$mm$    & $mm$  &   $G$ &            &       & $G$              &       \\ \hline
+1& 700      & 102   & 88    & 6.6    & 13000   &     2600  & 168   &  4.2         & CaB-FM     \\
+1& 1000     & 106   & 74     & 8     & 16500  &      160   &  12   &  83          & CaB-FM     \\ \hline
+2& 160      &  74   & 70     & 1.6   &   9250 &      5000  & 125   & 1.28         & Netic      \\
+2& 160      &  74   & 70     & 1.6   &   9250 &      6200  &  147  & 1.13         & CaB-FM     \\ \hline
+3& 3        &  67.2 & 64     & 0.8   &   350  &      44000 & 520   & 0.006        & hyperm-49  \\ \hline
+3& 10       &  67.2 & 64     & 0.8   &   1062 &      65000 & 735   & 0.014        & hyperm-49  \\ \hline
+3& 20       &  67.2 & 64     & 0.8   &   2120 &     100000 & 1130  & 0.018        & hyperm-49  \\ \hline
+3& 30       &  67.2 & 64     & 0.8   &   3200 &     150000 & 1600  & 0.018        & hyperm-49  \\ \hline
+3& 40       &  67.2 & 64     & 0.8   &   4250 &     180000 & 2080  & 0.019        & hyperm-49  \\ \hline
+3& 50       &  67.2 & 64     & 0.8   &   5300 &     260000 & 3120  & 0.016        & hyperm-49  \\ \hline
+3& 70       &  67.2 & 64     & 0.8   &   7400 &     220000 & 2500  & 0.027        & hyperm-49  \\ \hline
+3& 80       &  67.2 & 64     & 0.8   &   8500 &     170000 & 2000  & 0.04        & hyperm-49  \\ \hline
+3& 90       &  67.2 & 64     & 0.8   &   9600 &      96000 & 1130  & 0.08        & hyperm-49  \\ \hline
+3& 100      &  67.2 & 64     & 0.8   &  10620 &      35000 & 411   & 0.24          & hyperm-49  \\ \hline
+\end{tabular}
+\end{center}
+\caption{R2083  shield from Tom Bayley   against of  $1000G$.
+Comparison of the  Carpenter and Netic alloys.
+Conetic is 10  times more efficient at 100 Oe field inside the material. Therefore it is safer to use
+Netic as a first layer. However, 10-15% increas in  material thickness makes it possible to use , for instance,
+Carpenter Silicon Core Iron B-FM, the magnetization curve of which is lower of that for Netic at $H\ge5-7 Oe$.
+The second layer may be Hiperm-49 1.6 mm or  even Co-netic   0.8mm thick
+ \label{htcc}}
+\end{tablemu250}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ & $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\
+\# &      $G$     & $mm$  & $mm$  & $mm$   &   $G$ &              &       & $G$              &       \\ \hline
+1& 3000            & 105   &  66   &  19.8  &  20000 &     250      &  47.1 &  63.7             & Netic \\ \hline
+%2& 63.7            &  64   &  63.4 &  0.8   &   6370 &   80000      &  1000 &  0.064            & Conetic      \\
+%2& 63.7            &  64   &  60.8 &  1.6   &   3185 &  450000      & 11000 &  0.007            & Conetic      \\ \hline
+2& 63.7            &  64   &  63.4 &  1.6   &   3185 &    4500      &  110  &  0.7              & Netic       \\
+%3& 0.064           &  60   &  58.4 &  0.8   &     6  & 60000        &   800 &      0            & E989-05      \\ \hline
+3& 0.7             &  60   &  58.4 &  0.8   &    60  &      80000   &   1000 & 0.7\times10^{-3} & E989-05      \\ \hlin
+\end{tabular}
+\end{center}
+\caption{R2083 shield   against of  $3000G$ at   ferromagnetic  $B_m=20000G$  and corresponding $\mu(B_m)=250$.
+ $n$
+-layer number starting from the external layer,
+ $B_{o}$
+-external field,
+$D_+$
+-external diameter,
+$t$
+-ferromagnetic thickness,
+$B_m$
+ -fields in the ferromagnetic determined via Eq.\ref{eq000},
+$\mu$
+-permeability determined via Fig.\ref{muneco},
+$S$
+-shielding factor  determined via Eq.\ref{eq000} ,
+$B_{in}$
+-fields inside the shielding.
+$Fm$
+-ferromagnetic material.
+\label{ca20000}}
+\end{tablemu250}
+
+
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ & $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\
+\# &      $G$     & $mm$  & $mm$  & $mm$   &   $G$ &              &       & $G$              &       \\ \hline
+1& 3000            & 115   &  66   &  24.5  &  17600 &   1000       &  213  &  63.7             & Netic \\ \hline
+2& 63.7            &  64   &  63.4 &  0.8   &   6370 &   80000      &  1000 &  0.064            & Conetic      \\
+2& 63.7            &  64   &  60.8 &  1.6   &   3185 &  450000      & 11000 &  0.007            & Conetic      \\ \hline
+3& 0.064           &  60   &  58.4 &  0.8   &     6  & 60000        &   800 &      0            & E989-05      \\ \hline
+\end{tabular}
+\end{center}
+\caption{R2083  shield  against of  $3000G$ at  maximum ferromagnetic   $B_m=17600 G$ and
+ $\mu(B_m)\approx 1000$. \\
+$B_{o}$ - external field(s) for the \#'s-layer  \\
+$t$   - the ferromagnetic thickness,  determined via  Eq.\ref{eq000})  \\
+$\mu$ - permeability, determined from Fig.\ref{muneco} \\
+$B_{in}$ -fields inside the  shielding cylinder .\\
+The external shield diameter $115mm$
+\label{ca17600}}
+\end{tablemu250}
+
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ &  $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\
+\# &      $G$     & $mm$  &  $mm$  & $mm$   &   $G$ &              &       & $G$              &       \\ \hline
+
+1& 50              & 164.75& 158.75(6.25'') &   3.175(0.125'')    &  2578  &   4500       & 110   &  0.46             & Net
+%1& 50              & 164.75& 156.75 &   4    &  2578  &   4500       & 110   &  0.46             & Netic \\ \hline
+2& 0.46            & 153.41 & 151.37  &  1.02(0.04'')   &  2185  &   400000     & 530   &  0.001            & Netic
+%2& 0.46            & 151.37& 149.77 &  0.4   &  2185  &   400000     & 530   &  0.001            & Conetic      \\
+%3& 0.001           & 144.0 &  142.4 &  0.76   &   3185 &  450000      & 11000 &  0.007            &       \\ \hline
+3& 0.001            & 144.0 &  142.4 &  0.51(0.02'')   &   3185 &  450000      & 11000 &  0.007
+\end{tabular}
+\end{center}
+\caption{HTCC  shield  against of  $50G$.
+$B_{o}$ - external field(s) for the \#'s-layer  \\
+$t$   - the ferromagnetic thickness,  determined via  Eq.\ref{eq000})  \\
+$\mu$ - permeability, determined from Fig.\ref{muneco} \\
+$B_{in}$ -fields inside the  shielding cylinder .\\
+The external shield diameter $115mm$
+\label{ca17600}}
+\end{tablemu250}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Further  possible studies with micro channel PMTs}
+
+
+\paragraph{Motivation} manufacturers($Burle$) of the micro channel
+plate PMTs are making progress
+          in the design of the MCP PMs. This may result in higher
+          counting rate and higher magnetic field immunity, as well.
+          $Burle$ is developing 10- an 5-micron MCP PMs such as 18mm 85104
+	  with increased QE of $20-30\%$ .
+\begin{enumerate}
+
+     \item
+Develop a setup of 2 10(5) micron MCP PMs with on board
+          pre-amplifiers.
+
+     \item
+perform resolution/counting rate  tests with 2 MCP PMTs
+\end{enumerate}
+
+\paragraph{Current status} preliminary publications are done
+                and  preliminary discussions  with the detector group members.
+We plan  to  publish  in NIM our recent results obtained with Burle
+          85011 PMs. This paper will include the description of the
+          on-board preamplifier, resolution measurements and, perhaps ,
+          magnetic field tests performed by the detector group.
+
+\paragraph{Labor}     $40 man\times day$ for  Pre-Amp/HV dividers by the
+Detector Group.
+\paragraph{Equipment} Electronic lab of JLAB for  Pre-Amp/HV dividers.
+\paragraph{Materials} 2 MCP  PMTs, HV components  for voltage dividers.
+\paragraph{Funding}   8000\$(from Detector Group?) for 2 MCP  PMTs and electronics
+components
+<<<<<<< ctofmagshield310108.tex
+
+
+
+\newpage
+
+
+%%%%%%%
+%%%%%%%%
+%%%%%%%%%
+%%%%%%%%%%
+%%%%%%%%%%%
+%%%%%%%%%%%
+
+
+
+
+
+
+\subsection{Magnetic Shield for the XP4508B Photomultiplier Tube}
+%(Travis insert writeup here)
+A magnetic shielding model was developed and theoretically 
+tested for the 5 inch XP 4508B Photomultiplier tube.  
+The program Poisson Super fish was used to examine the shielding properties of
+various shield setups subject to an external magnetic field up to 60 Gauss.  
+The sensitivity of the PMT requires a very low (~.2 Gauss) 
+magnetic field at the location of the photo cathode.
+
+\subsubsection{Single Layer Shielding}
+
+The first shield design tested was a single 1.6mm 
+thick shield surrounding the PMT with an inner radius of 7.657cm. 
+ An external magnetic field was applied to the shielded area ranging from
+0 to 60 Gauss.  The calculated magnetic field strength was recorded
+ at critical points (the center of the shielded area, location of the
+ photo cathode, close to the inner radius of the shield,
+and inside the shield).  The calculations were performed with 2 different
+ materials, conetic and hyperm49.  The ferromagnetic properties of these materials
+were well known, so we wanted to see how well they would perform in our 
+particular configuration.  Experimental data was also collected for this 
+size shielding made of a $50\%$ alloy of Ni Fe
+and was compared to our theoretical calculations.  The graph below shows
+ the strength of the magnetic field at the center of the shield for the 
+different materials listed.
+
+\newpage
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{SS_Materials.eps}
+\caption{\small{Single Shield Material Comparison}}
+\label{Single mu-metal shield 1.6mm thick 76mm in radius.}
+\end{figure}
+
+
+
+None of these 3 shields performed adequately enough to limit the strength of 
+the magnetic field to less than 0.1 Gauss when an external field of around 50 G
+ was applied, so we explored the effect of increasing the thickness of the shield.  
+Calculations were performed for a single 3.2mm thick shield with the same inner
+ radius of 7.657cm with 4 materials: regular iron, netic (soft iron),conetic, 
+and hyperm49.  Increasing the thickness of the shield clearly helped to provide
+ better shielding from the external field, but not by a significant enough
+ amount to achieve the desired field of 0.1 Gauss.  This led us to conclude 
+a single layer shield would be insufficient for our design, so we began to
+ test 2 layer shielding models; however, we were able to determine that 
+hyperm49 and conetic performed much better than 
+netic or iron, with hyperm49 
+seemingly the best for our purposes.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{SS_32.eps}
+\caption{\small{Magnetic Field at location of Photo cathode}}
+\label{Single Shield 3.2mm Thick}
+\end{figure}
+
+
+\subsubsection{2 Layer Shielding}
+
+Four   configurations were tested for 2 layer shields with fixed
+ inner diameters of 5.795 and 6.135 inches for the inner and outer 
+shields, respectively.  The inner shield was made of conetic and was
+ either 1.0mm or 1.6mm thick, while the outer shield was made of netic 
+(soft iron) and was either 4.0mm or 6.0mm thick.  The strength of the
+ magnetic field was again calculated and recorded at the location of
+ the photo cathode, shown below.  The varying thicknesses made very little 
+difference in the calculated magnetic field strength (less than 0.1 G),
+ but the setup with the maximum thicknesses (netic at 6.0mm, conetic 1.6mm)
+ was slightly better than the others.  The measured magnetic field at H=50
+ Gauss was still 0.79G, which is still far too high for the PMT to operate correctly.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{DS.eps}
+\caption{\small{Magnetic Field at location of Photo cathode}}
+\label{Double Layer Shield}
+\end{figure}
+
+\subsubsection{3 Layer Shielding}
+
+For these calculations a 3rd shield was introduced, 
+the shield manufactured by Photon is that was distributed
+ with the PMT.  This shield is made of Mu-Metal MS175, but
+ we approximated this material with our known magnetic
+ permeability for the Mu-Metal conetic.  The outer 2 shields were
+ the exact same as in the 2 layer model described above, so we
+ merely repeated the same calculations with the addition of this 
+third inner shield of conetic.  The addition of this third shield
+ helped somewhat, but not to the degree required to reduce the
+ field to 0.1 or 0.2 Gauss.  The recorded field at the location
+ of the photo cathode was still about 0.6 Gauss with a 6mm netic
+ outer shield and 1.6mm conetic middle shield.
+
+\newpage
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{TS.eps}
+\caption{\small{Magnetic Field at location of Photo cathode}}
+\label{Triple Layer Shield}
+\end{figure}
+
+From our 1 layer shielding calculations,
+ it was clear that hyperm49 would provide better
+ shielding than netic, so we modified the 3 layer model
+ above by switching the material of the outer shield from 
+netic to hyperm49.  Since the best 3 layer shield was with
+ a 6mm thick layer of netic and a 1.6mm thick layer of conetic,
+ we used these sizes for this model as well, with a 6mm thick
+ layer of hyperm49, a 1.6mm thick layer of conetic, and the inner
+ Photonis shield of conetic.  This simple alteration helped to 
+improve the shielding of the model significantly, reducing the magnetic
+ field strength at the photo cathode from 0.69 to 0.28 at an external
+ field strength of 50G.  The field strength at an external field of 35G 
+(which is the expected field strength) is about 0.2G, which is close to
+ the required level for correct operation of the PMT.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{TS_Compare.eps}
+\caption{\small{Magnetic Field at location of Photo cathode}}
+\label{Triple Layer Shield Comparison}
+\end{figure}
+
+\subsubsection{Conclusion}
+
+From the variety of calculations performed, it is clear that a
+ 3 layer shielding model using the materials Hyperm49 and conetic
+ would provide the best shielding from external fields up to 60 Gauss.  
+The best model tested was an outer shield of Hyperm49 with 6mm thickness
+ and 6.135 inch inner diameter, a middle shield of conetic with 1.6mm 
+thickness and 5.795 inch inner diameter, and the inner Photonis Mu-metal
+ shield with inner diameter 5.500 inches.  
+This model would reduce an
+ external field of ~35G to ~0.2G at the location of the photo cathode. 
+ Further improvements on this shielding model might involve a thicker
+ outer shield of hyperm49, lengthening of shields (in the axial direction)
+ to extend farther from the photo cathode, or replacing the Photonis inner
+ shield with one of different size.  The materials hyperm49 and conetic
+ perform nearly identically up to about a 50G external field (at which 
+point hyperm49 becomes far superior), so interchanging conetic and hyperm49
+ on the inner shields would probably not have a significant effect on the
+ strength of the magnetic field.
+
+
+
+
+From this section we conclude that in order to achieve the fields below 0.2G
+we have to develop some new solutions. One of such solutions is 
+described in the following section.
+
+%%%%%%%%%%%%%%%%%%%%
+\section{Magnetic Shield for the XP4508B Photomultiplier Tube}
+
+A magnetic shielding model was developed and theoretically tested for the 5 inch XP4508B Photomultiplier tube.  The program Poisson Superfish was used to examine the shielding properties of 
+various shield setups subject to an external magnetic field up to 60 Gauss.  The sensitivity of the PMT requires a very low (~.2 Gauss) magnetic field at the location of the photo cathode.
+
+\subsection{Single Layer Shielding}
+
+The first shield design tested was a single 1.6mm thick shield surrounding the PMT with an inner radius of 7.657cm.  An external magnetic field was applied to the shielded area ranging from
+0 to 60 Gauss.  The calculated magnetic field strength was recorded at critical points (the center of the shielded area, location of the photo cathode, close to the inner radius of the shield,
+and inside the shield).  The calculations were performed with 2 different materials, conetic and hyperm49.  The ferromagnetic properties of these materials 
+were all well known, so we wanted to see how well they would perform in our particular configuration.  Experimental data was also collected for this size shielding made of a 50% alloy of NiFe
+and was compared to our theoretical calculations.  The graph below shows the strength of the magnetic field at the center of the shield for the different materials listed.
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.6\textwidth]{/madlem/data/SS_Materials.eps}
+%\caption{\small{Single Shield Material Comparison}}
+%\label{Single Shield Material Comparison}
+%\end{figure}
+
+
+
+None of these 3 shields performed adequately enough to limit the strength of the magnetic field to less than 0.1 Gauss when an external field of around 50 G was applied, so we explored the effect of increasing the thickness of the shield.  Calculations were performed for a single 3.2mm thick shield with the same inner radius of 7.657cm with 4 materials: regular iron, netic (soft iron),conetic, and hyperm49.  Increasing the thickness of the shield clearly helped to provide better shielding from the external field, but not by a significant enough amount to achieve the desired field of 0.1 Gauss.  This led us to conclude a single layer shield would be insufficient for our design, so we began to test 2 layer shielding models; however, we were able to determine that hyperm49 and conetic performed much better than netic or iron, with hyperm49 seemingly the best for our purposes.
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.6\textwidth]{/madlem/data/SS_32.eps}
+%\caption{\small{Magnetic Field at location of Photocathode}}
+%\label{Single Shield 3.2mm}
+%\end{figure}
+
+
+\subsection{2 Layer Shielding}
+
+As directed by my mentor, I tested 4 different configurations for 2 layer shields with fixed inner diameters of 5.795 and 6.135 inches for the inner and outer shields, respectively.  The inner shield was made of conetic and was either 1.0mm or 1.6mm thick, while the outer shield was made of netic (soft iron) and was either 4.0mm or 6.0mm thick.  The strength of the magnetic field was again calculated and recorded at the location of the photo cathode, shown below.  The varying thicknesses made very little difference in the calculated magnetic field strength (less than 0.1 G), but the setup with the maximum thicknesses (netic at 6.0mm, conetic 1.6mm) was slightly better than the others.  The measured magnetic field at H=50 Gauss was still 0.79G, which is still far too high for the PMT to operate correctly.
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.6\textwidth]{/madlem/data/DS.eps}
+%\caption{\small{Magnetic Field at location of Photocathode}}
+%\label{Double Layer Shield}
+%\end{figure}
+
+\subsection{3 Layer Shielding}
+
+For these calculations a 3rd shield was introduced, the shield manufactured by Photonis that was distributed with the PMT.  This shield is made of Mu-Metal MS175, but we approximated this material with our known magnetic permeability for the Mu-Metal conetic.  The outer 2 shields were the exact same as in the 2 layer model described above, so we merely repeated the same calculations with the addition of this third inner shield of conetic.  The addition of this third shield helped somewhat, but not to the degree required to reduce the field to 0.1 or 0.2 Gauss.  The recorded field at the location of the photo cathode was still about 0.6 Gauss with a 6mm netic outer shield and 1.6mm conetic middle shield.
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.6\textwidth]{/madlem/data/TS.eps}
+%\caption{\small{Magnetic Field at location of Photocathode}}
+%\label{Triple Layer Shield}
+%\end{figure
+
+From our 1 layer shielding calculations, it was clear that hyperm49 would provide better shielding than netic, so we modified the 3 layer model above by switching the material of the outer shield from netic to hyperm49.  Since the best 3 layer shield was with a 6mm thick layer of netic and a 1.6mm thick layer of conetic, we used these sizes for this model as well, with a 6mm thick layer of hyperm49, a 1.6mm thick layer of conetic, and the inner Photonis shield of conetic.  This simple alteration helped to improve the shielding of the model significantly, reducing the magnetic field strength at the photo cathode from 0.69 to 0.28 at an external field strength of 50G.  The field strength at an external field of 35G (which is the expected field strength) is about 0.2G, which is close to the required level for correct operation of the PMT.
+
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=.6\textwidth]{/madlem/data/TS_Compare.eps}
+%\caption{\small{Magnetic Field at location of Photocathode}}
+%\label{Triple Layer Shield Comparison}
+%\end{figure
+
+\subsection{Conclusion}
+
+From the variety of calculations performed, it is clear that a 3 layer shielding model using the materials Hyperm49 and conetic would provide the best shielding from external fields up to 60 Gauss.  The best model tested was an outer shield of Hyperm49 with 6mm thickness and 6.135 inch inner diameter, a middle shield of conetic with 1.6mm thickness and 5.795 inch inner diameter, and the inner Photonis Mu-metal shield with inner diameter 5.500 inches.  This model would reduce an external field of ~35G to ~0.2G at the location of the photo cathode.  Further improvements on this shielding model might involve a thicker outer shield of hyperm49, lengthening of shields (in the axial direction) to extend farther from the photo cathode, or replacing the Photonis inner shield with one of different size.  The materials hyperm49 and conetic perform nearly identically up to about a 50G external field (at which point hyperm49 becomes far superior), so interchanging conetic and hyperm49 on the inner shields would probably not have a significant effect on the strength of the magnetic field.
+
+
+\subsection{Hybrid Magnetic Shielding with R2083}
+
+In conjunction with the triple shield model from Fig.~\ref{R2083_Initial}, 
+it has been proposed that the use of a correction coil placed between two layers
+ of shielding should decrease the magnetic field to below the 0.1~G threshold required 
+by the R2083. In all tests involving a correction coil,
+ the external magnetic field was kept at a constant 1000~G.
+
+\subsubsection{Effect of Correction Coil}
+
+The initial shield design shown in Fig.~\ref{R2083_Initial} was reconfigured such that the 
+middle shielding layer of Hiperm49 was increased to 0.5~cm thick, 
+and the outer layer of Netic is 1.0~cm thick. 
+This was done to reduce the weight and cost of the materials. The new design with the correction coil
+ between the Co-Netic and Hiperm49 layer is shown 
+in Fig.~\ref{R2083CorrectionCoilStandardDesign.eps}.
+%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.0\textwidth]{R2083CorrectionCoilStandardDesign.eps}
+\caption{\small{The  shield with correction coil. 
+The external magnetic field is set at 1000 G.  The field map  is shown when the correction coil is set to 25 A.}}
+\label{R2083_Correction_Coil}
+\end{figure}
+%
+In order to understand the behavior of the internal magnetic field as it approached 0~G,
+ the sign of the z-component of the magnetic field was used in conjunction with the 
+absolute magnitude of the total magnetic field. 
+As seen in Fig.~\ref{R2083_Correction_Coil_PMT_Region}, the utilization of the correction coil is capable of reducing the internal magnetic field to within acceptable tolerances, but this design requires further optimization.
+
+\begin{figure}[ht]
+\centering
+\subfloat[PMT Region]
+	{\includegraphics[width=7cm]{R2083_Correction_Coil_PMT_Region.eps}\label{R2083_Correction_Coil_PMT_Region}}
+\qquad
+\subfloat[Outer Shield Region]
+{\includegraphics[width=7cm]{R2083_Correction_Coil_Outer_Region.eps}\label{R2083_Correction_Coil_Outer_Region}}
+\qquad
+\subfloat[Middle Shield Region]
+{\includegraphics[width=7cm]{R2083_Correction_Coil_Middle_Region.eps}\label{R2083_Correction_Coil_Middle_Region}}
+\qquad
+\subfloat[Inner Shield Region]
+{\includegraphics[width=7cm]{R2083_Correction_Coil_Inner_Region.eps}\label{R2083_Correction_Coil_Inner_Region}}
+\caption{\small{Effect of changing current of the correction coil on internal magnetic field strength within the PMT and shield regions. The external magnetic field is kept constant at 1000 Gauss.}}\label{R2083_Correction_Coil2}
+\end{figure}
+%\clearpage
+%\newpage
+

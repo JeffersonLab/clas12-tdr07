@@ -1,0 +1,696 @@
+\documentclass[12pt]{article}
+\input epsf
+\usepackage{graphicx}
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+
+
+
+\textwidth  6.in
+\textheight 8.5in
+\topmargin 0. in
+\oddsidemargin 0in
+\evensidemargin 0in
+\pagenumbering{arabic}
+%
+\newcommand{\Thgg}{$\theta_{\gamma^*\gamma}~$}
+\newcommand{\Phgg}{$\phi_{\gamma^*\gamma}~$}
+\newcommand{\Epg}{$ep~\rightarrow~ep\gamma~$}
+\newcommand{\Eppiz}{$ep~\rightarrow~ep\pi^o~$}
+\newcommand{\Enpip}{$ep~\rightarrow~en\pi^+~$}
+\newcommand{\EppiD}{$ep~\rightarrow~e\pi \Delta~$}
+\newcommand{\Epeta}{$ep~\rightarrow~ep\eta~$}
+\newcommand{\Epr}{$ep~\rightarrow~ep\rho~$}
+\newcommand{\EpX}{$ep~\rightarrow~epX~$}
+\newcommand{\EpKY}{$ep~\rightarrow~eKY~$}
+\newcommand{\vEpg}{$\vec ep~\rightarrow~ep\gamma~$}
+\def\gevc2{(GeV/c)$^2$}
+\begin{document}
+\pagestyle{plain}
+%\indent
+%\input{central_introduction.tex}
+%\input{central_solenoid.tex}
+%\input{central_tracker.tex}
+%\input{central_tof.tex}
+%\input{central_ec.tex}%
+%\begin{thebibliography}{99}
+%\input{bibl.tex}
+%\end{thebibliography}
+%\end{document}
+\title
+{
+\vspace{-1.4cm}
+\begin{flushright}
+\normalsize{Draft; source file /u/home/baturin/DocCVS/12gev/TDR/TDR2007/main/detector/central/ctof/ctofmagshield.tex}
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+%\bigskip
+\nopagebreak
+\end{flushright}Magnetic shielding for the CLAS12 Central TOF detector.}
+\author
+{
+{}\\
+%{}\\
+%{}\\ 
+%{}\\
+%{}\\
+%{}\\
+\mbox
+{J.Ball, V.Baturin, V.Burkert, D.Carman} \\
+{ L.Elouadrhiri, P.Fazilleau ,D Grilli, M.Guidal,} \\
+{G.S.Mutchler,} \\
+{J.Riso,  A.Starostin. }
+%{}   \\
+%{V.Popov, C.Zorn, V.Kuznetsov(KNU), A.Nee(KNU) }   \\
+%{}\\
+%{}\\
+\mbox 
+%{}\\
+%{}\\FAZILLEAU Philippe
+%{}\\
+%{}\\
+{}\\
+}
+\maketitle  
+\tableofcontents
+\listoftables
+\newpage
+\section{Introduction}
+ 
+The Central Time Of Flight detector ({\tt CTOF}) 
+ is being designed at JLab with the  ordinary PMTs, coupled 
+to the scintillators via $\approx1.6m$-long light guides of complex design
+\footnote{We  anticipate that  at
+final stage of designing   the regular PMTs may be replaced
+with fine mesh PMTs with twice shorter light guides. These PMTs
+ are insensitive  up to 5000Gs.}.
+ At the nominal length of light guides the
+ ordinary  PMTs  requires a robust magnetic shield against  of $\leq500Gs$.
+The   optional metal channel PMTs H8500  may operate at 200-500Gs  without magnetic shielding.
+However, with a powerful enough  shielding both kinds of PMTs could operate at significantly 
+higher field. In such a case a  shorter light guides may  be used, 
+ that improves  significantly the  time resolution.
+
+%The  magnetic shield for  R2083/H8500  against
+%  $\approx 30/300~mT$ respectively is  required.
+%However, we anticipate that  at
+% the final stage of designing  the regular PMTs may be replaced
+%with fine mesh PMTs, which are insensitive to magnetic fields up to 700mT.
+%  Due to their  different sense areas($S_a$) and   
+%tolerated magnetic fields $(B_m)$ the corresponding
+%light guides has various  transmission lengths($L_t$) and diameters.  
+%The time being we consider %, as the most realistic candidates,  
+%the following PMTs\footnote{Unfortunately, recently 
+% Hamamatsu has discontinued   the most appropriate
+%fine mesh PMT R6504 with the photo cathode diameter $51mm$}:
+%However, the more efficient is the shield  
+%the shorter may be light guides, thus the better may be  the time resolution.
+
+%The main  goal of this note is to 
+% estimate  a  possible shield's   dimensions and  tolerated fields
+%using  simple methods suggested by different manufacturers of magnetic shields.
+%  Then we  
+The main goal of this note is to formulate a research plan  
+for  the further   FEA  simulation  in the  inhomogeneous fringe  magnetic fields.
+Using  the  results of FEA  calculations we'll  design a shield for R2083 and H8500
+and 
+optimize  the length of light guides for  for a  better time resolution.
+
+The relevant characteristics of PMTs are listed below:
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}  \hline 
+Hamamatsu& Type         &$D_{max}$& $S_a$    &  $L_{max}$  &  $B_{max}$& M        \\
+model    &              & $(mm)$  & $(mm^2)$ & $(mm)$ &    $(Gs)$ &   $(Kg)$    \\ \hline
+R2083    & ordinary     & 54      & 1662     & 120    &    0.1    & $\approx 5$    \\
+H8500    & metal channel& 72      & 2400     & 15     &   200-500 & $\approx10$    \\ \hline
+\end{tabular}
+\end{center}
+where $D_{max}$ is the maximum diameter, $S_a$ - sensitive area,
+ $L_{max}$- maximum length to protect against the magnetic field,
+$B_{max}$ - maximum tolerated field by ``naked'' PMT and $M$ is the expected 
+shielding mass.
+\bigskip
+Most likely  R2083 PMTs will be used in the assembly H2431, enclosed into 
+the $\mu$-metal shielding $0.8mm$ thick, $60mm$ in external diameter and $200mm$ long.
+However, we plan to ask Hamamatsu to change the  H2431 design  in order to arrange a 
+overhung of $30-60mm$ from  the photo cathode side.  It is required for a 
+ more efficient shielding\footnote{The internal field drops significantly at the depth of one radius of the shield.}.
+%\verb|http://www.mushield.com/design-guide.shtm|
+
+
+\section{Principles for  magnetic shield design}
+
+Two  kinds of PMT shielding are possible:
+ passive and active shielding. 
+Active shielding makes use of  magnetic fields 
+produced by a  solenoid  around a PMT to cancel the 
+fringing magnetic field inside  PMT's.
+We do not plan to use active shielding 
+ because in our case the  harmful filed
+is  not solenoid-al. In addition such shield  will be 
+ more complex and more costly.
+
+In a passive shielding  the diamagnetism 
+of superconducting cylinder could be   used 
+to block the magnetic field  inside the cylinder.
+Such  kind of shielding looks very complex and expensive.
+
+In a traditional ferromagnetic PMT  shielding 
+field lines are concentrated in the bulk of a 
+ferromagnetic cylinder, reducing the fringing fields inside it.  
+%
+%Unfortunately, the ferromagnetic shield around PMTs
+%  need holes in both ends. 
+%These holes allow the shield to be slid onto the PMT,
+%Active shielding makes use of the magnetic field 
+%produced by a  coil to cancel the 
+%fringing magnetic field in the PMT's area. 
+%Active shielding may be  relatively light weight,
+% compared to ferromagnetic shielding. 
+%
+
+
+\subsection{How Magnetic Shields Works}
+%% estimate, roughly,  a  possible shield's   dimensions and  tolerated fields
+%using  simple methods suggested by different manufacturers of magnetic shields.
+%  Then we  
+Let's consider a simplified  model for a PMT  magnetic shield, 
+i.e. a ferromagnetic($\mu>>1$)
+cylinder of outer/inner  diameters $D_+/D_-$ , thickness 
+$t=\frac{1}{2}(D_+-D_-)$ and finite length $L\approx 4D_+$, which is 
+ placed into a uniform axial  field $B_o$. Assume that the last  is created
+ inside an infinitely long  solenoid of inner diameter  $2D_+$.
+The conservation of the magnetic flux in such system implicates:
+ \begin{equation}
+4B_o \pi D_+^2 \approx B_{in} \pi D_-^2 + B_m \pi (D_+^2-D_-^2)
+\label{eq004}
+\end{equation}
+Neglecting $B_{in}$ compared $B_o$ one can  
+estimate, roughly,  the field in the media, $B_m$, and inside the shield, $B_{in}$, as follows:
+ \begin{equation}
+B_m  \approx B_0\frac{D+}{t}=\mu(B_m)B_{in}
+\label{eq003}
+\end{equation}
+
+The problem of the  infinite  hollow ferromagnetic cylinders in the uniform 
+transverse magnetic fields 
+may be solved analytically, as well as the problem  for 
+ ellipsoids in axial fields.
+  Therefore,  
+the following formulas\footnote{
+Recommended by  the Magnetic Shield 
+ Corporation.\\\verb |http://www.magnetic-shield.com/dynamics/works.html} 
+ are available for preliminary
+ estimations of the magnetic shield efficiency
+\begin{equation}
+S=\frac{B_o}{B_{in}}\approx \mu({B_m})\frac{t}{D_+}~~~;~~~B_m\approx B_o\frac{D_+}{0.8t}~~~;~~~t\approx B_o\frac{D_+}{0.8B_m}
+\label{eq000}
+\end{equation}
+%
+where $S$ stands for the shielding factor of a cylinder,\\$\mu(B_m)$ - the permeability in function 
+on the field in the shielding material $B_m$
+ $B_o$ - the external  field,\\ $B_{in}$ - the 
+ field inside ferromagnetic,\\
+$t$ - the thickness of a shielding material and \\
+$D_+$ - the external diameter of the cylinder.\\ 
+%This  formula is 
+% mostly  applicable for a  transverse field. 
+%
+For a multilayer shielding of $n$ coaxial cylinders
+the resulting shielding factor is:
+\begin{equation}
+S=S_1 \times S_2 \times...\times S_n
+\label{eq777}
+\end{equation}
+%
+where $S_i, i=1,...,n$ are shielding factors for $i$'s 
+cylinder,  estimated via Eq.\ref{eq000}.
+
+Although the above formulas are recommended  for rough estimations 
+of the shield design at perpendicular direction 
+they may be used for axial fields, provided the 
+cylinder lengths exceeds  four  diameters.  
+
+ Hence,  our shielding  will be designed  as  2-3 coaxial 
+cylinders,  fabricated from  ferromagnetic  materials.
+However, prior to implementing  this simplified  approach it would be useful to understand,at least qualitatively,
+the dynamics of magnetic shielding. 
+
+Ferromagnetic properties of materials may be 
+reproduced assuming that  there are randomly oriented internal current loops,
+ responsible for a local  magnetization.  
+ The external  field
+ just correlates   these  current loops along its direction.
+Due to such correlation the  fields  inside   
+ferromagnetic  amplifies  by  orders of magnitude.
+However,  outside the ferromagnetic  it  drops, since outside the  oriented  current loops produce
+ a field  of   opposite  direction.  
+That is the basic  mechanism of  magnetic  shielding.
+
+   Effectively, local currents cancel each other in the bulk
+of the ferromagnetic, thus,  resulting in surface currents, only. 
+%In our case of a magnetic field applied along the axis of a  
+%hollow cylinder, 
+Due to a cylindrical symmetry,
+  the surface  currents will run in $\phi$-directions, 
+in which connection
+the inner surface current 
+will be opposite to the outer one.
+      Hence, our shield  may be approximated with  
+two  thin coaxial solenoids.
+The outer solenoid has the diameter $D_+$, while the inner diameter 
+$D_-=D_+-t$. At that point one may forget about the ferromagnetic 
+media, which is replaced now by currents in vacuum.
+
+Due to a well known formula for a 
+field at the axis $z$  of a thin  finite  solenoid,
+the magnetic field created by the outer surface, $B_+(z)$,   is:
+\begin{equation}
+%B_+=+\mu_o j_s \frac{L}{\sqrt{L^2+D_+^2}}
+B_{+}(z)=+\mu_o j_s(Cos~\alpha^+(z)-Cos~\beta^-(z)~)
+\label{eq31}
+\end{equation}
+where $j_s$ is the absolute value of surface current density,
+ $\alpha_^+(z)$ and $\beta_^+(z)$
+are  the two  angles,  created by $z$-axis and two  beams,
+ running from   point $z$ to the corresponding ends  of  a  cylinder.
+Due to  opposite direction of  inner surface 
+currents the corresponding field is opposite to that of external cylinder:
+\begin{equation}
+%B_-=-\mu_o j_s \frac{L}{\sqrt{L^2+D_-^2}}   
+B_-(z)=-\mu_o j_s(Cos~\alpha^-(z) - Cos~\beta^-(z)~)
+\label{eq32}
+\end{equation}
+%At  $t.D$  the angles 
+%$\alpha^+\approx \alpha^-$ and  
+Thus, the resulting vacuum field inside 
+the   shield $B_{in}$ , may  be evaluated as
+\begin{equation}
+%B_{in}(z)=B_o + B_+ - B_-\approx B_o-\mu_o j_s \frac{t}{L}  
+B_{in}(z)=B_o + B_+ - B_-\approx B_o- \mu_o j_s \frac{t}{D_-}g(z),
+\label{eq1}
+\end{equation}
+where  factor 
+%$g(z)\approx 2(Sin^2(\alpha_1)Cos(\alpha_1)-Sin^2(\alpha_2)Cos(\alpha_2))$%
+$g(z)\approx Sin(\alpha^+ + \alpha^-)-Sin(\beta^+ + \beta^-)$.
+%
+In  the Maxwell equation
+\begin{equation}
+rot~\textbf{H} = \textbf{j} ~
+\label{eqHJ}
+\end{equation}
+$\textbf{j}$ %=$\textbf{j_{ext}}$+$\textbf{j_s}$ 
+is the summ of external $\textbf{j}_e$  and
+ surface  $\textbf{j}_s$ current densities.
+Integrating Eq.\ref{eqHJ} 
+%along the axial direction $z$ 
+over a rectangular loop, 
+enclosing the inner surface element, 
+%at the $center$ of the solenoid 
+we find :  
+\begin{equation}
+H_m^z =H_{is}^z+j_s   
+\label{eqBJ1}
+\end{equation}
+where $H_m^z$ is the field inside the ``media'', 
+$H_{is}^z$ is the field at the 
+inner surface of the shield ,$j_s$ is the $\phi$ component of the 
+surface current density.
+Therefore, neglecting   radial components, one obtains:
+\newline
+\begin{equation} 
+B_m = B_{is}+\mu_o j_s=\mu(B_m) B_{is}\approx \mu(B_m)\kappa B_{in}  
+\label{eqBJ}
+\end{equation}
+where $\mu(B_m)>>1$ is the permeability at $B_m$, 
+$\kappa=\frac{B_{is}}{B_{in}}\leq1$ 
+accounts for radial non-uniformity
+ of the axial field inside  short solenoids.
+ 
+An important rule  may  be concluded  from the  Eq.\ref{eqBJ}. 
+This equation relates
+the internal ferromagnetic field to the surface currents. Assume that  
+a piece of ferromagnetic is placed  inside at   very close contact to the  shield's surface.
+In this case  the magnetization of this piece  has to be  equal to that of  
+the outer layer. Otherwise surface currents are not identical, that contradicts to charge  conservation.
+
+Therefore, on order to provide independent functioning of inner layer( according to Eq.\ref{777}), the close  
+surface contacts has to be excluded.
+
+ 
+Using  Eq.\ref{eqBJ}  to exclude  the term $\mu_o \j_s$ from
+Eq.\ref{eq1} we find:
+%
+\begin{equation}
+B_{in}=B_o-B_{in}(\mu(B_m)-\kappa)\frac{tg}{D_-}
+%=B_o+\mu(B_m)\frac{tg}{D_-}B_{in}  
+\label{eq11}
+\end{equation}
+%
+and neglecting $\kappa$ compared to $\mu$ we find
+%
+\begin{equation}
+B_{o}
+%=(1+\mu(B_m)\frac{tg}{D_-})B_{in}
+\approx \mu(B_m)\frac{tg}{D_-} B_{in}
+=\kappa^{-1}\frac{tg}{D_-}B_{m}~~~;~~~B_{m}=B_o\frac{\kappa D_-}{tg}
+%=\frac{tg}{D_-} B_{m} 
+\label{eq12}
+\end{equation}
+%
+The final relation between external and internal fields is:
+%
+\begin{equation}
+B_o \approx \mu(B_o \frac{\kappa D}{gt}) \frac{gt}{D} B_{in}
+\label{eq13}
+\end{equation}
+%
+%where $\alpha$ is the angle between the axial line and the beam running from the 
+%center of the cylinder to  its  most distant point. 
+At the center of a cylinder  $4D_-$ long  
+  $g\approx 0.96$,   $\kappa\approx 1$. Therefore
+\begin{equation}
+B_o \approx \mu(B_o \frac{D}{t}) \frac{t}{D} B_{in}
+\label{eqfinal}
+\end{equation}
+which  is  close  to the recommended  Eq.\ref{eq000}.
+
+
+%Magnetic shield compny 
+%alloys-perm-graph.ps.gz
+
+
+
+\begin{figure}[htbp]%#1
+\begin{center}
+%\includegraphics[width=13.4cm,clip=true,bb=-100 -40 730 850]{./figures_llg/CLASTOF.ps.gz}
+\includegraphics[width=16cm,clip=true,bb=0 0 500 500]{./magshieldGrilli-2.ps.gz}
+\end{center}
+\caption{FEA of the magnetic flux density $B$ inside the ``Russian Doll'' shield,
+  composed of two cylinders.  The external field 3000Gs(300mT). 
+Vertical scale is for  $B(Gs)$. Horizontal scale - transversal distance $D(in)$;
+ $D=5.04$ corresponds to the axial line of  cylinders. 
+The outer shield is a Netic cylinder $136mm$  
+external diameter, 1'' thick and  $250mm$ long.
+The second layer is a Hyperm-49 cylinder $84mm$ in outer  diameter
+%1/16''
+$1.6mm$ thick.
+ Minimum $B$ inside the cylinder is  $\approx0.23Gs$, only.
+This figure was 
+ kindly presented  by David Grilli from the Mu-Shield Company. 
+\label{shieldGrilli}}
+\end{figure}
+\clearpage
+
+
+
+
+\begin{figure}[htbp]%#1
+\begin{center}
+%\includegraphics[width=16.4cm,clip=true,bb=-100 -40 730 850]{./figures_llg/CLASTOF.ps.gz}
+\includegraphics[width=16cm,clip=true,bb= 0 0 500 700]{./Netic-conetic.ps.gz}
+\end{center}
+\caption{Permeability of NETIC and CO-NETIC from the Magnetic Shield Corp. 
+\label{muneco}}
+\end{figure}
+\clearpage
+
+
+
+\subsection{Ferromagnetic materials}
+Available ferromagnetic shielding materials come 
+in two types: those with high saturation and 
+those with high permeability.
+%, in other words, 
+%there is always trade-off. 
+High permeability materials are useful where the fields are small, 
+therefore,  high permeability materials are to ``wrap '' PMTs. 
+In high field regions, high saturation materials 
+should be used.  
+%A low saturation material 
+%in a high field region would need to be excessively thick.
+
+As a  high saturation ferromagnetic material
+ a  silicon steel (2.25% Si, 0.40% Al, balance Fe) may be implemented.
+ It has been  widely used  by  industry for relays and motors. 
+%specifically Allegheny Ludlum Relay Steel #5. 
+%The composition of silicon steel is 2.25% Si, 0.40% Al, balance Fe 
+It  is easy to form and  has moderately high saturation  $1.56/1.96T$ 
+for a  non-oriented/oriented grain makes, respectively.
+The more advanced and expensive  Netic alloy saturates at $2.14T$.
+
+The high permeability material is Conetic, 
+which contains 80.6% Ni and 14% Fe and is in the same 
+family metallurgically as Mu-metal.
+ Conetic may be  used for the inner  shield layer around PMTs.
+
+
+% about 10 cm away from the top flange of the magnet 
+%in order to catch most of the residual 
+%leakage field from silicon\u2013iron with 
+%its high permeability.
+
+
+
+
+
+
+
+
+\verb|http://www.mushield.com/design-guide.shtml|
+
+\section{Estimations}
+
+For our preliminary estimations of the shield parameters
+  we will use both  Eq.\ref{eq000}.
+% and  
+% Eq.\ref{eqfinal}. 
+We set the external magnetic field $B_o$ to be tolerated by  the shielding.
+First we estimate the filed inside the ferromagnetic,$B_m$.
+Then  we read the value of $\mu(B_m)$ from the Fig.\refn{muneco}.
+Next we  determine the magnetic field inside the shield, $B_{in}$. 
+This procedure will be repeated for each next 
+layer using  as input $B_o=B_{in}$ from the previous
+step, starting from the outer layer.
+The stages  of   such estimations are listed in Table~\ref{ca001}.
+In this table  the initial external field is  3000Gs. 
+Although the field inside th ferromagnetic is close to saturation, after the first layer
+the internal field is only $27.4Gs$. In such low field the permeability of the second 
+layer of the same ferromagnetic is 3300 that results in 0.4Gs field inside 
+the second layer. This rough  calculations are in good agreement with the FEA 
+calculations($0.23Gs$) performed for us by D.Grilli from the Mu-shield 
+company (see Fig.\ref{shieldGrilli}).  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}$ & $D_+$ & $D_-$ & $t$ & $B_m$& $\approx\mu$&$S$      &$B_{in}$     & Comm.   \\ 
+\# &  $Gs$  & $mm$  & $mm$  & $mm$  & $Gs$ &           &         &$Gs$         &         \\ \hline  
+1 &3000     &  136  &   86  & 25    & 18462&      600  & 110     & 27.4        & Netic   \\ \hline
+2 &27.4     &   84  &   80.8& 1.6   & 1797 &     3300  &  63     & 0.4         & Netic   \\ \hline
+3 &0.4      &  61.6 &  60   & 0.8   &  11  &    250000 &0.006$   &$\leq0.001$  & E989-05 \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{         \label{ca001}}
+\end{table}
+\clearpage
+%3&0.2       &  61.6 &  60  & 0.8   &  11  &     250000&0.006$   &  $\leq\times10^{-3}$ & E989-05 \\ \hline
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}$& $D_+$ & $D_-$ & $t$  & $B_m$  & $\mu$   & $S$    &$B_{in}$         & Comm. \\ 
+\#&$Gs$    & $mm$  & $mm$  & $mm$ & $Gs$   &         &        &$Gs$             &       \\ \hline  
+1 &3000    &  128  &  74   & 27   &  17600 &  1000   &  214   &  14             & Netic \\ 
+2 &14      &  74   &  70.8 & 1.6  &  810   &  1800   &  39    & 0.4             & Netic  \\ \hline \hline 
+1&3000     &   124 &  74   & 25   & 18560  & 600     & 120    & 24.8            & Netic \\ 
+2&24.8     & 73.6  &  72   & 0.8  & 2868   & 4500    & 48.6   & 0.5             & Netic \\ \hline
+% 2&14     &   -   &   -   &   -  &   -    &  300000 & $10^4$ & 1.5\times10^{-3}& Conetic \\ 
+% 3&0.2    &  61.6 &  60   & 0.8  &   329  &  150000 &$1935$  & 0.1\times10^{-3}& E989-05 \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{The H8500 shielding   against vs  $3000Gs$  at maximum   
+filed inside  ferromagnetic  set $B_m=17600, 18500$. \\
+$\#$ - layer number starting from the external layer, \\
+$B_o$ - external field, \\
+$B_m$ - fields in the ferromagnetic determined via   Eq.\ref{eq000}, \\
+$t$ - ferromagnetic thickness  determined via   Eq.\ref{eq000}, \\
+$\mu$ - permeability, determined from Fig.\ref{muneco},\\
+$B_{in}$ -fields inside the shielding.\\
+External diameter $128mm$    \label{H8500at17600} }
+\end{table}
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}$&$D_+$&$D_-$&$t$   &$B_m$  &$\approx\mu$&$S$   &$B_{in}$          & Comm.    \\ 
+\#&  $Gs$  &$mm$ &$mm$ &$mm$  &$Gs$   &            &      &$Gs$              &          \\ \hline  
+1    & 3000& 128 & 74  & 27   & 17600 & 1000       & 214  & 14               & Netic    \\  \hline 
+2    & 14  & 74  & 71  & 1.6  & 810   & 1800       & 39   & .35             & Netic    \\ \hline \hline 
+1    & 3000& 115 & 66  & 24.5 & 17600 & 1000       & 213  & 14               & Netic    \\  \hline 
+2    & 14  & 60  & 58.4& 0.8  & 1312  & 300000     & 4000 & .0035           & E989-05 \\ \hline \hline 
+1    & 2000& 92  & 66  & 13.1 & 17600 & 1000       & 142  & 14               & Netic    \\ \hline
+2    & 14  & 64  & 63.4& 0.8  & 1400  & 350000     & 4375 & .004             & Conetic  \\ \hline
+2    & 14  & 64  & 63.4& 0.8  & 1400  & 3500       & 44   & .4               & Netic    \\ \hline \hline 
+1    &3000 & 128 & 72  & 28   & 10900 & 4500       & 1200 & 2.5             & Netic    \\ \hline
+2    &2.5  &   - &   - &   -  & 140   & 120000     & 1920 &$.8\times10^{-3}$ & Conetic \\ \hline
+3    &0.2  &61.6 &  60 & 0.8  & 11    & 250000     & 6000 &$\leq\times10^{-3}& Conetic \\ \hline\hline 
+1    & 1000& 86  & 66  & 9.94 & 10800 & 5000       & 872  & 1.2    & Netic    \\ \hline
+2    & 1.2 & 64  & 63.4& 0.8  &  120  & 100000     & 1250 & 0.001  & E989-05  \\ \hline \hline
+1    & 500 & 74.6& 66  & 4.3  & 10800 & 5000       & 250  & 2.0    & Netic    \\ \hline
+2    & 2.0 & 60  & 58.4& 0.8  & 187   & 150000     & 2000 & 0.001  & E989-05  \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{R2083 multilayer  shielding at external fields  
+$B_{o}=3000,2000,1000,500Gs$. \\
+$\#$ - layer number starting from the external layer, \\
+$B_m$ - field  in the ferromagnetic determined via  Eq.\ref{eq000},  \\
+$\mu$ - permeability, determined from Fig.\ref{muneco},\\
+$B_{in}$ -fields inside the shielding.\\
+%External diameter $92mm/86$ at $2000Gs/1000Gs$\\
+\label{cal2}}
+\end{table}
+\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ & $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\ 
+\# &      $Gs$     & $mm$  & $mm$  & $mm$   &   $Gs$ &              &       & $Gs$              &       \\ \hline  
+1& 3000            & 105   &  66   &  19.8  &  20000 &     250      &  47.1 &  63.7             & Netic \\ \hline
+2& 63.7            &  64   &  63.4 &  0.8   &   6370 &   80000      &  1000 &  0.064            & Conetic      \\ 
+2& 63.7            &  64   &  60.8 &  1.6   &   3185 &  450000      & 11000 &  0.007            & Conetic      \\ \hline
+2& 63.7            &  64   &  63.4 &  1.6   &   3185 &    4500      &  110  &  0.7              & Netic       \\
+3& 0.064           &  60   &  58.4 &  0.8   &     6  & 60000        &   800 &      0            & E989-05      \\ \hline
+3& 0.7             &  60   &  58.4 &  0.8   &    60  &      80000   &   1000 & 0.7\times10^{-3} & E989-05      \\ \hlin
+\end{tabular}                                                      
+\end{center}
+\caption{R2083 shield   against of  $3000Gs$ at   ferromagnetic  $B_m=20000Gs$ ;
+ $\mu(B_m)=250$. \\
+$B_{o}$ - external field(s) \\
+$t$   - the ferromagnetic thickness  determined via  Eq.\ref{eq000})  \\
+$\mu$ - permeability, determined from Fig.\ref{muneco} \\
+$B_{in}$ -fields inside the  shielding cylinder.\\
+The external shield diameter $105mm$.  
+.\label{ca20000}}
+\end{tablemu250}
+\end{document}
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ & $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\ 
+\# &      $Gs$     & $mm$  & $mm$  & $mm$   &   $Gs$ &              &       & $Gs$              &       \\ \hline  
+1& 3000            & 115   &  66   &  24.5  &  17600 &   1000       &  213  &  63.7             & Netic \\ \hline
+2& 63.7            &  64   &  63.4 &  0.8   &   6370 &   80000      &  1000 &  0.064            & Conetic      \\ 
+2& 63.7            &  64   &  60.8 &  1.6   &   3185 &  450000      & 11000 &  0.007            & Conetic      \\ \hline
+3& 0.064           &  60   &  58.4 &  0.8   &     6  & 60000        &   800 &      0            & E989-05      \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{R2083  shield  against of  $3000Gs$ at  maximum ferromagnetic   $B_m=17600 G$ and 
+ $\mu(B_m)\approx 1000$. \\
+$B_{o}$ - external field(s) for the \#'s-layer  \\
+$t$   - the ferromagnetic thickness,  determined via  Eq.\ref{eq000})  \\
+$\mu$ - permeability, determined from Fig.\ref{muneco} \\
+$B_{in}$ -fields inside the  shielding cylinder .\\
+The external shield diameter $115mm$
+\label{ca17600}}
+\end{tablemu250}
+\end{document}
+
+
+
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl&$B_{o}       $ & $D_+$ & $D_-$ & $t$    &  $B_m$ & $\approx\mu$ &  $S$  & $B_{in}$          & Comm. \\ 
+\# &      $Gs$     & $mm$  & $mm$  & $mm$   &   $Gs$ &              &       & $Gs$              &       \\ \hline  
+1& 50              & 164.75&156.75 &     4  &  2578  &     4500     & 110   &  0.46             & Netic \\ \hline
+2& 0.46            & 151.37&149.77 &  0.4   &  2185  &     400000   & 530   &  0.001            & Conetic      \\ 
+%3&                 & 144.0 & 142.4 &  0.4   &   3185 &  450000      & 11000 &  0.007            &       \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{HTCC  shield  against of  $50Gs$.
+$B_{o}$ - external field(s) for the \#'s-layer  \\
+$t$   - the ferromagnetic thickness,  determined via  Eq.\ref{eq000})  \\
+$\mu$ - permeability, determined from Fig.\ref{muneco} \\
+$B_{in}$ -fields inside the  shielding cylinder .\\
+The external shield diameter $115mm$
+\label{ca17600}}
+\end{tablemu250}
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\section{Further  possible studies with micro channel PMTs}
+
+
+\paragraph{Motivation} manufacturers($Burle$) of the micro channel 
+plate PMTs are making progress
+          in the design of the MCP PMs. This may result in higher 
+          counting rate and higher magnetic field immunity, as well.
+          $Burle$ is developing 10- an 5-micron MCP PMs such as 18mm 85104
+	  with increased QE of $20-30\%$ .     
+\begin{enumerate}
+    
+     \item
+Develop a setup of 2 10(5) micron MCP PMs with on board 
+          pre-amplifiers.    
+
+     \item
+perform resolution/counting rate  tests with 2 MCP PMTs
+\end{enumerate}
+
+\paragraph{Current status} preliminary publications are done  
+                and  preliminary discussions  with the detector group members.
+We plan  to  publish  in NIM our recent results obtained with Burle 
+          85011 PMs. This paper will include the description of the 
+          on-board preamplifier, resolution measurements and, perhaps ,
+          magnetic field tests performed by the detector group.
+
+\paragraph{Labor}     $40 man\times day$ for  Pre-Amp/HV dividers by the  
+Detector Group.
+\paragraph{Equipment} Electronic lab of JLAB for  Pre-Amp/HV dividers.
+\paragraph{Materials} 2 MCP  PMTs, HV components  for voltage dividers.
+\paragraph{Funding}   8000\$(from Detector Group?) for 2 MCP  PMTs and electronics 
+components
+
+
+
+
+\newpage
+\end{document}

@@ -1,0 +1,705 @@
+\section{Prototyping and Component Testing}
+
+The design goals for the PCAL detailed in the previous sections are based 
+on the proposed geometry for {\tt CLAS12}, the combined performance of the 
+PCAL, the existing EC for {\tt CLAS12}, and experience gained from the 
+construction followed by 10 years of successful operation of the EC~\cite{ec}. 
+In addition, several factors have established the preliminary design.
+These principle considerations include: 
+
+\begin{itemize}
+\item Comparable geometric coverage for the PCAL with respect to the EC;
+\item Good resolution/calorimetry coverage for up to 10~GeV photons and 
+electrons;
+\item Improved particle identification ability to enhance final state
+reconstruction at higher energies; 
+\item Information on the longitudinal shower development for $e/\pi$
+discrimination;
+\item Fast calorimeter response for use in the Level-1 trigger;
+\item Sufficient position information to resolve $\pi^0 \to \gamma \gamma$; 
+\item Compatibility with the present EC and other {\tt CLAS} components;
+\item Mechanical stability;
+\item Mechanical support viability;
+\item Constructibility (reasonable facilities, manpower and resources
+to assemble the detectors); 
+\item Reasonable options for testing components in order to establish
+PCAL operational parameters. 
+\end{itemize}
+
+In the construction of the existing EC system, the components were 
+carefully characterized (e.g. scintillator attenuation, light transmission, 
+photo-electron efficiencies). Calibration procedures were developed and 
+continue to be improved to update the relevant properties (e.g. PMT gains 
+and pedestal).  This information has been used to construct algorithms for 
+extracting particle identification, particle position, and particle energy 
+\cite{ecrec}.  An EC electronic sum is available as part of the current 
+trigger options for {\tt CLAS} and has proven to be essential for limiting 
+the amount of recorded data, while identifying useful final states.  The 
+calorimeter has operated reliably, providing critical information on reaction 
+final states, with sound performance in terms of maintenance and stability. 
+The mechanical structures for the calorimeter movement and support work well. 
+Thus part of the PCAL design has been based on the existing EC.
+
+To match the above goals, a lead-scintillator sampling calorimeter with a
+wavelength shifting fiber readout was chosen.  Scintillator light readout 
+systems with embedded fibers are well known.  This technique was used, for
+example, in the MINOS FAR detector~\cite{MINOS}, and many other ``tile''
+calorimeters. 
+
+The main design features of the PCAL are:
+
+\begin{itemize}
+\item Triangular shape with sides of order 4.0~m in length;
+\item Sampling structure with Pb as the radiator and scintillator as the 
+      active medium;
+  \begin{itemize}
+  \item Lead 2.2~mm (available sheets) [simulation verifies this choice of 
+        sheet depth];
+  \item Scintillator strips:
+      \begin{itemize}
+      \item Scintillator 10-mm longitudinal depth;
+      \item Strip width will be important in determining position resolution;
+      \item Simulation suggests that 4.5-cm width is adequate to reach 
+            required position resolution;
+      \item $U$, $V$, and $W$ readout;
+      \end{itemize}
+   \end{itemize}
+\item Light readout needs to reach several photo-electrons/MeV of deposited 
+      energy;
+\item Components need to be combined to reduce the required number of PMTs;
+\item Wavelength-shifting fibers are the chosen method for light collection.
+\end{itemize}
+
+Component testing was primarily focused on finding the components that did 
+not compromise the design goals, while minimizing costs.  Tests were 
+conducted to find the optimal:
+ 
+\begin{itemize}
+\item Wavelength-shifting fibers;
+\item Photomultiplier tubes;
+\item Number of fibers per strip;
+\item Grooved scintillators;
+\item Glue that binds fibers and scintillators and improves optical properties.
+\end{itemize}
+
+Tests were also designed to characterize combinations of components in
+terms of the number photo-electrons/MeV and to verify the expected 
+attenuation lengths for the scintillator and the fiber.
+
+For these test measurements, several different types of scintillator,
+wavelength-shifting fibers (WLS - single and multi-clad), and PMTs were 
+studied, see Table~\ref{tab:req}.  Extruded scintillators from Fermilab (FNAL) 
+and Kharkov, as well as commercial scintillators from Eljen were compared on 
+the basis of light yield and cost.  The FNAL and Kharkov strips are grooved 
+during the extrusion by the die~\cite{fnalex,yerex}, whereas the grooves for 
+the Eljen scintillators were machined by the manufacturer.  The grooves 
+provide insets for the WLS fibers.  The fibers are held in place by either a 
+UV-cured glue or an epoxy.  Light absorption by the fiber is influenced by 
+the optical properties of the glue.  Preliminary results indicate that an 
+optical epoxy is adequate, both in terms of bonding and light transmission. 
+The more expensive UV-cured optical glues were used during these tests.  The 
+FNAL and Kharkov scintillator strips were coated with a reflective material 
+(1-mm titanium dioxide, excluding the inside surface of grooves) to improve 
+light collection.  Tests on the Eljen scintillator were done with and without 
+an additional aluminized-mylar surface. The Hamamatsu R1450-13 and R6095 PMTs 
+were tested because of their high quantum efficiency at 500~nm.  R1450-13
+and R6095 PMTs were chosen with QE $>$ 18\ and $>$16\% at 500~nm and studied 
+as possible options.  Light yield measurements were done with Kuraray 1.5-mm 
+and 2-mm diameter Y11 fibers to determine the dependence of the light yield 
+on the fiber diameter.  Finally, a sufficient sample of scintillator-WLSF-PMT 
+combinations was studied to determine the optimal combination.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[hbt!]
+\begin{center}
+\begin{tabular}{|c||c|c|c|} \hline 
+PMT           & Type    & Photo-cathode & \# of stages \\
+              &         &               &              \\ \hline
+Hamamatsu     & R7899EG & 25 mm         & 10 \\
+              & R1450-13& 19 mm         & 10 \\
+              & R6095   & 28 mm         & 11 \\ \hline 
+ElectronTubes & 9124B   & 30 mm         & 11 \\ \hline 
+Photonis      & XP1912  & 19 mm         & 10 \\
+              & XP2802  & 19 mm         & 10 \\ \hline \hline 
+WLS fibers    & Type    & Diameter      & Cladding \\ \hline 
+Kuraray       & Y11     & 2 mm          & Single   \\
+              & Y11     & 1.5 mm        & Single   \\
+              & Y11     & 1 mm          & Single   \\
+              & Y11     & 1 mm          & Multi    \\ \hline 
+Bicron        & BC-91A  & 1 mm          & Single   \\ 
+              & BC-92   & 1 mm          & Single   \\ \hline \hline 
+Scintillators & Type    & Cross section &\# of grooves \\ \hline 
+Eljen Tech.   & EJ-204  & $3\times 1$ cm$^2$ & 4  \\
+              & EJ-204  & $3\times 1$ cm$^2$ & No grooves \\ \hline 
+FNAL          & MINOS   & $4\times 1$ cm$^2$ & 1  \\ \hline 
+Amcrys-Plast, Kharkov   &               & $2.6\times 1$ cm$^2$ & 2 \\
+                        &               & $2.6\times 1$ cm$^2$ & 3 \\ \hline  
+\end{tabular}
+\end{center} 
+\caption{\small{Pre-shower calorimeter readout components used in the test.}} 
+\label{tab:req} 
+\end{table} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Setup}
+
+Measurements were performed in the semi-clean room in the EEL building at 
+JLab using a 4-m long dark box (see Fig.~\ref{fig:dbox}).  The box was 
+instrumented with a moving cart.  In Fig.~\ref{fig:setup}, a schematic view 
+of the setup is shown.  Scintillator strips with fibers were secured inside 
+the box.  The trigger PMT was attached directly to the end of the 
+scintillator strip through an acrylic light guide.  For the 
+scintillator-light guide and the light guide-PMT connections, Bicron BC-630 
+optical grease was used. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!tbh]
+\vspace{110mm} 
+\special{psfile=../preshower/dbox.eps hscale=50 vscale=50 hoffset=35 voffset=0}
+\caption{\small{Picture of the dark box. The moveable cart is mounted on 
+rails.}}
+\label{fig:dbox}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+WLS fibers were glued inside the scintillator grooves using Dymax UV-curable 
+optical glue OP-52.  The fibers were extended about 40~cm from the end of the 
+scintillator in order to connect to the photo-cathode of a test PMT.  The 
+test PMT was installed inside a plastic housing, a tube with $\mu$-metal 
+shielding inside.  The housing tube had two end-caps, one with connectors for 
+the HV and signal cables, and the another with an adapter for the fiber 
+connection~\cite{adapter}.  To secure the fiber on the photo-cathode of the 
+test PMT, several plastic adapters were built with thin metallic tubes as 
+inserts.  The inner diameter of the tubes was chosen to have a tight fit for 
+the fibers.  The tubes were aligned along the axis of the PMT and guided the 
+fibers in the direction perpendicular to the photo-cathode.  Bicron BC-630 
+optical grease was used between the fiber and the photo-cathode for good 
+optical contact.     
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[!t]
+\vspace{50mm} 
+\special{psfile=../preshower/setup.eps hscale=70 vscale=60 hoffset=70 voffset=0}
+\caption{\small{Schematic view of the setup for the light yield measurements.}}
+\label{fig:setup}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The readout electronics of the system consisted of a LeCroy 1881M ADC and a 
+Philips 704 discriminator.  As a gate for the ADC, the discriminated pulse 
+from the trigger PMT was used.  Signals of the test and the trigger PMTs were 
+delayed and connected to the ADC inputs, see Fig.~\ref{fig:setup}.  The
+ADC information was read out using the standard {\tt CLAS} data
+acquisition (DAQ) software.
+
+\subsection{Determination of the Number of Photo-electrons} 
+
+For the analysis of the photo-electron statistics, the method developed in
+Ref.~\cite{yield} was used.  Each ADC spectrum was fit with a sum of a 
+Poisson distribution, $P_i(N_{pe})$, convoluted with a Gaussian function,
+$C_i(n_{ch})$.  Poisson distributions describe the photo-electron 
+distribution, while the Gaussians are used to describe the PMT response. 
+The predicted ADC spectrum for a given average number of photo-electrons 
+will be:
+
+\begin{eqnarray}
+\label{eq:fit}
+A&=&c\cdot\sum_i P_i(N_{pe})\times C_i(n_{ch}) \\
+\label{eq:pi}
+P_i(N_{pe})&=&\frac {N^i_{pe}\cdot e^{-N_{pe}} } {i!} \\
+\label{eq:ci}
+C_i(n_{ch})&=&\frac {1} {\sigma_1\cdot\sqrt{i}} \cdot
+\exp \left( -(\frac {n_{ch}-(a_1+(i-1)\cdot a_0)} 
+{\sigma_1\cdot\sqrt{2i}})^2 \right). 
+\end{eqnarray}
+ 
+In eq.(\ref{eq:fit}), the summation goes over the possible number of
+photo-electrons in the spectrum, $i$.  The coefficient $c$ is for the 
+overall normalization and $N_{pe}$ is the average number of photo-electrons. 
+In eq.(\ref{eq:ci}), $n_{ch}$ is the pedestal-subtracted ADC channel number. 
+The parameters $a_1$ and $\sigma_1$ are the position and the standard 
+deviation of the single photo-electron peak in units of ADC channel. 
+$a_0$ is the distance between two adjacent photo-electron peaks in units 
+of ADC channel (not necessarily equal to $a_1$). The fit parameters were 
+$c$, $N_{pe}$, and $a_0$. 
+
+The parameters $a_1$ and $\sigma_1$ were defined from fits to a single
+photo-electron distribution for each of the test PMTs.  Two examples of 
+single photo-electron peaks are shown in Fig.~\ref{fig:sing}.  The left 
+plot shows the response of the Photonis XP2802 PMT as the light intensity 
+is lowered.  The right graph shows a single photo-electron peak for the 
+Hamamatsu R6095 PMT.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[tb]
+\vspace{90mm} 
+\special{psfile=../preshower/rel_spec_xp2802.eps hscale=60 vscale=60 hoffset=35
+voffset=0}
+\special{psfile=../preshower/r6095_spe_fit.eps hscale=42 vscale=50 hoffset=235
+ voffset=0}
+\caption{\small{(Left) ADC distribution of the XP2802 PMT corresponding to a 
+few and single photo-electrons.  (Right) Fit to the single photo-electron 
+distribution of the Hamamatsu R6095 PMT.  The fit was done using the sum of 
+two Gaussians, one for the ADC pedestal and a second one for the single 
+photo-electron distribution.}}
+\label{fig:sing}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Determination of the Absolute Light Yield}
+
+Since the measurements were carried out with a $\beta$-source, the amount 
+of energy deposited for a given event will vary significantly.  Most of 
+the measurements were done with a $^{90}$Sr source that provided a 2.3-MeV 
+$\beta$ based on the decay $^{90}{\rm Sr} \to 0.546~{\rm MeV} \beta^- +
+^{90}{\rm Y}  \to 2.28~{\rm MeV} \beta^-$.  The measured responses will,
+however, depend on the part of the $\beta$ spectrum that was selected by the 
+trigger PMT.  A typical spectrum is shown in Fig.~\ref{fig:trigpm}.  To reduce 
+the systematics due to variations in the trigger conditions and to estimate 
+the deposited energy, events from the endpoint of the $\beta$ spectrum 
+($\sim$2~MeV) were used in the comparisons.  The endpoint was identified by 
+increasing the trigger threshold until the average $N_{pe}$ remained constant. 
+In Fig.~\ref{fig:b14}, fits to the ADC distributions of the Hamamatsu R7899EG 
+and R6095 PMTs for different trigger settings (ADC channel 550 to 600) are 
+presented.  The dependence of $N_{pe}$ on the trigger PMT ADC channel is 
+shown in Fig.~\ref{fig:npe}.  As one would expect, the number of 
+photo-electrons increases with increasing trigger ADC channel and flattens 
+out at the end.  The number of photo-electrons at the endpoint was taken as 
+the light yield corresponding to a $\sim$2~MeV energy deposition.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!t]
+\vspace{130mm} 
+\special{psfile=../preshower/trig_test_adc.eps hscale=70 vscale=80
+hoffset=55 voffset=-5} 
+\caption{\small{ADC spectra of the trigger and test PMTs. The test PMT ADC
+distributions for different slices of the trigger PMT ADC were fitted to get 
+the photo-electron statistics.}} 
+\label{fig:trigpm}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h!t]
+\vspace{130mm} 
+\special{psfile=../preshower/bin14_7899_6095.eps hscale=80 vscale=80 
+hoffset=35 voffset=-5} 
+\caption{\small{Fit to the ADC spectra of the Hamamatsu R7899EG and R6095
+PMTs with eq.(\ref{eq:pi}). The spectra correspond to the trigger PMT ADC 
+channels 550 to 600.}} 
+\label{fig:b14}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\vspace{11.5cm} 
+\special{psfile=../preshower/npe_7899_6095.eps hscale=70 vscale=70 hoffset=75 
+voffset=0} 
+\caption{\small{Dependence of $N_{pe}$ on the trigger PMT ADC channel.  The 
+closed squares are $N_{pe}$ for the R7899EG PMT and the open squares are for 
+the R6095 PMT.  The solid line curve is the $\chi^2$ distribution for the 
+fit to the spectra of the R7899EG PMT.}} 
+\label{fig:npe}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Light Yield with Single-Fiber Readout}
+
+Studies of the PMT response were performed with the same FNAL scintillator 
+and the single-clad 1-mm diameter Y11 WLS fiber (WLSF).  Sample results are 
+shown in Fig.~\ref{fig:diffpm}.  The response was extrapolated to the endpoint 
+energy by increasing the trigger thresholds.  All of the fits show the 
+expected flattening at the end of the spectrum.  The tabulated yields 
+(see Table \ref{tab:diffpm}) are based on the endpoint extrapolation to 
+$\sim$2~MeV energy deposition. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\vspace{130mm} 
+\special{psfile=../preshower/diff_pmt_npe.eps hscale=60 vscale=60 hoffset=75 
+voffset=0}
+\mbox{
+\begin{picture}(-120,-120)(350,0)
+\put(450,7){\large {\bf Trigger PMT ADC bin center}}
+\put(380,210){\large {\bf $N_{pe}$}}
+\end{picture}}
+\caption{\small{Dependence of $N_{pe}$ on the trigger PMT ADC channel.  The
+closed squares are $N_{pe}$ for R7899EG (red), R6095 (black), XP2802 (blue), 
+and R1450 (green) PMTs.  The open squares are the $\chi^2$ distributions for 
+the fits (in the same color coding).}} 
+\label{fig:diffpm}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht!]
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|c|c|} \hline 
+PMT & R7899EG & R6095 & XP2802 & R1450 & 9124B \\ \hline
+$N_{pe}$ & 10.3 & 7.6 & 7.3 & 6.5 & 4.7   \\ \hline 
+$\sigma_{N_{pe}}$ & 0.53 & 0.57 & 0.39 & 0.17 & 0.14 \\ \hline 
+$\chi^2$ & 1.7 & 0.92 & 1.16 & 1.23 & 0.7 \\ \hline  
+\end{tabular} 
+\end{center} 
+\caption{\small{The number of photo-electrons for different PMTs
+corresponding to a 2~MeV energy deposition in the FNAL extruded scintillator 
+with one groove.  Readout employed a 1-mm diameter, single-clad Y11 WLS 
+fiber.}}
+\label{tab:diffpm} 
+\end{table} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The Hamamatsu R7899EG (green extended photo-cathode) PMT has the highest 
+light yield, followed by the Hamamatsu R6095 PMT with $\sim$26\% fewer 
+photo-electrons.  The other PMTs, the PHOTONIS XP2902, the ElectronTubes 
+9124B, and the Hamamatsu R1450, did not perform as well. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb!]
+\vspace{120mm} 
+\special{psfile=../preshower/diff_scint.eps hscale=60 vscale=60 hoffset=75 
+voffset=0} 
+\mbox{
+\begin{picture}(-120,-120)(350,0)
+\put(450,7){\large {\bf Trigger PMT ADC bin center}}
+\put(380,210){\large {\bf $N_{pe}$}}
+\end{picture}}
+\caption{\small{Dependence of $N_{pe}$ on the trigger PMT ADC channel.  The
+closed squares are $N_{pe}$ for the FNAL extruded scintillator strip (red), 
+Kharkov extruded scintillator strip (green), and the Eljen diamond-cut strip 
+(blue).  Note that the FNAL and Kharkov scintillator strips have a reflective
+coating, while the Eljen scintillator was wrapped only in aluminized mylar.}} 
+\label{fig:diffsc}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Comparison of the scintillators was done using an R6095 PMT.  All of 
+the strips had a 1-mm, single-clad Y11 fiber glued in the groove on the 
+surface of the strip.  The EJ204 scintillator did not have a reflective 
+coating, therefore two measurements with and without wrapping were done. 
+The results are tabulated in Table~\ref{tab:scint} and are shown in 
+Fig.~\ref{fig:diffsc}.  The FNAL extruded scintillator showed the highest 
+light yield.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht!]
+\begin{center}
+\begin{tabular}{|c||c|c|c|c|} \hline 
+         & FNAL & Eljen & Eljen   & Kharkov \\
+         &      &       & wrapped &         \\ \hline 
+$N_{pe}$ & 7.6  & 2.5   & 5.7     & 6.8     \\ \hline 
+$\sigma_{N_{pe}}$ & 0.57 & 0.55 & 0.33 & 0.23 \\ \hline 
+$\chi^2$ & 0.92 & 1.08 & 1.1 & 1.02 \\ \hline  
+\end{tabular} 
+\end{center} 
+\caption{\small{The number of photo-electrons for 2~MeV of energy deposition 
+in different scintillator strips. Readout was with 1-mm, single-clad Y11 WLS
+fibers and an R6095 PMT.}} 
+\label{tab:scint} 
+\end{table} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The candidate WLS fibers were studied. Different fiber types and fiber
+diameters were glued into the FNAL scintillator strip and the photo-electron 
+statistics were measured with the Hamamatsu R7899EG PMT.  The relative light 
+yield for different fibers is presented in Fig.~\ref{fig:wfs}.  The light 
+yield for the Bicron G92 fiber is not presented because it was too low (not a 
+surprise since G92 is designed to have a fast response time and has a small 
+attenuation length).
+
+The number of photo-electrons was observed to increase with the diameter of 
+the fiber.  A 1.5-mm fiber has $\sim$25\% more light than a 1-mm diameter 
+fiber, and a 2-mm fiber has $\sim$40\% more light.  The light yield is also 
+higher for multi-clad fibers compared to single-clad by about 20\%.  Bicron 
+G91A 1-mm diameter, single-clad fiber has about 10\% less light yield than 
+Kuraray 1.0-mm, single-clad Y11 fiber.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\vspace{110mm} 
+\special{psfile=../preshower/diff_fibers.eps hscale=70 vscale=70 hoffset=70 
+voffset=-20} 
+\caption{\small{Light yield for different WLS fiber readout relative to 1-mm
+diameter, single-clad Y11 fiber. In all cases, the fibers were glued to the
+FNAL extruded fiber and the Hamamatsu R7899 PMT was used for the readout.}} 
+\label{fig:wfs}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{More Measurements}
+
+Additional measurements have been performed to check the systematics of the 
+results.  The same scintillator-WLSF-PMT combinations were measured at several 
+settings.  Results from different measurements were consistent to within a 
+few percent.  One of the major sources of uncertainty is the determination
+of the single photo-electron peak position and the Gaussian width for a given
+PMT.  Therefore, measurements for one PMT but several different voltages were
+performed.  In Fig.~\ref{fig:diffhv}, the dependence in the measured number of 
+photo-electrons vs. the trigger PMT response for different HV settings is
+shown.  The maximum difference in the estimated number of photo-electrons for 
+the extrapolated end point is $<$10\%.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\vspace{120mm} 
+\special{psfile=../preshower/636_637_638.eps hscale=60 vscale=60 hoffset=70 
+voffset=0} 
+\mbox{
+\begin{picture}(-120,-120)(350,0)
+\put(450,7){\large {\bf Trigger PMT ADC bin center}}
+\put(380,220){\large {\bf $N_{pe}$}}
+\end{picture}}
+\caption{\small{Light yield for the Hamamatsu R6095 PMT operated at different
+HV settings.  The blue squares correspond to 800~V, the red squares are at 
+850~V, and the green squares are at 900~V.  The open squares correspond to 
+the $\chi^2$ distributions of the fits.}}
+\label{fig:diffhv}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Measurements were made with cosmic ray muons in order to verify the above 
+results.  The light yield for the R6095 PMT with FNAL scintillator and 
+1-mm diameter single-clad Y11 fibers was determined.  As a gate for the ADC, 
+the coincidence of the trigger PMT and the scintillator counter positioned
+above the scintillator strip was used.  The counter had 1-cm thick, 
+$1.5 \times 4$~cm$^2$ scintillator.   A fit to the test PMT spectrum, 
+selected with a cut on the trigger PMT ADC in the range of MIP energy 
+deposition, yielded $\sim$9 photo-electrons.  There is a difference of 
+$\sim$20\% compared to the number of photo-electrons obtained with the 
+$^{90}$Sr source ($\sim$2~MeV energy deposition). This difference can be 
+explained by the fact that in the cosmic setup, the average path of particles 
+is $>$1~cm.  Also the energy loss in the 1-mm titanium dioxide coating 
+would lower the $\beta$ energy deposited, but it would not influence the 
+cosmic ray muon energy deposition.  More precise measurements of the absolute 
+photo-electron yield will be done with a box prototype (see below).
+
+\subsection{Multiple Fiber Readout}
+
+In the final design of the PCAL, each scintillator strip will be read out 
+with three WLS green fibers embedded in the grooves on the surface of the
+scintillator strip.  To estimate the expected light yield for the three 
+fiber readout, the Amcrys-Plast, Kharkov extruded scintillator strips with
+three grooves were used with Kuraray 1-mm diameter, single-clad Y11 fibers. 
+In Fig.~\ref{fig:13f}, the light yield dependences on the trigger PMT ADC 
+bin center are shown for one, two, and three fiber readout. The source 
+($^{90}$Sr) position was unchanged during these measurements.  As one can 
+see, the number of photo-electrons is proportional to the number of fibers. 
+In the figure the open squares represent the $\chi^2$ distribution for the 
+fit to the two fiber readout case.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\vspace{12.0cm} 
+\special{psfile=../preshower/1_to_3f.eps hscale=70 vscale=70 hoffset=60 
+voffset=0}
+\caption{\small{Dependence of $N_{pe}$ on the trigger PMT ADC channel for one 
+(closed squares), two (closed upward triangles), and three (closed downward 
+triangles) WLS fiber readout from the Kharkov scintillator strip with three 
+grooves on the surface. The source was $^{90}$Sr and the readout PMT was the 
+R6095.  The open squares represent the $\chi^2$ distributions for the fit to 
+the two fiber readout case.}} 
+\label{fig:13f}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The source position dependence was studied using three fiber readout.  The
+source was moved on the surface of the strip from one side to the other, and 
+the measurements of the light yield were performed at four points.  The 
+results are shown in Fig.~\ref{fig:coord}.  No dependence on the position 
+of the source is observed.  However, it should be noted that the multi-fiber 
+readout and the position dependence should be checked with the final strip 
+geometry since the Kharkov scintillators are only 2.63-cm wide, while for 
+the pre-shower, 4.5-cm wide scintillators will be used.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht!]
+\vspace{110mm} 
+\special{psfile=../preshower/coord_dep.eps hscale=70 vscale=70 hoffset=60 
+voffset=-5}
+\caption{\small{Dependence of $N_{pe}$ on the trigger PMT ADC channel for 
+the three fiber readout of the Kharkov three-groove scintillator strip. 
+Different color symbols correspond to different position of the $^{90}$Sr 
+source. For light readout, the R6095 PMT was used.}} 
+\label{fig:coord}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Summary of the Test Measurements}
+
+The light yield for several different types of scintillator strips, WLS
+green fibers, and PMTs was measured.  The purpose of these measurements
+was to select the best combination of the scintillator-WLSF-PMT based on
+the performance and price.  Systematic uncertainties of the relative
+light yield measurements of different combinations of
+scintillator-WLSF-PMT were $<$10\%. For the absolute light yield, the 
+estimated systematic uncertainty was $\sim$20\%.
+
+The best results were obtained with the FNAL extruded scintillator, Kuraray 
+Y11 fibers, and the Hamamatsu R7899EG PMT. The Hamamatsu R6095 PMT, selected 
+with QE $>$16\% at 500~nm, showed only $\sim$25\% less light yield, while in 
+price it is about 33\% times less expensive.  Multi-clad fiber readout showed 
+$\sim$20\% more light than single-clad fiber readout, but it is about 35\% 
+more expensive. 
+
+Based on the measurement results and the available price estimates, the 
+choice for the pre-shower will be: the FNAL extruded scintillator, Kuraray
+1-mm diameter, single-clad Y11 fiber, and the Hamamatsu R6095 PMT,
+selected with QE $>$16\% at 500~nm.  It should be noted that by the
+performance and price, extruded scintillators from Amcrys-Plast, Kharkov 
+(Ukraine), Bicron G91A wavelength-shifting fibers, and the Hamamatsu 
+R1450 PMT, selected to have $>$18\% quantum efficiency at 500~nm, were not
+too far from the best choice set and generally meet the requirements
+for the pre-shower.     
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{||c||c||} \hline 
+ Component    & Optimal Choice \\ \hline 
+ WLS Fiber    & Kuraray 1-mm diameter, single clad WLS fiber (Y11) \\ \hline 
+ PMT          & Hamamatsu R6095 PMT, selected with QE $>$16\% at 500~nm \\ \hline  
+ Scintillator & FNAL extruded scintillator \\ \hline  
+\end{tabular} 
+\end{center} 
+\caption{\small{Final choice for the pre-shower calorimeter components.}}
+\label{tab:choice} 
+\end{table} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+\subsection{Prototype of the PCAL Module}
+
+A small-size prototype has been designed and constructed from existing
+materials.  The cross section of the prototype has a rectangular shape and 
+is on the order of 30~cm.  The prototype contains 15 layers of scintillator 
+and 14 layers of lead.  Top and side views of this prototype are shown in 
+Fig.~\ref{fig:boxpro1}.  The scintillator layers were read out on three 
+sides ($X1$, $Y$, $X2$), so as to mimic the final ($UVW$) readout planned 
+for the PCAL.  In each view there were five readout strips channels. 
+The scintillator and lead layers were stacked using horizontal supports to 
+secure them inside the box.  There were openings made in these supports and 
+on the side walls to allow the WLS fibers to come out of the box.  To connect 
+to the PMTs, the fibers were glued inside holders located on shelfs that were 
+attached along the side plates, outside of the box.  The ends of the fibers 
+were polished and the PMTs were attached to the fibers using an optical gel. 
+Only $X1$ and $Y$ views were furnished with Hamamatsu R6095 PMTs. On $X2$, 
+5 different PMTs were used.  The full five module longitudinal depth in each 
+view of the prototype will allow accurate characterization of the shower and 
+a fairly complete determination of the combined response of the components in 
+terms of energy and timing.  The prototype will be placed in the Hall B beam 
+for direct studies with electrons.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb]
+\vspace{8.5cm} 
+\special{psfile=../preshower/presh_box_1.eps hscale=40 vscale=40 hoffset=40 
+voffset=0}
+\special{psfile=../preshower/presh_box_3.eps hscale=60 vscale=60 hoffset=245 
+voffset=10}
+\caption{\small{Two views of the box prototype currently under construction. 
+The full 5 module longitudinal depth will allow study of the behavior of 
+shower development and actual sampling features using cosmic rays or
+possibly from in-beam tests.}}
+\label{fig:boxpro1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The first measurements with the prototype were performed using cosmic ray
+muons.  In Fig.~\ref{fig:cosmset}, a schematic of the test setup is shown. 
+As a trigger, a coincidence of a scintillator counter, located on top of
+the prototype, with an OR of one of the prototype layers was used.  The
+signals from each PMT were split into two parts with a ratio of $2:1$.  The 
+larger part was sent to the discriminator and then to the trigger logic 
+and TDCs.  The smaller part was delayed and sent to the ADC inputs. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb]
+\vspace{13.cm} 
+\special{psfile=../preshower/pcalDAQ.epsi hscale=57 vscale=57 hoffset=-10 
+voffset=0}
+\caption{\small{Schematic layout of the cosmic test setup of the PCAL 
+prototype.}}
+\label{fig:cosmset}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The main purpose of the cosmic test was to determine the average number of
+photo-electrons per MeV of energy deposition, and to compare this with the
+single strip measurements presented above. In Fig.~\ref{fig:XADC}, ADC 
+spectra of all five PMTs on the $X1$ view are shown.  In these
+distributions, events when only a single PMT is fired in all three views 
+are selected.  This selection ensures an MIP crossing through the system. 
+The ADC distributions in the figure correspond to the MIP energy
+distribution and have a characteristic Landau shape.  Fits were performed
+using two Gaussian functions and the peak position of the Gaussian with
+the narrower width was taken as the point of 2~MeV energy deposition in a
+single scintillator strip.  The corresponding distribution of the $Y$ view 
+is shown in Fig.~\ref{fig:YADC}.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb]
+\vspace{14.cm} 
+\special{psfile=../preshower/adc_x1.epsi hscale=60 vscale=60 hoffset=40 
+voffset=0}
+\caption{\small{ADC spectra of the $X1$ view PMTs corresponding to the MIP 
+energy deposition.}}
+\label{fig:XADC}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htb]
+\vspace{14.cm} 
+\special{psfile=../preshower/adc_y.epsi hscale=60 vscale=60 hoffset=40 
+voffset=0}
+\caption{\small{ADC spectra of the $Y$ view PMTs corresponding to the MIP 
+energy deposition.}}
+\label{fig:YADC}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To determine the photo-electron statistics, for each PMT position, the
+single photo-electron peak at a given voltage was measured using a
+setup with a trigger PMT and a LED.  For accurate determination of the
+single photo-electron peak position, the gain vs. voltage for each PMT was
+measured in the single photo-electron regime and in the regime when a large
+amount of light was directed to the photo-cathode.  Corrections to the
+light emission stability of the LED were applied using the trigger PMT
+pulse.  In Table~\ref{tab:pestat} the obtained photo-electron statistics for
+all 10 R6095 PMTs are presented.  The average number of photo-electrons 
+obtained is in good agreement with the expected number of photo-electrons 
+from previous test measurements with single strips.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[hbt!]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|} \hline 
+    & &  & ADC peak & ADC
+peak & \# of p.e. \\ 
+Channel & \# of fibers & PMT HV (V)  & for MIP (1/3) & for s.p.e.
+& for 1 MeV \\ 
+\hline
+X1-1 & 15 & 786 & $82.9\pm0.5$& 3.3& 7.5 \\
+X1-2 & 15 & 791 & $95.4\pm0.2$& 2.9& 9.7 \\
+X1-3 & 15 & 841 & $105.5\pm0.3$& 4.3& 7.2 \\
+X1-4 & 15 & 825 & $104.\pm0.3$& 3.8& 8.1 \\
+X1-5 & 14 & 855 & $116.3\pm0.6$& 5.1& 6.7 \\
+Y-1 & 15 & 865 & $128.3\pm0.7$& 3.4& 11.3 \\
+Y-2 & 14 & 822 & $102.9\pm0.5$& 3.7& 8.1 \\
+Y-3 & 15 & 818 & $96.4\pm0.3$& 2.2& 12.8 \\
+Y-4 & 15 & 762 & $87.4\pm0.2$& 2.9& 8.8 \\
+Y-5 & 15 & 733 & $78\pm0.6$&1.9& 11.9 \\
+\hline
+\end{tabular}
+\end{center} 
+\caption{\small{Results of cosmic test measurements for the $X1$ and $Y$
+PMT views.  The ADC value for the MIP energy deposition corresponds to 
+1/3 of the PMT signal after the splitter.}} 
+\label{tab:pestat} 
+\end{table} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage

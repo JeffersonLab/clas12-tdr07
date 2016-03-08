@@ -1,0 +1,14 @@
+
+
+#archiving instruction
+# include additional files via 
+pico ./tar/tarlistoffilesSTAGESt0CLAS12.doc
+
+#from your source directory do :
+tar -c -f ./tar/STAGESt0CLAS12.tar `cat ./tar/tarlistoffilesSTAGESt0CLAS12.doc`
+#unarchiving instruction
+#from your source directory do:
+tar -x -f ./tar/STAGESt0CLAS12.tar
+
+
+

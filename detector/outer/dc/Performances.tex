@@ -1,0 +1,202 @@
+\section{Simulation: Expected Performance}
+\label{simulation}
+
+As discussed above, the {\tt CLAS12} detector is designed to detect 
+semi-inclusive and exclusive events with a modest number (up to 4 or 5) 
+of outgoing hadrons.  In addition to the electron and hadrons associated 
+with the event of interest, the detected event will contain both 
+electromagnetic and hadronic ``accidentals''.  Because the physics goal is 
+to run at beam-target luminosities of \1035 or higher, we have simulated the 
+expected accidental particle flux associated with these luminosities.  Using 
+a modified version of the EGS program~\cite{egs}, we simulated the total 
+hadronic and electromagnetic particle fluxes generated when an electron beam 
+is incident upon a liquid-hydrogen target with a luminosity of \1035.  We 
+calculated the total flux through a measurement layer during its active 
+(measurement) time and multiplied by the probability of the particle interacting 
+in that layer and divided by the number of cells in the layer to get an estimate 
+of the fractional occupancy of that layer due to background.  The expected layer 
+occupancy under these conditions is on the order of 3-4\%.  Our experience with 
+the present {\tt CLAS} detector is that track-finding is highly efficient if the 
+accidental occupancy is less than 4\%~\cite{dcnim}.  Fig.~\ref{trkeff} shows 
+the efficiency of our present tracking program for finding a track as a 
+function of the fractional occupancy of Region~1, that is, the percentage of 
+wires that fired for the event in question.  One can see that the efficiency
+begins to fall off at a fractional occupancy of about 4\%.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=trk_eff.eps hscale=90 vscale=85 hoffset=0 voffset=-280}
+\caption{\small{Plot of tracking efficiency versus the fractional number
+of wires with hits in Region~1 taken from Ref.~\cite{dcnim}.}}
+\label{trkeff}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Rate Dependence of the Tracking Efficiency}
+
+We use two methods to simulate our rate-dependent efficiency:
+
+\begin{enumerate}
+\item we use a GEANT3 or GEANT4 based simulation to estimate the number
+of wires with hits in Region~1 during its estimated active time window
+of 150~ns.  We then infer the tracking efficiency from Fig.~\ref{trkeff}.
+
+\item we use a GEANT3-based model of the tracking chambers, magnetic
+field and key absorbers to simulate background during an event.  We
+combine this background event with a simulated single-particle track
+through the chambers, and run our normal track reconstruction code on
+the combined event.
+\end{enumerate}
+
+Our GEANT3 rate simulations indicate that the number of accidental tracks
+(not associated with the event in question) crossing the Reg. 1
+drift chambers during their sensitive time at a luminosity of \1035
+is signicantly less than that simulated for a recent experiment:
+E1DVCS which employed a similar solenoidal shield for Moller electrons
+and which ran at a luminosity of $2\cdot 10^{34}$~cm$^{-2}$s$^{-1}$.
+We are continuing to run more detailed simulations to verify this
+result.
+
+\subsection{Charged Track Resolution}
+
+We have also used two methods to simulate resolutions.  In one, we use the 
+MOMRES~\cite{momres} program to estimate the position, angle, and momentum 
+resolution in the bend plane and a simple linear fit to estimate the position 
+and angular resolution out of the bend plane.  The second method is to use 
+the full power of a GEANT3 simulation and a full track reconstruction to 
+estimate the resolution on the five track parameters simultaneously.
+
+We studied the position, angle, and momentum resolution for a number of 
+possible detector options using MOMRES.  The input file to MOMRES
+characterized the detector position, material thickness, and estimated hit 
+resolution for a particular track angle.  We also produced a $B$-field file 
+that was a tabulation of the $B$-field strength vs. path length for a 
+particular track angle.  These, and the desired range of momenta, were then
+used to calculate the expected components of the resolutions due to multiple 
+scattering and measurement resolution.  We fit these outputs to the expected 
+kinematic form.  From these fits we extracted two parameters ($\sigma$1 and 
+$\sigma$2) for each of the three terms ($dp/p$, $d\theta$, $dx$).  These six 
+parameters summarize the output of MOMRES.  In addition, we calculated the 
+angle resolution in the non-bend plane in a manner analogous to that of MOMRES, 
+using estimates for the effects of multiple scattering and measurement error, 
+fitting the resulting smeared trajectory by a straight line, and extracting 
+the $\sigma$1 and $\sigma$2 parameters that characterize the resolution in 
+this non-bend plane angle.  Thus, eight parameters for each value of track 
+angle fully characterize the tracking resolution for any one detector option.  
+Fig.~\ref{dpvstheta} shows the momentum resolutions for tracks emitted at 
+various angles.
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : dp/p vs. theta %%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{9.0cm}
+\special{psfile=dpvstheta.ps hscale=60 vscale=45 hoffset=50 voffset=255 angle=-90}
+\caption{\small{Resolution simulated using MOMRES plotted vs. particle 
+momentum for tracks emitted at various angles.  The momentum resolution
+is better at small angles because the traversed integral $B$-field is
+higher.}}
+\label{dpvstheta}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Looking at Fig.~\ref{comparep} we see three graphs of the 
+momentum resolution plotted versus momentum.  One is for a MOMRES 
+calculation of our standard set-up, with 6 layers of a Forward Silicon Tracker
+(FSVT) followed by our three regions of drift chamber; a second is for the 
+same setup but without the FSVT.  Finally, a third curve 
+shows the result of increasing the spatial resolution of the drift chambers 
+from 250 to 350~$\mu$.  Note that our standard case, with the FSVT, has better 
+resolution at high momentum because of the extra measurement points from the
+FSVT, but has worse resolution at low momenta, because of the additional
+multiple scattering of six planes of FSVT.  Fig.~\ref{compareth} shows the 
+three cases again; there is not much difference between them.  Finally, 
+Figs.~\ref{comparex} shows the dramatic improvement in vertex resolution 
+provided by the FSVT. 
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : dp/p: 4 cases %%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{9.0cm}
+\special{psfile=comp_p_paper.eps hscale=55 vscale=45 hoffset=70 voffset=0}
+\caption{\small{Momentum resolution simulated using MOMRES (for 3 cases)
+plotted vs. particle momentum for tracks emitted at 15$^\circ$.}}
+\label{comparep}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : dt 4 cases %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{9.0cm}
+\special{psfile=comp_th_paper.eps hscale=55 vscale=45 hoffset=70 voffset=0}
+\caption{\small{Theta resolution simulated using MOMRES (for 3 cases)
+plotted vs. particle momentum for tracks emitted at 15$^\circ$. }}
+\label{compareth}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : dx 4 cases %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{9.0cm}
+\special{psfile=comp_x_paper.eps hscale=55 vscale=45 hoffset=70 voffset=0}
+\caption{\small{Impact parameter resolution simulated using MOMRES (for 3 cases)
+plotted vs. particle momentum for tracks emitted at 15$^\circ$.}}
+\label{comparex}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fig.~\ref{resol} provides a few more results of these studies to
+parameterize and understand the resolution expected for the {\tt CLAS12}
+tracking system.  The plots show the expected angular resolution, the 
+expected position resolution, and the expected momentum resolution
+for different angle bins, each as a function of momentum.  These plots
+were made using the current design of the tracking system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=resol_1.eps hscale=35 vscale=30 hoffset=15 voffset=160}
+\special{psfile=resol_2.eps hscale=35 vscale=30 hoffset=225 voffset=160}
+\special{psfile=resol_3.eps hscale=35 vscale=30 hoffset=115 voffset=-10}
+\caption{\small{Simulation results for the {\tt CLAS12} tracking system
+showing the expected angular resolution, position resolution, and
+momentum resolution for different angle bins as a function of momentum.}
+\label{resol}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Expected Physics Performance}
+
+We used a series of programs to calculate the acceptance and reconstructed 
+physics parameters for event types of interest.  The program {\it clasev}
+\cite{clasev} served as an event generator and analysis program. 
+Depending on the value of input flags, it generates certain types of 
+events; that is, it produces a set of 4-momenta for the primary hadrons 
+in the hadronic center-of-mass and allows some of them to decay into the 
+final-state hadrons and transforms their momenta to the lab system.  For 
+each final-state track, it calls {\tt FASTMC} to determine if the track 
+falls within a fiducial acceptance window and to determine its final, 
+smeared lab momentum.  It then produces selected physics analysis variables 
+such as missing mass from calculations involving the smeared momenta of 
+those tracks that were accepted. 
+
+Fig.~\ref{massplot} shows the expected missing mass resolution 
+expected for {\tt CLAS12} from simulation studies based on the current
+design specifications for a number of different reactions.  For all
+cases studied the results are quite encouraging in terms of identifying
+the missing particle cleanly for each reaction.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{14.0cm}
+\special{psfile=mm1.ps hscale=39 vscale=36 hoffset=-10 voffset=160}
+\special{psfile=mm2.ps hscale=39 vscale=36 hoffset=225 voffset=160}
+\special{psfile=mm3.ps hscale=40 vscale=37 hoffset=-10 voffset=-55}
+\special{psfile=mm4.ps hscale=40 vscale=37 hoffset=230 voffset=-55}
+\caption{\small{Simulation results highlighting the expected missing
+mass resolution of {\tt CLAS12} with the nominal design specifications for
+the drift chambers.  Shown are the spectra for the reactions
+$ep \to e'\pi+X$ (UL), $ep \to e'K^+X$ (UR), $ep \to e'p\pi^+X$ (LL),
+and $ep \to e\rho^+X$ (LR).}}
+\label{massplot}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

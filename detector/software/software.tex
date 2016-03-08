@@ -1,0 +1,334 @@
+\section{Introduction and Goals}
+
+The goal of the offline software development effort is to provide tools to 
+the collaboration that allow data analysis to proceed in an efficient, 
+repeatable, and understandable way. The process should be set up to minimize 
+errors and to allow cross-checks of results. As much as possible, 
+software-engineering related details should be hidden from collaborators 
+allowing them to concentrate on the physical processes and experimental 
+effects they are studying. If the process is efficient in terms of time 
+invested by the experimenter, it will likely be efficient in terms of resource 
+use (cpu, storage, network) as well. Also, when the time invested is minimized,
+it allows the process to be repeated with variations in assumptions or 
+parameters. These repeated investigations result in a more robust scientific 
+result.
+
+Our hope is that by encouraging communication of ideas with multiple 
+discussion forums (meetings with remote access, email lists, websites, wikis), 
+we can make most major design decisions as a collaboration and avoid 
+unnecessary repetition of effort. We see consensus decision making and good 
+documentation as keys to achieving this goal.
+
+Large-scale computing efforts are common in nuclear and high energy physics, 
+and there are several standard components in all of them. High-bandwidth data 
+acquisition and network capability, mass storage, sophisticated reconstruction 
+algorithms leading to high cpu requirements, data volume reduction schemes, 
+generic and experiment-specific software analysis tools, detailed simulation 
+software, calibration and run parameter management are all areas that need to 
+be addressed. In this section we present our ideas on the aspects of the 
+problem directly related to software development. There is a separate effort 
+at the Lab to characterize and cost the hardware computing infrastructure 
+necessary to support the entire 12-GeV program at the Lab. The reader 
+should refer to that report for a more quantitative discussion of the 
+concomitant hardware requirements.
+
+\section{Computing Model}
+
+Currently we expect that the computing model that has been used for 
+{\tt CLAS} will be the starting point for that of {\tt CLAS12}.  Raw data 
+is buffered on disk in the counting room and then transferred to the 
+computer center for storage on tape.  Data from tape is staged out to disk 
+for analysis, initially to develop calibration constants and then for full 
+reconstruction of the data set, the latter being the most compute-intensive 
+step in the process. Reduced volume streams in the form of PAW ntuples, 
+ROOT trees and skimmed native-format events are produced either as a 
+by-product of the reconstruction job or later in separate passes through 
+the reconstructed data. We fully expect that major modifications to this 
+scenario will be necessary for {\tt CLAS12}, but the basic hardware 
+requirements this process generates will not be much different. In addition, 
+there are cpu requirements for simulation which are a factor of a few beyond 
+reconstruction of the raw data.  Also, reconstruction or simulation or both 
+may have to be repeated as understanding of the data progresses through 
+analysis of previous iterations.
+
+In the past the bulk of the hardware computing infrastructure has been 
+supplied locally by the lab's central computing center, although collaborating 
+institutions running batch processing farms have also made significant 
+contributions, especially in the generation of simulated data. This rather 
+traditional arrangement sidesteps issues of network bandwidth, meta-data 
+catalogs, remote job submission, and heterogeneous computing environments. 
+We expect that with development of grid technology, these and other problems 
+will have ready solutions and we will be able to take advantage of non-lab 
+computing resources more fully.
+
+\section{Design Tasks and Progress}
+
+\subsection{Simulation}
+
+There are two different, though overlapping, areas in our current simulation 
+effort. One is focused on validating design decisions for the upgraded 
+detector, the other on building a modern simulation system that can be used 
+for the life of the {\tt CLAS12} program. The former has two components: (1) a 
+parametric Monte Carlo that can estimate the resolution for charged particle 
+tracking and (2) a full GEANT3 system that depends on the code base that has 
+been developed for the current {\tt CLAS} detector, modified to reflect the 
+new design, including reconstruction. The latter is an entirely new 
+GEANT4-based, object-oriented design.
+
+\vskip 0.5cm
+
+\noindent
+\underline{Parametric Monte Carlo}
+
+One of the fundamental algorithmic challenges in the design of {\tt CLAS12} 
+is the problem of track reconstruction in a non-uniform magnetic field.  Not 
+only does the torus produce an inhomogeneous field in the tracking volume, 
+but charged particles emerging from the solenoid must be tracked as they 
+traverse the fringe field of that magnet. Since no analytic form for the 
+particle trajectories exist, they must be calculated by "swimming" the
+particles numerically through a map of the magnetic field. Track fitting 
+then becomes very expensive in terms of cpu time. One way to finesse the 
+problem is to linearize it by parameterizing the trajectory as small deviations 
+from a reference trajectory. The reference trajectory must come from a 
+``swim'', but subsequent ``trial'' trajectories, with different starting 
+parameters (momentum, direction), can be computed by a simple matrix 
+inversion. Position resolution is put in at a set of idealized detector 
+planes. It is also possible to incorporate multiple Coulomb scattering in 
+this model. This technique has already been used to estimate momenta 
+resolution for {\tt CLAS12}. Results appear in other sections of this 
+document.  The method cannot give information on some things, such as the 
+effect of accidentals, track reconstruction efficiency or confusion due to 
+overlapping tracks.
+
+\vskip 0.5cm
+
+\noindent
+\underline{{\tt CLAS} Software with {\tt CLAS12} Geometry}
+
+The current {\tt CLAS} system consists of over a half a million lines of 
+FORTRAN, C and C++ code contained in about 2,500 source code files. It 
+represents a large investment by the {\tt CLAS} collaboration over many 
+years. {\tt CLAS}, with its toroidal magnetic field also presents the 
+difficulty of tracking in a non-homogeneous fields and that problem has 
+been solved in this body of code. Recently, the geometry of crucial detector 
+elements was changed to reflect the {\tt CLAS12} design, both in simulation 
+and in reconstruction. The resulting system can now do a full GEANT3-based 
+simulation and reconstruction of {\tt CLAS12} events, in particular charged 
+particle tracking in the forward drift chambers. Studies using this system 
+have been carried out to verify momentum resolution results from the 
+parametric Monte Carlo and to estimate the effect of accidental M{\o}ller 
+scattering background on track reconstruction. More of the details of the 
+detector subsystems and beam line components of the upgraded configuration 
+are being added to extend the range of these and similar studies.
+
+\vskip 0.5cm
+
+\noindent
+\underline{Object-Oriented Detector Simulation}
+
+We have started development of a GEANT4-based object-oriented simulation 
+package. Several features have already been prototyped:
+
+\vskip 0.5cm
+
+\noindent
+$\bullet$ XML-based geometry definition:
+We have adopted a scheme for geometry definition based on the Hall D Detector 
+Specification (HDDS) developed for the GlueX experiment. The specification is 
+embodied in a W3C-standard XML schema and the input classes use Apache's 
+Xerces C++ Parser, which does validation against the schema. Using XML has 
+the standard advantages: human-readability, self-documentation, a well-defined 
+formatting standard and written-by-others parsing and display tools. We have 
+added the classes to interface the DOM structure to the GEANT4 geometry 
+definition classes. The geometry definition happens at run-time; the binary 
+executable is geometry agnostic. This allows very fast developing of new or 
+prototype configurations.
+
+We have started to extend the HDDS vocabulary to take advantage of features 
+of GEANT4 that were not well-known when HDDS was initially developed, such 
+as the concept of regions. We are collaborating closely (using the same 
+source code repository in fact) with the GlueX collaboration so that both 
+groups can benefit from further development.
+
+\vskip 0.5cm
+
+\noindent
+$\bullet$ Plug-in modules for primary event generation:
+
+We have a system for selecting primary event generators at run-time via 
+plug-in modules. This facilitates a clean definition of the interface between 
+physics event generation and detector simulation, and will allow us to easily 
+use a variety of event generation schemes, suitable for a variety of physics 
+analyses.
+
+\vskip 0.3cm
+
+\noindent
+$\bullet$ Options for a library of standard and/or custom hit generation 
+schemes:
+
+Sensitive detectors and hit generation are a substantial impediment to 
+getting started quickly with a new GEANT4 system. The GEANT4 developers have 
+introduced pre-programmed "scorers" to help users that are not interested in 
+the details of the form of the hit-by-hit output data. For our application we 
+need more control over hit generation than the scorers provide, yet would like 
+to be able to do fast prototyping without having to code sensitive detector 
+algorithms for each new type of detector volume. To facilitate this, we have 
+developed a system where a library of generic detector types are available to 
+the user. The types will include things like energy sums in a calorimeter 
+module, or the hit time for a scintillator paddle, or drift times for a wire 
+chamber. To a first approximation, the read-out of similar devices can be 
+programmed generically. In the first stages of development, where this 
+approximation is useful, having hits generated via menu choice is useful. 
+The choice of hit generation scheme is made in the HDDS geometry definition 
+file and thus can be turned on an off without modification of code.
+
+In the case that none of the library schemes is appropriate or at a later 
+stage of development where a greater degree of reality is required, there 
+is the option of providing custom hit schemes via plug-in modules at run-time. 
+This specification again happens at the HDDS level, via overloading the 
+hit-scheme-menu choice with the name of the plug-in module.
+
+\vskip 0.3cm
+
+\noindent
+$\bullet$ Abstract design of output data structure:
+
+We have an "in principle" design of set of structures suitable for 
+serialization. Provision is made for:
+
+\begin{itemize}
+\item {\it Raw Data}: Data that looks like digitized hits coming from read-out 
+electronics;
+\item {\it Monte Carlo True Hits}: As-generated information prior to 
+digitization, such as energy in a calorimeter module;
+\item {\it Digitized Hits}: The measured value of true hits with experimental 
+smearing included; 
+\item {\it Reconstruction Results}: Things such as tracks, clusters, etc.
+\item {\it Monte Carlo Meta Data}: Information only available in Monte Carlo, 
+such as lists of generated particles or trajectory information independent 
+of detector material.
+\end{itemize}
+
+\vskip 0.3cm
+
+\noindent
+$\bullet$ Output data generation in expected raw data format:
+
+We have in hand an API for writing output event streams in a format, EVIO, 
+that will be used for raw data from the CODA system. This has been interfaced 
+with working GEANT4 applications. Development of the API was partially 
+motivated by the {\tt CLAS12} simulation effort.
+
+\subsection{Reconstruction Techniques}
+
+There are several standard reconstruction techniques that have wide 
+application, yet are not readily available in a detector-independent form. 
+We plan as much as possible to provide these tools to the collaboration 
+where needed. Examples include:
+
+\begin{itemize}
+\item {\it Kinematic fitting}: In addition to the usual application of 
+combining four-vectors with mass and energy constraints, the tool should 
+have a kernel that is general enough to deal with any problem of 
+minimization with general non-linear constraints;
+\item {\it Kalman filter}: This is a technique widely used to correctly 
+weight tracking measurements whose errors are correlated due to multiple 
+scattering.  We hope to apply it in the charged particle tracking package 
+since our resolution will have a substantial contribution from multiple 
+scattering;
+\item {\it Particle classification}: We plan to provide a framework for the 
+application of selected particle identification systems, such as Fisher 
+discriminants or neural nets.
+\end{itemize}
+
+\section{Development Environment}
+
+\subsection{Software Technology}
+
+In order to get started, we have already made several software technology 
+choices. In each case we have discussed the options and come to consensus on 
+the choices. We are mindful of the shifting scene in several of these areas 
+and recognize that some technologies may have to be abandoned if compelling 
+replacements become available.
+
+\begin{itemize}
+\item Programming language: C++
+\item Scripting language: Perl
+\item High-level analysis tool: ROOT
+\item Detector simulation: GEANT4
+\item Source code management: Subversion
+\item Source code documentation: Doxygen
+\item Build scripting: GNU make
+\item Relational database: MySQL
+\item XML parser: Xerces
+\end{itemize}
+
+\subsection{Code Development Policies}
+
+\noindent
+\underline{Coding Standards}
+
+We have agreed to have a formal set of standards and are looking into taking 
+over an existing, appropriate set or using an existing standard as a model. 
+This is a tricky problem; too few standards and chaos ensues, too many and 
+they are ignored (with chaos ensuing). We hope to strike the right balance.
+
+\vskip 0.3cm
+
+\noindent
+\underline{Documentation Standards}
+
+We have already been using the Doxygen system to provide web-based browsing 
+of our C++ source code. This is only a means to end; we will have to develop 
+some way to judge whether the documentation provided by the developer is 
+adequate. For high-level APIs this is crucial to having code adopted widely 
+within the collaboration and for low-level code, it is a key to 
+maintainability. Again, this is a very difficult area to adjudicate and 
+enforce.
+
+\vskip 0.3cm
+
+\noindent
+\underline{Code Review}
+
+Without an enforcement mechanism, no matter how mild, any set of standards 
+are meaningless. We recognize this and we have agreed in principle to have 
+some quasi-formal method of validating submissions of source code. This may 
+take the form of a gatekeeper for each area of the code, or a central review 
+committee that looks at all changes.
+
+\section{Relationship with Online}
+
+We will endeavor to develop online and offline applications from a common 
+code base. This will have efficiencies when data format or content change. 
+Also, if a software-based trigger is implemented for {\tt CLAS12}, we need 
+to have strict control over versioning of the libraries used in event 
+reconstruction. Offline and online codes must have access to the same set 
+of routines or else the calculation of the efficiency of online event cuts 
+is subject to errors.
+
+\section{Organizational Structure}
+
+We will need to have clear definition of responsibilities for producing and 
+maintaining the software and its documentation in all software components 
+during all stages of the upgrade project: design, construction, calibration, 
+reconstruction and simulation. Where possible we plan to identify groups that 
+can carry these tasks through for each detector system, from start to finish. 
+In that way, we insure continuity and the development of institutional memory. 
+These groups will in most cases naturally form within the groups developing 
+and testing the detector hardware and electronics.
+
+Given the scarcity of manpower to address all issues we have been working 
+closely with colleagues in the other Experimental Halls, especially those 
+working on the GlueX experiment in Hall D. Where common solutions are 
+possible, and there are many such areas, we hope to share developer resources. 
+Our adoption and extension of the HDDS detector geometry system is a good 
+example of this cooperation.
+
+We are studying how to organize ourselves as a far-flung collaborative group 
+with many independent parts that must cooperate closely. In particular we may 
+have to adopt industry-standard project management tools and techniques to 
+insure adequate progress, just as they are applied to the 12 GeV Project in 
+general.  In this context, we recognize that software development presents 
+its own set of unique challenges in this regard.

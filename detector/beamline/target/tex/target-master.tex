@@ -1,0 +1,104 @@
+\documentclass[12pt]{article}
+% 
+%\usepackage{tabularx}  
+%\usepackage[dvips]{graphicx}
+%\usepackage{longtable}
+%\usepackage{hhline}
+%\usepackage{alltt}
+%\usepackage{ifthen}
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+%\usepackage{color}
+%\usepackage{amsmath}
+%\usepackage{tabularx}
+%\usepackage{latexsym}
+%
+\def\1035{10$^{35}$~cm$^{-2}$s$^{-1}$}
+\def\degg{$^{\circ}$ }
+\def\qsq{$Q^2 $}
+\def\co2{$CO_2 $}
+\def\microns{$\mu m $}
+\def\gevcsq{$GeV/c^2 $}
+\def\gev{$GeV $}
+\def\gevc{$GeV/c $}
+\def\plots{../epsfiles}
+\def\tex{.}
+%
+\topmargin -0.3in
+\headheight 0.0in
+\headsep 0.5in
+\textheight 9.4in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+\renewcommand{\baselinestretch}{1.4}
+%\pagestyle{empty}       %suppresses page numbers
+%
+\begin{document}
+
+\title{Longitudinally Polarized Solid Target}
+
+\author{D.Crabb, M.Seely, C.Keith \\ [0.5ex]
+University of Virginia\\
+Jefferson Lab}
+
+
+
+\maketitle
+
+%\vspace{2cm}
+%\begin{figure}[ht]
+%\begin{center}
+%\vspace{1cm}
+%\epsfig{file=../epsfiles/target-in.ps,width=11cm}
+%\end{center}
+%\end{figure}
+
+\vfil
+\eject
+
+\tableofcontents
+
+\vfil
+\eject
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 1.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Polirized target}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+\section{Physics Requirements}
+\input {\tex/phys.tex}
+
+\vfil
+\eject
+
+\section{Polarized Target Design}
+\input{\tex/design.tex}
+\vfil
+\eject
+
+
+\section{Expected Performance}
+\input{\tex/perform.tex}
+\vfil
+\eject
+
+\section{Cost and Schedule}
+\input{\tex/cost.tex}
+\vfil
+\eject
+\clearpage 
+
+\section{Collaboration and Responsibilities}
+\input{\tex/collab.tex}
+
+\end{document}
+

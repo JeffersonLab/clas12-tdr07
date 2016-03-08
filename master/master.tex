@@ -1,0 +1,517 @@
+\documentclass[12pt]{report}  
+%
+\bibliographystyle{elsevier}      
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+\usepackage{bm}
+\input epsf
+\usepackage[dvips]{color}
+\usepackage{lscape}
+\usepackage{longtable}
+\usepackage{hhline}
+\usepackage{alltt}
+\usepackage{ifthen}
+\usepackage{amsmath}
+\usepackage{tabularx}
+\usepackage{latexsym}
+
+\topmargin -0.5 in
+\headheight 0.0in
+\headsep 0.5in
+\textheight 9.0in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\1035{10$^{35}$~cm$^{-2}$s$^{-1}$}
+\def\degg{$^{\circ}$ }
+\def\qsq{$Q^2 $}
+\def\co2{$CO_2 $}
+\def\microns{$\mu m $}
+\def\gevcsq{$GeV/c^2 $}
+\def\gev{$GeV $}
+\def\gevc{$GeV/c $}
+
+%
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\zh}{z}
+\newcommand{\xbj}{x_{\scriptscriptstyle B}}
+%
+\newcommand{\Epgb}{$\vec ep \to ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Epgl}{$\vec e\vec p \to ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Epgt}{$ep^T \to ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Thgg}{$\theta_{\gamma^*\gamma}~$}
+\newcommand{\Phgg}{$\phi_{\gamma^*\gamma}~$}
+\newcommand{\Epg}{$ep \to ep\gamma~$}
+\newcommand{\Eppiz}{$ep \to ep\pi^0~$}
+\newcommand{\Enpip}{$ep \to en\pi^+~$}
+\newcommand{\EppiD}{$ep \to e\pi \Delta~$}
+\newcommand{\Epeta}{$ep \to ep\eta~$}
+\newcommand{\Epr}{$ep \to ep\rho~$}
+\newcommand{\EpX}{$ep \to epX~$}
+\newcommand{\EpKY}{$ep \to eKY~$}
+\newcommand{\vEpg}{$\vec ep \to ep\gamma~$}
+\newcommand{\xidef}{$\xi=x_B\frac{1+\frac{Delta^2}{2Q^2}}{2-x_B+x_B\frac{Delta^2}{2Q^2}}$}
+\def\gevc2{(GeV/c)$^2$}
+\newcommand{\EpgX}{$ep \to ep\gamma X~$}
+\newcommand{\bfk}{\mbox{\boldmath $k$}}
+\newcommand{\bfP}{\mbox{\boldmath $P$}}
+\newcommand{\bfp}{\mbox{\boldmath $p$}}
+\def\VEC#1{\hbox{\boldmath$#1$\unboldmath}}
+\def\Vec#1{{\bf #1}}
+\def\slash{/\!\!\!}
+\def\one{1 \!\! 1}
+\def\D{{\mathrm d}}
+\def\E{{\mathrm e}}
+\def\I{{\mathrm i}}
+\renewcommand{\baselinestretch}{1.4}
+\title{CLAS12 Technical Design Report \\
+\Large Version 5.1}
+
+\date{\today}
+\begin{document}
+%
+%\thispagestyle{empty}
+%\begin{figure}[htbp]
+%\vspace{20.0cm}
+%\special{psfile=TDRcover.ps hscale=95 vscale=95 hoffset=-55 voffset=-90}
+%\end{figure}
+
+%\pagebreak
+%\clearpage
+
+%\thispagestyle{empty}
+%~~
+
+%\newpage
+
+%\thispagestyle{empty}
+
+%\pagenumbering{arabic}	
+\maketitle
+
+\thispagestyle{empty}
+\vspace{2cm}
+\newpage
+\thispagestyle{empty}
+
+~~
+\vfil
+\eject
+
+\noindent
+{\bf \large \underline{Participating Institutions:}}\\ 
+
+\vspace{0.3cm}
+
+\noindent 
+Arizona State University, Tempe, AZ\\
+Argonne National Laboratory, Argonne, IL\\
+California State University, Dominguez Hills, CA\\
+Catholic University of America, Washington, DC\\
+CEA-Saclay,  Gif-sur-Yvette, France\\
+University of Connecticut, Storrs, CT\\
+Edinburgh University, Edinburgh, UK\\
+Fairfield University, Fairfield, CT\\
+Florida International University, Miami, FL\\
+University of Glasgow, Glasgow, UK\\
+Hampton, University, Hampton, VA\\
+Idaho State University, Pocatello, Idaho\\
+INFN, Laboratori Nazionali di Frascati, Fascati, Italy\\
+INFN, Sezione di Genova, Genova, Italy\\
+Institute of Theoretical and Experimental Physics (ITEP), Moscow, Russia\\
+James Madison University, Harrisonburg, VA\\
+Kyungpook University, Daegu, South Korea\\
+Los Alamos National Laboratory, Los Alamos, NM\\
+Moscow State University, Moscow, Russia\\
+University of New Hampshire, Durham, NH\\
+Norfolk State University, Norfolk, VA\\
+Ohio University, Athens, OH\\
+Old Dominion University, Norfolk, VA\\
+Institut de Physique Nucleaire, Orsay, France\\
+Rensselaer Polytechnic Institute, Troy, NY\\
+Rice University, Houston, TX\\
+University of Richmond, Richmond, VA\\
+University of South Carolina, Columbia, SC\\
+Temple University, Philadelphia, PA\\
+Thomas Jefferson National Accelerator Facility, Newport News, VA\\
+Virginia Polytechnic Institute and State University, Blacksburg, VA\\
+University of Virginia, Charlottesville, VA\\
+College of William and Mary, Williamsburg, VA\\
+Yerevan Institute of Physics, Yerevan, Armenia\\
+
+\newpage
+\thispagestyle{empty}
+
+~~
+\vfil
+\eject
+
+\tableofcontents
+
+\newpage
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries The CLAS12 Physics Program}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Physics Program}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+\vspace{5cm}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\part{Physics}
+
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{executive_summary.tex}
+
+\input{../der/der.tex}
+\input{../der/trans-target.tex}
+\input{../der/derconc.tex}
+%
+\input{../strucfunc/F2A1.tex}
+\input{../strucfunc/xpctdlargex.tex}
+\input{../strucfunc/pdf.tex} 
+\input{../strucfunc/Moments.tex}
+\input{../strucfunc/duality.tex}
+%
+\input{../sidis/sidis.tex}
+\input{../nuclear/nuclear.tex}
+\input{../Spectroscopy/spec.tex}
+\input{../formfactors/ff.tex}
+%
+\input{../pac30/pac30_overview.tex}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\part{Detector}
+
+\setcounter{chapter}{0}
+\setcounter{section}{0}
+\setcounter{subsection}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Design Overview}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Design Overview}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{design_overview.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Tracking Systems -- Drift Chambers \& Vertex Tracker}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Tracking Systems}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../detector/outer/dc/tracking_tdr.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{High Threshold {\v C}erenkov Detector}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries HTCC}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{Youri/revdoc.tex} 
+\input{MC-simulation/MC-simulation.tex}
+\input{Magnetic-shielding/Magnetic-shielding.tex}
+\input{PMT-studies/PMT-studies.tex}
+\input{Mechanical/Mechanical.tex}
+\input{quality_safety.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Central TOF Detector}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries CTOF}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{ctof.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{FTOF System}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries FTOF}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../detector/outer/tof/ftof.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Pre-Shower Calorimeter}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Pre-shower Calorimeter}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../preshower/pcal-overview.tex}
+\input{../preshower/design-analysis.tex}
+\input{../preshower/mechdesign.tex}
+\input{../preshower/pcal_readout.tex}
+\input{../preshower/pcal_prototyp.tex}
+\input{../preshower/pcal_construction.tex}
+\input{../preshower/pcal_qc_safety.tex}
+\input{../preshower/pcal_collab.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Beamline Elements}
+
+\def\1035{10$^{35}$~cm$^{-2}$s$^{-1}$}
+\def\degg{$^{\circ}$ }
+\def\qsq{$Q^2 $}
+\def\co2{$CO_2 $}
+\def\microns{$\mu m $}
+\def\gevcsq{$GeV/c^2 $}
+\def\gev{$GeV $}
+\def\gevc{$GeV/c $}
+\def\plots{epsfiles}
+\def\tex{tex}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Beamline Elements}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input {\tex/poltgt.tex}
+\input {moeller.tex}
+\input {otherbm.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Additional Equipment Required for Physics Program}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Additional Equipment}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{optional.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Data Acquisition and Trigger}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Data Acquisition and Trigger}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../daq_trigger/overview.tex}
+\input{../daq_trigger/hardware_design.tex}
+\input{../daq_trigger/software.tex}
+\input{../daq_trigger/conclusion.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Infrastructure}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Infrastructure}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{infrastructure.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Offline Software}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Offline Software}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{offline_tdr.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Commissioning the Experimental Equipment}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Commissioning}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{commission.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagebreak
+
+\chapter{Collaboration Responsibilities}
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 5.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Collaboration Responsibilities}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../detector/collab/participation.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{bible.tex}
+
+\end{document}

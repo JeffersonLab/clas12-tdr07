@@ -1,0 +1,155 @@
+\section{Conceptual Design}
+
+The design parameters of the PCAL were established using the full GEANT 
+simulations of the PCAL-EC system.  As a tool, a modified GEANT simulation 
+computer program for the {\tt CLAS} detector was used.  The PCAL was 
+positioned in front of the current EC as shown in Fig.~\ref{fig:clas12fwd}.  
+These studies are described in detail in Refs.~\cite{natalia,whitlow} and are 
+summarized below.  The mechanical design depends on the number of 
+scintillator-lead layers, on the angular coverage of the PCAL, and on the 
+size of the readout segmentation.  These parameters were determined by the 
+physics requirements for the detection and identification of high-energy 
+electrons, photons, and $\pi^0$s via $2\gamma$ decay.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{100mm}
+\special{psfile=../preshower/clas12fwd.epsi hscale=55 vscale=50 hoffset=70 
+voffset=-60}
+\caption{\small{Particle ID detector package of the {\tt CLAS12} forward
+region.  The low threshold {\v C}erenkov counter is shown in magenta, two
+layers of FTOF counters are shown in green and yellow, the PCAL is shown 
+in red, and the EC in blue.}}  
+\label{fig:clas12fwd} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Initial simulations were carried out with 15 layers of lead and 
+scintillator (similar to the inner part of the EC), using 35-mm wide 
+segmentation for the scintillator layers, corresponding to about 108 
+readout channels in each stereo view.  Events were generated in a uniform 
+distribution of $\pi^0$ and photon events at the target with momenta up 
+to 12~GeV.  Reconstruction of clusters was done using the standard cluster 
+reconstruction algorithm of the EC, but applied to both the PCAL and EC.  
+As shown in Fig.~\ref{fig:ecpcal}, the combined PCAL and EC system retains 
+good energy resolution, $\sigma_E \sim 0.1\sqrt E$, and a constant 
+efficiency for two-cluster reconstruction up to the highest momenta. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{70mm}
+\special{psfile=../preshower/ecpcal_res.eps hscale=45 vscale=45 hoffset=20 
+voffset=-15}
+\special{psfile=../preshower/eff_12gev.epsi hscale=45 vscale=45 hoffset=220 
+voffset=-90}
+\mbox{
+\begin{picture}(-10,-10)(350,0)
+\put(520,170){\large {\bf (a)}}
+\put(765,170){\large {\bf (b)}}
+\end{picture}}
+\caption{\small{Performance of the combined PCAL-EC detector at high 
+energies, shown with blue points. a) The energy resolution of the 
+{\tt CLAS12} electromagnetic calorimetry system as a function of the 
+inverse square root of energy. b) The efficiency of reconstruction of two 
+clusters from $\pi^0$ decay photons as a function of pion momentum. Red 
+symbols correspond to the EC performance presented in 
+Fig.~\ref{fig:ecsim}.}}  
+\label{fig:ecpcal} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Keeping the number of layers at 15, the width of the readout segments 
+(strips) was varied from 35~mm (108 channels) up to 60~mm (65 channels). In 
+Fig.~\ref{fig:lw}a, the two-cluster reconstruction efficiency is presented 
+for different strip widths.  The magenta points correspond to a 60-mm strip 
+width, the blue points are for 50-mm segmentation, the green points for 43-mm
+strip width, and the red points are for 35-mm width.  The efficiency 
+decreases with energy for wider strips, but remains reasonably high if the 
+strip size is kept at less than 50~mm. 
+
+Other simulations were performed using 9 or 12 layers in the PCAL design, 
+clearly showing a loss of two-cluster reconstruction efficiency.  In
+Fig.~\ref{fig:lw}b, the two-cluster reconstruction efficiency is shown as a 
+function of $\pi^0$ momentum for 9 (red), 12 (green), and 15 (blue) layers. 
+Clearly, the 15 layer configuration has the highest efficiency.  The reduced 
+efficiency in the other cases is mainly due to insufficient radiation 
+thickness for high-energy photons to convert and deposit sufficient energy 
+for the shower to be detected.  Simulations were repeated for the 12-layer 
+case, by doubling the thickness of the first 3 layers of lead.  This 
+configuration had a comparable two-cluster reconstruction efficiency as the 
+original 15-layer design, but poorer energy resolution. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{70mm}
+\special{psfile=../preshower/str_width-1.epsi hscale=45 vscale=45 hoffset=30 
+voffset=-15}
+\special{psfile=../preshower/mod-3-4-5.epsi hscale=45 vscale=45 hoffset=230 
+voffset=-88}
+\mbox{
+\begin{picture}(-10,-10)(350,0)
+\put(520,30){\large {\bf (a)}}
+\put(745,30){\large {\bf (b)}}
+\end{picture}}
+\caption{\small{Performance of different configurations of the PCAL.  a) 
+The reconstruction efficiency for two clusters from $\pi^0$ decay photons 
+as a function of pion momentum for different readout segmentation.  The 
+magenta points correspond to 60-mm strip width, the blue points are for 
+50-mm segmentation, the green points for 43-mm strip width, and the red 
+points are for 35-mm width.  b) The reconstruction efficiency for two 
+clusters for different numbers of scintillator-lead layers. The red points 
+correspond to a 9-layer configuration, the green points are for 12 layers, 
+and the blue points are for 15 layers.}}  
+\label{fig:lw} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Additional simulations were performed using variable segmentation of the 
+scintillator layers.  Keeping constant the total number of readout channels 
+per sector, it was found that the maximum efficiency can be obtained if 
+half of each stereo layer is equipped with 45-mm wide strips and half with 
+90-mm wide strips (double-strip readout). The triangular stereo layers
+overlap such that there is always a region with 45-mm wide strips in one of 
+the stereo layers, as shown in Fig.~\ref{fig:vwidt}.  There is only a small 
+loss of two-cluster efficiency at the highest momenta for this geometry 
+compared with 45-mm wide strips in all stereo layers, see 
+Fig.~\ref{fig:vwidteff}.  It should be noted that at forward angles (short 
+$U$-strips), where most of the high-energy $\pi^0$s are produced, all three 
+stereo readout views have small readout segmentation. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{90mm}
+\special{psfile=../preshower/vwidth.eps hscale=60 vscale=60 hoffset=40 
+voffset=10}
+\caption{\small{Variable segmentation for different stereo readout planes 
+($U$, $V$, and $W$).  There is always a region with single strip (45-mm 
+segmentation) readout in one of the stereo layers.}}  
+\label{fig:vwidt}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{9.3cm}
+\special{psfile=../preshower/eff_64pmt.eps hscale=60 vscale=60 hoffset=80 
+voffset=-10}
+\caption{\small{Various combinations of 45-mm and 90-mm readout 
+segmentation.  For the black histogram only 45-mm readout is used, amounting
+to a total of 258 channels per sector.  The other histograms correspond to 
+cases when part of the layer was read out in 90-mm segments, keeping the 
+total number of channels to 192 per sector.}}  
+\label{fig:vwidteff} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The proposed design of the PCAL covers the full angular range of the EC. 
+The PCAL has 15 scintillator and 14 lead layers, confined between two 
+endplates.  A variable width of the readout segmentation will be used to
+minimize the number of readout channels, while retaining sufficient
+resolution for the separation of close clusters. It is proposed to
+use 45-mm segmentation for the short strips in $U$, and for the long
+strips in the $V$ and $W$ stereo readout planes, at least half of the 
+height of the layer.  For the remaining part, 90-mm wide segmentation can 
+be used (two strips).  The total number of readout channels will be limited 
+to 192 per sector. 

@@ -1,0 +1,1254 @@
+\section{FTOF System Overview}
+
+The Forward Time-of-Flight System (FTOF) will be a major component of the 
+{\tt CLAS12} forward detector used to measure the time-of-flight of charged 
+particles emerging from the target.  The average path length from the target 
+to the FTOF counters will be roughly 650~cm.  The requirements for the FTOF 
+system include excellent timing resolution for particle identification and 
+good segmentation for flexible triggering and prescaling options.  The design
+parameters were chosen to allow for separation of pions and kaons up to 
+roughly 3~GeV.  The most energetic particles are produced at small angles.  
+The system specifications call for a time resolution of $\sigma_{TOF}$=80~ps 
+at the more forward angles of {\tt CLAS12} and 150~ps at angles larger than
+36$^\circ$.  The system must also be capable of operating in a high-rate 
+environment.  The maximum counting rate occurs in the forward direction 
+where, at an operating luminosity of $1\times10^{35}$~cm$^{-2}$s$^{-1}$, the 
+average rate per scintillator is approximately 250~kHz.
+
+The discriminated scintillator signals will be used in certain situations 
+in the {\tt CLAS12} Level-1 trigger.  Therefore, the system must provide 
+signals representing a uniform response with adequate granularity to select 
+particles reaching the detectors.  The timing in the trigger hardware will 
+be limited by the flight time variations between fast particles (e.g. 
+electrons) and slow particles (e.g. protons), which can be as large as 50~ns.
+Therefore, precise timing information will only be achieved in off-line 
+software analysis using the momentum and position measured with the drift 
+chamber system.
+
+The FTOF system will also be used for energy-loss measurements in specific 
+instances.  Pulse height information, being directly proportional to energy 
+deposited, provides an independent means for the identification of slow 
+particles.  In this regard, the flight time can provide for a more accurate 
+measurement of particle energy than magnetic analysis for slow particles, 
+where the effects of multiple scattering are the largest.
+
+In order to meet the requirements for the tight timing resolution, the major 
+considerations in the design of the FTOF system are:
+
+\begin{itemize}
+
+\item {\it Scintillator Size:} The overall size of the system will demand 
+careful consideration of light collection in order to optimize the time 
+resolution of the system.  Also, the width of each scintillator determines
+the granularity of the scattering angle definition in the trigger.
+
+\item {\it Geometry:} The projected space behind the coils of the main
+{\tt CLAS12} torus is inactive and therefore useful for locating the
+light guides, photomultiplier tubes (PMTs), voltage dividers, and cables.  
+The remaining area in the forward direction is the fiducial region of the 
+detector and must be covered with scintillator counters.
+
+\item {\it Magnetic Field:} The PMTs will have to be properly shielded
+from the stray magnetic fields of the {\tt CLAS12} torus.
+
+\item {\it Crossing Tracks:} Particle trajectories from the target can
+intersect adjacent TOF counters.  Therefore light from both counters
+will have to be summed to optimize particle identification in the data
+analysis.
+
+\end{itemize}
+
+Each component of the design must satisfy these design constraints and be
+optimized against cost considerations.
+
+In each sector of {\tt CLAS12}, the FTOF system will be comprised of three 
+sets of TOF counters, referred to as panels (called panel-1a, 1b, and 2),
+in each sector.  Each panel consists of an array of rectangular scintillators
+with a PMT on each end.  Panel-1 refers to the sets of counters located at 
+forward angles (roughly 5$^\circ$ to 36$^\circ$) (where the two panels are
+necessary to meet the 80~ps resolution requirements) and panel-2 refers to 
+the sets of counters located at larger angles (roughly 36$^\circ$ to 
+45$^\circ$).  The positioning and attachment of the FTOF system panels to 
+the forward carriage of {\tt CLAS12} are shown in Fig.~\ref{fwd_car}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.0cm}
+\special{psfile=fwd_car.eps hscale=32 vscale=32 hoffset=110 voffset=0}
+\caption{\small{View of the FTOF counters for {\tt CLAS12} highlighting
+the location of the panel-1 and panel-2 counters.  This figure was generated
+from our 3--D CAD model.}}
+\label{fwd_car}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The panel-1 counters will consist of the current {\tt CLAS} panel-1 TOF 
+counters (called panel-1a) and a new set of panel-1 counters (called 
+panel-1b).  The existing panel-1a counters consist of 23 scintillators, each 
+measuring 5.08-cm thick and 15-cm wide.  The lengths of these counters 
+range from roughly 32~cm at the smallest scattering angles to roughly 
+375~cm at the largest scattering angles.  The scintillators are constructed 
+from Bicron BC-408 and are read out through short acrylic light guides 
+to 2-in Thorn EMI-9954A PMTs.  The new panel-1b counters will consist of an 
+array of 58 scintillators constructed from Bicron BC-404 scintillator for
+the shorter counters and BC-408 for the longer counters, each 6-cm wide and 
+6-cm thick with a range of lengths to match the panel-1a counters.  This new 
+panel will be mounted off of the forward carriage in front of the existing 
+panel-1a counters.  One sector of the FTOF system highlighting the panel-1 
+counters is shown in Fig.~\ref{ftof_pic}.  Note that the existing panel-1a
+arrays extend down to only 8$^\circ$ in the {\tt CLAS} geometry.  As the
+positioning of the forward carriage in {\tt CLAS12} becomes finalized, we
+will then decide on the number, lengths, and widths of additional scintillator
+bars to add at the small-angle apex of the panel-1a arrays to ensure
+acceptance down to 5$^\circ$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.8cm}
+\special{psfile=panel1_sector.eps hscale=47 vscale=47 hoffset=135 voffset=0}
+\caption{\small{View of the FTOF panel-1 counters for {\tt CLAS12} for one
+sector from the 3-D CAD model of the detector.}}
+\label{ftof_pic}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The panel-2 counters will consist of the current {\tt CLAS} panel-2 TOF 
+counters, which include 11 22-cm wide, 5.08-cm thick scintillators in each 
+sector.  The length of these counters ranges from roughly 370~cm to 
+430~cm.  The scintillators are constructed from Bicron BC-408 and are 
+read out through curved acrylic light guides to 3-in Philips XP4312B PMTs. 
+These scintillators are included to give complete acceptance for 
+outbending charged particles incident upon the {\tt CLAS12} drift chambers.  
+Monte Carlo simulations are currently underway to determine how many of the
+panel-2 counters will need to be included in {\tt CLAS12} to match the
+acceptance of the drift chamber system.  Note that the exact number of
+the panel-2 counters that is required depends directly on the final size 
+of the Region~3 chambers (which is still being optimized).  Given the
+present design of the outermost {\tt CLAS12} drift chambers, it appears that
+no more than 5 to 6 of the existing panel-2 counters will be required in each
+sector.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{7.5cm}
+\special{psfile=panel_layout.eps hscale=70 vscale=70 hoffset=150 voffset=-5}
+\caption{\small{View of the forward TOF panel-1 and panel-2 scintillators
+for a single sector for the existing {\tt CLAS} TOF system.}}
+\label{panel_layout}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In the current {\tt CLAS} detector, the panel-2 counters are mounted to the
+side carriages (called the north and south clam shells).  However, in
+the {\tt CLAS12} design these panels will be mounted on the existing
+forward carriage.  Work is presently underway to engineer and design the
+supports and attachment scheme.  A schematic representation of the layout 
+of panel-1 and panel-2 for a single sector of the existing {\tt CLAS} TOF 
+system is shown in Fig.~\ref{panel_layout}.
+
+\section{Design Requirements}
+\label{design_req}
+
+In {\tt CLAS12}, operated with a maximum beam energy of roughly 11~GeV,
+forward-going charged hadrons will have momenta up to roughly 5 - 6~GeV.  
+Mounted in front of the FTOF system will be the existing {\tt CLAS} low 
+threshold {\v C}erenkov system.  The planned radiator gas for this system will
+be C$_4$F$_{10}$ (perfluorobutane), as in the current detector system.  This 
+gas has an index of refraction of $n$=1.00153, and thus a threshold for pion
+detection of roughly 2.6~GeV.  This threshold sets the momentum range where
+the FTOF system must be able to separate kaons from pions.  To separate pions 
+from kaons up to 2.6~GeV and pions and kaons from protons up to 5.6~GeV, a 
+timing resolution of $\sigma_{TOF} \approx$80~ps has to be achieved for the 
+panel-1 counters (see Fig.~\ref{delta_tof}).  This assumes a 4$\sigma$ 
+difference in flight-time between the two particles over a 650-cm path 
+length and allows identification of a hadron species in the presence of 
+other hadrons with up to ten times higher rates.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{7.0cm}
+\special{psfile=tdiff.ps hscale=70 vscale=70 hoffset=30 voffset=-125}
+\caption{\small{Time differences, $\Delta t$, between protons and pions,
+between protons and kaons, and between kaons and pions (as indicated) over
+the 650-cm path length from the target to the FTOF system.  The 
+horizontal lines indicate the $4\sigma$ separation time differences for
+the panel-1b and panel-1a counters.}}
+\label{delta_tof}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The requirement of 80~ps for the FTOF timing resolution is expected to be
+achievable for the panel-1 system with the planned design.  The TOF counters 
+from the existing {\tt CLAS} detector have a timing resolution of about 
+150~ps~\cite{smith1}.  The new FTOF system is expected to have an improved 
+timing resolution relative to the existing TOF panel (panel-1a) by a factor 
+of $\sqrt{15/6}$, or the square root of the ratio of the scintillator widths.  
+Thus, due to the improved light collection efficiency, the new TOF panel-1b
+should provide a timing resolution of about 95~ps or less.  The resolution 
+expected from the two timing measurements in panel-1 is then expected to be 
+$\sigma_{TOF} = ((1/150~{\rm ps})^2 + (1/95~{\rm ps})^2)^{-1/2} = 80$~ps.  
+Timing resolutions of 60~ps have been achieved with small scintillator 
+counters~\cite{kim}.  For counters 200~cm in length, prototypes have achieved 
+a resolution of about 70~ps~\cite{chen}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=r2_shadow.eps hscale=75 vscale=75 hoffset=60 voffset=5 angle=-2.5}
+\caption{\small{View of the projected shadow (in light yellow) created by the 
+main torus cryostats and drift chambers as projected on the face of the FTOF 
+system (shown in orange and dark red).}}
+\label{shadow1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+As with the design of the current {\tt CLAS} TOF counters, the inactive
+components of the detector for the FTOF system must be designed to fit
+fully within the projected space (the shadow) behind the superconducting 
+coils of the main torus.  Therefore all light guides, PMTs, voltage 
+dividers, and cables have tight constraints on how much space they can 
+take up.  Fig.~\ref{shadow1} shows the shadow created by the main torus 
+cryostats and drift chambers as projected on the face of the FTOF system.  
+This picture comes from our CAD model of the {\tt CLAS12} system for one 
+particular design assumption for the drift chamber endplate design.  The 
+limits of the shadow region are actually defined at the current time by 
+the Region~2 drift chamber system.  While the Region~1 and Region~3 
+chambers have their endplates, on-board electronics, and readout cables 
+located in the shadow of the torus cryostats, the Region~2 chambers are 
+located fully between the cryostats.  Thus the Region~2 endplates define
+the ultimate shadow for the definition of the FTOF panel-1 inactive
+region.  Fig.~\ref{phi_cov} shows the $\phi$ angle coverage for each
+counter of the FTOF system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.0cm}
+\special{psfile=phi_cov.ps hscale=85 vscale=85 hoffset=-35 voffset=-140}
+\caption{\small{Calculation of the $\phi$ angle coverage of each counter
+in the FTOF system using the nominal design for the FTOF system.  The
+discontinuity in the $\phi$ coverage for panel-1b is due to the use of
+shorter PMTs for the first six counters (97-mm long Hamamatsu R9779 PMTs), 
+whereas the larger angle counters employ slightly longer PMTs (131-mm long 
+Photonis XP20D0B PMTs).}}
+\label{phi_cov}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{FTOF System Description}
+
+The time-of-flight detectors provide an electronic signal for the data 
+acquisition system, which reflects the time a particle passes through the 
+scintillator.  Passing through the scintillator, the particle ionizes the 
+material and subsequently generates scintillation light; these photons travel 
+on various paths inside of the scintillator and the light guide, may 
+get absorbed, reflected (internally or on outer coatings), and ultimately 
+impinge on the photocathode of the photomultiplier tube (PMT), producing a 
+current of photoelectrons.  In several stages this current gets amplified 
+within the PMT and is then available as an electronic output pulse.  The 
+pulse finally passes through various components of the electronics system, 
+including a discriminator and a time-to-digital converter (TDC) for computer 
+readout.  These various processes influence and determine the total time 
+resolution $\sigma_{TOF}$.  It is convenient to parameterize $\sigma_{TOF}$ 
+with the following formula:
+
+\begin{equation}
+\sigma_{TOF} = \sqrt{\sigma_0^2 + \frac{\sigma_1^2 + (\sigma_P L/2)^2}
+{N_{pe}\exp(-L/2 \lambda)}}.
+\end{equation}
+
+The parameters in this formula quantify the characteristics of the detector 
+geometry and components (i.e. scintillator, PMTs, and electronics).  In 
+particular, $\lambda$ is the attenuation length of the scintillator and $L$ 
+its length; $\sigma_0$ represents the intrinsic resolution of the electronics 
+and other processes that are independent of the light intensity, $\sigma_1$ 
+models the jitter in the combined single-photoelectron response of the 
+scintillator and PMT, and $\sigma_P$ accounts for path length variations 
+in the light collection.  Path length variations in the scintillator scale 
+with the distance from the source to the PMT, which we take to be half the 
+length of the counter ($L/2$), since the scintillators are read out at either 
+side.  The statistical behavior of the last two terms is indicated by scaling 
+the single-photoelectron responses by $\sqrt{N_{pe}}$, where $N_{pe}$ is the 
+average number of photoelectrons seen by the PMT of a counter with an 
+infinitely long attenuation length.  For scintillators that are several 
+meters long, the dominant contribution comes from transit time variations of 
+photon paths in the scintillator.  Parameters for the present {\tt CLAS} TOF 
+system are given in Ref.~\cite{tof_note}.
+
+\subsection{Geometry}
+
+Fig.~\ref{sigma_tof} illustrates how the detector size (width and length) 
+affects the timing resolution.  As a guide to necessary improvements in the 
+time resolution of the system, we scale the parameterization of the 
+{\tt CLAS} system from the present 15-cm wide counters down to 6~cm in width.
+An important consideration is a good match of the detector cross section to 
+the size of the PMT entrance window.  How exactly the connection is optimized
+(e.g. with or without a light guide), needs to be studied with Monte Carlo 
+simulations and detector prototypes, which are being built at the University 
+of South Carolina.  Preliminary results indicate that the best time
+resolutions are obtained without light guides.  Fig.~\ref{sigma_tof} also 
+shows how, by means of a combined measurement from the two detector planes, 
+one can improve on the time resolution.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[t]
+\vspace{8.0cm}
+\special{psfile=ftof_width_6cm.eps hscale=50 vscale=50 hoffset=420 
+voffset=-35 angle=90}
+\caption{\small{Expected time resolution for the existing panel-1a counters
+(15-cm wide) with an assumed intrinsic electronic resolution of 40~ps.  Also 
+shown are predictions for the new panel-1b counters (6-cm wide) and for the
+combined panel-1a and panel-1b counters.  The arrow along the bottom of the
+plot shows the range of scintillator lengths in the FTOF panel-1 counters.}}
+\label{sigma_tof}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Scintillation Material}
+
+The parameterization of $\sigma_{TOF}$ is used to study the possible 
+improvements in resolution based on a trade-off between the decay time of 
+the scintillator ($\sigma_1$) and the number of photoelectrons ($N_{pe}$) 
+arriving at the PMT, which depends on the attenuation length $\lambda$.  The 
+bulk attenuation length and the scintillator decay times for three typical 
+scintillators are listed in Table~\ref{parms}.  The actual value for the 
+attenuation length in a given setup may differ and will be measured on 
+prototype detectors. In Fig.~\ref{sc_tof} the expected resolution is plotted 
+as a function of counter length for the three scintillators listed in 
+Table~\ref{parms}. For the figure we have used bulk attenuation lengths for 
+BC-404 and BC-418, while we have used the measured values for BC-408, which 
+is used in the current {\tt CLAS} TOF system.  The plot illustrates that 
+the overall performance of short counters, less than 200~cm in length, is 
+improved by the use of fast scintillators with small decay times $\tau$, 
+whereas for long counters, the existing material BC-408 with its larger 
+attenuation length is the better choice.  The final choice for the short 
+FTOF counters is an open question and will be explored experimentally.  
+
+The new scintillation counters, which are formed in a casting process
+against glass surfaces, will be milled using a diamond-edge fly cutting 
+technique on two sides of the counters and the ends.  This process has been 
+shown to leave the surface typically flatter and smoother than hand-polished 
+surfaces.  Costs associated with diamond-tooled finishes on all four
+sides of the scintillator bar are significantly more than on two sides only.
+The technical representatives at Saint-Gobain Crystals have indicated that
+scintillation bars with only two sides diamond-tool finished and two casted
+against glass, perform better than bars with all four sides machined.  We
+will perform bench tests to verify these claims before making a final decision.
+
+The geometry and materials for the interface between the scintillator and PMT, 
+and the wrapping material for the scintillator to provide for light-tightness 
+and improved light collection are important design parameters and will be 
+studied on prototypes to provide for a maximum of photoelectrons.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+ \begin{minipage}{1.5cm}
+~~
+ \end{minipage}
+ \begin{minipage}{8.0cm}
+   \begin{tabular} {|c|c|c|} \hline
+     Scintillator & Bulk ($\lambda$) (cm) & $\tau$ (ns) \\ \hline
+     BC-408 & 380 & 2.1 \\
+     BC-404 & 160 & 1.8 \\
+     BC-418 & 100 & 1.4 \\ \hline
+   \end{tabular}
+ \end{minipage}
+ \begin{minipage}{8.0cm}
+   \begin{tabular} {|c|c|} \hline
+     PMT ($2''$) & Rise Time (ns) \\ \hline
+     XP20D0B   & 2.5 \\
+     XP2020    & 1.5 \\
+     XP2020/UR & 1.4 \\
+     R9779     & 1.8 \\ \hline 
+   \end{tabular}
+ \end{minipage}
+\caption{\small{Attenuation lengths $\lambda$ and decay times $\tau$ for 
+various scintillators (left) and rise times (right) for various photomultiplier
+tubes.  The present {\tt CLAS} TOF system utilizes BC-408 scintillator coupled 
+to 2-in Thorn EMI9954A PMTs (panel-1a) and 3-in Philips XP4312B PMTs
+(panel-2).}}
+\label{parms}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=ftof_att_6cm.eps hscale=50 vscale=50 hoffset=430 voffset=-35 
+angle=90}
+\caption{\small{Resolution for various scintillation materials showing the 
+trade-off between attenuation length and decay time.  Estimates assume 6-cm 
+wide scintillators and an intrinsic resolution of the electronics of 40~ps.
+The arrow along the bottom of the plot shows the range of scintillator lengths 
+in the FTOF panel-1 counters.}}
+\label{sc_tof}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Light Guides}
+\label{lgs}
+
+Preliminary simulation studies indicate that the best time resolutions 
+for the panel-1b counters will be obtained without light guides since 
+the number of photons entering the PMT window is higher by a factor of 
+two than with the best optimized light guide of non-zero length.  
+Eliminating the light guides altogether allows for long enough 
+scintillators to cover the full fiducial region given the constraints of 
+the PMT, voltage divider, and cable sizes.
+
+\subsection{Photomultiplier Tubes}
+\label{sec:pmt}
+
+Prototypes have realized a timing resolution of 70~ps for 200-cm long 
+detectors using Philips XP2020/UR PMTs, which have 25\% faster rise times 
+than the more standard Philips XP2262 PMTs.  This is achieved with an 
+improved transit-time spread across the photocathode.  PMTs contribute to 
+a large fraction of the total hardware costs for the FTOF system.  Careful 
+prototyping of the detectors is therefore especially important for the 
+selection of a specific tube and voltage divider network, as, e.g., the 
+XP2020/UR is about twice as expensive as the XP2262.  While we plan to 
+perform detailed prototyping efforts to optimize the choice of components, 
+we expect that a faster PMT will be required.  In Table~\ref{parms} we 
+give the rise times for various common tubes.  Faster PMTs are available, 
+but in practice should be matched to the rise times of the combined 
+scintillator-light guide system.  
+
+PMT performance must be carefully weighed against the tube geometry.
+An important criterion for the new panel-1b counters is that they
+cover the same $\phi$ range as the drift chambers.  In other words,
+all of the inactive system elements must reside within the projected
+shadow of the torus coils/drift chambers.  Thus it is imperative to
+select a PMT model that meets this requirement.  The choice of the PMTs 
+for the panel-1b counter readout will employ two different PMTs.  For 
+the first six counters, we will employ Hamamatsu R9779 PMTs (97-mm long).  
+For the remaining counters we will employ Photonis XP20D0B PMTs (131-mm 
+long).  The design requirement to match the acceptances of the FTOF system 
+to the drift chambers is an important consideration.  The coverage 
+specification for the drift chambers is to provide 50\% $\phi$ coverage 
+at $\theta$=5$^\circ$.  This specification is only met for the FTOF 
+system when using the shorter PMTs.  This $\phi$ coverage of the panel-1b
+counters with this design choice is highlighted in Fig.~\ref{phi_cov}.  The 
+final number of counters readout with the Hamamatsu PMTs still needs to be 
+finalized.  The issue will be a compromise between the physics requirements 
+for large $\phi$ coverage at small polar angles and the increased costs
+of the Hamamatsu PMTs compared to the Photonis PMTs.  Also the timing
+specifications for the Hamamatsu PMTs are slightly worse than for the
+Photonis PMTs.  However, this is offset by the improved light collection
+for the shorter counters.
+
+\subsection{Voltage Dividers}
+
+A schematic diagram of the high-voltage divider currently used for the
+{\tt CLAS} TOF panel-1a and panel-2 readout is shown in Fig.~\ref{divider}
+\cite{smith1}.  For the panel-1b counters we are presently planning on
+using the Photonis Imaging Systems VD127K/T transistorized hybrid voltage 
+divider as shown in Fig.~\ref{divider}.  Each of these active dividers use 
+high-voltage transistors to fix the PMT gain by stabilizing the voltage and
+to protect the PMT against high light levels by shutting down the circuit 
+in an over-current situation.  
+
+The tube-base assembly for the current {\tt CLAS} panel-1a counters is shown 
+in Fig.~\ref{tube_base}.  In order to allow the scintillator to span the
+maximum area of the detector, the PMT and voltage divider are required to
+fit in the shadow of the main torus magnet.  The same constraint will be
+imposed on the tube-base assemblies for {\tt CLAS12}.  A design of this
+sort meets our requirements of an extremely compact design.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.5cm}
+\special{psfile=divider.eps hscale=43 vscale=43 hoffset=-15 voffset=-40}
+\special{psfile=photonis_base.ps hscale=35 vscale=45 hoffset=215 voffset=270 angle=-90}
+\caption{\small{(Left) Schematic diagram of the high-voltage divider for the 
+EMI-9954A PMT used for the current {\tt CLAS} panel-1 readout.  The last four 
+stages of the divider are stabilized by high-voltage FETs.  (Right) Schematic
+diagram of the active Photonis VD127K/T dividers planned for the panel-1b 
+counters.}}
+\label{divider}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{5.2cm}
+\special{psfile=tube_base.eps hscale=65 vscale=65 hoffset=60 voffset=-10}
+\caption{\small{Side view of the PMT-base assembly mounted on the {\tt CLAS}
+panel-1a TOF scintillators.  The compact design is required by space 
+limitations in the detector for the 2-in PMT.}}
+\label{tube_base}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Assembly}
+
+Each scintillation counter will be individually wrapped, and assembled with
+two photomultiplier tubes, one at each end.  The layers are shown in 
+Fig.~\ref{wrap} for the existing panel-1a and panel-2 counters.  The outer 
+coverings of the scintillator consist of two layers of aluminum foil, one 
+strip of 5-mil lead foil on the side facing the target, and finally, one 
+layer of black Kapton.  The lead foil was included to shield the scintillators 
+from background x-rays produced in the target.  This is the only extra 
+material facing the target.
+
+For the new panel-1b counters, studies are underway to decide on the final
+wrapping materials, especially with regard to adding a thin lead sheet for
+x-ray absorption on the side facing the target.  Currently we plan on
+wrapping the counters in a single layer of metalized mylar film and then
+a double layer of Tedlar PVF film for light tightness.  Presently we are not 
+planning to change the wrapping of the existing panel-1a and panel-2 counters 
+as a cost reduction measure.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{6.5cm}
+\special{psfile=panel1a_wrap.eps hscale=70 vscale=70 hoffset=40 voffset=-205}
+\caption{\small{Cross section of counter wrapping for the existing {\tt CLAS} 
+panel-1a and panel-2 counters. The UV-transmitting fiber is used for the
+laser calibration system.  The lead foil is to absorb low-energy background 
+x-rays from the target.}}
+\label{wrap}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+After wrapping, each panel-1a and panel-2 scintillator was attached to a 
+support structure, light guides and photomultiplier tubes were glued in 
+place, and an optical fiber installed for the laser calibration system. 
+Dymax 3-20262 UV-curing optical cement was used as a bond for the light
+guide/scintillator interface, as well as the PMT/light guide interface.
+This approach is also planned for the panel-1b counters.
+
+The panel-1a and panel-2 counters are each supported individually by a
+composite sandwich structure of stainless steel skins on structural foam 
+that is attached to the detector frame only at the two ends. The composite 
+structure, which mounts on the scintillator side facing away from the target,
+provides uniform material thickness to the scattered particles.  The support 
+was undersized so the counters could be placed as close together as allowed 
+by the wrapping material.  The assembly with support is shown in 
+Fig.~\ref{support}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{10.5cm}
+\special{psfile=panel1a_mount.eps hscale=70 vscale=70 hoffset=10 voffset=-145}
+\caption{\small{Counter and support assembly. a) Top view and enlarged end 
+view of the panel-1a and panel-2 assemblies.  b) Side view of the panel-2
+mounting assembly.}}
+\label{support}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The panel-1a counters were mounted on 1-in-thick supports to minimize the 
+thickness of the package from the standpoint of Coulomb multiple scattering
+and energy loss considerations.  The maximum deflection for the installed 
+scintillators is 4.4~mm, as estimated from deflection tests and the compound 
+angle of each detector,  which relieves the overall support requirements.
+The space for the panel-2 counters allowed for 3-in-thick sandwich supports,
+which were mechanically much stiffer and resulted in no appreciable 
+deflection. 
+
+The mounting of the panel-1b counters in front of the existing panel-1a
+counters is being designed to allow for minimal additional material in the
+active area of the detectors.  Fig.~\ref{tofsupport1} shows the current 
+mounting plan for the panel-1 counters.  Here the panel-1b counters will 
+be mounted on a triangular support frame very similar in design to that 
+employed for the existing panel-1a counters.  Side views of the panel-1 
+counters showing the individual support frames is shown in 
+Fig.~\ref{tofsupport2}.  The support frames for the two panels in each 
+sector will be mounted to the forward carriage using legs that project 
+through the gaps between the PCAL and EC detectors.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{7.0cm}
+\special{psfile=tof_panel1_support.eps hscale=50 vscale=50 hoffset=85 voffset=0}
+\caption{\small{Panel-1 counter support structure diagram showing the
+angle brackets used to attach the counters in the different panels to their
+associated support frames.}}
+\label{tofsupport1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{9.5cm}
+\special{psfile=support1.eps hscale=50 vscale=50 hoffset=5 voffset=10}
+\special{psfile=support2.eps hscale=27 vscale=27 hoffset=180 voffset=30}
+\caption{\small{Side views of the panel-1 counters in a single sector 
+showing the panel-1a and panel-1b counters mounted on their associated
+support frames.  These figures were generated from our 3--D CAD model.}}
+\label{tofsupport2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Magnetic Shielding}
+
+The FTOF PMTs will be located roughly 650~cm from the target in a local
+magnetic field that should be less than 24~G (maximum that occurs in
+the axial direction with respect to the PMT), given the field map for the 
+current design of the {\tt CLAS12} torus.  A magnetic shield for the PMTs 
+must be included to reduce both the axial and transverse components of the 
+field, especially near the photocathode.  These conditions are similar to 
+those of the PMTs in the current {\tt CLAS} TOF system.  In the existing 
+panel-1a and panel-2 counters, the magnetic shield consists of a cylinder 
+made from 0.020-in thick $\mu$-metal, with the shield extending 2-in beyond 
+the front face of the PMT.  For the panel-1b counters, we are planning on a 
+design that consists of a cylinder made from 1 to 2-mm thick $\mu$-metal, 
+with the shield ending at the front face of the PMT.  The outside face of 
+the cylinder will have a $\mu$-metal endcap to improve the shielding
+against the axial field and the cable connections to the voltage divider
+(anode, dynode, and high voltage) will be made through the shield.  Detailed 
+studies of these PMTs will be carried out in various magnetic fields to 
+optimize the final design of the magnetic shielding.
+
+\subsection{Laser Calibration System} 
+\label{sec:laser}
+
+A system of ultraviolet (UV) lasers is used to test and calibrate the 
+existing {\tt CLAS} TOF counters.  This system will continue to be employed
+and will be updated to include connections to the new panel-1b counters. 
+The UV light is delivered to the center of each scintillator via a silica 
+optical fiber.  The fiber core diameter is 200~$\mu$m with a 240-$\mu$m 
+cladding.  The TDC and ADC information from the laser pulses is then used
+to calibrate the overall timing and pulse-height time-walk. 
+
+The calibration system consists of optical tables located near the 
+counters.  Each optical table contains a Laser Photonics LN203C nitrogen 
+laser operating at 337~nm enclosed in an aluminum box for RF shielding 
+and personnel safety.  The laser beam is directed through an opening in 
+the aluminum enclosure to a series of optical and mechanical elements.  
+The laser beam first encounters a flat quartz plate that reflects a small 
+fraction ($\approx$ 4\%) of the light back to a fast photodiode circuit
+that is used as a reference to time the laser to the TOF scintillators.
+Most of the laser light passes through a variable neutral-density filter 
+with a dynamic range of 1:40.  This filter can be used to attenuate the 
+light over a range of values suitable for measuring the time-walk correction 
+of the scintillators.  The filter is adjusted by a remotely controlled 
+stepping motor.  Downstream of the filter, the beam is expanded by a 
+CTR 5$\times$3 diffuser.  The diffused beam incident on the fibers is 
+uniform to within 30\%.  The beam can then be partially intercepted by a 
+``mask'' controlled by a stepping motor.  Several different hole patterns 
+along the ``mask'' can be positioned to illuminate various combinations of 
+fiber bundles.  Each bundle consists of seven all-silica 100-$\mu$m-diameter 
+fibers (numerical aperture is 0.22) that are 13-m long and distributed to 
+the various scintillators.  For the panel-1a counters, there are 24 bundle 
+ends that are arranged in a four-by-six rectangular array behind the ``mask'' 
+within an area of 3.0~cm$^2$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.5cm}
+\special{psfile=tof_elec1.eps hscale=60 vscale=58 hoffset=60 voffset=-5}
+\caption{\small{Overall schematic of the electronics used in the current
+{\tt CLAS} TOF system.}}
+\label{electronics_old}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Electronics}
+
+The FTOF counters will generate prompt signals for the {\tt CLAS12} 
+Level-1 trigger electronics, as well as signals for pulse-height and 
+timing analysis.  The overall layout of the TOF electronics currently used 
+in {\tt CLAS} is shown in Fig.~\ref{electronics_old}.  In this design the 
+PMT dynode pulses go to a pretrigger circuit to generate the Level-1 trigger.
+Each PMT anode pulses go to a LeCroy 1881M FASTBUS ADC and a CAEN VME 1190 
+pipeline TDC (100~ps LSB) for readout.  A simplified design using pipeline 
+TDCs, flash ADCs (or pipeline ADCs), and improved electronics for forming 
+the trigger signals is planned for {\tt CLAS12} (see 
+Fig.~\ref{electronics_new}).  With the incorporation of the new ADCs, the 
+miles of delay cables employed in the current TOF system can be eliminated.
+
+The intrinsic resolution of the electronics system ($\sigma_0$) must be 
+reduced and it has been measured to be as small as 14~ps in various setups
+\cite{smith2}.  There are many contributions to this term, and each electronic 
+component will be chosen to insure that it meets our specifications.  In 
+order to achieve the rate capability at a luminosity of 
+$1 \times 10^{35}$~cm$^{-2}$s$^{-1}$, a high-resolution pipeline TDC will be 
+used for the new panel-1b counters.  These modules may be the commercially 
+available modules used for the readout of the existing {\tt CLAS} TOF 
+counters, or may be electronics developed at JLab.  For instance, the JLab 
+Fast Electronics group is developing such a TDC based on the COMPASS F1 chip. 
+Presently, we assume $\sigma_0$ = 40~ps in our estimates in 
+Figs.~\ref{sigma_tof} and \ref{sc_tof}, limited by the resolution of the 
+COMPASS F1 TDC chip. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{6.7cm}
+\special{psfile=tof_elec2.eps hscale=60 vscale=60 hoffset=70 voffset=0}
+\caption{\small{Overall schematic of the electronics planned for the new
+{\tt CLAS12} FTOF system.}}
+\label{electronics_new}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Cables}
+
+Fast timing of signals from the FTOF system requires cables with low 
+signal distortion.  Measurements were made of the response of several 
+types of coaxial cable for the existing {\tt CLAS} TOF system, including 
+RG-58, the usual cable for fast NIM electronics, RG-213, and Belden 9913, 
+a low-loss semi-solid polyethylene cable.  The lengths of the cables 
+($\sim$400~ns) were chosen to match the time required to form a first-level 
+trigger for {\tt CLAS}.  The response of the cables to a NIM logic signal, 
+-0.75~V and 10~ns duration, was measured, and the transmission of pulses 
+through the cable was simulated.  Note that the cable dispersion in high 
+quality Belden 9913 is approximately equal to the dispersion in standard 
+RG-213 cable for the same delay because the slower velocity in RG-213 
+($\beta = 0.66$) compared to Belden 9913 ($\beta= 0.84$) compensates for 
+the larger attenuation.  We plan to keep the Belden 9913 cable from the PMT 
+dynode to the trigger electronics and RG-213 from the anode to the ADC and 
+discriminator for panels-1a and 2.  The faster trigger cables reduce the 
+need for additional signal delay.  Since the panel-1b counters will
+typically not be in the trigger for {\tt CLAS12} electron runs, the
+preferred choice of readout cable for the new panel-1b counters is to
+use short standard RG-58 cables to feed into a nearby pipeline TDC and
+ADC readout system.
+
+\subsubsection{High-Voltage Supplies}
+
+The photomultipliers for the FTOF counters will operate at about 2000~V with
+negative polarity.  The maximum dark current drawn by the PMTs for the
+existing panel-1a counters is about 20~nA and is about 30~nA for the
+panel-2 PMTs.  The current {\tt CLAS} TOF system is powered by five 
+LeCroy 1458 mainframes that can contain up to sixteen cards, each supplying 
+12 independent channels for a maximum of 192 channels per mainframe.  This
+system will be reused for the FTOF system, however due to the number of HV
+channels in the panel-1b system, additional HV channels will have to
+be added to the system.
+
+\section{Simulations and Reconstruction}
+
+The FTOF system is being modeled within our GEANT4 Monte Carlo framework.  
+Fig.~\ref{gsim_ftof} shows a representation of the counters in this model,
+including panel-1a, panel-1b, and panel-2 in each sector of {\tt CLAS12}.
+The output of the Monte Carlo are the ADC and TDC values associated with
+the two ends of each counter where there is a hit, modeled with the
+appropriate resolution expected for these detectors.  At the current time, 
+the coding for the full FTOF reconstruction is being implemented in the 
+Monte Carlo.  Studies of the angular coverage of the counters, particle 
+identification vs. momentum, reconstruction for tracks that cross multiple 
+counters, and the impacts of the panel support frames will be carried out
+in the near future.  However, even with the low-level ADC and TDC information
+currently available, we can already gain some insight into the expected 
+coverage and response of this system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{15.0cm}
+\special{psfile=ftof_gemc.eps hscale=80 vscale=80 hoffset=20 voffset=10}
+\caption{\small{Model of the FTOF system included in our GEANT3 Monte 
+Carlo. (a). Perspective view looking downstream of the six FTOF sectors 
+divided into panel-1a, 1b, and 2. (b) Close-up view of (a) focussing in 
+on a single sector. (c). View of the back of panel-1a (looking upstream) 
+showing details of the definitions of panel-1a (pink) and panel-1b (green).}}
+\label{gsim_ftof}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fig.~\ref{ftof_acc} shows the acceptance of the {\tt CLAS12} FTOF system
+in terms of $\phi$ and $\theta$.  Plots of this sort serve to define the 
+shadow region in terms of $\phi$ vs. $\theta$ defined by the main torus 
+cryostat and the drift chamber system.  In this shadow, all of the inactive 
+components of the detectors must reside, including light guides, PMTs, 
+voltage dividers, magnetic shielding, support frames and structures, and 
+cables.  Fig.~\ref{ftof_acc} shows the thrown particles in the simulation
+and the particles reconstructed by the FTOF system.  The final definition 
+of the shadow region serves to define the lengths of the new panel-1b 
+counters as a function of polar angle, as well as the number of required
+panel-2 counters.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{14.0cm}
+\special{psfile=theta.eps hscale=49 vscale=47 hoffset=-20 voffset=200}
+\special{psfile=phi.eps hscale=44 vscale=48 hoffset=225 voffset=200}
+\special{psfile=y_vs_x.eps hscale=50 vscale=55 hoffset=90 voffset=-10}
+\caption{\small{Preliminary GEANT4 Monte Carlo output showing the 
+geometric coverage of the panel-1b FTOF system in terms of $\theta$ (deg) 
+(UL) and $\phi$ (UR) (deg).  Here the black curves are the thrown events 
+and the red curves are the reconstructed events.  Also shown for panel-1b
+is the reconstructed $y$-coordinate vs. $x$ coordinate (m) (bottom) for the 
+full FTOF system.}}
+\label{ftof_acc}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\section{Engineering and Design: Task List and Time Line}
+%
+%The engineering and design tasks and time line of the {\tt CLAS12} FTOF 
+%system are based in large part on our experiences with the design and
+%construction of the existing {\tt CLAS} TOF system.  In this section
+%we present an overview of the specific engineering and design tasks and
+%time line that are associated with the {\tt CLAS12} FTOF system.  Shown
+%below is an overview of the engineering and design time line to complete
+%the various tasks by the beginning of FY09.
+%
+%\begin{tabbing}
+%~~~~~$\bullet$ Student Training \hskip 7.0cm                 \= 8/2005 \\
+%~~~~~$\bullet$ PMT and Scintillator Acquisition              \> 8/2005 \\
+%~~~~~$\bullet$ Assembly Hall Acquisition 		     \> 9/2005 \\
+%~~~~~$\bullet$ Data Acquisition System Implementation        \> 6/2006 \\
+%~~~~~$\bullet$ Detector Lab Infrastructure	 	     \> 7/2006 \\
+%~~~~~$\bullet$ Verification of Electronics Specifications    \> 8/2006 \\
+%~~~~~$\bullet$ Calibration of Different TDCs		     \> 7/2006 \\
+%~~~~~$\bullet$ Verification of Current TOF Specifications    \> 8/2006 \\
+%~~~~~$\bullet$ First Prototype Tests for FTOF	             \> 9/2006 \\
+%~~~~~$\bullet$ Prototype Tests for Different Geometries      \> 8/2007 \\
+%~~~~~$\bullet$ Prototype Tests with Different PMTs	     \> 8/2007 \\
+%~~~~~$\bullet$ Overall Optimized Time Resolution	     \> 8/2007 \\
+%~~~~~$\bullet$ Prototype Detector Beam Tests at JLab	     \> 9/2007 \\
+%~~~~~$\bullet$ Planning of Final Detector Design	     \> 9/2007 \\
+%~~~~~$\bullet$ Design of Detector Assembly Tools	     \> 9/2007 \\
+%~~~~~$\bullet$ Detector Calibration System Design	     \> 9/2008 \\
+%~~~~~$\bullet$ Complete Detector Design		             \> 9/2008 \\
+%~~~~~$\bullet$ Detector Component Acquisition	             \> 9/2008 \\
+%~~~~~$\bullet$ Complete Infrastructure for Assembly	     \> 9/2008 \\
+%\end{tabbing}
+%
+%\section{Construction Cost}
+%
+%The construction costs associated with the FTOF system are provided in
+%Table~\ref{costs}.  Here the specific costs associated with the PMTs,
+%scintillator material, light guides, voltage dividers, mechanical support,
+%signal and high voltage cables, and the laser calibration system are 
+%provided.  This table also provides a proposed breakdown of the construction 
+%costs on a year-by-year basis over the four-year construction period for
+%this system.  Note that the costs (associated with the new panel-1b
+%counters) are based on 58 counters/sector $\times$ 6~sectors $\times$ 
+%2~ends/counter or 700~units.  All costs are scaled up by 10\% to account for 
+%taxes, shipping, and handling.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|l|l|l|l|l|l|} \hline
+%                       &           &  \multicolumn{4} {|c|} {Year} \\ \cline{3-6}
+%~~~~~~~~~~{\bf Item}   & {\bf Cost}& ~~~1     & ~~~2     & ~~~3     & ~~~4    \\ \hline  
+%1. PMTs                & \$630.7k  & \$210.2k & \$210.2k & \$210.2k & \$0     \\ \hline 
+%2. Scintillator        & \$345.4k  & \$115.1k & \$115.1k & \$115.1k & \$0     \\ \hline
+%3. Light Guides        & \$215.6k  & \$71.9k  & \$71.9k  & \$71.9k  & \$0     \\ \hline
+%4. Voltage Dividers    & \$105.5k  & \$35.2k  & \$35.2k  & \$35.2k  & \$0     \\ \hline
+%5. Magnetic Shielding  & \$65.5k   & \$21.8k  & \$21.8k  & \$21.8k  & \$0     \\ \hline
+%6. Mechanical Support  & \$70.2k   & \$0      & \$0      & \$35.1k  & \$35.1k \\ \hline
+%7. Signal Cables       & \$28.7k   & \$9.6k   & \$9.6k   & \$9.6k   & \$0     \\ \hline
+%8. High Voltage Cables & \$53.5k   & \$17.8k  & \$17.8k  & \$17.8k  & \$0     \\ \hline
+%9. Laser System        & \$41.8k   & \$13.9k  & \$13.9k  & \$13.9k  & \$0     \\ \hline
+%~~~~~~~~~~{\bf Total}  & \$1556.9k & \$495.5k & \$495.5k & \$530.6k & \$35.1k  \\ \hline
+%\end{tabular}
+%\end{center}
+%\caption{\small{Breakdown of the construction costs for the {\tt CLAS12} FTOF 
+%system, including a proposed cost breakdown of the over the four-year duration 
+%of the construction project.}}
+%\label{costs}
+%\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%Each of the budget items included in Table~\ref{costs} is expanded in more
+%detail below to discuss specifically what is included in each budget category,
+%what manufacturers and models are being considered, and the source of the
+%quote.
+%
+%\vskip 0.5cm
+%
+%\noindent
+%\underline{PMTs:}
+%
+%\vskip 0.3cm
+%
+%The cost estimate for the panel-1b PMTs assumes that we will employ Philips
+%XP2020/UR devices.  Our pricing information comes from Photonis Imaging Sensors.
+%The have quoted us a price of \$819/PMT.  The budgeted amount for the PMTs is
+%given by:
+%
+%\begin{center}
+%\$819/PMT $\times$ 700 PMT $\times$ 1.1 (taxes/S\&H) = \$630.7k
+%\end{center}
+%
+%\noindent
+%\underline{Scintillator:}
+%
+%\vskip 0.3cm
+%
+%The scintillator cost is based on using BC-404 scintillator for the new panel-1b
+%counters.  We have obtained a quote from Saint-Gobain Crystals to manufacture 
+%six pieces each of our 58 different length scintillators.  The cost assumes that 
+%two surfaces of the rectangular counter are cast against a glass surface and the 
+%other two surfaces and ends are diamond-tool finished.  The total number of 
+%pieces of 6-cm wide by 6-cm high scintillator ranging from 32~cm to 376~cm in 
+%length is 384.  The budgeted amount for the scintillator is given by:
+%
+%\begin{center}
+%\$314k $\times$ 1.1 (taxes/S\&H) = \$345.4k
+%\end{center}
+%
+%\noindent
+%\underline{Light Guides:}
+%
+%\vskip 0.3cm
+%
+%The light guides that will be constructed for the panel-1b counters are detailed
+%in Fig.~\ref{lightg}, and will be constructed from acrylic.  We have obtained
+%a quote from Saint-Gobain Crystals to manufacture the 700 light guides for the 
+%system.  The budgeted amount for the light guides is given by:
+%
+%\begin{center}
+%\$280/guide $\times$ 700 guides $\times$ 1.1 (taxes/S\&H) = \$215.6k
+%\end{center}
+%
+%\noindent
+%\underline{Voltage Dividers:}
+%
+%\vskip 0.3cm
+%
+%The voltage dividers that will be employed for the panel-1b counters are detailed
+%in Fig.~\ref{divider}.  These units are Photonis Imaging Sensor VD127K/T dividers,
+%and the company provided the quote for the 700 dividers.  The budgeted amount for 
+%the voltage dividers is given by:
+%
+%\begin{center}
+%\$137/divider $\times$ 700 dividers $\times$ $\times$ 1.1 (taxes/S\&H) = \$105.5k
+%\end{center}
+%
+%\noindent
+%\underline{Magnetic Shielding:}
+%
+%\vskip 0.3cm
+%
+%The magnetic shielding includes 700 cylinders of 1-mm thick $\mu$-metal.  We
+%have obtained a quote from The MuShield Company, Inc. for \$85/unit.  The 
+%budgeted amount for the magnetic shielding is given by:
+%
+%\begin{center}
+%\$85/unit $\times$ 700 units $\times$ 1.1 (taxes/S\&H) = \$65.5k
+%\end{center}
+%
+%\noindent
+%\underline{Mechanical Support:}
+%
+%\vskip 0.3cm
+%
+%The costs for the mechanical supports for the panel-1b scintillators are taken
+%directly from the costs associated with the mechanical supports for the panel-1a
+%scintillators (from 1994) scaled by an inflation factor of 1.3.  The source of 
+%the estimate is Elton Smith of Jefferson Lab who was responsible for the system.  
+%The budgeted amount for the mechanical supports is given by:
+%
+%\begin{center}
+%\$54k $\times$ 1.3 = \$70.2k
+%\end{center}
+%
+%\noindent
+%\underline{Signal Cables:}
+%
+%\vskip 0.3cm
+%
+%We are planning to purchase pre-made signal cables for the panel-1b counters.  
+%We have received a quote from Pasternack Enterprises for 72-ft long RG-58 
+%cables.  Note that for each PMT there are two signal cables needed, one for 
+%the anode and one for the dynode.  The budgeted amount for the signal cables 
+%is given by:
+%
+%\begin{center}
+%\$18.65/cable $\times$ 1400 cables $\times$ 1.1 (taxes/S\&H) = \$28.7k
+%\end{center}
+%
+%\noindent
+%\underline{High Voltage Cables:}
+%
+%\vskip 0.3cm
+%
+%We are planning to purchase pre-made high voltage cables for the panel-1b 
+%counters.  We have received a quote from Pasternack Enterprises for 72-ft
+%long RG-59B/U cables.  The budgeted amount for the high voltage cables is 
+%given by:
+%
+%\begin{center}
+%\$69.42/cable $\times$ 700 cables $\times$ 1.1 (taxes/S\&H) = \$53.5k
+%\end{center}
+%
+%\noindent
+%\underline{Laser System:}
+%
+%\vskip 0.3cm
+%
+%The costs associated with the laser system include the optical fibers that run 
+%from the scintillators to the laser and connector pieces to attach the optical 
+%fibers to the fibers attached directly to the counters.  The costs are based on 
+%the 1996 purchase order for the {\tt CLAS} panel-1a fibers and connectors scaled 
+%by a factor of 1.3 for inflation.  The budgeted amount for the fibers assumes 
+%that we will purchase the same fiber bundle arrays used for {\tt CLAS}.  Each 
+%fiber bundle includes 7 optical fibers, one of which in each bundle is employed 
+%as a spare.  The vendor for the original {\tt CLAS} fibers was RoMack Inc.  In 
+%the budget estimates we scale the costs by a factor of 2.52, which represents 
+%the ratio of the number of panel-1b scintillators to the number of panel-1a 
+%scintillators (i.e. 58/23).  The budgeted amount for the optical fibers is 
+%given by:
+%
+%\begin{center}
+%\$11k $\times$ 2.52 $\times$ 1.3 $\times$ 1.1 (taxes/S\&H) = \$39.6k
+%\end{center}
+%
+%For the fiber connectors, the original purchase order for the panel-1a system 
+%was with Cameo Electronics.  The cost was \$600 for 100 connectors.  The
+%budgeted amount for the fiber connectors is given by:
+%
+%\begin{center}
+%\$600 $\times$ 2.52 $\times$ 1.3 $\times$ 1.1 (taxes/S\&H) = \$2.2k
+%\end{center}
+%
+%\section{Design and Construction Responsibilities} 
+%
+%This section provides a breakdown of the design and construction manpower
+%responsibilities.  The contributing institutions are the University of
+%South Carolina (USC) and JLab.  Table~\ref{manpower} provides a breakdown
+%of the manpower contributions as a function of year, with years 1 through
+%4 representing the FTOF construction period.  Table~\ref{tasks} provides
+%further information about which group and which position will be responsible
+%for the various design and construction tasks.   Fig.~\ref{usc_tests} 
+%shows the test setup currently in place at USC for the testing of the
+%{\tt CLAS12} scintillators for the FTOF system.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{small}
+%\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|} \hline
+%                       & \multicolumn{8} {|c|} {Year} & PED & Construction \\ \cline {2-9}
+%                       & -2 & -1 & 0 & 1 & 2 & 3 & 4 & Total & Subtotal & Subtotal \\ \hline
+%{\bf USC Labor}        & & & & & & & & & &  \\ \cline{1-1}
+%Professor              & 20 &  30 &  30 &  30 &  30 &  30 &  30 & 200 &  80 & 120 \\
+%Graduate Student       & 15 &  20 &  20 &  20 &  20 &  20 &  20 & 135 &  55 &  80 \\
+%Undergraduate Student  & 40 &  50 &  50 &  50 &  50 &  50 &  50 & 340 & 140 & 200 \\
+%Staff (Grant)          &  5 &  15 &  15 &  20 &  20 &  20 &  20 & 115 &  35 &  80 \\
+%Staff (Other)          &  2 &  15 &   2 &   2 &   1 &   1 &   1 &  24 &  19 &   5 \\
+%Contributed University &  0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\ \hline
+%Total                  & 82 & 130 & 117 & 122 & 121 & 121 & 121 & 814 & 329 & 485 \\ \hline \hline
+%{\bf JLab Labor}       & & & & & & & & & & \\ \cline{1-1}
+%Scientist              & 0 & 2 &  2 &  2 &  2 &  6 & 10 &  24 &  4 & 20 \\
+%Mechanical Technician  & 0 & 0 &  0 &  0 & 10 & 10 & 10 &  30 &  0 & 30 \\
+%Mechanical Engineer    & 0 & 0 &  4 &  4 &  1 &  1 &  1 &  12 &  8 &  4 \\
+%Mechanical Designer    & 0 & 0 & 10 & 10 &  2 &  0 &  0 &  28 & 18 & 10 \\
+%Electrical Engineer    & 0 & 0 & 23 & 23 &  0 &  0 &  0 &  45 & 45 &  0 \\
+%Electrical Designer    & 0 & 0 & 10 & 10 &  0 &  0 &  0 &  20 & 20 &  0 \\ \hline
+%JLab Total             & 0 & 2 & 49 & 49 & 15 & 17 & 21 & 159 & 95 & 64 \\ \hline
+%\end{tabular}
+%\end{small}
+%\end{center}
+%\caption{\small{Manpower contributions to the {\tt CLAS12} FTOF design and
+%construction tasks as a function of time. All manpower estimates in man-weeks.
+%Year 1 marks the start of the construction phase of the project.}}
+%\label{manpower}
+%\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{table}[htbp]
+%\begin{center}
+%\begin{tabular}{|l|c|c|c|c|} \hline
+%                & \multicolumn{3} {|c|} {JLab} & USC \\ \hline
+%{\bf PED Tasks} & Electrical & Scientist & Mechanical & University \\ \hline
+%Attach to Carriage                &   & x & x & x \\
+%Backing Structure for Scintillator&   & x & x & x \\
+%Cable Routing                     &   & x &   &   \\
+%Pretrigger Design                 & x & x &   & x \\
+%Cross Talk Tests                  &   &   &   & x \\
+%Voltage Divider Optimization      & x & x &   & x \\
+%Light Guide Optimization          &   &   &   & x \\
+%Prototype Detector Optimization   &   &   &   & x \\
+%Magnetic Shielding Design         &   & x & x & x \\
+%PMT Housing and Grounding         &   & x & x & x \\ \hline
+%\end{tabular}
+%\end{center}
+%\caption{\small{Responsibilities for design and construction tasks at JLab and USC.}}
+%\label{tasks}
+%\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[htbp]
+%\vspace{7.0cm}
+%\special{psfile=usc_test.ps hscale=45 vscale=50 hoffset=5 voffset=10}
+%\caption{\small{Photograph of the test setup for the {\tt CLAS12} FTOF
+%system at the University of South Carolina in March 2007.}}
+%\label{usc_tests}
+%\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{tabbing}
+%~~~~~~~~~~{\bf Key Milestones for Construction} ~~~~~\= Start   ~~~~~~~  \= Finish\\
+%~~~~~~~~~~Ordering all detector components      \> 9/2008	\> 1/2009\\
+%~~~~~~~~~~Testing all detector components       \> 9/2008	\> 9/2010\\
+%~~~~~~~~~~Staged assembly of TOF counters       \> 9/2008	\> 1/2011\\
+%~~~~~~~~~~Testing Electronics                   \> 5/2009	\> 9/2010\\
+%~~~~~~~~~~TOF counter frame                     \> 1/2010	\> 1/2011\\
+%~~~~~~~~~~Mounting and cabling		        \> 1/2011	\> 7/2011\\
+%~~~~~~~~~~Readout and final testing	        \> 2/2011	\> 9/2011
+%\end{tabbing}
+
+\section{FTOF System Quality Assurance Procedures}
+
+This section provides a list of quality assurance (QA) steps for
+the construction of the FTOF system for {\tt CLAS12}.  The information
+given here is based on experience from construction of the TOF
+system for the current {\tt CLAS} detector system.
+
+\vskip 0.5cm
+
+{\it Scintillator Material:}  Upon arrival of the scintillator material
+from the manufacturer, all scintillator should be unwrapped and
+inspected with UV light for scratches, marks, and defects.  All pieces
+should be measured for tolerances.  Any plastic outside of acceptable
+size, clarity, or condition should be shipped back to the manufacturer.
+
+\vskip 0.5cm
+
+{\it Scintillator Handling:} In all steps of handling the scintillator
+material, white gloves and lab coats should be worn.  Whenever possible,
+observe clean room-like procedures.  Naked plastic should be covered if 
+it needs to be left exposed for any period of time.  The scintillator 
+material is very susceptible to damage from scratches, heat, cold, and 
+shock.  Care must be taken at each step of the construction process to 
+monitor the environmental conditions and to be sure that the detectors 
+and materials are handled with care.
+
+\vskip 0.5cm
+
+{\it Workmanship:} Accuracy in workmanship is very important as
+mishandling and poor construction procedures can reduce the detector
+resolution noticeably.  All measurements have to be precise and all
+construction procedures and tolerances have to be rigidly followed.
+
+\vskip 0.5cm
+
+{\it Construction Steps:}  The steps involved in the construction of
+the FTOF scintillators are listed below along with general QA
+guidelines.
+
+\begin{itemize}
+
+\item Preparation of wrapping layers: The dimensions of the wrapping
+materials must be precise to avoid any gaps that could cause local
+efficiency problems or introduce light leaks.  Proper cutting implements
+must be employed with sharp blades always in use.  All wrapping materials
+must be handled using gloves to avoid surface deposits.  A clean work
+area is required to avoid any debris adhering to the surface.  Finally
+all wrapping steps must ensure smooth material finishes to ensure optimal 
+resolution.  
+
+\item Fiber preparation and gluing: Fibers must be cut so that the ends
+are perfectly flat.  Any ridges in these fibers will give rise to a
+surface for reflections that could impact the calibrations.  Also the
+cut ends must be properly polished and cleaned.  Care must be taken 
+when gluing the fibers into position to ensure that no glue gets on the
+ends of the fibers.  Care in handling and routing of the fibers is
+required to ensure that they are not bent in such a manner that they
+could crack or break.
+
+\item Wrapping: Strict procedures must be followed when wrapping the
+aluminum and Tedlar about the scintillator material.  The wrapping
+materials and the tape employed tend to curl or wrinkle when under
+stress.  When smoothing the materials during the wrapping process care
+must be taken not to rip the materials or introduce scratches in the
+material layers or the scintillator itself.
+
+\item Support structure preparation and mounting: Careful visual inspection 
+must be employed of any tape that is being employed to attach the counters
+to the backing structure to be sure it is free from defects.  Also
+procedures must be followed carefully to be sure that any tape employed
+has good adhesion to all contact surfaces.  Sufficient measurements
+must be made when positioning the scintillators on the support structure
+to ensure that all alignment tolerances are met.
+
+\item Mounting the PMTs: Care must be taken to ensure that instructions 
+for mixing epoxy used to attach the PMTs are precisely followed.  Procedures 
+to eliminate or reduce air bubbles in the epoxy must also be followed.
+
+\end{itemize}
+
+\vskip 0.5cm
+
+{\it PMT Handling:} The PMTs are susceptible to damage from shock and
+care must be taken to handle them with care both before and after they
+are mounted.  In addition, care must be taken to avoid any scratches on
+the PMT face during handling and installation.
+
+\vskip 0.5cm
+
+{\it Detector Testing:} HV checks of the detectors should be performed
+and the dark current should be measured for each PMT.  Any measured
+dark current more than 100~nA is an indication of a possible light
+leak or bad PMT.  Attempts to find light leaks should continue to ensure 
+that the measured currents are the same in the testing area with lights on 
+and lights off.  Attenuation length measurements should be performed on
+selected detectors to ensure that they are within the manufacturers
+stated specifications.
+
+\vskip 0.5cm
+
+{\it Installation:} Quality assurance during installation must involve
+procedures for proper and safe handling of the detector structures to
+be sure that they are not subject to any shocks or stresses, as well as
+to ensure that support frames and lifting structures do not put any
+stresses on the detector, the light guides, or the PMTs.  Care must be
+taken that the installation procedure does not affect the integrity of
+the surface wrapping.  Finally, procedures must be followed regarding
+voltage and signal connections to the detectors to be sure that all
+cables are labeled and sufficient strain-relief or slack is allowed for
+so no stresses are put on the detectors or readout electronics. 
+
+\section{FTOF System Safety Issues}
+
+During construction there are three important areas of safety concern.  
+These include:
+
+\begin{itemize}
+
+\item The construction procedure involves the use of glue, epoxy, and
+paints that can cause irritation if they come in contact with skin
+or eyes.  Safety precautions dictate the requirements to use gloves when
+mixing or handling glues, epoxies, or paints, as well as appropriate eye 
+protection.
+
+\item A sizeable number of construction tasks involve use of scissors
+and Exacto blades.  Extreme care must be taken when undertaking activities
+using these instruments to avoid personal injury and cuts.
+
+\item During construction the scintillator bars and scintillator
+assemblies will have to be handled and manipulated.  Care must be taken
+when lifting or supporting loads to avoid personal injury.
+
+\end{itemize}
+
+There are four main areas of safety concern for installation and operation
+of the FTOF system.  These include:
+
+\begin{itemize}
+
+\item Grounding scheme - necessary to prevent electrical shock.
+
+\item Elevated work areas - access to the FTOF system for installation
+and repairs will be via man-lifts.  Operators will employ appropriate
+harnessing and fall protection.
+
+\item Staging and installation - special procedures will have to be 
+detailed for the installation of these large and heavy detector panels.
+
+\item Cable installation - floor grating will be removed and signage
+and personnel barriers will be installed to prevent trip and fall
+hazards.
+
+\end{itemize}
+
+It is expected that the safety issues involved with this work involve
+low risk for personnel injury or equipment damage, especially with the
+use of appropriately planned and supervised work activities.
+
+\section{Collaboration}
+
+The design, prototyping, and construction of the FTOF system is the
+primary responsibility of the University of South Carolina and
+Jefferson Laboratory.  USC is currently in the stage of R\&D to optimize 
+the design of the panel-1b counters and to demonstrate that the combined 
+panel-1a/panel-1b system will meet the design specification of 80~ps 
+timing resolution. 

@@ -1,0 +1,28 @@
+\contentsline {section}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.1}Optical Requirements}{4}
+\contentsline {subsection}{\numberline {1.2}Physical Environment}{6}
+\contentsline {subsection}{\numberline {1.3}Overall design}{8}
+\contentsline {section}{\numberline {2}Optical Design and Construction}{9}
+\contentsline {subsection}{\numberline {2.1}Mirror Prototyping}{14}
+\contentsline {subsection}{\numberline {2.2}Light Collection Cones.}{24}
+\contentsline {section}{\numberline {3}DAQ for HTCC}{28}
+\contentsline {section}{\numberline {4}HTCC Gas System Overview}{30}
+\contentsline {section}{\numberline {5}Simulations of Detector Peformance}{32}
+\contentsline {subsection}{\numberline {5.1}Optical Properties of physical components}{32}
+\contentsline {subsubsection}{\numberline {5.1.1}Radiator Gas}{33}
+\contentsline {subsubsection}{\numberline {5.1.2}Photomultiplier Tubes (PMT)}{33}
+\contentsline {subsection}{\numberline {5.2}Distributions of Photons incident on the PMT faces.}{33}
+\contentsline {subsection}{\numberline {5.3}Background Rates}{35}
+\contentsline {section}{\numberline {6}PMT Studies}{36}
+\contentsline {subsection}{\numberline {6.1}PMT magnetic shielding studies}{36}
+\contentsline {subsection}{\numberline {6.2}PMT Laboratory Studies.}{38}
+\contentsline {subsubsection}{\numberline {6.2.1}Cosmic Ray PMT Testing Apparatus.}{44}
+\contentsline {subsection}{\numberline {6.3}Calibration of the ADC scale}{47}
+\contentsline {subsection}{\numberline {6.4}Relative Quantum Efficiency Measurements}{52}
+\contentsline {section}{\numberline {7}Mechanical Design}{54}
+\contentsline {subsection}{\numberline {7.1}Outer body}{54}
+\contentsline {subsection}{\numberline {7.2}PMT Mount}{55}
+\contentsline {subsection}{\numberline {7.3}Mirror positioning and alignment}{56}
+\contentsline {subsection}{\numberline {7.4}Upstream and entry}{56}
+\contentsline {subsection}{\numberline {7.5} Exit Scheme.}{57}
+\contentsline {section}{\numberline {8}Cost estimates}{57}

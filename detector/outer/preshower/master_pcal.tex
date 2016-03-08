@@ -1,0 +1,149 @@
+\documentclass[12pt]{article}
+%\documentclass{elsart}
+%%\bibliographystyle{elsevier}
+\usepackage{fancyhdr}
+\topmargin -0.3in
+\headheight 0.0in
+\headsep 0.5in
+\textheight 9.4in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+\renewcommand{\baselinestretch}{1.4}
+\usepackage{epsfig}
+\input epsf
+\usepackage[dvips]{color}
+\usepackage{lscape}
+\usepackage{longtable}
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+
+\pagenumbering{arabic}	
+
+
+
+
+\input{newcomm.tex}
+
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+%
+
+\begin{document}
+
+
+\thispagestyle{empty}
+\begin{center}
+{\Huge \bf Pre-shower calorimeter for the CLAS12 detector}
+\end{center}
+\vspace{2cm}
+\begin{figure}[ht]
+\begin{center}
+\vspace{1cm}
+\epsfig{file=pcal_all_6.eps,width=14cm}
+\end{center}
+\end{figure}
+
+\begin{center}
+\Large Version 1.1
+\end{center}
+
+
+\pagestyle{empty}
+
+\input{title.tex}
+
+
+
+
+\thispagestyle{empty}
+
+\begin{abstract}
+
+The CLAS12 detector package will include the existing electromagnetic
+calorimeters of the CLAS detector. Calorimeters in
+CLAS12 will be used primarily for identification of electrons,
+photons, $\pi^0\to \gamma\gamma$, and
+neutrons. At high energies, the existing calorimeters alone will not be
+able to provide necessary accuracy for energy and position measurements
+of electromagnetic showers. Therefore, pre-shower calorimeters are
+proposed to install in front of the existing electromagnetic
+calorimeters. The pre-shower calorimeter will have similar geometrical design and
+the readout scheme as the present calorimeters: lead-scintillator
+sandwich with three stereo readout planes. Proposed pre-shower will
+be about $5.5$ radiation 
+lengths and will have smaller readout segmentation in the
+transverse direction than the present calorimeter. Light, produced in the scintillator strips will
+be transported to a photomultiplier tube via 1 mm diameter wave-length
+shifting fibers, embedded in the surface of the strip. This addition
+to the CLAS12 electromagnetic calorimetry in the forward region will
+allow accurate determination of the shower energy
+and separation of close clusters from high energy $\pi^0$ decays for
+energies up to $10$ GeV. 
+
+\end{abstract}
+
+\newpage
+\tableofcontents
+
+\newpage
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 1.1 \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Pre-shower calorimeter}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{../preshower/pcal-overview.tex}
+\input{../preshower/design-analysis.tex}
+%%\input{../preshower/expected-performance.tex}
+\input{../preshower/mechdesign.tex}
+\input{../preshower/pcal_readout.tex}
+\input{../preshower/pcal_prototyp.tex}
+\input{../preshower/pcal_construction.tex}
+\input{../preshower/pcal_collab.tex}
+
+
+\pagepreake
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

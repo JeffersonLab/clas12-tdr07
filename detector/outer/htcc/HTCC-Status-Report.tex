@@ -1,0 +1,95 @@
+\documentclass[12pt]{article}        
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+\topmargin -0.3in
+\headheight 0.0in
+\headsep 0.5in
+\textheight 9.4in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+\renewcommand{\baselinestretch}{1.4}
+\title{The CLAS12 High Threshold Cerenkov Detector Technical Design Report}
+
+
+\author{I.Bedlinskiy$^{1}$, S.Boyarinov$^{2}$, V.Burkert$^{2}$, S.Christo$^{3}$, L.Elouadrhiri$^{2}$, G.Fedotov$^{4}$, \\ K.Hafidi$^{5}$, P.Hemler$^{2}$, G.Jacobs$^{2}$, J.Joo$^{6}$, D.Kashy$^{2}$,  V. Kubarovsky$^{2}$,  \\ K.Mikhaylov$^{1}$, R. Niyazov$^{7}$  J.Price$^{8}$, Y. Sharabian*$^{2}$, P.Stoler$^{7}$, A. Vlassov$^{1}$, \\ C. Wiggins$^{2}$, M.Zarecky$^{2}$}
+
+
+
+\date{\today}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\Huge \bf The CLAS12 High Threshold Cerenkov Detector Technical Design Report}
+\end{center}
+\vspace{2cm}
+\begin{figure}[ht]
+\begin{center}
+\vspace{1cm}
+\framebox{\epsfig{file=Youri/pictures/CD3_IDNTC_4.eps,width=10cm,angle=-90}}
+\end{center}
+\end{figure}
+
+\begin{center}
+\Large Version 1.2
+\end{center}
+
+\newpage
+
+
+
+\pagenumbering{arabic}	
+\maketitle
+
+
+
+\vspace{2cm}
+
+\begin{center}
+$^{1}$Institute of Theoretical and Experimental Physics, Moscow, 117259, Russia\\
+$^{2}$Thomas Jefferson National Accelerator Facility, Newport News, Virginia 23606\\ 
+$^{3}$Christopher Newport University, Newport News, Virginia 23606\\
+$^{4}$Moscow State University, General Nuclear Physics Institute, 119899 Moscow, Russia\\
+$^{5}$Argonne National Laboratory, Argonne, Illinois, 60430\\
+$^{6}$University of Connecticut, Storrs, Connecticut 06269\\
+$^{7}$Rensselaer Polytechnic Institute, Troy, New York 12180-3590\\
+$^{8}$University of California at Los Angeles, Los Angeles, California  90095-1547
+\end{center}
+
+	
+\thispagestyle{empty}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 1.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries HTCC}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+
+%\pagestyle{myheadings}
+%\markright{CLAS12 technical design report document}
+%\pagestyle{myfootings}
+%\markboth{qqq}{qqq1}
+
+\input{Youri/revdoc.tex} 
+\input{MC-simulation/MC-simulation.tex}
+\input{Magnetic-shielding/Magnetic-shielding.tex}
+\input{PMT-studies/PMT-studies.tex}
+\input{Mechanical/Mechanical.tex}
+\input{Cost/Cost-table}
+\input{quality_safety}
+\end{document}

@@ -1,0 +1,224 @@
+\section{Checkout \& Quality Assurance Before Detector Installation} 
+
+\subsection{Objectives}
+
+In general, the objectives of the {\tt CLAS12} detector checkout before beam
+is delivered to Hall~B are to eliminate dysfunctional or weak components
+in the detector system that are instrumental for the overall operation of
+the individual detector systems and can be spotted without using the
+electron beam.  This will include the following aspects of the detector
+systems.
+
+After completion of the systems checkout without beam, the overall
+functioning of the {\tt CLAS12} components after installation will have been
+established.
+
+\begin{itemize}
+
+\item Checkout of the cable routing schemes of the signal readout without
+high voltages or low voltages applied to the detectors.  For the
+drift chamber system, this will be carried out with digital signals
+injected channel-by-channel into the front-end electronics.  Similarly,
+cable routing of the electromagnetic calorimeters (PCAL, EC), the forward
+and central time-of-flight (FTOF, CTOF) arrays, the {\v C}erenkov
+counters (LTCC, HTCC), and the silicon vertex tracker (SVT), will be
+checked.  This procedure will weed out false signal cablings and
+faulty signal connections.
+
+\item The high voltage (HV) system of the drift chambers will be tested
+by reading out electronic noise in the drift chambers when the high
+voltage has been applied.  This will be done in a ``self-triggering'' mode,
+where the discriminator thresholds of the front-end electronics are set
+to sufficiently low values to allow electronics noise to pass the
+threshold.  This procedure allows checking that all channels are properly
+supplied with the voltage required to operate the preamplifier and
+amplifier-discriminator boards (ADBs).  Similarly, the HV distribution
+to the photomultiplier tube (PMT) based detectors (PCAL, EC, HTCC, LTCC,
+FTOF, CTOF) will be checked by turning the HV supplied to individual
+channels ON and OFF and observing the appearance and disappearance of
+noise and cosmic ray signals induced in the scintillators coupled to
+the PMTs.
+
+\item Low Voltage: The functionality of the low voltage (LV) distribution
+to the front-end electronics will be tested by turning the supplies to
+clusters of channels ON and OFF and observing the appearance and
+disappearance of related channels in the occupancy plots.  This will be
+accomplished by using the {\tt CLAS12} data acquisition system run in a 
+free-running mode.
+
+\item Slow Controls: The slow controls procedures to adjust the critical
+parameters of the equipment will be checked out once the full system has
+been installed in the experimental hall.  It will include checkout of
+all systems controlled by EPICS.
+
+\item Trigger and Data Acquisition: Part of the {\tt CLAS12} online system
+(Trigger and DAQ), as well as the response of the new FTOF and PCAL
+detectors will be checked without using beam.  Cosmic rays will be used
+to form a trigger from the existing EC and TOF scintillator arrays to
+determine the response of the new FTOF and PCAL detectors.  This will
+allow a complete checkout and calibration of the two new detector
+systems that are part of the {\tt CLAS12} forward detector system.
+
+\item Laser Calibration TOF: The forward TOF system will be instrumented
+with a laser-based calibration system.  A fast laser pulse will be
+injected into the center of each TOF paddle, and the response of the
+scintillator measured at both ends.  This allows rapid checkout of the
+functionality of all FTOF paddles, and will provide accurate timing
+calibration and time-walk corrections for the PMT-discriminator-TDC
+chain.
+
+\item PCAL, EC, and FTOF systems: Checkout and calibration will proceed
+with cosmic rays.  The three detector systems are supported together
+on the forward carriage.  After mounting the three detector systems in
+one of the six sector, the detector packages can be conveniently tested
+together using cosmic rays.  The procedure will be similar to what is
+currently using in CLAS for calibrating the EC and TOF systems.  A
+trigger will be setup that uses the stereo readout of the inner and outer
+parts of the EC to form a trigger that selects cosmic rays pointing
+toward specific regions of the PCAL and FTOF.  The analysis of such
+events allows a detailed mapping of the responses of these detectors
+across their entire active areas.
+
+\item Cosmic ray calibration of the drift chamber systems: The
+reconstruction efficiency of the DC system can be mapped out using
+a cosmic ray trigger made by a coincidence of two test scintillation
+counters oriented such as to sample tracks passing through the DC
+system and are oriented towards the target region.  Efficiency of
+single DC layers (1 out of 36) or of a single superlayer (1 out of 6) can
+be mapped by excluding the layer (or superlayer) to be tested from the
+fit, and measuring the hit probability in that same region by
+projecting the reconstructed track into that particular region.
+
+\item Single photon calibration for HTCC/LTCC: The standard procedure for 
+calibrating the low threshold Gas {\v C}erenkov counter (LTCC) response has 
+been to use the single photo-electron ``noise'' signal and adjust the PMT 
+HV to equalize the output signal.  This technique uses a self-triggering 
+procedure that allows calibrating all 216 channels simultaneously.  For 
+the HTCC, a similar procedure will be used.  To check the sensitivity of 
+the HTCC PMTs to the fringe field of the solenoid magnet, the calibration 
+will be repeated with the magnetic field ramped up in steps of 1/10 of the 
+maximum field.  The (possibly shifted) single photo-electron peak will be 
+recorded, and then the HV will be adjusted to restore the no-field peak 
+position.   
+
+\item CTOF cosmic ray calibration: After complete assembly and integration 
+into the Solenoid magnet, a single small scintillation start counter will 
+be placed in the center of the CTOF barrel for triggering. A signal in the 
+start counter and a hit in one of the CTOF scintillators, which indicates 
+passage of a cosmic ray muon, will be used to calibrate the CTOF 
+scintillators on the opposite side of the CTOF barrel.  The Solenoid will 
+then be powered up in steps of 1/10 of maximum current, and the response of 
+the CTOF PMTs will be measured.   
+
+\item SVT (barrel part BST) cosmic ray calibration: After complete assembly 
+and installation of the central detector system, cosmic ray triggers by the 
+additional start counter in the CTOF barrel will be used to measure the 
+efficiency of the SVT response and the track reconstruction, first with 
+straight tracks without magnetic field, and then with the Solenoid magnet 
+ramped up to 1/2 and full fields to test the accuracy of track 
+reconstruction in the barrel part.  For this the track will be reconstructed 
+in the 8 SVT layers in the upper hemisphere, and checked against the track 
+parameters reconstructed in the 8 SVT layers of the lower hemisphere. 
+Agreement within multiple scattering effects is expected.      
+
+\item Solenoid and Torus magnet checkout: The Solenoid magnet checkout in 
+Hall~B will occur after the initial quality assurance test and field 
+mapping outside of the Hall.  It will consist of ramping the field to a 
+moderate level to ensure integrity of the magnet after transport to the 
+Hall, and the functionality of the cryogenics interfaces and controls and 
+of the power supply.  The Torus magnet will be assembled in Hall~B by the 
+vendor from pre-fabricated components.  After assembly, the magnet will be 
+interfaced with the cryogenic system in the hall, cooled down, and ramped 
+up.  A magnet quench will be initiated to verify the quench detection and 
+protection system.  This will be part of the vendor's responsibility.  Once 
+the magnet is accepted and in its final location, magnetic field tests will
+be carried out to determine deviations from the ideal symmetry.
+
+\end{itemize}
+
+\section{Checkout with Beam}
+
+\subsection{Objectives}
+
+In general, the objectives of the Hall~B and {\tt CLAS12} commissioning 
+procedure are to achieve reliable beam transport through thin and extended 
+targets to the beam dump, to verify the optics design of the {\tt CLAS12} 
+Torus and Solenoid magnets, and to determine the alignment and operational 
+performance of the {\tt CLAS12} detector systems using beam interactions.  
+Operation of the {\tt CLAS12} detector system in the presence of magnetic 
+fields, and in conjunction with the trigger and data acquisition system and 
+other ancillary systems will be studied as well. 
+
+After completion of the commissioning, the functionality of the Hall~B 
+instrumentation, including the beam line, the {\tt CLAS12} superconducting 
+Torus and Solenoid magnetic field distribution, all {\tt CLAS12} detectors, 
+the trigger and data acquisition systems, as well as the {\tt CLAS12} online 
+software will have been verified.  
+
+\subsection{Beam Line Operation}
+
+\begin{itemize}
+
+\item Optimize the beam transport through the hall and {\tt CLAS12} to the 
+Faraday cup (FC) and/or the beam dump at various beam currents.  Determine 
+the temperature rise of the FC for beam currents of 5, 10, 15, 20, 30, and
+50~nA, and 6.6, 8.8, and 11~GeV beam energies.
+
+\item Verify the accuracy, stability, and reproducibility of the beam monitors.
+
+\item Verify beam parameters such as spot size and angle dispersion using 
+the beam position monitors.
+
+\item Establish background levels from the beam dump and/or Faraday cup for 
+optimized beam parameters.  Develop optimal shielding conditions of the 
+tunnel at various running conditions.
+
+\item Calibrate the current integrator (Faraday cup) at various beam energies 
+and beam currents. 
+
+\end{itemize}
+
+\subsection{{\tt CLAS12} Operation}
+
+\begin{itemize}
+
+\item Study the performance of the {\tt CLAS12} detector systems, as well 
+as the trigger and data acquisition system at different beam/target 
+conditions.  This includes the measurement of rates in the various detector 
+systems, the FTOF, the HTCC, the PCAL, and the R1, R2, and R3 drift chamber 
+systems in all six {\tt CLAS12} sectors. This will be done at different 
+levels of the solenoid field (50\%, 75\%, 100\%), and at different levels 
+of the Torus current (25\%, 50\%, 75\%, 100\%).   
+
+\item Verify the detector alignments, especially the 3 regions of drift 
+chambers, by operating {\tt CLAS12} without magnetic fields (both Solenoid and 
+Torus magnets will be OFF) and at very low beam currents ($<$0.1~nA) to 
+avoid the intense M{\o}ller background.  Using thin targets will provide a 
+point-like source of charged tracks emerging from the nominal {\tt CLAS12} 
+center. 
+
+\item Calibrate the various CLAS detector systems using beam interactions in 
+a thin target and with various field settings in the {\tt CLAS12} Torus and 
+Solenoid magnets.  This includes establishment of trigger and detection 
+efficiencies of the various detection systems.
+
+\item Measure the timing resolution of the FTOF and CTOF systems using the 
+RF beam structure for accurate information on the start time of charged 
+particles. 
+
+\item Checkout the {\tt CLAS12} calibration and online reconstruction 
+software. 
+
+\item Study drift chambers occupancies as a function of beam current and 
+test the online reconstruction efficiencies. 
+
+\item Determine the LTCC and HTCC efficiencies with high-energy electrons 
+identified by large energy deposition in the EC and PCAL.  
+
+\item Measure the rates of the FTOF and CTOF detectors for different beam 
+currents and different target materials, and determine possible saturation 
+effects.  
+
+\end{itemize}
+
+

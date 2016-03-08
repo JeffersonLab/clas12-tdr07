@@ -1,0 +1,10 @@
+\section{Quality Assurance}
+
+The Service Oriented Architecture is composed of many integrated services loosely connected. The usual interaction between the consumer of a service and the supplier of the service is not direct: generally there will be several processes and a network in between. As a result, during an extended development process, there becomes a strong possibility of errors invading the code, rendering it either unusable or incorrect. Quality assurance of developing projects then becomes a major concern. 
+
+The program being proposed is an {\it extensive} suite checks to assure that every major release is thoroughly checked prior to being made available to the CLAS12 collaboration. In addition, at any level the individual code developer will be able to check {\it any} version against the standard suite. 
+
+The suite of reconstruction standards will include three types of data. The first is {\it pure} simulation, that is monte carlo generated data through the CLAS12 detector {\it without} any detector resolution included.  Reconstruction of this data set should return {\it exactly} what was input; any deviation is suspect and cause for special consideration. The next set of standard data will be a persistent monte carlo data set {\it with} full simulation, whose results should remain consistent with input parameters. Finally, varied sets of actual data, fully testing as completely as possible all aspects of the reconstruction software, will be utilized to track the code development. Of course, in all data types, performance in terms of compute resources and storage will also be tracked. Databases of performance results will be maintained as a service for comparison.
+
+
+

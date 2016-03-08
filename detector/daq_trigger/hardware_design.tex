@@ -1,0 +1,345 @@
+\section{Hardware Design}
+
+\subsection{Overview}
+
+The generic scheme for the {\tt CLAS12} DAQ system hardware is shown in 
+Fig.~\ref{fig:HARDWARE1}.  This system will be described in detail in 
+the following sections.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{130mm}
+\special{psfile=CLAS12_HARDWARE_1.eps hscale=60 vscale=60 hoffset=0 
+voffset=0}
+\caption{\small{Generic scheme for the {\tt CLAS12} DAQ system hardware.}}
+\label{fig:HARDWARE1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Front-End for Fast Detectors}
+
+{\tt CLAS12} will have two calorimeters, two time-of-flight systems, and 
+two {\v C}erenkov counters with more than 3700 total PMT channels. Every 
+PMT will be connected to a Flash ADC and to a TDC through a discriminator 
+(see Figs.~\ref{fig:TDC1} and \ref{fig:ADC1}).  Splitter panels will be used 
+to deliver signals to both the ADC and TDC subsystems.  Four VME64X and 
+nineteen VXS crates will be used to accommodate the 56 TDC and 244 ADC boards. 
+Sixteen VME crates will contain the 262 discriminator boards.
+
+The 16-channel JLab-made discriminators have a controllable threshold and 
+output signal width.  They have built-in scalers, and every VME crate with
+discriminators will have a readout controller (ROC), so those scalers can be 
+read out.  The discriminators were successfully used in the {\tt CLAS} 
+tagger system.  A new revision of the discriminators for {\tt CLAS12} will 
+have a test input for calibration purposes and a channel mask.  This is
+currently under development.
+
+In {\tt CLAS12}, 128-channel 85~ps resolution and 32-channel 35~ps resolution 
+pipeline TDCs will be used.  The first channel of every board will be 
+connected to a reference signal through a discriminator to provide a timing 
+reference.  The {\tt CLAS} system has been using these TDC boards for several 
+years.  A recent firmware version for those TDCs has reached 160~MB/s
+readout speed due to advanced 2eSST data transfer protocols.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{130mm}
+\special{psfile=CLAS12_TDC_1.eps hscale=62 vscale=62 hoffset=10 voffset=10}
+\caption{\small{Planned scheme for the TDC readout in {\tt CLAS12}.}}
+\label{fig:TDC1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The 16-channel JLab-made Flash ADCs are still under development and were 
+not available for testing in {\tt CLAS} at the time of writing of this
+document.  However, based on our tests with commercially available Flash 
+ADC boards (Struck SIS3320, see Refs.~\cite{pozd,smith}), {\tt CLAS12} can 
+be equipped with 12-bit 200~MHz boards. We are expecting that the JLab 
+FADCs will satisfy those requirements.
+
+The FADCs are a significant part of the trigger system and will send
+prompt information to the Cluster Finder board installed in the same
+crate. The cluster information will include energy for every channel above 
+threshold.  A threshold will be applied to the energy sum of several 
+consecutive hits.  Information will be sent to the Cluster Finder over the 
+backplane serial bus every 16~ns.  The Cluster Finder board is described 
+in Section~\ref{l1trig}, along with the energy summing algorithm.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{130mm}
+\special{psfile=CLAS12_ADC_1.eps hscale=60 vscale=60 hoffset=0 voffset=0}
+\caption{\small{Planned scheme for the ADC readout in {\tt CLAS12}.}}
+\label{fig:ADC1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Front-End for the Drift Chambers}
+
+The existing {\tt CLAS} preamplifier hybrid boards will be re-used for
+sense wire signal amplification.  The existing MUX boards will be redesigned 
+and the ADB crates will be equipped with new backplanes.  The ADB crates will 
+be reused, probably with new power supplies installed.  Fig.~\ref{fig:ADB1} 
+shows the new ADB electronics layout that is planned.  One ADB crate will have 
+14 96-input preamplifier boards serving a complete drift chamber region, with 7 
+boards per superlayer (112$\times$6 wires = 96$\times$7 channels).  The new MUX 
+boards will send data to the new Segment Finder using a 96-wire bus and ECL
+outputs to the TDCs after a 2-to-1 multiplexing.  The ADB crate backplane has 
+two 96-line buses, one per superlayer, ending in the middle of crate, where the 
+two-unit-wide Segment Finder is installed.  Communication between the various 
+components is described in Section~\ref{l1trig}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{12.0cm}
+\special{psfile=CLAS12_ADB_1.eps hscale=62 vscale=64 hoffset=15 voffset=0}
+\caption{\small{Planned layout of an ADB crate for {\tt CLAS12}.}}
+\label{fig:ADB1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+18 ADB crates will be connected to 9 FASTBUS crates containing 14 LeCroy 
+1877 TDC boards each.  The FASTBUS crates will be upgraded with new Wiener 
+power supplies that include remote control.  In the future, the FASTBUS
+electronics can be replaced by 6 VME64X crates containing 16 v1190
+CAEN TDC boards each (see Fig.~\ref{fig:DC1}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{13.0cm}
+\special{psfile=CLAS12_DC_1.eps hscale=64 vscale=64 hoffset=15 voffset=5}
+\caption{\small{Schematic layout of the planned readout configuration
+for the {\tt CLAS12} drift chambers.}}
+\label{fig:DC1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In addition to aging problems, the FASTBUS TDCs may set another limitation 
+for the {\tt CLAS12} DAQ system.  Currently they are programmed to accept 
+up to 4 hits during a 2~$\mu$s interval, which corresponds to the maximum 
+drift time in the Region~3 {\tt CLAS} drift chamber. The {\tt CLAS12} drift 
+chambers will have similar drift times, so the TDC window will be set to similar 
+values as with the current {\tt CLAS} configuration.  Unfortunately, with the 
+FASTBUS 1877 TDCs, we can only program the window size against a common stop 
+signal.  This signal is derived from the Level-1 trigger signal, and can be 
+delayed a few microseconds to the TDC inputs.  In that situation, we have to open 
+the TDC window by a few more microseconds, which may lead to more background 
+hits.  In that case, we may need to allow 8 or 16 hits per channel to make 
+sure that we are not losing useful hits.  That may increase the TDC conversion 
+time (which is hit-dependent) and the data rate from the FASTBUS crates, which
+would lead to a decrease in the overall DAQ performance.  Our backup VME-based 
+solution will be activated if the FASTBUS electronics will not be usable for 
+any reason.
+
+\subsection{{\tt CLAS12} Trigger}
+
+{\tt CLAS12} will have a three-level trigger system.  The Level-3 trigger 
+is a software-based component and will be discussed in Section~\ref{sec:software}.  
+The following sections contain a detailed description of the hardware-based 
+Level-1 and Level-2 trigger components.
+
+\subsubsection{Trigger Efficiency Study}
+
+As a first step in the {\tt CLAS12} trigger system design, we studied the
+efficiency of the current {\tt CLAS} trigger system.  In particular, we
+studied its efficiency for electrons, which is important for most of the
+physics program.  Detailed results can be found in Ref.~\cite{mikh}.
+We found that by increasing the {\v C}erenkov counter pretrigger 
+discriminator threshold up to 2 photoelectrons, we can make the electron 
+trigger much more selective.  However, {\tt CLAS} has never run with that 
+threshold because of the possibility of losing electrons with low energy 
+deposition in the {\v C}erenkov counter.  {\tt CLAS12} will have two 
+{\v C}erenkov counters, so even with a lower threshold, it is expected that
+electron selection will be improved.  We also found that many non-electron 
+events can be rejected by doing pattern recognition in the drift chambers 
+and matching tracks with the fast detectors.  The new {\tt CLAS12} trigger 
+system was designed to be flexible enough to exercise different approaches, 
+depending on the particular run requirements.
+
+\subsubsection{Trigger System Timing and Layout}
+
+The maximum trigger decision time is currently set to 3~$\mu$s for Level-1
+and 4~$\mu$s for Level-2.  The first number is defined by the SVT readout
+chip, and the sum of both times must be less then 8~$\mu$s, which is defined 
+by the FADC units.  Our preliminary FPGA algorithm development shows that 
+3~$\mu$s for Level-1 may not be enough, for example, to complete the cluster 
+finding in the calorimeters using energy corrections.  Those time constraints 
+can be mitigated by using newer SVT readout chips and bigger FPGAs in the FADC
+boards.
+
+It is important to make sure that logically completed parts of the detector 
+will not be wired to the several FPGAs inside the Cluster Finder boards, which 
+will make cluster reconstruction much more difficult.  The current Cluster
+Finder board design contains two FPGAs, which collect information from 8 FADC 
+modules each.  That layout will satisfy all possible Level-1 algorithms.
+
+\subsubsection{Level-1 Trigger}
+\label{l1trig}
+
+The Level-1 trigger system is based on fast detectors equipped with Flash
+ADCs.  The first stage components of the trigger hardware are incorporated 
+into the Data Acquisition elements (VXS crates), while the final decision is 
+made in a specialized trigger crate containing Level-1 Subsystem
+Processors. The same crate also contains Level-2 Road Finders and
+Level-1/Level-2 matching logic incorporated into the Global Trigger
+Processor, as well as Trigger Supervisor boards as 
+shown in Fig.~\ref{fig:TRIGGER1}.  The system is driven by a 16~ns global
+clock with an internal FPGA 4~ns clock.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{145mm}
+\special{psfile=CLAS12_TRIGGER.eps hscale=55 vscale=55 hoffset=0 voffset=0}
+\caption{\small{Trigger system logic diagram for {\tt CLAS12}.}}
+\label{fig:TRIGGER1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The VXS crates shown in Fig.~\ref{fig:ADC1} contain two trigger system
+components: processing units on the FADC boards (Fig.~\ref{fig:TRIGGER_FADC})
+and Cluster Finder (CF) boards that collect data from the Flash ADCs over fast 
+serial lines.  The CF boards search for clusters in the electromagnetic 
+calorimeters and other detectors, and send the results to the following 
+stage of the trigger system (see Fig.~\ref{fig:TRIGGER_CF}).  A signal 
+processing algorithm running in the FADC board processing unit is shown in 
+Fig.~\ref{fig:TRIGGER_FADC_1}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{12.0cm}
+\special{psfile=CLAS12_TRIGGER_FADC.eps hscale=62 vscale=64 hoffset=0 voffset=5}
+\caption{\small{Processing unit on the FADC board.}}
+\label{fig:TRIGGER_FADC} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{10.0cm}
+\special{psfile=CLAS12_TRIGGER_CF1.eps hscale=20 vscale=25 hoffset=15 voffset=0}
+\caption{\small{Cluster Finding diagram on the Cluster Finder board.}}
+\label{fig:TRIGGER_CF} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{10.0cm}
+\special{psfile=CLAS12_TRIGGER_FADC_1.eps hscale=60 vscale=60 hoffset=15 voffset=0}
+\caption{\small{Signal processing algorithm on the FADC board.}}
+\label{fig:TRIGGER_FADC_1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Level-2 Trigger}
+
+The ADB crates shown in Fig.~\ref{fig:ADB1} contain the Segment Finder 
+(SF) boards that collect data from the set of drift chamber MUX boards
+corresponding to an entire drift chamber region. The SF boards search for
+track segments and send them onto the following stage.  The MUXs send data 
+with a 15~ns strobe, so in a 105~ns interval, all data from both superlayers
+is injected into a programmable delay (see Fig.~\ref{fig:TRIGGER2}).  The 
+Level-1-driven switch and latch units accumulates the drift chamber hits 
+during a 2~$\mu$s interval and passes the result to the Segment Finder board 
+for processing.
+
+The Segment Finder searches for segments in both superlayers simultaneously, 
+then performs a region-based segment search, and finally builds a list of 
+region-based segments.  The system works as a pipeline and sends sets of 
+segments to the Level-2 Road Finders. Every segment occupies 24 bits: 7 bits for 
+wire numbers in $U$ and 5 bits for the $U$-$V$ difference for the first and 
+last wires in the region-based segment.
+
+Six Level-2 Road Finder boards are installed in the trigger crate along with 
+six Level-1 Subsystem Processor boards, a Global Trigger Processor (GTP) board, 
+and a Trigger Supervisor (TS) board. The system collects all information from 
+the fast detectors and drift chambers, along with the information from the 
+central detectors.  It performs drift chamber-based track finding and matches 
+the tracks with clusters from the fast detectors.  The Global Trigger Processor 
+collects the data from the Level-1 Subsystem Processors and Level-2 Road Finders 
+and produces the Level-2 trigger signals (see Fig.~\ref{fig:TRIGGER1}).
+
+The Trigger Supervisor generates the Level-1/Level-2 pass/fail and other 
+signals, and controls the entire DAQ system readout through the Trigger 
+Interface units.  The Trigger Interface (TI) units installed in every 
+crate participate in the readout process.
+
+\subsubsection{Level-1/Level-2 Timing Diagram}
+
+The generic scheme for the Level-1/Level-2 trigger timing is shown in 
+Fig.~\ref{fig:TRIGGER2}.  The entire trigger system can be considered as a
+three-stage process.
+
+The first stage is the Level-1 sector-based trigger, which includes the FADC 
+on-board processing (T1), data transfer over the VXS backplane serial bus (T2), 
+cluster finding (T3), data transfer to the trigger crate (T4), sector-based 
+Level-1 decision (T5), and data transfer to the following trigger stages.  
+During that period of time (T1+T2+T3+T4+T5+T6+T7), the drift chamber signals are 
+delayed by a programmable delay on the MUX boards in the ADB crates.  The T3 and 
+T5 time intervals can be different for different run periods, so the programmable 
+delay must be reprogrammed accordingly.
+
+The second stage starts when the Level-1 signal arrives at the ADB crate, 
+initiating the drift chamber hit-latching process (T8).  The typical T8 
+timing is about 2~$\mu$s and is defined by the maximum drift time.  Three 
+latch units will be used for every channel, so up to three Level-1 triggers 
+can be processed in parallel.  If a fourth Level-1 signal arrives while 
+the first one is still latching, the whole trigger system will be stopped, 
+however, such events will be extremely rare based on the expected trigger
+rate.  After the latching process is finished, the latched hits will be 
+transferred to the Segment Finder (T9), processed there (T10), and the list
+of segments will be transferred to the Level-2 Road Finders (T11) installed in 
+the trigger crate, and processed there (T12).  During that period of
+time (T8+T9+T10+T11+T12), the Level-1 information (clusters from the
+Level-1 Subsystem Processors) will be delayed by another programmable delay.
+
+Stage three is the final Level1/Level2 trigger processing stage in the
+Global Trigger Processor (T13+T14) and Trigger Supervisor (T15). The
+total trigger decision time must be less than 7~$\mu$s to satisfy
+the Flash ADC range.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{12.0cm}
+\special{psfile=CLAS12_TRIGGER_2.eps hscale=58 vscale=58 hoffset=10 voffset=0}
+\caption{\small{Level-1 and Level-2 trigger timing diagram.}}
+\label{fig:TRIGGER2} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Readout Controllers}
+
+Readout Controllers (ROCs) are installed in every FASTBUS, VME, VME64X, 
+and VXS crate.  The ROCs collect data from the front-end boards, process it, 
+and send it to the Event Builder over the network.  Currently we employ 
+mvme6100 controllers with a prpmc880 or pmc280 co-processor module.  That 
+configuration is fast enough to meet the {\tt CLAS12} requirements and more 
+co-processor modules can be installed if necessary.  By the time of 
+{\tt CLAS12} startup, a new generation of ROCs (including multi-processor and 
+multi-core units) will be available.
+
+\subsection{Computing and Network}
+
+A Foundry 1500 switch is currently used as the backbone of the DAQ system, 
+and a similar switch will be used for {\tt CLAS12}.  The Event Builder, 
+Event Recorder, and other critical DAQ components for {\tt CLAS} are 
+running on 4-CPU Opteron-based servers, and that configuration is sufficient 
+for {\tt CLAS12} as well.  ROCs are linked to the 1500 Foundry switch
+through smaller switches with up to four GBit uplinks (see Fig.~\ref{fig:NET1}).  
+The {\tt CLAS} data storage system (RAID5) is sufficient for up to a 150~MB/sec 
+data rate.
+
+All available equipment is good enough to satisfy the {\tt CLAS12} 
+requirements, but most likely we will upgrade most of the components 
+because of aging and maintenance considerations.  The performance of the 
+link to the JLab Computer Center tape storage must be increased
+up to at least 200~MB/s.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{12.0cm}
+\special{psfile=CLAS12_NET_1.eps hscale=64 vscale=64 hoffset=10 voffset=5}
+\caption{\small{Planned scheme for {\tt CLAS12} networking.}}
+\label{fig:NET1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

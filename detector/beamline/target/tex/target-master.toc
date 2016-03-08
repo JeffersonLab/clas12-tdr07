@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Physics Requirements}{3}
+\contentsline {section}{\numberline {2}Polarized Target Design}{4}
+\contentsline {subsection}{\numberline {2.1}Polarizing magnet and the cryostat}{4}
+\contentsline {subsection}{\numberline {2.2}Target insert, cells, $\mu $-waves and NMR}{8}
+\contentsline {subsection}{\numberline {2.3}Heat Load and Pumping requirements}{9}
+\contentsline {section}{\numberline {3}Expected Performance}{11}
+\contentsline {section}{\numberline {4}Cost and Schedule}{14}
+\contentsline {section}{\numberline {5}Collaboration and Responsibilities}{18}

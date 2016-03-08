@@ -1,0 +1,27 @@
+\contentsline {section}{\numberline {1}Overview and Requirements}{4}
+\contentsline {subsection}{\numberline {1.1}Requirements}{4}
+\contentsline {subsection}{\numberline {1.2}Current DAQ system analysis}{4}
+\contentsline {subsection}{\numberline {1.3}'Free-running' DAQ versus traditional DAQ systems}{4}
+\contentsline {subsection}{\numberline {1.4}Front-End Electronics: ADCs}{4}
+\contentsline {subsection}{\numberline {1.5}Front-End Electronics: TDCs and discriminators in fast detectors}{5}
+\contentsline {subsection}{\numberline {1.6}Front-End Electronics: TDCs and ADBs in drift chamber}{5}
+\contentsline {subsection}{\numberline {1.7}Trigger System}{5}
+\contentsline {subsection}{\numberline {1.8}Online Monitoring}{5}
+\contentsline {subsection}{\numberline {1.9}Online Calibration}{6}
+\contentsline {section}{\numberline {2}Hardware Design}{6}
+\contentsline {subsection}{\numberline {2.1}Overview}{6}
+\contentsline {subsection}{\numberline {2.2}Front-End for Fast Detectors}{6}
+\contentsline {subsection}{\numberline {2.3}Front-End for Drift Chamber}{8}
+\contentsline {subsection}{\numberline {2.4}CLAS12 Trigger}{10}
+\contentsline {subsubsection}{\numberline {2.4.1}Level1 Trigger}{10}
+\contentsline {subsubsection}{\numberline {2.4.2}Level2 Trigger}{10}
+\contentsline {subsubsection}{\numberline {2.4.3}L1/L2 timing diagram}{11}
+\contentsline {subsection}{\numberline {2.5}Readout Controllers}{12}
+\contentsline {subsection}{\numberline {2.6}Computing and Network}{12}
+\contentsline {section}{\numberline {3}Software}{13}
+\contentsline {subsection}{\numberline {3.1}CODA Data Acquisition System}{13}
+\contentsline {subsection}{\numberline {3.2}CLAS12-specific components running as CODA extensions}{14}
+\contentsline {subsection}{\numberline {3.3}Level3 trigger}{15}
+\contentsline {subsection}{\numberline {3.4}Online Monitoring}{15}
+\contentsline {subsection}{\numberline {3.5}Online Calibration}{16}
+\contentsline {section}{\numberline {4}Conclusion}{17}

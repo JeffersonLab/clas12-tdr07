@@ -1,0 +1,652 @@
+
+\section{CLAS12 Physics Requirements}
+
+The {\tt CLAS} detector in Hall B is being upgraded to take advantage 
+of the increase of the CEBAF beam energy from 6 to 12~GeV, thus the 
+new name, {\tt CLAS12}.  There are several broad areas of physics 
+enquiry that drive these changes: spectroscopic studies of excited 
+baryons, investigations of the influence of nuclear matter on propagating 
+quarks, studies of polarized and unpolarized quark distributions, and a 
+comprehensive measurement of generalized parton distributions (GPDs).  
+Many of the reactions of interest are electroproduction of exclusive and 
+semi-inclusive final states.  The cross sections for these processes are 
+small, necessitating high-luminosity experiments.  A variety of proposed 
+experiments rely on luminosities of \1035 to achieve the desired statistical 
+accuracy in runs of a few months duration.  The deep exclusive reactions in 
+which an electron scattering at moderate to high values of $Q^2$ results in 
+a meson-baryon final state, provides the most stringent requirements for 
+the {\tt CLAS12} tracking system.  A final state of a few high-momentum, 
+forward-going particles (the electron as well as one or more mesons), 
+combined with a moderate-momentum baryon emitted at large angles, is the 
+typical event type on which the specifications of the tracking system are 
+based.  
+
+In broad strokes, the tracking system must measure forward-going particles 
+down to laboratory angles as small as 5$^{\circ}$ and as large as 
+40$^{\circ}$ in order to cover as much of the hadronic center-of-mass 
+region as possible.  We require very good momentum and angular resolution 
+for the scattered electron (on the order of $\Delta p/p = 1\%$ and 
+$\Delta \theta$ = 1~mrad) in order to determine the virtual photon flux 
+factor $\Gamma_v$, and hence the cross sections, to an accuracy of a few 
+percent.  In addition, a momentum resolution of about 20 to 50~MeV is 
+necessary in order to positively identify a missing hadron in these 
+exclusive reactions.  Finally, good vertex resolution will allow detection 
+of secondary decay vertices and serve as a good marker for strangeness 
+production.
+
+A tracking system capable of achieving these standards was described
+in the PCDR~\cite{pcdr} and quantitatively parameterized in a ``fast'' 
+Monte Carlo program~\cite{fastmc}.  A number of {\tt CLAS} collaborators 
+used the existing model of the detector as described in the {\tt FASTMC} 
+in proposals presented to JLab PAC-30~\cite{pac} in August 2006, the 
+first PAC to consider 12-GeV proposals.
+
+As discussed above, the {\tt CLAS12} detector is designed to detect 
+semi-inclusive and exclusive events with a modest number (up to 4 or 5) 
+of outgoing hadrons.  In addition to the electron and hadrons associated 
+with the event of interest, the detected event will contain both 
+electromagnetic and hadronic ``accidentals''.  Because the physics goal is 
+to run at beam-target luminosities of \1035 or higher, we have simulated 
+the expected accidental particle flux associated with these luminosities.
+Using a modified version of the EGS program~\cite{egs}, we simulated the 
+total hadronic and electromagnetic particle fluxes generated when an 
+electron beam is incident upon a liquid-hydrogen target with a luminosity 
+of \1035.  We calculated the total flux through a measurement layer during 
+its active (measurement) time and multiplied by the probability of the 
+particle interacting in that layer and divided by the number of cells in 
+the layer to get an estimate of the fractional occupancy of that layer due 
+to background. The expected layer occupancy under these conditions is
+on the order of 3-4\%.  Our experience with the present {\tt CLAS} detector 
+is that track-finding is highly efficient if the accidental occupancy is 
+less than 4\%~\cite{dcnim}.  
+
+\section{Overview of the CLAS12 Detector}
+
+In Fig.~\ref{clas12} we show a CAD model picture of the proposed 
+{\tt CLAS12} detector highlighting each of the detector subsystems, 
+including the three forward-angle drift chambers, called Regions 1, 2, 
+and 3, as well as the central silicon vertex tracker.  
+Table~\ref{tracker-specs} provides a listing of the {\tt CLAS12} tracking 
+system design requirements.  As noted in the previous section, the new 
+detector is being designed to operate at a luminosity of \1035.  This 
+higher luminosity goal (the present {\tt CLAS} detector operates at a 
+maximum luminosity of 10$^{34}$~cm$^{-2}$s$^{-1}$) necessitates the use 
+of a solenoidal magnet and conical absorber to shield the detector from 
+M{\o}ller electrons.  To reduce interactions between this solenoidal field 
+and the main {\tt CLAS} toroidal field, and to facilitate construction and 
+installation of new detector elements, the torus has been re-designed.  It 
+is more compact than the present torus while providing equivalent bending 
+power for charged particles between 5$^{\circ}$ and 40$^{\circ}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{11.0cm}
+\special{psfile=clas12_system.eps hscale=70 vscale=70 hoffset=0 voffset=0}
+\caption{\small{A three-dimensional view of the proposed {\tt CLAS12} 
+detector highlighting the various subsystems.  The small inset on the left
+shows the same area highlighted by the dashed box on the right but with
+the solenoid removed to show the SVT system.}}
+\label{clas12}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c||} \hline \hline
+{\bf Category}      & {\bf Requirement} \\ \hline
+Angular coverage    & 5$^{\circ}$ - 135$^{\circ}$ \\ \hline
+Momentum resolution & 0.020 to 0.050~GeV          \\ \hline
+Angular resolution  & 1~mrad (electrons), 10- 20~mrad (hadrons) \\ \hline
+Luminosity     &  10$^{35}$~cm$^{-2}$s$^{-1}$ \\ \hline
+\end{tabular}
+\caption{\small{General specifications for {\tt CLAS12} tracking.}}
+\label{tracker-specs}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have designed the tracking detectors with these external constraints: 
+a central solenoid of 5~T central field value and a radius available for 
+tracking detectors of 25~cm, a new torus with a different aspect ratio 
+but with the same number of amp-turns as the present {\tt CLAS} torus, 
+an expected background rate consistent with a luminosity of \1035, and a 
+separation between the ``forward'' and ``central'' regions defined to be 
+at about 40$^{\circ}$; specifically the forward tracking chambers are 
+designed to cover scattering angles between 5$^{\circ}$ and 40$^{\circ}$ 
+and the central tracker will cover 40$^{\circ}$ to 135$^{\circ}$.  Although 
+the torus cryostat will limit the azimuthal coverage to about 50\% at 
+5$^{\circ}$, our goal is that the inactive portion of the drift chambers 
+not further intrude into the active volume, i.e. the dead areas of the drift 
+chambers (endplates, electronics, etc.) will be located in the ``shadow'' of 
+the coil as viewed from the target.  For Region 2, this is not possible, but 
+we shall try to minimize this dead area.
+
+The higher beam energies available to {\tt CLAS12} mean that tracks will 
+go more forward and have higher momentum than for the present {\tt CLAS} 
+experiments.  We thus require better resolution from the forward drift 
+chambers.  Our design should give better spatial resolution than the
+present {\tt CLAS} chambers for several reasons: smaller cells and use of 
+thicker (30~$\mu$m diameter) sense wires will result in a more linear drift
+velocity (see Fig.~\ref{garfield}), all cells in a superlayer will be 
+identical, easing the calibration, and the simpler mechanical structure 
+should make these chambers easier to survey.  The other feature of higher 
+energy and associated smaller cross sections, requires the use of higher 
+intensity beams.  The resultant higher backgrounds is the primary motivation 
+for the central solenoidal magnet and M{\o}ller absorber.  The higher 
+background can also be mitigated by cells which cover a smaller angular 
+range and have a smaller active time window.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{7.2cm}
+\special{psfile=btoro1.ps hscale=50 vscale=40 hoffset=90 voffset=-5}
+\caption{\small{The integral of the B field times path length along
+rays from the target at various angles.}}
+\label{bdl}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Forward tracks (angles between 5$^{\circ}$ and 40$^{\circ}$) will be 
+momentum-analyzed by passing through the magnetic field of the torus.
+The magnet provides an integral Bdl of almost 3 T-m at 10$^{\circ}$, 
+falling to about 1 T-m at 30$^{\circ}$ (see Fig.~\ref{bdl}).  Such forward 
+tracks will first pass through six layers of a forward silicon vertex tracker 
+(FVT); a silicon strip tracker with a strip pitch of 300~$\mu$m arranged with 
+alternating $U$-$V$ stereo layers with a stereo angle of $\pm$9$^{\circ}$ 
+located about 20~cm from the target.  These tracks will then traverse the 
+high-threshold {\v C}erenkov counter (HTCC) before entering the Region 1 
+drift chamber at a distance of 2.1~m from the target.  The track continues 
+through the magnetic field region and its trajectory is measured in two 
+more drift chambers, denoted Regions 2 and 3, respectively.  The Region 2 
+and 3 chambers are located at 3.3 and 4.5~m from the target, respectively.  
+The FVT should localize hits with an estimated accuracy of about 50~$\mu$m 
+perpendicular to the strip direction, while the three regions of drift 
+chambers are expected to have spatial resolutions of about 200~$\mu$m per 
+layer.  The expected momentum resolution from such an assembly is a function 
+of angle, ranging from about 0.3\% at 5$^{\circ}$ to about 1.0\% at 
+30$^{\circ}$ and nearly constant as a function of momentum.  The angular 
+resolution falls rapidly with increasing momentum, but should be better than 
+2~mrad at a momentum of 1~GeV.
+
+The momentum and angular resolution goals for the central tracker are set 
+by the requirement that we be able to positively identify a single missing 
+pion; roughly a 50~MeV resolution is required to achieve a fractional momentum 
+resolution of 1\% or better at a track momentum of 5~GeV. Because the events 
+of interest have about 10\% of the total charged particle momenta measured 
+in the central region, the design value for the fractional momentum 
+resolution of the central tracker is 5\% at a momentum of 1~GeV.  
+
+We have studied two options for central tracks: 8 layers of silicon strips 
+with alternating plus and minus stereo angle strips being one, and 4 
+layers of silicon followed by an 8-layer micromegas detector being the 
+other.  For forward tracks we have a conceptual design based upon 6 layers 
+of silicon with alternating plus/minus stereo angle strips followed by 
+three regions of drift chambers with the wires of each chamber arranged in 
+two 6-layer ``superlayers'' with alternating plus/minus stereo angles.
+
+A side-view of the proposed {\tt CLAS12} detector (cut through the beamline) 
+is shown in Fig.~\ref{clas12side}.  A solenoidal magnet contains the 
+target, the central silicon vertex tracker (SVT), and the central 
+time-of-flight system (CTOF), as well as the M{\o}ller absorber.  Charged 
+particles with emission angles greater than 40$^{\circ}$ follow helical 
+paths through the 8 layers of the SVT, which are arranged into four $U$-$V$ 
+modules with ``$U$'' and ``$V$'' referring to strip orientations of 
+$\pm$1.5$^{\circ}$, respectively.  The time resolution of the CTOF 
+($\sim$200~ps) will enable particle identification of the charged tracks, 
+as well as allowing a very efficient rejection of out-of-time accidentals.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=clas12_sideview.eps hscale=60 vscale=60 hoffset=-15 voffset=350 angle=-90}
+\caption{\small{A side-view of the {\tt CLAS12} detector showing the
+different detector subsystems, and highlighting the central and forward
+vertex trackers and drift chambers.}}
+\label{clas12side}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Forward-going tracks (with angles less than 40$^{\circ}$) pass through
+the forward vertex tracker (FVT), which is arranged into three $U$-$V$ 
+modules with the ``$U$'' and ``$V$'' strips oriented at $\pm$9$^{\circ}$ 
+angles.  Following the FVT is a high-threshold {\v C}erenkov counter (HTCC), 
+a threshold {\v C}erenkov counter filled with atmospheric CO$_2$ gas, 
+designed for electron identification.  It will effectively reject other 
+charged particles, up to the momentum threshold for pions ($\sim$6~GeV).  
+Following the HTCC is the toroidal magnet which, besides providing the 
+magnetic field for momentum analysis, supports three regions of drift 
+chambers (denoted Regions 1, 2, and 3) for charged track detection.  
+Regions 1 and 3 are attached to the front and rear faces of the toroid, 
+while Region 2 is located between the torus coils.
+
+Following the torus-drift chamber assembly is the forward detector,
+consisting of a low-threshold {\v C}erenkov counter (LTCC) for charged 
+hadron identification, the main time-of-flight (TOF) system, and the 
+pre-shower calorimeter (PCAL) and main electromagnetic calorimeter (EC).  
+The TOF is used to define the main event start time and to enhance charged 
+hadron identification, while the PCAL and EC are used for electron and
+photon detection.
+
+\section{Central Vertex Tracker}
+
+There are two options for a central tracker: an 8-layer silicon strip 
+detector or a 4-layer silicon strip detector surrounded by an 8-layer 
+micromegas chamber.  The 8-layer silicon strip detector is the standard 
+option. The silicon strips are laid out with a $\pm$1.5$^{\circ}$ stereo 
+angle as are alternate layers in the micromegas tracker.  Each design 
+consists of concentric shells of measurement layers at successively greater 
+radius. The $r-\phi$ coordinate is measured by the strip coordinate in 
+either case. The $r-z$ coordinate is measured by a stereo angle projection. 
+Table~\ref{central-silicon-specs} lists the specifications for the SVT-only
+design.  Fig.~\ref{centralsvt1} highlights the layout of the central SVT and 
+Fig.~\ref{centralsvt2} provides an end view of the device to show the
+four individual layers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c|c|c|c||} \hline \hline
+{\bf layer} & {\bf no. sides} & {\bf no. readout} & {\bf radius} & {\bf length}\\ \hline
+1 - 2 & 7 & 3580 & 4.4 cm & 11.1 cm    \\ \hline
+3 - 4 & 12 & 6144 & 8.0 cm & 22.2 cm    \\ \hline
+5 - 6 & 17 & 8704 & 11.4 cm & 33.3 cm    \\ \hline
+7 - 8 & 22 & 11264 & 14.7 cm & 44.4 cm    \\ \hline
+\end{tabular}
+\caption{\small{Specifications for the central SVT.}}
+\label{central-silicon-specs}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{7.0cm}
+\special{psfile=svt.eps hscale=40 vscale=40 hoffset=90 voffset=-10}
+\caption{\small{A CAD model of the central SVT looking along the beam
+direction.  The individual sensors overlap in eight layers forming four
+superlayers of adjacent $\pm$1.5$^{\circ}$ $U$-$V$ strip orientations.}}
+\label{centralsvt1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{7.5cm}
+\special{psfile=svt_cutview.eps hscale=30 vscale=30 hoffset=120 voffset=-5}
+\caption{\small{An end view of the central SVT looking along the beam
+direction highlighting the layout of the staves into polygons for each
+of the four layers.}}
+\label{centralsvt2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The SVT is designed to operate in the 5~T field of the solenoid.  The
+current design, shown in Fig.~\ref{centralsvt2}, employs four 2-layer
+superlayers with a butt-joint design between the staves that make up
+each face of the polygons for each layer.  As the sensors on each stave
+are oriented at a $\pm$1.5$^{\circ}$ stereo angle, each layer has a
+small dead area where the sensors do not overlap.  To combat the impact
+of this feature on the resolution, successive layers of the SVT are
+clocked with respect to each other.
+
+The active strips on each layer of the SVT are laid out with a 75~$\mu$m,
+with neighboring strips capacitively coupled together, effectively
+forming a 150~$\mu$m readout pitch.  The momentum resolution of the
+SVT is given roughly by $\delta p/p \sim (r_{out} - r_{in})^{-2}$.  The
+strips will be read out using the SVX4 custom 128-channel analog to
+digital converter chips used by the D0 and CDF experiments at Fermilab
+to read out their silicon strip detectors.  Fig.~\ref{strip_layout}
+provides a picture of two wire-bonded silicon sensors, the $U$ and $V$
+strip orientations, the SVX4 chips, and the associated local readout
+electronics.
+
+\vskip 3.0cm
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[hb]
+\vspace{7.0cm}
+\special{psfile=strip_layout.eps hscale=40 vscale=40 hoffset=15 voffset=-5}
+\caption{\small{A photograph of a prototype of a portion of the SVT,
+including two wire-bonded silicon sensors, the SVX4 readout chips, and the
+associated local readout electronics.}}
+\label{strip_layout}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfil
+\eject
+
+\section{Forward Vertex Tracker}
+
+The forward silicon tracker consists of six single-sided silicon strip 
+detector planes (which form three double $U$-$V$ layers.  Each plane is 
+formed from twenty pieces, each roughly trapezoidal in shape with strips 
+on one plane running parallel to one of the sides of the triangle with 
+readout on the outer-radius side and strips from the other plane being 
+parallel to the other side of the triangle. In this way, the strips cover 
+the entire area of the triangular surface and always run to the ``outside'' 
+where the readout electronics is located.  The strips vary in length, from 
+the longest which is adjacent to its parallel side down to a short strip 
+opposite. See Fig.~\ref{fwdsvt} for a layout of the detector and 
+Table~\ref{fwd-silicon-specs} for the detector specifications.  The readout 
+will employ the SVX4 chips discussed above for the SVT.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c|c|c||} \hline \hline
+&{\bf Region 1}    &  {\bf Region 2} & {\bf Region 3}\\ \hline
+dist. from target  & 18 cm & 19 cm   & 20 cm \\ \hline
+num. $U/V$ strips  & 5000 & 5000  & 5000 \\ \hline
+stereo angle       & +/- 9$^{\circ}$ & +/- 9$^{\circ}$   & +/- 9$^{\circ}$ \\ \hline
+strip pitch        & 0.0075 cm & 0.0075 cm & 0.0075 cm \\ \hline
+\end{tabular}
+\caption{\small{Specifications for the forward SVT.}}
+\label{fwd-silicon-specs}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{7.0cm}
+\special{psfile=fsvt.eps hscale=55 vscale=55 hoffset=60 voffset=0}
+\caption{\small{A view of the forward SVT showing its arrangement into 
+three superlayers of two $\pm$9$^{\circ}$ $U$-$V$ stereo strips.}}
+\label{fwdsvt}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Drift Chambers}
+
+The overall tracking requirements (0.5 -  1\% fractional momentum resolution 
+at 5~GeV and efficient tracking at a luminosity of \1035) are the main
+drivers for drift chamber design.  Because the {\tt CLAS} drift chamber
+system~\cite{dcnim} has operated successfully for 8 years, we plan to 
+re-use many of the design concepts and most of the utility infrastructure.  
+In particular, we plan to re-use the present gas mixing and handling system, 
+the high-voltage and low-voltage systems, the FASTBUS TDC system and the 
+post-amplifier/multiplexer systems.  The construction project thus consists 
+of new chambers, on-board electronics, and on-board jumper cables.
+
+The required better resolution of the tracking system compared to the 
+present {\tt CLAS} detector will be achieved by chambers with a smaller 
+cell size and thus inherently better spatial resolution, and the smaller 
+physical size and thus more accurate placement of the chambers with respect 
+to the magnet coils.  The design of the forward chambers is very similar to 
+the present {\tt CLAS} chambers.  The cell design is hexagonal and the sense 
+wire layers are arranged in 6-layer superlayers as in the present chambers. 
+The major difference is that the cells are approximately two thirds as big 
+as the present chambers allowing efficient tracking at higher luminosities 
+because the accidental occupancy from particles not associated with the 
+event is smaller. Table~\ref{fwd-dc-design-parms} lists the design 
+parameters and Fig.~\ref{fwddc} shows a single sector of the new Region 1
+chamber.  For the purposes of simulating track resolutions, we assumed that 
+the position resolution of the individual drift cells would be 250~$\mu$m.  
+For reference, the present {\tt CLAS} chambers have resolutions of 310, 315,
+and 380 $\mu m$ for R1, R2, and R3, respectively.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.0cm}
+\special{psfile=r1.eps hscale=47 vscale=47 hoffset=120 voffset=0}
+\caption{\small{A view of one sector of the Region 1 drift chamber 
+showing the projection of the wires onto the chamber endplate.}}
+\label{fwddc}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c|c|c||} \hline \hline
+&{\bf Region 1}      &  {\bf Region 2} & {\bf Region 3}\\ \hline
+dist. from target    & 2.1 m & 3.3 m   & 4.5 m \\ \hline
+num. of superlayers  & 2 & 2   & 2 \\ \hline
+layers/superlayer    & 6 & 6   & 6 \\ \hline
+wires/layer          & 112 & 112   & 112 \\ \hline
+cell size            & 0.86 cm & 1.36 cm   & 1.88 cm \\ \hline
+assumed resolution per wire  & 0.025 cm & 0.025 cm   & 0.025 cm \\ \hline
+\end{tabular}
+\caption{\small{Design parameters for the {\tt CLAS12} drift chambers.}}
+\label{fwd-dc-design-parms}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The chambers differ from the present {\tt CLAS} chambers in a number of 
+ways.  Successive superlayers have their wires arranged with a plus or 
+minus 6$^{\circ}$ stereo angle; the present arrangement has an axial layer and 
+a 6$^{\circ}$ stereo layer.  For the present {\tt CLAS} detector, the $\phi$ 
+resolution is about four times larger than the $\theta$ resolution.  To 
+have more equal resolution in the two angles, we decided that we needed to 
+double our effective stereo angle in order to improve the  $\phi$ resolution.
+Unlike the present chambers, all of the wires in one of the superlayers are
+strictly parallel, and in a plane perpendicular to the wire direction form
+perfect hexagons.  This should allow a more accurate drift velocity 
+calibration than the current design with its layer-to-layer increase in 
+cell size.  The choice of gas; a 92:08 Argon:CO$_2$ mixture is a small 
+departure from our present 90:10 mixture and should result in a higher and 
+more constant drift velocity.  We plan to run with a gas gain of $5\cdot10^4$.
+
+Another departure from the present design is to design every chamber (in 
+all three regions) to be self-supporting in order to ensure that they are 
+easy to install and remove for maintenance.  In the present {\tt CLAS}, the 
+Region 1 chambers are all bound together into a single unit in order to 
+maintain the wire tension without excessively thick endplates, and the 
+Region 2 chambers are actually mounted onto the magnet cryostat with the 
+cryostat itself maintaining the internal wire tension.  None of the present 
+Region 1 or 2 chambers can be accessed individually without a lengthy 
+``tension-transfer'' process.  To avoid this, we are designing all chambers 
+to be self-supporting like our present Region 3 chambers.  The key will be 
+ultra-stiff endplates which obtain their stiffness by a flanged design.  
+
+A third design change is to use 30~$\mu$m diameter sense wire rather than 
+the more common 20~$\mu$m wire. Our choice of wire is 30~$\mu$m diameter, 
+gold-plated tungsten for the sense wires, 140~$\mu$m diameter, gold-plated 
+aluminum for the field wires and 140~$\mu$m diameter, stainless steel for
+the guard wires.   This should make the chamber more robust to wire 
+breakages.  Higher voltages will be required to achieve the same gas gain, 
+and the resulting higher electric field in the drift cells will result in 
+a more nearly constant drift velocity which should be easier to calibrate.
+Prototypes are being built to study possible negative side-effects of the 
+higher voltage operation such as leakage currents on the circuit boards 
+and/or higher rates of cathode emission from the field wire surfaces.
+Fig.~\ref{garfield} shows GARFIELD calculations for a Region 3 drift cell
+with both a 20~$\mu$m and a 30~$\mu$m diameter sense wire.  Here the
+cells with the thicker sense wire will have a significantly higher drift 
+velocity which is desirable to reduce the time window, and hence the chamber 
+occupancy.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=garfield1.eps hscale=30 vscale=27 hoffset=50 voffset=165}
+\special{psfile=garfield2.eps hscale=30 vscale=27 hoffset=50 voffset=-5}
+\special{psfile=garfield3.eps hscale=30 vscale=27 hoffset=240 voffset=165}
+\special{psfile=garfield4.eps hscale=30 vscale=27 hoffset=240 voffset=-5}
+\caption{\small{GARFIELD calculations of the electric field lines (top)
+and drift time vs. drift distance (bottom) for a Region 3 drift cell.  The 
+left plots show the configuration with a 20~$\mu$m diameter sense wire and 
+the right plots show the configuration with a 30~$\mu$m diameter sense wire.
+The high voltages were set to provide the same gas gain for each
+configuration.}}
+\label{garfield}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Expected Detector Performance}
+
+We studied the position, angle, and momentum resolution for a number of 
+possible detector options using MOMRES~\cite{momres}.  Our procedure was 
+to produce a MOMRES input file that characterized the detector position, 
+material thickness, and estimated hit resolution for a particular track 
+angle.  We also produced a B-field file which was a tabulation of the 
+B-field strength vs. path length for a particular track angle.  These, 
+and the desired range of momenta, were the inputs to MOMRES. MOMRES 
+calculated the expected components of the resolutions due to multiple 
+scattering and measurement resolution, respectively.  We fit these outputs 
+to the expected kinematic form. From these fits we extracted two parameters 
+(sig1 and sig2) for each of the three terms ($dp/p$, $d\theta$, $dx$). 
+These six parameters summarize the output of MOMRES. In addition, we 
+calculated the angle resolution in the non-bend plane in a manner 
+analogous to that of MOMRES, using estimates for the effects of multiple 
+scattering and measurement error, fitting the resulting smeared trajectory 
+by a straight line, and extracting the $\sigma$1 and $\sigma$2 parameters 
+that characterize the resolution in this out-of-bend-plane angle.  Thus, 
+eight parameters for each value of track angle fully characterize the 
+tracking resolution for any one detector option.  Fig.~\ref{30degres} 
+shows the momentum, $\theta$, $\phi$, and vertex resolutions for three 
+detector options for tracks emitted at 30$^{\circ}$.  Fig.~\ref{90degres} 
+shows the momentum, $\theta$, $\phi$, and vertex resolutions for three 
+detector options for tracks emitted at 90$^{\circ}$, i.e. into the central 
+detector. 
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : 30deg resolution %%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{9.0cm}
+\special{psfile=30deg_resln.eps hscale=50 vscale=50 hoffset=90 voffset=0}
+\caption{\small{Resolution simulated using MOMRES plotted vs. particle 
+momentum for 30$^{\circ}$ tracks.  Sub-figures a, b, c, and d show the 
+momentum, $\theta$, $\phi$, and vertex resolutions, respectively.  Three 
+options are shown: solid- 3 SVT planes + CC + 3 DC planes; dashed- CC + 
+3 DC planes; dotted - 3 DC planes.}}
+\label{30degres}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fig.~\ref{resol} provides a few more results of these studies to
+parameterize and understand the resolution expected for the {\tt CLAS12}
+tracking system.  The plots show the expected angular resolution, the 
+expected position resolution, and the expected momentum resolution
+for different angle bins, each as a function of momentum.  These plots
+were made using the current design of the tracking system.
+
+Fig.~\ref{resplot} shows the reconstructed momentum for 1000 events
+each containing a 1~GeV track emitted at a 45$^{\circ}$ polar angle
+but at random values of azimuthal angle and with random multiple
+scattering.  The dark histogram shows the expected reconstructed
+spectrum at a luminosity of 10$^{35}$~cm$^{-2}$s$^{-1}$.  The gray
+histogram and the solid line show the resolution with 40 times the
+nominal background (consisting of random SVT hits).  The gray histogram
+was constructed using the nominal $\pm$1.5$^{\circ}$ $U$-$V$ strip
+pitch, and the solid line was made increasing the strip pitch by a
+factor of two above the nominal.  The studies serve to validate the
+basic SVT design parameters.
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : 90deg resolution %%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=90deg_resln.eps hscale=50 vscale=50 hoffset=90 voffset=-5}
+\caption{\small{Resolution simulated using MOMRES plotted vs. particle 
+momentum for 90$^{\circ}$ tracks.  Sub-figures a, b, c, and d show the 
+momentum, $\theta$, $\phi$, and vertex resolutions, respectively.  Three 
+options are shown: solid- 3 SVT planes; dashed- 16 DC-stereo planes; 
+dotted - 8 DC-cathode pad planes.}}
+\label{90degres}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=resol_1.eps hscale=35 vscale=30 hoffset=15 voffset=160}
+\special{psfile=resol_2.eps hscale=35 vscale=30 hoffset=225 voffset=160}
+\special{psfile=resol_3.eps hscale=35 vscale=30 hoffset=115 voffset=-10}
+\caption{\small{Simulation results for the {\tt CLAS12} tracking system
+showing the expected angular resolution, position resolution, and
+momentum resolution for different angle bins as a function of momentum.}
+\label{resol}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{6.5cm}
+\special{psfile=centralrates1.eps hscale=120 vscale=85 hoffset=75 voffset=0}
+\caption{\small{A plot of reconstructed momentum (GeV) for 1000 events,
+each containing a 1~GeV track emitted at a 45$^{\circ}$ polar angle
+but at random values of azimuthal angle and with random multiple
+scattering.  The solid histogram is for events with the background 
+expected at a luminosity of \1035.  The gray histogram ($\pm$1.5$^{\circ}$
+strip pitch) and solid line ($\pm$3$^{\circ}$ strip pitch) were
+simulations run increasing the background by a factor of 40.}}
+\label{resplot}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Expected Physics Performance}
+
+We used a series of programs to calculate the acceptance and reconstructed 
+physics parameters for event types of interest.  The program {\it clasev}
+\cite{clasev} served as an event generator and analysis program. 
+Depending on the value of input flags, it generates certain types of 
+events; that is, it produces a set of 4-momenta for the primary hadrons 
+in the hadronic center-of-mass and allows some of them to decay into the 
+final-state hadrons and transforms their momenta to the lab system.  For 
+each final-state track, it calls {\tt FASTMC} to determine if the track 
+falls within a fiducial acceptance window and to determine its final, 
+smeared lab momentum.  It then produces selected physics analysis variables 
+such as missing mass from calculations involving the smeared momenta of 
+those tracks that were accepted. 
+
+Fig.~\ref{massplot} shows the expected missing mass resolution 
+expected for {\tt CLAS12} from simulation studies based on the current
+design specifications for a number of different reactions.  For all
+cases studied the results are quite encouraging in terms of identifying
+the missing particle cleanly for each reaction.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{14.0cm}
+\special{psfile=mm1.ps hscale=39 vscale=36 hoffset=-10 voffset=160}
+\special{psfile=mm2.ps hscale=39 vscale=36 hoffset=225 voffset=160}
+\special{psfile=mm3.ps hscale=40 vscale=37 hoffset=-10 voffset=-55}
+\special{psfile=mm4.ps hscale=40 vscale=37 hoffset=230 voffset=-55}
+\caption{\small{Simulation results highlighting the expected missing
+mass resolution of {\tt CLAS12} with the nominal design specifications for
+the drift chambers.  Shown are the spectra for the reactions
+$ep \to e'\pi+X$ (UL), $ep \to e'K^+X$ (UR), $ep \to e'p\pi^+X$ (LL),
+and $ep \to e\rho^+X$ (LR).}}
+\label{massplot}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfil
+\eject
+
+\begin{thebibliography}{99}
+
+\bibitem{pcdr} 
+Pre-Conceptual Design Report the Science and Experimental Equipment
+for the 12~GeV Upgrade of CEBAF, see www.jlab.org/12GeV/collaboration.html.
+
+\bibitem{fastmc}
+FASTMC is a fast parametric Monte Carlo of {\tt CLAS12}; the code and 
+documentation are contained in CVS under 12GeV/fastmc.
+
+\bibitem{pac} 
+JLab PAC30 meeting, Aug. 2006; see www.jlab.org/exp\_prog/PACpage/pac.html.
+
+\bibitem{egs}
+R.L. Ford and W.R. Nelson, The EGS code system: Computer program for the 
+Monte Carlo simulation of electromagnetic cascade showers, SLAC-210 (1978).
+ 
+\bibitem{dcnim} 
+M.D. Mestayer {\it et al.}, Nucl. Inst. and Meth. A {\bf 449}, 81 (2000).
+
+\bibitem{momres} 
+B.A. Mecking, The MOMRES package is used as an input to FASTMC and is
+a program to estimate the momentum and angle resolution given a table of 
+material thicknesses, position resolution, and integral magnetic field.
+The progam is in CVS under 12GeV/momres.
+
+\bibitem{clasev} 
+H. Avakian, General event generator.  The program is in CVS under
+12GeV/fastmc/clasev.
+
+\end{thebibliography}
+
+\end{document}
+

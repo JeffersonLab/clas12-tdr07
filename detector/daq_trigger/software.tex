@@ -1,0 +1,121 @@
+\section{Software}
+\label{sec:software}
+
+\subsection{CODA Data Acquisition System}
+
+{\tt CLAS12} will use the CODA data acquisition software~\cite{coda}, similar 
+to what we are using in {\tt CLAS}.  The {\tt CLAS} version of CODA was 
+modified in recent years to improve performance and reliability, and those 
+changes will be incorporated into the future version of CODA, along with 
+appropriate redesign and cleanup.  The most important changes were `parallel' 
+front-end readout, multi-processor ROC support, and a multi-threaded Event 
+Builder.  As a result, {\tt CLAS} is running at an 8-10~kHz event rate, 
+which is close to the {\tt CLAS12} requirements.  We are expecting to get 
+new software from the CODA group by the time of {\tt CLAS12} startup.  Until
+then, we will use the current {\tt CLAS} version of CODA for detector 
+commissioning and test runs.
+
+Recent upgrades have eliminated most of bottlenecks from the DAQ software, but 
+there are still places where improvements can be made.  One of them is 
+multi-event readout and corresponding data coping inside the ROC memory. 
+That modification will improve DAQ performance significantly for the 
+free-running DAQ mode, but it will not have a big impact while {\tt CLAS12}
+is using FASTBUS 1877 TDCs. Those TDCs have 6 event buffers and need to be
+readout on an event-by-event basis to avoid back-logs.  When the FASTBUS 
+electronics are replaced, we plan on utilizing multi-event readout.
+
+\subsection{{\tt CLAS12}-Specific Components Running as CODA Extensions}
+
+Several CODA extensions were developed for the {\tt CLAS} detector, and some 
+of them will be re-used in {\tt CLAS12}.  The CODA fragment format was 
+expanded by adding an additional data bank header; this way several data 
+banks with different formats could be created and processed by the same ROC. 
+This feature may be implemented into the new CODA version, or we can continue
+to use it as it is implemented now.
+
+The currently used BOS data format will be obsolete, and the CODA data format 
+will be used instead for all output data files, but data will be organized 
+based on the detectors, not on the readout hardware layout.  Again, it can 
+be done by expanding the CODA format or by {\tt CLAS12}-specific extensions.
+
+The data translation procedure running in the ROCs will be re-used, with 
+possible data format modifications.  Two advantages of this method should 
+be mentioned: the data volume reduction (especially in the drift chambers) 
+and the ability to access data using the `offline' format on the very first 
+stage of the data acquisition process.  Also the ROC-level histogram package 
+played a critical role in the DAQ performance analysis, and it will be reused 
+after adjustment to the new data format.  The DAQ performance profiler will 
+be reused, although it may be part of the new CODA version as well.
+
+The Event Transfer (ET) system in {\tt CLAS} was extended by adding a new 
+package to handle multi-threaded attachments to a single ET station, with 
+special care taken for preserving the event order.  This method was 
+successfully used by the Event Builder, Level-3, and the fast online 
+reconstruction software running on an 8-CPU Sparc Server, and will be 
+reused in some form in {\tt CLAS12}.
+
+\subsection{Level-3 Trigger}
+\label{daq_l3t}
+
+A multi-threaded Level-3 (software) trigger was implemented in {\tt CLAS}, 
+but was used in tagging-mode only. We will redesign that component for 
+{\tt CLAS12}, implementing full reconstruction up to at least the hit-based 
+tracking level.  A single multi-core machine is used right now to run the
+Level-3 trigger, and a computer farm solution can be used for {\tt CLAS12} 
+if needed.
+
+\subsection{Online Monitoring}
+
+Online Monitoring will be addressed in {\tt CLAS12} as a part of the
+Experiment Control System (ECS) concept.  This approach was used in 
+previous years by other collaborations.  We will use their experience to 
+design the {\tt CLAS12} ECS.
+
+ECS will collect all information coming from various {\tt CLAS12} components
+into one processing center, which will perform analysis and report problems 
+with maximum possible precision.  To make the whole system work successfully,
+all information from the low-level components will be reported in standard 
+form, EPICS-channel access format is currently being considered.  Special 
+care will be taken to avoid false alarms.
+
+The generic scheme for the {\tt CLAS12} Experiment Control System is shown 
+in Fig.~\ref{fig:MON1}.  Low-level hardware and data quality control 
+components will communicate with top-level state machines using EPICS channel 
+access and/or similar protocol.  The data acquisition components will have 
+a DAQ-specific communication system.  Most state machines will be 
+detector-specific, with one central component supervising the entire 
+{\tt CLAS12} setup. A set of logic diagrams will be developed to handle 
+different situations during {\tt CLAS12} experiments, such as production 
+data taking, calibration runs, test runs, troubleshooting, recovery, etc. 
+These diagrams will be processed by the state machines.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{100mm}
+\special{psfile=CLAS12_MON_1.eps hscale=64 vscale=64 hoffset=0 voffset=0}
+%%\mbox{
+%%\begin{picture}(-10,-10)(350,0)
+%%\end{picture}}
+\caption{\small{Generic scheme of the {\tt CLAS12} Experiment Control System.}}
+\label{fig:MON1} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The Experiment Control System for {\tt CLAS12} is currently under development.
+We are looking into several frameworks that can be used to build the
+{\tt CLAS12} ECS, such as CERN PVSS (used by all major CERN experiments), 
+AFECS (under development at JLab), and others.
+
+It may take a while to complete the design because of the dependency on 
+the accelerator's control system, which we have to be compatible with on 
+some level.  Several approaches are being considering by other JLab groups, 
+and we are planning to participate in joint efforts to obtain the system
+most suitable for {\tt CLAS12}. 
+
+\subsection{Online Calibration}
+
+The main goal of the online calibration system is to deliver the calibration 
+parameters for the trigger components.  Normally, special runs will be taken 
+and analyzed online before production data taking starts.  Those runs will be 
+processed and analyzed by software included into the Level-3 trigger 
+component running in tagging mode.

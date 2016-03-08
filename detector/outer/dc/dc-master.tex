@@ -1,0 +1,703 @@
+\documentclass[12pt]{article}
+% 
+%\usepackage{tabularx}  
+%\usepackage[dvips]{graphicx}
+%\usepackage{longtable}
+%\usepackage{hhline}
+%\usepackage{alltt}
+%\usepackage{ifthen}
+\usepackage{epsfig}
+%\usepackage{color}
+%\usepackage{amsmath}
+%\usepackage{tabularx}
+%\usepackage{latexsym}
+%
+\def\1035{10$^{35}$~cm$^{-2}$s$^{-1}$}
+\def\degg{$^{\circ}$ }
+\def\qsq{$Q^2 $}
+\def\co2{$CO_2 $}
+\def\microns{$\mu m $ }
+\def\gevcsq{$GeV/c^2 $}
+\def\gev{$GeV $}
+\def\gevc{$GeV/c $}
+\usepackage{fancyhdr}
+\topmargin -0.3in
+\headheight 0.0in
+\headsep 0.5in
+\textheight 9.4in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+\renewcommand{\baselinestretch}{1.4}
+%
+
+%\pagestyle{empty}       %suppresses page numbers
+%
+\begin{document}
+
+\title{CLAS12 Drift Chambers}
+
+\author{CLAS12 Drift Chamber Group\\ [0.5ex]
+Jefferson Laboratory}
+
+\maketitle
+
+\vspace{2cm}
+\begin{figure}[ht]
+\begin{center}
+\vspace{1cm}
+\epsfig{file=umbrella.ps,width=11cm}
+\end{center}
+\end{figure}
+
+\vfil
+\eject
+
+\tableofcontents
+
+\vfil
+\eject
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Technical Design Report}}
+\fancyhead[r]{\mbox{\bfseries Version 1.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Drift chambers}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+
+\input{PhysicsRequirements.tex}
+
+\input{CLAS12Overview.tex}
+
+\input{DCDesign}
+
+\subsection{Mechanical Design}
+
+The chambers are designed to position the wires with 100~$\mu$m
+accuracy and to be robust and easily serviceable.  The chambers are 
+being designed with in-position surveying in mind.  In order to cover 
+angles down to 5$^\circ$ the dead areas of each chamber (endplates, 
+printed circuit boards, etc.) must be made as small as possible.  
+The chambers in the high-field region (Region~2) must not be susceptible 
+to eddy-current forces that might arise in the event of a quench of the 
+superconducting torus.
+
+We have arrived at different solutions for the three regions, but they
+share some characteristics:
+
+\begin{itemize}
+\item a very accurately drilled, flat endplate is affixed to a much stiffer
+frame;
+\item the flanges of the frame extend beyond the endplate thickness but
+do not further increase the dead area of the chamber;
+\item the chambers can be supported from two points only, at two ends of
+the outer ``back'' plate;
+\item the Region~1 and Region~3 chambers are fully self-supporting, in any 
+orientation relative to gravity, by the aforementioned two-point attachment;
+\item to further minimize dead area, the Region~2 chamber will have a portion
+of the wire tension borne by springs attached to the torus cryostat;
+\item when out of position, the Region~2 chamber will have temporary posts
+in compression taking the wire tension;
+\item signal translator boards (STB) will be mounted on the chamber and
+provide a connection between wire crimp pins and the on-board pre-amplifier
+hybrid units;
+\item similarly, on-board high-voltage translator boards (HVTB) provide a
+connection to the high-voltage for each group of wires;
+\item on-board cables will run from the STBs and HVTBs to a connector
+box on the back plate.
+\end{itemize}
+
+\subsubsection{Wire Layout: Cells, Layers, Superlayers}
+
+The wires are laid out in a ``brick-wall'' pattern with a guard wire
+layer followed by two layers of field wires and one layer of sense
+wires in a repeating pattern.  Six layers of sense wires and their 
+corresponding field and guard layers constitute a single superlayer.
+All of the wires in one superlayer are parallel.  As we progress through
+the three regions, the superlayers are alternately $U$, $V$, $U$, $V$, 
+$U$, and $V$ with ``$U$'' representing wires with a +6\degg stereo angle 
+and ``$V$'', -6\degg.  The present {\tt CLAS} detector has a similar wire 
+layout structure and we have had very robust track-finding ability, even in 
+the presence of modest backgrounds (up to 4\% occupancy levels) and in the 
+presence of malfunctioning areas of the chambers; tracking is still 
+efficient even with only 5 superlayers active.
+
+The proposed chambers are planar; all wires in a given layer lie within
+a plane; as opposed to the present {\tt CLAS} where wires in a given layer 
+lie on a cylindrical surface.  This has the advantage that all cells 
+within a given layer are equal-sized, facilitating calibration.
+
+\subsubsection{Endplates and Box Assembly}
+
+The chamber body consists of a precisely-drilled flat endplate fitted into a 
+stiff, machined frame.  We have completed the design of a full-sized Region~1 
+prototype chamber and show the results here.  Fig.~\ref{dcassy} shows the 
+essential elements of the drift chamber: the endplates, the ``backplate'', the 
+stiffening ``rails'' into which the endplates fit and the ``noseplate'' which 
+fits into a common hexagonal support ring.  Fig.~\ref{endplate} shows design 
+details for the endplate itself and Fig.~\ref{frame} shows how the endplates 
+fit into the associated box frame.  Table~\ref{reg1-design-parms} lists the 
+design parameters for the Region~1 prototype chamber.  Fig. ~\ref{reg1fea} 
+shows expected deflections of the endplate assembly after stringing (relative 
+to unstrung).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.0cm}
+\special{psfile=dcassy.ps hscale=45 vscale=45 hoffset=100 voffset=-50}
+\caption{\small{Assembly drawing showing the key elements of the drift
+chamber box.  Gas window, electronic boards, and cables not shown.}}
+\label{dcassy}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{21.0cm}
+\special{psfile=r1_proto_1.ps hscale=22 vscale=22 hoffset=-10 voffset=300}
+\special{psfile=r1_proto_2.ps hscale=50 vscale=50 hoffset=80 voffset=0}
+\caption{\small{Design drawings of a Region~1 endplate showing the dimensions,
+hole locations, and tolerances.}}
+\label{endplate}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.0cm}
+\special{psfile=reg1_proto_exploded.ps hscale=45 vscale=45 hoffset=60 voffset=260 angle=-90}
+\caption{\small{Drawing which shows how a Region 1 endplate fits into its 
+associated frame.}}
+\label{frame}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c||} \hline \hline
+{\bf Parameter}      &  {\bf Value} \\ \hline
+total weight   & 160 kg \\ \hline
+num. total wires & 4928 \\ \hline
+diameter(tension) sense wires & 30 $\mu$m, 20 g \\ \hline
+diameter(tension) field wires & 140 $\mu$m, 63 g \\ \hline
+diameter(tension) guard wires & 140 $\mu$m, 285 g \\ \hline
+total wire tension & 352 kg   \\ \hline
+endplates span & 1.75 m \\ \hline
+back plate span & 1.75 m \\ \hline
+max. endplate deflection & 1.6 mm \\ \hline
+max. gravitational wire sag & 250 $\mu$m \\ \hline \hline
+\end{tabular}
+\caption{\small{Design parameters for the Region 1 drift chamber prototype.}}
+\label{reg1-design-parms}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.5cm}
+\special{psfile=r1_def.ps hscale=65 vscale=65 hoffset=30 voffset=0}
+\caption{\small{Finite-element analysis of the Region~1 prototype endplate
+showing expected deflections due to wire tension.  Note that the red
+areas correspond to deflections of about 1.6~mm.}}
+\label{reg1fea}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Wires, Feedthroughs, Crimp Pins}
+
+Table~\ref{wirechoices} lists the materials and specifications for our wires, 
+feedthroughs, and crimp pins.  Our endplates are not parallel to each other, 
+but instead are oriented with respect to each other at an angle of 60$^\circ$.  
+For this reason, the wire position is fixed, not by the location of the crimp, 
+but by the position at which the wire leaves the end of the feedthrough.  This 
+concept was tested before the present {\tt CLAS} construction.  The nominal 
+wire-stringing tension was enough to force the wire to the ``bottom'' of the 
+feedthrough mouth, establishing the position within an accuracy of 25~$\mu$m.  
+Fig.~\ref{feedthrough} shows the details of a feedthrough penetration.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c||} \hline \hline
+{\bf Parameter}      &  {\bf Value} \\ \hline
+end-plate material & Aluminum, Stesalit \\ \hline
+gas-bag material & aluminized Mylar \\ \hline
+sense wire material   & gold-plated tungsten \\ \hline
+field wire material   & gold-plated Aluminum \\ \hline
+guard wire material   & stainless steel \\ \hline
+feedthrough material & Noryl \\ \hline
+crimp pin material & gold-plated copper (OFHC) \\ \hline \hline
+\end{tabular}
+\caption{\small{Material choices for the wires, feedthroughs, and crimp pins.}}
+\label{wirechoices}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{5.5cm}
+\special{psfile=reg1_proto_wire_angle.ps hscale=55 vscale=55 hoffset=450 
+voffset=-75 angle=90}
+\caption{\small{Illustration of two neighboring endplates showing the feedthrough 
+penetration on each and the wire strung between the two feedthroughs.}}
+\label{feedthrough}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Attachment Points}
+
+The chambers are being designed to be supported from two points on the back 
+plate without imposing a large change of stress on the wires.  This will 
+facilitate installation.  Fig.~\ref{dcassy} shows a sketch of the 
+attachments on the back plate of the chamber.
+
+
+\subsubsection{Survey, Alignment, and Magnetic Field Mapping}
+
+The chambers are being designed with survey and alignment in mind.  For 
+accurate tracking the chamber locations must be well-known in space; 
+especially with respect to the magnetic field.  Survey points will be 
+located on accessible faces of the chamber frame.  Internal surveys 
+(see Section~\ref{internal}) will transfer our knowledge of the location 
+of wire holes to these faces.
+
+The magnetic field mapping strategy has not been worked out pending
+a final design of the torus magnet, but the concept will be to use
+Hall probes to locate the positions of the energized conductors within
+the cryostats to very good accuracy, and then to calculate the fields.
+We are taking advantage of very precise magnetic probe technology and
+also of sophisticated software packages to calculate fields.
+This allows us to design small, precise instruments which can abut
+the cryostats themselves and be surveyed accurately.
+
+\subsection{Electronic Readout}
+
+The signal connections to the wires are made through printed-circuit boards
+mounted along one side of each chamber, called Signal Translator 
+Boards (STB).  These boards are responsible for signal
+routing and pre-amplification.  On the opposite side of each sector, another
+set of circuit boards (HVTB) is used to make the high-voltage connections
+to the wires.
+
+\subsubsection{On-chamber PCBs and Cables}
+
+The {\tt CLAS12} wire chamber geometry changes significantly from {\tt CLAS}, 
+so the circuit boards that interface the high voltages for the field, sense, 
+and guard wires are new designs.  The circuit boards that interface the 
+sense wires to the pre-amplifiers (STB) are also new designs.   These 
+interface circuit boards, both for high voltage and pre-amplifier, will be 
+designed on a 96-channel format.  This format will allow only seven circuit 
+boards for each superlayer.  Each sector in a particular region, will use these 
+seven circuit board formats for either high voltage, or pre-amplification of 
+the sense wire signal.  Table~\ref{electronic-channels} gives a channel count 
+of the system.  Fig.~\ref{r1stb} shows the traces routed from the signal pick-up
+at the plated-through holes to the signal inputs to the pre-amplifier.
+Fig.~\ref{proto:r1} shows how the boards will fit on the chamber.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{10.0cm}
+\special{psfile=r1stb.ps hscale=80 vscale=80 hoffset=30 voffset=-40}
+\caption{\small{Trace routing shown on one of the Region~1 STBs being
+designed.}}
+\label{r1stb}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fortunately the pre-amplifier used for the {\tt CLAS} drift chambers can still 
+be manufactured and the components are readily available.  A large order 
+for the {\tt CLAS} pre-amplifier, CP01, was ordered less than two years ago, 
+as replacements for the original 1994 design.  The new order included an 
+epoxy resin encapsulation of the components on the pre-amplifier 
+Single-Inline-Package or SIP.  The encapsulation of the components on 
+the hybrid SIP pre-amplifier will prevent component corrosion.
+
+The CP01 pre-amplifier specifications are suitable for the {\tt CLAS12} wire 
+chamber signal levels, and provide the gain, dynamic range, rise time, 
+low noise, and low power for the upgrade performance requirements.  
+These pre-amplifiers were designed in unison with the Amplifier 
+Discriminator Boards, that provide another level of amplification and of 
+course a monostable discriminator pulse with the threshold setting 
+optimized for the best resolution or sensitivity to a minimum ionizing 
+signal.  The monostable discriminated pulse widths are then multiplexed 
+into a single channel of a pipeline TDC, with a least significant count 
+of 500~pS, and 8~$\mu$s of pipeline memory depth.
+
+The low voltage power supplies used for {\tt CLAS} will be used for {\tt CLAS12}.  
+These units are robust and manufactured by Hewlett Packard.  The supplies are 
+remotely programmable and monitored, and will provide more than enough power for 
+the new wire chamber pre-amplifier requirements.  We will use the same successful 
+method of isolating the low voltage from ground loops, using local voltage 
+regulators on the pre-amplifier interface boards (STBs).  The segmentation of the 
+low voltage distribution cables is based on 32 preamplifier channels per supply 
+cable.  Each of these supply cables is fused with an appropriate type fuse rated 
+for overcurrent protection based on 32 pre-amplifier loads.  We plan to re-use 
+our CAEN system 527 high voltage supplies with somewhat finer segmentation than 
+our current system; consistent with our total channel count dropping from 34000 
+to about 24000.
+
+We plan to use 17 twisted pair cable for routing our signals from the STBs
+to the chamber back plate.  The cable is a round jacketed cable, with a 
+0.025~in pitch so that the overall cable dimension is smaller than the 
+standard 17 pair cable.  This smaller outer diameter cable will only be used 
+from the STBs to the on-chamber ``service panels''.  The standard 17-pair 
+cable will be used from the chamber service panel to the readout electronic racks.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c||} \hline \hline
+{\bf Component}      &  {\bf Number} \\ \hline
+STB boards (6 types)   & 252 total \\ \hline
+HVTB boards (6 types)   & 252 total \\ \hline
+low-voltage cables   & 252 total $\mu$m \\ \hline
+high-voltage cables   & 252 total $\mu$m \\ \hline
+signal cables (17-pair)   & 1512 \\ \hline
+total signals   & 24192 \\ \hline \hline
+\end{tabular}
+\caption{\small{Electronic channel counts.}}
+\label{electronic-channels}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Post-Amplifiers, Discriminators, Multiplexers, TDCs}
+
+We plan to re-use our post-amplifier and discriminator boards, as well
+as its associated multiplexing scheme.  We also plan to re-use our
+LeCroy 1877 TDC modules.  For details of these systems, refer to our
+drift chamber technical paper in Ref.~\cite{dcnim}.
+
+\subsection{Gas System}
+
+We have an extensive gas-handling system which has performed well.
+We plan to re-use it.  Full details of this system and its design is 
+described in our drift chamber technical paper in Ref.~\cite{dcnim}.
+
+\input{r1proto}
+
+\section{Construction}
+
+The chambers are being designed with individual holes and holders for
+each wire, a ``strung'' rather than a ``wound'' chamber.  Our inspection
+and assembly procedures are designed to produce devices with wires placed
+and known by external survey to an accuracy of 100~$\mu$m, in order to
+achieve our goal of a 250~$\mu$m positional accuracy per wire layer.  In 
+addition to accuracy, we have chosen materials and designed procedures to 
+insure a quiet and long-lived detector.
+
+\subsection{Inspection and Cleaning}
+
+A visual and tactile inspection will be performed on the endplates and 
+structural frame once we have accepted delivery.  If deemed necessary, 
+the surfaces will be sanded using 320-grit paper on a orbital sander to 
+de-burr them in preparation for measurements.  The endplates and structural 
+frame will undergo a gross cleaning by soaking in a low residue laboratory 
+degreasing solution with hand scrubbing followed by a high pressure water 
+rinse. The parts will then receive their final cleaning using an ultrasonic 
+bath of a laboratory-grade detergent solution.  After two hours they will be 
+removed from the bath and rinsed with de-ionized water then sprayed with 
+methanol to aid drying. Once dry, the parts are heat-sealed in nylon bags 
+with a nitrogen atmosphere to await assembly.
+
+Smaller parts such as feedthroughs and hardware are cleaned using a 
+bench-top ultrasonic cleaner with laboratory detergent followed by a 
+de-ionized water rinse and a dousing of methanol to facilitate drying. 
+In addition, the injection molded parts are specified to be free of 
+silicon mold releases.
+
+\subsection{Box Assembly}
+
+The box assembly for Regions~1 and 3 consist of a structural frame 
+to which the endplates are attached. This is achieved by first welding 
+the frame to a reasonable tolerance then skim-cutting and drilling the 
+endplate-receiving surfaces of the frame in a 5-axis milling machine. 
+The cleaned endplates and cleaned structural frame are then joined using 
+pins to locate them with low out-gassing epoxy (Shell Epon 826 
+resin/Versamid 140 hardener) on the contact surfaces and bolts to clamp 
+and secure them. When the epoxy has cured, the box assembly is sent to 
+the measurement lab for fiducialization. Once this is complete, the 
+feedthroughs are inserted and set in place using the same epoxy that was 
+used to bond the endplates to the frame.
+
+\subsection{Internal Survey}
+\label{internal}
+
+A statistical sampling of the feedthrough hole locations and diameters 
+will be performed on all endplates and structural components upon receipt 
+from the vendor as part of the normal verification procedure.  The JLab
+Survey Group will be using a Faro hard probe configuration on their portable 
+coordinate measuring machine in a temperature-controlled laboratory for 
+these measurements. The goal is to ensure the feedthrough holes are within 
+the 0.200~mm true position tolerance and that the hole diameters are within 
+the specified tolerance range. 
+
+Once the box frame and endplates are assembled and before the feedthroughs 
+are installed, a seven parameter least squares transformation is used to 
+fiducialize the assembly in the measurement laboratory using a Faro laser 
+tracker. This translation will provide a reference from the feedthrough hole 
+locations on the endplates to tooling on the outside of the chamber that can 
+be seen once it is installed in {\tt CLAS12}.  The chamber location in the hall 
+will be ascertained also using the Faro laser tracker.  The measurement group 
+will then provide a formula that we can use to determine the wire locations in 
+space. We can expect an overall wire location accuracy of approximately 0.2~mm 
+using this system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.8cm}
+\special{psfile=reg1_proto_fiducial_holes.ps hscale=47 vscale=47 hoffset=90 voffset=-70}
+\caption{\small{Location of fiducial holes which allow transfer of wire 
+feedthrough locations to the front (upstream) edge of frame.}}
+\label{holes}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Because of the difficulty in producing the metal inserts of the feedthroughs, 
+there is a high incidence of cracks and unwanted ovality in the flared section 
+of the parts. We will be measuring and qualifying each of the metal inserts 
+using magnifiers and run-out jigs before shipping them to the injection molders. 
+
+
+\vskip 0.2cm
+
+\noindent
+Note: 1) Faro quoted precision, point to point = 0.061~mm. Total volumetric 
+precision (25 m cubed) is 0.086~mm.
+
+\vskip 0.1cm
+
+\noindent
+Note: 2) Error budget for installed feedthrough points/line:
+
+\vskip 0.2cm
+
+a. Initial inspection/fiducialization of endplates = 0.086~mm.
+
+b. Secondary fiducialization of assembled box frame fiducials = 0.05~mm.
+
+c. Installation survey standard error = approx. 0.1~mm.
+
+\vskip 0.2cm
+
+The rms value for each feedthrough hole location in the installation 
+would be approximately 0.14~mm. To define a point on the wire you would need 
+to take the standard error for its two feedthrough holes. Therefore, 
+the rms of any calculated point on the wire would be almost exactly 0.2 
+mm (assuming the wire is straight). This value would then be translated 
+in $X$ and $Y$ for each end of the wire to account for the offsets due to 
+the feedthroughs.
+
+\subsection{Stringing}
+
+The detector will be gravity-strung using the same basic methodology 
+used when stringing the current {\tt CLAS} drift chambers. The detector box 
+assembly will be mounted to a stringing fixture.  The frame will connect 
+to the fixture using attachments that place the detector-frame system 
+such that they rotate along the center of mass. This will permit safer 
+and easy rotation of the detector by hand. A gantry crane will be used 
+to lift the detector onto and off the stringing fixture and to raise the 
+small end of the detector  to account for the stereo angle.
+
+The stringing fixture is very basic.  It is mounted to the floor using 
+concrete anchors. This minimizes floor obstruction as the box must be 
+rotated to the opposite side to string the second set of wires. The box 
+and frame assembly should be far enough away from the uprights such that 
+they do not interfere with stringing activities. There is sufficient 
+adjustment to gravity string the wires. There is a gross adjustment using 
+the gantry crane to lift the telescoping side and pin it on the adjustment 
+collar.  The collar has a fine adjustment to zero in on the most 
+favorable stringing angle. The detector box will be rotated 180 degrees 
+to string the second super layer.
+
+Once the detector is installed onto the fixture, wire feedthrough 
+insulators will be inserted and glued into each hole. Special care must 
+be taken to use only the minimal amount of glue required to provide a
+solid gas seal and to prevent glue contamination inside the detector. Once 
+one endplate is filled, the assembly will be rotated such that the other 
+side can be done. Once all wire feedthrough inserts are in place, the box 
+will be pre-tensioned.
+
+\subsection{Mounting Electronics Boards}
+
+The signal side of each chamber is tiled with multi-layer printed circuit 
+boards called Signal Translation Boards (STBs).  These boards were designed to 
+capacitively decouple high voltage from the signals, and then to route the 
+signals to the single in-line package (SIP) transimpedance pre-amplifiers 
+mounted on these boards.  The amplified differential signals are then sent 
+via 20-m long twisted-pair lines to the main {\tt CLAS12} readout electronics.
+
+The connections between the sense-wire crimp pins and the plated-through holes 
+of the STB boards are made using short conductive-rubber tubes.  This material 
+consists of silver-plated and/or nickel-plated glass spheres embedded in a 
+silicon-rubber matrix.  These tubes pass through the plated-through hole and 
+over the end of the crimp pins, making the electrical contract between the wire 
+and the circuit board.  A small plastic cap inserted into the end of the tube 
+ensures good contact with the circuit board.  This approach has the advantages 
+of reducing the space needed for connections, preventing crimp pins from being 
+pulled from the feedthroughs when disconnecting the boards from the wires, and 
+reducing the cost compared to metal connectors.  This detail is shown in
+Fig.~\ref{crimp}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=reg1_proto_ft_assy.ps hscale=47 vscale=47 hoffset=90 voffset=-75}
+\caption{\small{An assembly drawing showing how the crimp pin is inserted
+into the feedthrough and how the conductive elastomer tube fits over
+the crimp pin and inside the plated-through hole on the printed
+circuit board to make the electrical connection.}}
+\label{crimp}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Positional Error Budget}
+
+In order to achieve a position resolution of 250 \microns
+the chambers have to be built accurately, positioned precisely
+and carefully calibrated.   There are three main categories
+of error: internal geometry, positioning accuracy and uncertainties
+in the time to distance translation.
+Table~\ref{errorbudget} lists the main contributors
+to the error on the internal geometry or position of the wire relative
+to fiducial marks on the endplates.  The quadratic sum of these
+terms gives 130 \microns.
+Errors in external surveys can
+be compensated by ``straight-track'' alignment runs to the level of
+60 \microns.  
+
+Intrinsic resolutions due to random-walk in the
+ion drift will be approximately 100 \microns times the square root
+of the drift distance in centimeters; i.e. 90 - 150 \microns for 
+Reg. 1 and Reg. 3.  This term has to be added to a variety of
+``time-slewing'' effects due to amplifier rise-time and discrete
+location of ions.  These time-slewing mechanisms mainly affect
+the resolution near the wire and near the edge of the drift 
+cell.  We see this clearly in our present data.  In an approximate
+sense, this term has a size of about 150 \microns.
+Adding the time-walk and time-slewing terms in quadrature gives
+us about 200 \microns for the drift velocity dependent error.
+A total quadratic sum of the internal positional error (130 \microns),
+the external positioning error after alignment (60 \microns) and
+the drift velocity dependent error (200 \microns) yields our
+estimate of 250 \microns error per layer of measurement.   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c|c||} \hline \hline
+{\bf Contribution}      &  {\bf Size $\sigma$ } \\ \hline
+endplate hole placement   & 100 \microns \\ \hline
+location in feedthrough & 50 \microns \\ \hline
+grav. wire sag (uncorrected) & 250 \microns \\ \hline
+grav. wire sag (corrected) & 25 \microns \\ \hline
+endplate deflection (uncorrected) & 0.8 mm \\ \hline
+endplate deflection (corrected) & 40 \microns \\ \hline
+transfer of feedthrough locations to tooling balls & 50 \microns \\ \hline
+{\bf quadratic sum} & 130 \microns \\ \hline \hline
+\end{tabular}
+\caption{\small{Various contributions to inaccuracies in internal wire positions.}}
+\label{errorbudget}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Quality Assurance}
+
+The detector will be strung in a class-10,000 clean room to maintain 
+clean wires and detector surfaces. Wire tensions will be monitored daily 
+during the stringing process. All tension test results will be collected 
+and saved in a database. All out of range wires will be replaced on a 
+daily basis.  Each step completed during the stringing process will be 
+independently checked at the end or beginning of each shift.
+
+Once stringing is complete, wires will be checked for shorts and cross-talk 
+prior to installing the HV boards. Wire tensions will be randomly tested and 
+results compared to those previously determined. HV testing will be 
+completed prior to installing the signal translator boards.
+
+
+\section{Operation}
+
+The chambers will operate for many years in a wide variety of experimental
+conditions.  We will draw on the present {\tt CLAS} experience to supply gas and
+power (low-voltage and high-voltage) to the chamber as needed, to monitor
+these utility systems, and to provide shift-takers with an online determination
+of various key tracking parameters: the number of hits used per track, the
+online position resolution, the number of hits per layer and wire, the 
+maximum drift time, and a plot of time differences for nearby wires which 
+show characteristic peaks when coherent noise is present.  We will follow 
+procedures similar to those described in our technical article~\cite{dcnim} 
+on the {\tt CLAS} drift chambers.  We do not anticipate any changes in the
+concepts for these operations.
+
+\subsection{Alignment}
+
+During {\tt CLAS} operation we have had numerous occasions to remove a chamber
+in order to inspect or fix some problem.  After such a repair period, we
+found it necessary to do a special ``$B$=0'' run in order to line up the 
+removed and replaced chamber with the untouched chambers in the same sector.  
+Our mechanical procedures allowed us to replace the chamber with millimeter 
+accuracy; the alignment procedure fine-tuned our positional knowledge to an 
+accuracy of better than 100~$\mu$m.
+
+The {\tt CLAS12} chambers have a simpler and smaller geometry (planar chambers 
+in a triangular box) and the positioning fixtures will be located closer 
+together, thus we hope to replace a removed chamber with much better accuracy.
+
+\input{Performances}
+
+\vfil
+\eject
+
+\begin{thebibliography}{99}
+
+\bibitem{pcdr} 
+Pre-Conceptual Design Report the Science and Experimental Equipment
+for the 12~GeV Upgrade of CEBAF, see www.jlab.org/12GeV/collaboration.html.
+
+\bibitem{fastmc}
+FASTMC is a fast parametric Monte Carlo of {\tt CLAS12}; the code and 
+documentation are contained in CVS under 12GeV/fastmc.
+
+\bibitem{pac30} 
+JLab PAC30 meeting, Aug. 2006; see www.jlab.org/exp\_prog/PACpage/pac.html.
+
+\bibitem{clasnim}
+B.A. Mecking {\it et al.}, Nucl. Inst. Meth. A {\bf 503}, 513 (2003).
+
+\bibitem{dcnim} 
+M.D. Mestayer {\it et al.}, Nucl. Inst. and Meth. A {\bf 449}, 81 (2000).
+
+\bibitem{egs}
+R.L. Ford and W.R. Nelson, The EGS code system: Computer program for the 
+Monte Carlo simulation of electromagnetic cascade showers, SLAC-210 (1978).
+ 
+\bibitem{momres} 
+B.A. Mecking, The MOMRES package is used as an input to FASTMC and is
+a program to estimate the momentum and angle resolution given a table of 
+material thicknesses, position resolution, and integral magnetic field.
+The progam is in CVS under 12GeV/momres.
+
+\bibitem{clasev} 
+H. Avakian, General event generator.  The program is in CVS under
+12GeV/fastmc/clasev.
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+
+
+
+

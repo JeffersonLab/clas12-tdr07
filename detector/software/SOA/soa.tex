@@ -1,0 +1,41 @@
+\section{Service Oriented Architecture}
+
+A software service is a specialized application with these primary characteristics:
+
+1.	It does one task or a small set of closely related tasks extremely well.
+
+2.	It is reliably available over a network, either the internet or an intranet. Often it is accessed via a Uniform Resource Locator (URL). 
+
+3.	It has an interface that utilizes standard data exchange, often (but not limited to) documents formatted using the Extensible Markup Language (XML).
+
+4.	The description of the interface is also available on the network, also through a URL. This description, typically an XML document, is viewed as a contract. Enhancements to the service might extend the contract, but they should not summarily deprecate an existing interface.
+
+An architecture developed using services is called a Service Oriented Architecture (SOA). Complex applications, usually called clients, are built by piping services together. A given SOA will support any number of clients. The transport might be the standard in industry, based on the Simple Object Access Protocol (SOAP), or it may be based on a more specialized  messaging system, such as the Java Messaging Service (JMS).
+
+
+The potential advantages of a SOA include:
+
+{\bf Modularity}. While modularity has been a buzzword for software developers for decades, it is clear that SOAs elevate the concept beyond what has been achieved up to now. While individual applications have been developed that are modular, what is meant in that case is that blocks of the code that are linked into the final executable are replaceable with no effect on the bulk of the application. Nevertheless, such modules generally require a shared object model and binary compatibility. Services require neither. The modularity achieved by services in a SOA extends beyond functional decomposition. Services require no object model or binary compatibility, since all the interaction occurs through implementation agnostic interfaces.
+
+{\bf Shared Code}. Services are necessarily shared, common resources. A service to extract detector geometry will perform the same function, in the same way, for all clients. While correctness is not guaranteed, consistency is. 
+
+{\bf Interoperability}. Related to the high level of modularity, interoperability refers to the fact that services can be written in (in principle) any language and run on any machine. Additional interoperability is achieved by providing well-tested legacy codes with a communication layer (a wrapper) that talks to the service backbone. In this manner, old code can be used without expensive refactoring.
+
+{\bf Maintainability}. Smaller code modules, as opposed to huge monolithic applications, are manifestly easier to maintain. They also are more robust against the loss of a primary developer to retirement or another job. It is far easier to dig into a thousand line service than a hundred thousand line applications.
+
+{\bf Deployment}. In a SOA, services and clients are replaced, often (though not necessarily) without announcement.  That is because, as mentioned, the exposed interface is a viewed as in inviolate contract, but the implementation is not. Changing a service implementation does not require a code distribution or a recompilation on the part of any other code.
+
+{\bf Loose Coupling}. This advantage referees to the fact that clients are unaware of the implementation details of the service. As such, they chance of unintended consequences resulting from tight coupling (shared access to memory and objects) is effectively eliminated. Interaction is not through shared objects or memory, but only through interfaces. It is vital, in an SOA, that only interfaces are exposed to the clients. Furthermore these interfaces exchange atomic data by value, not reference. 
+
+{\bf Extensibility}
+. SOAs are extensible in a unique way: once a useful set of services are provided, developers can create applications that are unanticipated by the service architects. Indeed, the unanticipated application is considered a litmus test of a successful SOA. In the CLAS 12 GeV nuclear physics environment, we will create basic services with goal of providing what is necessary for analysis, visualization and simulation as we see it today—but those same services might be combined more effectively that we imagine.
+
+The potential disadvantages of a SOA include:
+
+Communicating using XML or with a messaging system is platform agnostic only when exchanging ASCII (or Unicode) data. Encoding binary data in Unicode is potentially time consuming and bandwidth intensive. To mitigate this problem, the architecture should, in certain cases, ship metadata instead of large amounts of binary data. That is, it should transmit a description of or instructions for accessing large data files rather than the data itself. Alternatively it could use a messaging system that transparently potential handled byte ordering differences between the service and client platforms.
+
+While almost all modern computer languages readily adapt to life in a SOA, FORTRAN is the one language that is problematic. For example, the state of the art in FORTRAN XML parsers is lagging behind other languages. How much legacy and new FORTRAN code will be written for 12 GeV CLAS is an open question. Nevertheless, the software group will have to provide extra support for incorporating FORTRAN services and especially clients.
+
+
+The Service Oriented Architecture has reached maturity in industry and government. Many successful commercial applications, such as Amazon, are built on publically accessible services. Many government agencies, such as the Department of Defense,  have been pushing their contractors to modify legacy codes to live in a service oriented environment. The CLAS 12 GeV software group is confident that we can leverage and adapt what has already been proven in the commercial and government realms for use in the software needs of the CLAS 12 GeV collaboration. 
+

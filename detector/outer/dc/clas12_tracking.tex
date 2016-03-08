@@ -1,0 +1,293 @@
+
+\section{Drift Chambers}
+
+The overall tracking requirements (0.5 -  1\% fractional momentum resolution 
+at 5~GeV and efficient tracking at a luminosity of \1035) are the main
+drivers for drift chamber design.  Because the {\tt CLAS} drift chamber
+system~\cite{dcnim} has operated successfully for 8 years, we plan to 
+re-use many of the design concepts and most of the utility infrastructure.  
+In particular, we plan to re-use the present gas mixing and handling system, 
+the high-voltage and low-voltage systems, the FASTBUS TDC system and the 
+post-amplifier/multiplexer systems.  The construction project thus consists 
+of new chambers, on-board electronics, and on-board jumper cables.
+
+The required better resolution of the tracking system compared to the 
+present {\tt CLAS} detector will be achieved by chambers with a smaller 
+cell size and thus inherently better spatial resolution, and the smaller 
+physical size and thus more accurate placement of the chambers with respect 
+to the magnet coils.  The design of the forward chambers is very similar to 
+the present {\tt CLAS} chambers.  The cell design is hexagonal and the sense 
+wire layers are arranged in 6-layer superlayers as in the present chambers. 
+The major difference is that the cells are approximately two thirds as big 
+as the present chambers allowing efficient tracking at higher luminosities 
+because the accidental occupancy from particles not associated with the 
+event is smaller. Table~\ref{fwd-dc-design-parms} lists the design 
+parameters and Fig.~\ref{fwddc} shows a single sector of the new Region 1
+chamber.  For the purposes of simulating track resolutions, we assumed that 
+the position resolution of the individual drift cells would be 250~$\mu$m.  
+For reference, the present {\tt CLAS} chambers have resolutions of 310, 315,
+and 380 $\mu m$ for R1, R2, and R3, respectively.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{9.0cm}
+\special{psfile=r1.eps hscale=47 vscale=47 hoffset=120 voffset=0}
+\caption{\small{A view of one sector of the Region 1 drift chamber 
+showing the projection of the wires onto the chamber endplate.}}
+\label{fwddc}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c|c|c||} \hline \hline
+&{\bf Region 1}      &  {\bf Region 2} & {\bf Region 3}\\ \hline
+dist. from target    & 2.1 m & 3.3 m   & 4.5 m \\ \hline
+num. of superlayers  & 2 & 2   & 2 \\ \hline
+layers/superlayer    & 6 & 6   & 6 \\ \hline
+wires/layer          & 112 & 112   & 112 \\ \hline
+cell size            & 0.86 cm & 1.36 cm   & 1.88 cm \\ \hline
+assumed resolution per wire  & 0.025 cm & 0.025 cm   & 0.025 cm \\ \hline
+\end{tabular}
+\caption{\small{Design parameters for the {\tt CLAS12} drift chambers.}}
+\label{fwd-dc-design-parms}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The chambers differ from the present {\tt CLAS} chambers in a number of 
+ways.  Successive superlayers have their wires arranged with a plus or 
+minus 6$^{\circ}$ stereo angle; the present arrangement has an axial layer and 
+a 6$^{\circ}$ stereo layer.  For the present {\tt CLAS} detector, the $\phi$ 
+resolution is about four times larger than the $\theta$ resolution.  To 
+have more equal resolution in the two angles, we decided that we needed to 
+double our effective stereo angle in order to improve the  $\phi$ resolution.
+Unlike the present chambers, all of the wires in one of the superlayers are
+strictly parallel, and in a plane perpendicular to the wire direction form
+perfect hexagons.  This should allow a more accurate drift velocity 
+calibration than the current design with its layer-to-layer increase in 
+cell size.  The choice of gas; a 92:08 Argon:CO$_2$ mixture is a small 
+departure from our present 90:10 mixture and should result in a higher and 
+more constant drift velocity.  We plan to run with a gas gain of $5\cdot10^4$.
+
+Another departure from the present design is to design every chamber (in 
+all three regions) to be self-supporting in order to ensure that they are 
+easy to install and remove for maintenance.  In the present {\tt CLAS}, the 
+Region 1 chambers are all bound together into a single unit in order to 
+maintain the wire tension without excessively thick endplates, and the 
+Region 2 chambers are actually mounted onto the magnet cryostat with the 
+cryostat itself maintaining the internal wire tension.  None of the present 
+Region 1 or 2 chambers can be accessed individually without a lengthy 
+``tension-transfer'' process.  To avoid this, we are designing all chambers 
+to be self-supporting like our present Region 3 chambers.  The key will be 
+ultra-stiff endplates which obtain their stiffness by a flanged design.  
+
+A third design change is to use 30~$\mu$m diameter sense wire rather than 
+the more common 20~$\mu$m wire. Our choice of wire is 30~$\mu$m diameter, 
+gold-plated tungsten for the sense wires, 140~$\mu$m diameter, gold-plated 
+aluminum for the field wires and 140~$\mu$m diameter, stainless steel for
+the guard wires.   This should make the chamber more robust to wire 
+breakages.  Higher voltages will be required to achieve the same gas gain, 
+and the resulting higher electric field in the drift cells will result in 
+a more nearly constant drift velocity which should be easier to calibrate.
+Prototypes are being built to study possible negative side-effects of the 
+higher voltage operation such as leakage currents on the circuit boards 
+and/or higher rates of cathode emission from the field wire surfaces.
+Fig.~\ref{garfield} shows GARFIELD calculations for a Region 3 drift cell
+with both a 20~$\mu$m and a 30~$\mu$m diameter sense wire.  Here the
+cells with the thicker sense wire will have a significantly higher drift 
+velocity which is desirable to reduce the time window, and hence the chamber 
+occupancy.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=garfield1.eps hscale=30 vscale=27 hoffset=50 voffset=165}
+\special{psfile=garfield2.eps hscale=30 vscale=27 hoffset=50 voffset=-5}
+\special{psfile=garfield3.eps hscale=30 vscale=27 hoffset=240 voffset=165}
+\special{psfile=garfield4.eps hscale=30 vscale=27 hoffset=240 voffset=-5}
+\caption{\small{GARFIELD calculations of the electric field lines (top)
+and drift time vs. drift distance (bottom) for a Region 3 drift cell.  The 
+left plots show the configuration with a 20~$\mu$m diameter sense wire and 
+the right plots show the configuration with a 30~$\mu$m diameter sense wire.
+The high voltages were set to provide the same gas gain for each
+configuration.}}
+\label{garfield}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Expected Detector Performance}
+
+We studied the position, angle, and momentum resolution for a number of 
+possible detector options using MOMRES~\cite{momres}.  Our procedure was 
+to produce a MOMRES input file that characterized the detector position, 
+material thickness, and estimated hit resolution for a particular track 
+angle.  We also produced a B-field file which was a tabulation of the 
+B-field strength vs. path length for a particular track angle.  These, 
+and the desired range of momenta, were the inputs to MOMRES. MOMRES 
+calculated the expected components of the resolutions due to multiple 
+scattering and measurement resolution, respectively.  We fit these outputs 
+to the expected kinematic form. From these fits we extracted two parameters 
+(sig1 and sig2) for each of the three terms ($dp/p$, $d\theta$, $dx$). 
+These six parameters summarize the output of MOMRES. In addition, we 
+calculated the angle resolution in the non-bend plane in a manner 
+analogous to that of MOMRES, using estimates for the effects of multiple 
+scattering and measurement error, fitting the resulting smeared trajectory 
+by a straight line, and extracting the $\sigma$1 and $\sigma$2 parameters 
+that characterize the resolution in this out-of-bend-plane angle.  Thus, 
+eight parameters for each value of track angle fully characterize the 
+tracking resolution for any one detector option.  Fig.~\ref{30degres} 
+shows the momentum, $\theta$, $\phi$, and vertex resolutions for three 
+detector options for tracks emitted at 30$^{\circ}$.  Fig.~\ref{90degres} 
+shows the momentum, $\theta$, $\phi$, and vertex resolutions for three 
+detector options for tracks emitted at 90$^{\circ}$, i.e. into the central 
+detector. 
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : 30deg resolution %%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{9.0cm}
+\special{psfile=30deg_resln.eps hscale=50 vscale=50 hoffset=90 voffset=0}
+\caption{\small{Resolution simulated using MOMRES plotted vs. particle 
+momentum for 30$^{\circ}$ tracks.  Sub-figures a, b, c, and d show the 
+momentum, $\theta$, $\phi$, and vertex resolutions, respectively.  Three 
+options are shown: solid- 3 SVT planes + CC + 3 DC planes; dashed- CC + 
+3 DC planes; dotted - 3 DC planes.}}
+\label{30degres}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fig.~\ref{resol} provides a few more results of these studies to
+parameterize and understand the resolution expected for the {\tt CLAS12}
+tracking system.  The plots show the expected angular resolution, the 
+expected position resolution, and the expected momentum resolution
+for different angle bins, each as a function of momentum.  These plots
+were made using the current design of the tracking system.
+
+Fig.~\ref{resplot} shows the reconstructed momentum for 1000 events
+each containing a 1~GeV track emitted at a 45$^{\circ}$ polar angle
+but at random values of azimuthal angle and with random multiple
+scattering.  The dark histogram shows the expected reconstructed
+spectrum at a luminosity of 10$^{35}$~cm$^{-2}$s$^{-1}$.  The gray
+histogram and the solid line show the resolution with 40 times the
+nominal background (consisting of random SVT hits).  The gray histogram
+was constructed using the nominal $\pm$1.5$^{\circ}$ $U$-$V$ strip
+pitch, and the solid line was made increasing the strip pitch by a
+factor of two above the nominal.  The studies serve to validate the
+basic SVT design parameters.
+
+%%%%%%%%%%%%%%%%%%%%%% Figure : 90deg resolution %%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=90deg_resln.eps hscale=50 vscale=50 hoffset=90 voffset=-5}
+\caption{\small{Resolution simulated using MOMRES plotted vs. particle 
+momentum for 90$^{\circ}$ tracks.  Sub-figures a, b, c, and d show the 
+momentum, $\theta$, $\phi$, and vertex resolutions, respectively.  Three 
+options are shown: solid- 3 SVT planes; dashed- 16 DC-stereo planes; 
+dotted - 8 DC-cathode pad planes.}}
+\label{90degres}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{12.0cm}
+\special{psfile=resol_1.eps hscale=35 vscale=30 hoffset=15 voffset=160}
+\special{psfile=resol_2.eps hscale=35 vscale=30 hoffset=225 voffset=160}
+\special{psfile=resol_3.eps hscale=35 vscale=30 hoffset=115 voffset=-10}
+\caption{\small{Simulation results for the {\tt CLAS12} tracking system
+showing the expected angular resolution, position resolution, and
+momentum resolution for different angle bins as a function of momentum.}
+\label{resol}}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htpb]
+\vspace{6.5cm}
+\special{psfile=centralrates1.eps hscale=120 vscale=85 hoffset=75 voffset=0}
+\caption{\small{A plot of reconstructed momentum (GeV) for 1000 events,
+each containing a 1~GeV track emitted at a 45$^{\circ}$ polar angle
+but at random values of azimuthal angle and with random multiple
+scattering.  The solid histogram is for events with the background 
+expected at a luminosity of \1035.  The gray histogram ($\pm$1.5$^{\circ}$
+strip pitch) and solid line ($\pm$3$^{\circ}$ strip pitch) were
+simulations run increasing the background by a factor of 40.}}
+\label{resplot}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Expected Physics Performance}
+
+We used a series of programs to calculate the acceptance and reconstructed 
+physics parameters for event types of interest.  The program {\it clasev}
+\cite{clasev} served as an event generator and analysis program. 
+Depending on the value of input flags, it generates certain types of 
+events; that is, it produces a set of 4-momenta for the primary hadrons 
+in the hadronic center-of-mass and allows some of them to decay into the 
+final-state hadrons and transforms their momenta to the lab system.  For 
+each final-state track, it calls {\tt FASTMC} to determine if the track 
+falls within a fiducial acceptance window and to determine its final, 
+smeared lab momentum.  It then produces selected physics analysis variables 
+such as missing mass from calculations involving the smeared momenta of 
+those tracks that were accepted. 
+
+Fig.~\ref{massplot} shows the expected missing mass resolution 
+expected for {\tt CLAS12} from simulation studies based on the current
+design specifications for a number of different reactions.  For all
+cases studied the results are quite encouraging in terms of identifying
+the missing particle cleanly for each reaction.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{14.0cm}
+\special{psfile=mm1.ps hscale=39 vscale=36 hoffset=-10 voffset=160}
+\special{psfile=mm2.ps hscale=39 vscale=36 hoffset=225 voffset=160}
+\special{psfile=mm3.ps hscale=40 vscale=37 hoffset=-10 voffset=-55}
+\special{psfile=mm4.ps hscale=40 vscale=37 hoffset=230 voffset=-55}
+\caption{\small{Simulation results highlighting the expected missing
+mass resolution of {\tt CLAS12} with the nominal design specifications for
+the drift chambers.  Shown are the spectra for the reactions
+$ep \to e'\pi+X$ (UL), $ep \to e'K^+X$ (UR), $ep \to e'p\pi^+X$ (LL),
+and $ep \to e\rho^+X$ (LR).}}
+\label{massplot}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\vfil
+\eject
+
+\begin{thebibliography}{99}
+
+\bibitem{pcdr} 
+Pre-Conceptual Design Report the Science and Experimental Equipment
+for the 12~GeV Upgrade of CEBAF, see www.jlab.org/12GeV/collaboration.html.
+
+\bibitem{fastmc}
+FASTMC is a fast parametric Monte Carlo of {\tt CLAS12}; the code and 
+documentation are contained in CVS under 12GeV/fastmc.
+
+\bibitem{pac} 
+JLab PAC30 meeting, Aug. 2006; see www.jlab.org/exp\_prog/PACpage/pac.html.
+
+\bibitem{egs}
+R.L. Ford and W.R. Nelson, The EGS code system: Computer program for the 
+Monte Carlo simulation of electromagnetic cascade showers, SLAC-210 (1978).
+ 
+\bibitem{dcnim} 
+M.D. Mestayer {\it et al.}, Nucl. Inst. and Meth. A {\bf 449}, 81 (2000).
+
+\bibitem{momres} 
+B.A. Mecking, The MOMRES package is used as an input to FASTMC and is
+a program to estimate the momentum and angle resolution given a table of 
+material thicknesses, position resolution, and integral magnetic field.
+The progam is in CVS under 12GeV/momres.
+
+\bibitem{clasev} 
+H. Avakian, General event generator.  The program is in CVS under
+12GeV/fastmc/clasev.
+
+\end{thebibliography}
+
+\end{document}
+

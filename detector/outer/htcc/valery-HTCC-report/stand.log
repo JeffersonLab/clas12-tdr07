@@ -1,0 +1,167 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2006.1.30)  21 MAR 2007 13:29
+**stand
+(stand.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size11.clo
+File: size11.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texmf/tex/latex/psnfss/times.sty
+Package: times 2001/06/04 PSNFSS-v8.2 (SPQR) 
+) (stand.aux)
+\openout1 = `stand.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 13.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 25.
+
+(/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 25.
+ [1
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 28.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 30.
+File: CLAS12-optics.eps Graphic file (type eps)
+ <CLAS12-optics.eps>
+File: cerenk-mirror.epsi Graphic file (type eps)
+
+<cerenk-mirror.epsi>
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 67.
+ [1
+
+]
+File: sc.eps Graphic file (type eps)
+ <sc.eps>
+File: cc.eps Graphic file (type eps)
+ <cc.eps>
+File: cerenk-test.epsi Graphic file (type eps)
+ <cerenk-test.epsi>
+File: cerenk-daq.epsi Graphic file (type eps)
+
+<cerenk-daq.epsi>
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 128.
+
+ (/usr/share/texmf/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 128.
+ [2]
+File: raw_adc.eps Graphic file (type eps)
+
+<raw_adc.eps> [3]
+File: one_photon.eps Graphic file (type eps)
+ <one_photon.eps>
+File: uv_1_fit.eps Graphic file (type eps)
+ <uv_1_fit.eps>
+File: uv_2_fit.eps Graphic file (type eps)
+ <uv_2_fit.eps>
+File: qt_1_fit.eps Graphic file (type eps)
+
+<qt_1_fit.eps>
+File: uv_1_result.eps Graphic file (type eps)
+ <uv_1_result.eps>
+File: uv_2_result.eps Graphic file (type eps)
+ <uv_2_result.eps>
+File: qt_1_result.eps Graphic file (type eps)
+ <qt_1_result.eps>
+File: k02471_ph.eps Graphic file (type eps)
+
+<k02471_ph.eps>
+File: cerenk-stand.epsi Graphic file (type eps)
+ <cerenk-stand.epsi>
+File: plateau.eps Graphic file (type eps)
+ <plateau.eps> [4] [5] [6] [7] [8] [9]
+File: rate_vs_wl.eps Graphic file (type eps)
+
+<rate_vs_wl.eps>
+File: shield_r_lin.eps Graphic file (type eps)
+ <shield_r_lin.eps>
+File: shield_r_log.eps Graphic file (type eps)
+ <shield_r_log.eps>
+File: shield_z_lin.eps Graphic file (type eps)
+ <shield_z_lin.eps>
+File: shield_z_log.eps Graphic file (type eps)
+
+<shield_z_log.eps> [10] [11] [12]
+File: 3layers.eps Graphic file (type eps)
+ <3layers.eps> [13] (stand.aux) ) 
+Here is how much of TeX's memory you used:
+ 730 strings out of 20880
+ 8374 string characters out of 197306
+ 56742 words of memory out of 350001
+ 3696 multiletter control sequences out of 10000+15000
+ 12060 words of font info for 35 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 32i,7n,21p,312b,326s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on stand.dvi (14 pages, 20868 bytes).

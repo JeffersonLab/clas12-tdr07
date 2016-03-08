@@ -1,0 +1,2240 @@
+\section{Introduction}
+
+The new time-of-flight system for {\tt CLAS12} will have a refurbished 
+forward-angle detector and a barrel scintillation detector for triggering 
+and time-of-flight measurements in the central region -- the central 
+time-of-flight (CTOF) detector.  The design of the CTOF barrel includes
+50 counters as shown in Figs.~\ref{barrel} and \ref{barrel2}.  Each CTOF
+counter is 66-cm long and $\approx$3.5$\times$3~cm$^2$ in cross section.  
+These counters will be placed inside the superconducting solenoid (nominal 
+field 5~T) at a radius from the beam axis of $\approx$25~cm.  Our goal in 
+the {\tt CLAS12} upgrade program is to achieve a timing resolution, 
+$\sigma_{TOF}\approx 50$~ps, which will allow $\ge 200$~ps separation
+\footnote{This value corresponds to $4\sigma_{TOF}$ separation at the given 
+momenta in the transverse direction.  A resolution change to 
+$\sigma_{TOF}\approx 60$~ps translates to a $3.3\sigma_{TOF}$ separation between 
+the different hadron species at the same momenta.} of pions from kaons up to 
+0.64~GeV and pions from protons up to 1.25~GeV.  Fig.~\ref{ctof_timing} shows
+the flight time for charged particles incident upon the CTOF counters as
+a function of momentum.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{CLASTOF.ps}
+\caption{\small{The design of the {\tt CLAS12} central TOF detector.}}
+\label{barrel}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.98\textwidth]{HTCC_CTOF_STUDY_060507_WRAP.eps}
+\caption{\small{The layout of the {\tt CLAS12} central TOF detector.  
+The solenoid is shown by the hatched area.  The scintillators form a barrel, 
+66-cm long with an inner radius 24.945~cm.  At the upstream and downstream
+ends, 50-mm diameter light guides are included that have a pitch of 
+20$^\circ$ and 41$^\circ$, respectively.  The 1.4 -- 1.6-m long light guides 
+for conventional PMTs may be replaced with $\leq$1-m long light guides to 
+accommodate magnetic-field-immune photo-detectors.}}
+\label{barrel2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{ctof90deg.eps}
+\caption{\small{Time of flight in the transverse direction vs. particle 
+momentum for protons (top), kaons (middle), and pions (bottom).}}
+\label{ctof_timing}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The timing information in {\tt CLAS12}~\cite{r2} will be referenced to 
+a stable radio-frequency signal from the accelerator.  Therefore, the 
+time-of-flight resolution is determined as $\sigma_{TOF} = 0.5 \sigma_{PMT}$.
+Thus we aim to develop a CTOF counter with an effective resolution of a
+single photomultiplier, with $\sigma_{PMT} \leq 72$~ps.  We refer to 
+$\sigma_{PMT}$ as an ``effective resolution'' since it is determined by 
+the scintillator rise time ($\leq 1$~ns), light collection efficiency, 
+discrimination, and the experimental environment, as well as by the 
+excellent intrinsic timing characteristics of modern photomultipliers 
+tubes (PMTs).
+
+In our R\&D program we are following a conservative strategy, i.e. we 
+are aiming for the best possible resolution using double-sided readout 
+with conventional PMTs and very long light guides ($\leq 1.5$~m), delivering 
+light to an area outside of the central solenoid where the associated 
+magnetic fields are low (see Fig.~\ref{fig:mmap1}).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\textwidth]{mmap1.eps}
+\caption{\small{Location of R2083 PMTs (cross-hairs) in relation to the 
+magnetic field map for the central {\tt CLAS12} solenoid.}}
+\label{fig:mmap1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have proven both experimentally and with calculations that long light 
+guides should have an increasing cross section moving from the scintillator
+to the PMT.  This feature allows delivery of about twice as much light 
+compared to a light guide of a constant cross section.  Therefore it is 
+preferable to use PMTs with large photocathodes.  The actual length and 
+configuration of the light guides will be defined by the maximum magnetic 
+field that can be tolerated by a conventional PMT.  Bent light guides, shown 
+on the downstream side of Fig.~\ref{barrel2}, will be used with ordinary PMTs, 
+which have to be protected against magnetic fields $\leq 1000$~G.  On the 
+upstream side magnetic fields are below 500~G.
+
+In parallel, we are pursuing other possible solutions based on modern PMTs  
+that are capable of operating in high magnetic fields, such as micro-channel
+plate, fine-mesh, and metal-channel PMTs.  The review of possible candidates 
+is given in Section~\ref{phdrev}.  At the current time, all of the aforementioned  
+PMTs are being considered as options for the CTOF system. 
+
+At the 5~T nominal solenoid field, long light guides of complex shape 
+are unavoidable elements of the CTOF counter instrumented with both ordinary 
+and/or fine-mesh PMTs. In order to investigate the design and technology for 
+bent light guides (see Section~\ref{design2083}), we consider a realistic 
+pilot design for the CTOF barrel with light guides shaped as a narrow pyramid.
+In Section~\ref{mutchler} we focus on the design of long light guides and 
+optimization of the light guides via Monte Carlo calculations.  Prototyping 
+and reference measurements of $\sigma_{PMT}$ with ordinary and magnetic field 
+insensitive photo-detectors are described in Section~\ref{measurements}.  
+From our R\&D program, coupled with the results of detailed Monte Carlo 
+calculations,  we estimate $\sigma_{PMT}$ for different possible CTOF 
+designs (see Section~\ref{estimates}).
+
+Within the program of employing magnetic-field-immune PMTs, we have measured 
+the timing resolution of counters instrumented with micro-channel plate (MCP) 
+PMTs with an on-board preamplifier.  We describe details of our measurements 
+in Section~\ref{meas85011}.  Such PMTs are supposed to be attached directly to
+the scintillators.  The corresponding pilot design is given in 
+Section~\ref{des85011}.  However, the performance of MCP PMTs with on-board 
+amplifiers is the subject of future tests in magnetic fields up to 4.5~T.
+
+Another magnetic-field-immune ($\leq 1$~T) photo-detector is the fine-mesh
+(FM) PMT.  We also plan to test more precise metal-channel (MC) PMTs for 
+their performance in magnetic fields up to $\leq 0.2$~T with magnetic shielding.
+Both types require significantly shorter ($\le$1~m) light guides to deliver 
+light to the locations with a low enough field.
+
+We emphasize that our conservative design with ordinary PMTs may accommodate 
+new photo-detectors, provided the space reserved for the long light guides can 
+be used to house the new PMTs.
+
+\section{Counter Prototyping and Reference Measurements}
+\label{measurements}
+
+Several prototype scintillation counters were manufactured at Kyungpook 
+National University (KNU) in 2004-2007.  In cooperation with the Detector 
+Group at JLab, two reference counters were made with double-sided readout 
+via MCP PMTs.  In all of our prototypes, we have used Bicron-408 
+scintillators $2 \times 3 \times 50$~cm$^3$ in size.  Each prototype counter 
+was instrumented with test PMTs on both ends for a double-sided readout.
+The detailed description of the prototypes, test measurements, analysis 
+methods, and results are published in several {\tt CLAS} notes and NIM 
+papers~\cite{Baturin:2005,r1,llg,barb06}.
+
+We have used two basic configurations for measuring the effective PMT time 
+resolution.  Our main setup for express measurements consists of only one 
+counter.  In order to measure the effective resolution of the PMTs, we placed 
+a radioactive source on the surface of the scintillator.  Using the 
+double-sided readout of the signal time and amplitude, we determined the 
+location of the source via the difference between the arrival times of the
+two signals.  The standard deviation of the determined source location is 
+proportional to the product of $\sigma_{PMT}$ and the known effective speed 
+of light in the scintillator.
+
+For reference we use a triplet of identical counters exposed to cosmic rays.
+The reference triplet consists of three identical scintillator bars with 
+double-sided readout.  The spacing between the middle and top counters and the
+middle and bottom counters was matched.  To determine the effective 
+resolution of the PMTs we use the method of cosmic ray tracking.  The track 
+coordinates are determined in each of the three counters via time difference 
+measurements in each counter.  For each counter we also determine the time 
+of a light flash in the scintillator as the mean value of the arrival times 
+at both ends.  Thus we exclude coordinate-dependent delays caused by light 
+propagation from the hit point to the PMTs.  For the straight tracks with 
+constant velocity, the hit time of the middle counter equates to the mean 
+value of the top and bottom hits.  This fact results from the simple geometry 
+of the setup.  Therefore, the difference in timing between the top and
+middle and the bottom and middle counters should be zero, while the 
+distribution of the residual values is determined by fluctuations in the PMT 
+timing.  In order to determine the effective $\sigma_{PMT}$, we study the 
+distribution of the residuals.  The standard deviation of residuals is 
+proportional to $\sigma_{PMT}$.
+
+In our studies we have shown with different measurement methods
+\cite{Baturin:2005,r1,barb06} that the effective time resolution of a 
+Hamamatsu R2083 PMT attached directly to our test scintillators may be as 
+good as $\approx$52~ps.  This value relates to a minimum ionizing particle 
+energy deposition of $\approx$6.6~MeV in 3~cm of plastic.  However, if the 
+1-m long light guides, shaped as a cut pyramid, mediate the light signal, 
+then the resolution drops to $\approx$78~ps. 
+
+The effective resolution of the Burle 85011 multi-anode (64 anodes) 
+micro-channel plate PMT of $\approx$75~ps was measured using a single 
+counter setup with the radioactive source method.  Amplification of the
+PMT signal via an on-board amplifier, which was designed at JLab for 
+this purpose, was required for these measurements.  The amplification 
+allows the MCP to operate at a reduced gain, thus its counting rate 
+capability is higher~\cite{Baturin:2005}.
+
+Recently at Kyungpook National University~\cite{kuznetsov} we studied
+a setup with six Hamamatsu R7761 fine-mesh PMTs attached directly to our 
+reference scintillators.  With this setup we have determined the effective 
+$\sigma_{R7761}$ to be $\approx$60~ps in the central region of the triplet.   
+The method of time resolution measuring with the radioactive source was also 
+used with a narrow 45-MeV proton beam incident on the center of our reference 
+counter with double-sided readout.  The effective $\sigma_{R7761}$ was 
+determined to be $\approx$34~ps. The full range of 45~MeV protons in plastic 
+scintillator is 25~mm, therefore the protons stop completely in the scintillator.
+However, due to the Birks effect, the energy deposition of 45-MeV protons is 
+only $\approx$35~MeV.  We plan further studies with this setup to address the 
+coordinate and angular dependence of the effective resolution.
+
+Below we describe in more detail the studies with the setup of three counters
+instrumented with six 1-m long light guides~\cite{llg} and single counters 
+instrumented with Burle 85011 micro-channel plate PMTs and Hamamatsu R7761-70 
+fine-mesh PMTs.
+
+Comparing the various tests, we conclude that the effective time resolution of 
+the PMTs in our prototypes is mostly dictated by the statistical fluctuations  
+in the number of primary photoelectrons.  Therefore, we conclude that further 
+progress in improving the effective time resolution may be provided with 
+better light guide design and optical properties, better coupling of the PMTs 
+to the light guides, and improved scintillator output in the corresponding 
+wavelength area.
+
+\subsection{Time Resolution Measurements with R2083 PMT Triplets}
+
+Six light guides with our pyramid shape were manufactured at KNU.  The light 
+transportation efficiency (LTE) of these light guides was found to be 
+$LTE=0.44\pm0.04$ via Monte-Carlo calculations~\cite{mutch} and various 
+measurements~\cite{llg}.  In order to increase the produced light, the 
+orientation of the scintillators was changed to 3~cm along the cosmic particle 
+track.  The obtained values of the effective $\sigma_{PMT}$ are listed in 
+Table~\ref{crt} in comparison to other measurements at different conditions. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+  & Setup \& Method                & Year &lg(N)&$\Delta E$ (MeV) & $\sigma_{PMT}$(ps)& Status \\ \hline
+1 & 2$\times$R2083,2cm,2$\times$LG(1 m)& 2004 &6    & $T_{\beta}<2.28$ &        &\small{Publ.}   \\
+  & coordinate meth.;$^{90}$Sr   &      &  $vs~x$   & $\to$ 4.4        & 89.1$\pm$4.0        &                \\ \hline
+2 & 2$\times$Burle 8501-501,NoLGs & 2004 &6 & $T_{\beta}<2.28$ & $\approx$80,    &\small{Publ.}   \\ 
+  & coordinate meth.;$^{90}$Sr   &      &  $vs~x$   & $\to$ 4.4        & 125$\pm$4           &                \\ \hline
+3 & 6$\times$R2083,2 cm,No LGs   & 2004 &6 & cosmic            &  &\small{Publ.}   \\
+  & cosmic ray tracking            &    & $vs~x,\theta$  & $\approx$4.4     & 59.1$\pm$0.7       &                \\ \hline
+4 & Same as \#3                    & 2005 &5 &                  &                     &\small{Publ.}   \\
+  &                                &      &  $vs~x,\theta$ & $\approx$4.4     & 62.3$\pm$0.4       &                \\ \hline
+5 & 6$\times$R2083, 3 cm, NoLGs    & 2005 &5 &                  &                     &\small{Publ.}   \\
+  & cosmic ray tracking            &      &  $vs~x,\theta$ & $\approx$6.6     & 52.0$\pm$0.6       &                \\ \hline
+6 & Same as \#5                    & 2006 &5 &                  &                    &\small{Publ.}   \\
+  & \textbf{reference with no LG}  &      & $vs~x,\theta$  & $\approx$6.6     & \textbf{52.2$\pm$0.4}       &                \\ \hline
+7 & 6$\times$R2083, 2 cm,          & 2005 &  &                  &                   &   \\
+  & 2$\times$LG (1 m),             &      &5 & $\approx$4.4     & 92.3$\pm$0.5      &                \\
+  & cosmic ray tracking            &      & $vs~x,\theta$  &                  &     &\small{Publ.}   \\ \hline
+8 & 6$\times$ R2083, 3 cm,         & 2005 &5 &                  &                   &                \\
+  & 2$\times$LG (1 m)              &      & $vs~x,\theta$  & $\approx$6.6     & 83.6$\pm$0.6       &\small{Publ.}   \\ \hline
+9 & Same as \#8                    & 2006 &5 &                  &                    &                \\
+  & \textbf{reference with LGs}    &      & $vs~x,\theta$  & $\approx$6.6     & \textbf{77.9$\pm$0.6}       &\small{Publ.}   \\  \hline
+10& 2$\times$Burle 85011, NoLGs    & 2006 &6 & $T_{\beta}<2.28$ & 86.6$\pm 1;10^6$ s$^{-1}$ &              \\ 
+  & coordinate method; $^{90}$Sr   &      & $vs~x$  & $\to$6.6         & 71.4$\pm 1;10^5$ s$^{-1}$ &\small{Publ.} \\ \hline
+11& 2$\times$FM R7761-70, NoLGs    & 2007 &3 & cosmic           & $60-66$               &\small{Discon-}  \\ 
+  & cosmic ray tracking            &      &$x\approx0$  & $\approx$6.6     &                &\small{tinued}       \\ \hline
+12& 2$\times$FM R7761-70, NoLGs    & 2008 &3 & protons          & $\approx34$           & \small{In Progr.}  \\ 
+  & cosmic ray tracking            &      & $x\approx0$ & $\approx$45      &                &              \\ \hline                  
+\end{tabular}
+\end{center}
+\caption{\small{Reference measurements of the effective time resolution 
+(standard deviation) of different PMTs.  The values of $\sigma_{PMT}$ in rows 
+1--10 of this table are averaged over -25~cm$<x<$25~cm and 
+-45$^\circ$ $< \theta <$45$^\circ$.  The uncertainties shown in this table 
+are derived from the fitting procedures.  The possible systematic uncertainty 
+is 6\% on the given values.}}
+\label{crt}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The best $\sigma_{PMT}$=52~ps=$\sigma_{NLG}$ was obtained with our no light 
+guide (NLG) setup (see Fig.~\ref{nlgres}), while with the 1-m long 
+pyramid-shaped light guides (LLG), we have measured $\sigma_{PMT}$ = 77.9~ps 
+= $\sigma_{LLG}$ (see Fig.~\ref{lgres}).  One can see from these two figures 
+that $x$-dependent systematics in the residuals are significant only in the 
+case of direct contact to the scintillators, while in the measurements performed 
+with light guides, these effects are negligible. 
+
+This systematic effect reflects a combination of at least two phenomena. 
+The first one is the coordinate dependence of the effective speed of light in the  
+scintillator bar.  The reason is that the closer the hit is to the PMT, the more d
+irect light with higher longitudinal speed participates in the PMT signal developing 
+at the threshold level.  The second effect is the well known time walk effects
+associated with the discriminators.
+
+However, if long light guides are implemented, then the direct light does not 
+share in the signal build-up and the signal size becomes significantly longer 
+due to the larger light path variations.  As one can see from Figs.~\ref{nlgres}
+and \ref{lgres}, both effects are much less pronounced in the measurements with   
+the long light guides.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{cosmic-6pmtnlg_picture.ps}
+\caption{\small{Effective time resolution of a PMT ($\sigma$) in the triplet 
+without light guides.  (UL) scatter-plot of residuals vs. longitudinal 
+coordinate $x$; the dashed line shows mean values, (UR) overall distribution of 
+residuals, (LL) local $\sigma$ vs. $x$ with mean value $\sigma=52.2\pm0.4$~ps, 
+(LR) ADC values.}} 
+\label{nlgres}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{cosmic-6pmtllg_picture.ps}
+\caption{\small{Effective time resolution of a PMT ($\sigma$) in the triplet 
+with 1-m long straight light guides.  (UL) scatter-plot of residuals vs. 
+longitudinal coordinate $x$ ;the dashed line shows mean values, (UR) overall 
+distribution of residuals, (LL) local $\sigma$ vs. $x$ with mean value 
+$\sigma=77.9\pm0.6$~ps, (LR) ADC values.}}
+\label{lgres}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To estimate the effective $\sigma_{PMT}$ in different counter designs (i.e. 
+with different dimensions of the light guides, etc.) we use the above 
+declared values and the empirical relations deduced from Monte Carlo 
+simulations~\cite{mutch} for ``extrapolation'' of the measured $\sigma_{PMT}$ 
+to the different designs.
+
+We emphasize that the resolution with 1-m long light guides, $\sigma_{LLG}$, 
+is worse due to the absorption of $\approx$56\% of the light in the light 
+guides.  The amount of light at the photocathodes is proportional to the 
+light transmission efficiency ($LTE$) of the light guides and, assuming the 
+statistical nature of the resolution, we can estimate $\sigma_{LLG}$ as:
+
+\begin{equation}
+\frac{1}{\sqrt{LTE}}\sigma_{NLG} =\frac{1}{\sqrt{0.44}}\times52.2~{\rm ps}
+=78.7~{\rm ps},
+\label{eq31}
+\end{equation}
+
+\noindent
+where $\sigma_{NLG}$ is the measured resolution.  The resulting value  
+matches to the reference from row--9 of Table~\ref{crt} within a 1\% accuracy.
+Therefore, we conclude that in our test setup the effective $\sigma_{PMT}$ 
+is determined mostly by the statistics of the primary photoelectrons, i.e. 
+by the amount of light at the photocathodes.  We use this experimental fact 
+as the main rule in our further estimations of $\sigma_{PMT}$ in various 
+environments.
+
+\subsection{Time Resolution Measurements with a Burle 85011 PMT}
+\label{meas85011}
+
+For these measurements the new assembly of a Burle 85011 PMT with an 
+``on-board'' preamplifier (with a gain value of $\times$50) and a high 
+voltage divider that was designed at JLab was employed.  The design of the 
+circuit board is described in Ref.~\cite{pa85011}.  This design follows the 
+requirement implied by the final goal of $\sigma_{PMT}\le$72~ps in time 
+resolution.
+
+The Burle~85011 photocathode is formed by 64 pads $0.6\times0.6$~cm$^2$ in 
+size.  We took into account the fact that the MCP PMT resolution may be 
+limited by the signal propagation time through the pad, which is spread 
+between 0 at the point of the pad-wire contact and $l_{max}/c$ for the most 
+remote point, at the distance $l_{max}$.
+  
+We used the central $6\times6$ pads as a single photocathode.  In order 
+to avoid additional jitter due to propagation from the individual pads, the 
+central 36 pads were grouped into three amplification channels via isochronous 
+transmitting lines.  The resulting three signals are summed up, also 
+isochronously, at the last stage of amplification.  Thus we guarantee that 
+the jitter caused by signal propagation is defined by the size of a single 
+pad, which amounts to only 10~ps (i.e. negligible).
+
+The test counter with our ``standard '' scintillator was assembled at KNU 
+and resolution measurements with a radioactive source were recently performed.
+We present the results below.
+
+\paragraph*{Effective Time Resolution at the Ultimate Gain:}
+
+A sample plot given by the coordinate method with extrapolation to the 
+energy loss in a 3-cm thick scintillator is shown in Fig.~\ref{mcp85011sample}.
+The extrapolated time resolution $\sigma_{PMT}$=71.4~ps was obtained at the 
+ultimate MCP gain of $0.89\times10^6$.  This resolution is very close to our 
+goal.  Unfortunately the counting rate at such a high gain is limited to 
+$10^5s^{-1}$~\cite{Baturin:2005}.  Therefore, we have measured the resolution 
+at lower gains and present below the measured dependence upon the MCP gain.  
+Prior to determining the gain, one has to measure the number of primary 
+photoelectrons ($N_{ppe}$) emitted from the photocathodes. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{esxm_picture13.ps}
+\caption{\small{Effective time resolution of a Burle 85011 MCP PMT obtained 
+with the location method of the $^{90}$Sr source placed in the center of the 
+counter.  (UL) energy ($E$) spectrum of $\beta$-particles, (LL) coordinate 
+distribution ($x$) of $\beta$-particles with $E>1$~MeV, (UR) $\sigma_x$ of 
+the peak vs $E$, (LR) $<x>$ vs  $E$.}}
+\label{mcp85011sample}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{Number of Primary Photoelectrons in the MCP:}
+
+We have measured the number of primary photoelectrons produced by MIPs using
+the technique developed within the coordinate method~\cite{Baturin:2005}.
+The PMT output signals were split in order that a fraction $f$=0.16 of 
+the initial current fed the ADC inputs, while the rest triggered the 
+corresponding discriminators.
+ 
+The ADC spectrum of $\beta$-particles was then used to determine the number 
+of primary photoelectrons and their dependence upon $\beta$-particle energy.  
+The corresponding graphs are shown in Fig.~\ref{mcpnppe85011}.  These
+results were extrapolated to determine the expected number of primary
+photoelectrons in a 2-cm thick scintillator, which was found to be 
+$N_{ppe}=370\pm8$ (note that this value relates to both photocathodes). This
+result is in good agreement with expectations using the quantum efficiency
+(QE) specified in the Burle 85011 data sheet. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{enppe_picture13.ps}
+\caption{\small{Determination of the number of primary photoelectrons.  (UL) 
+Energy ($E$) spectrum of $\beta$-particles, (UR) $N_{ppe}$ vs $E$.  We 
+expect the number of primary photoelectrons to be $369 \pm 2$ for a MIP 
+energy of $\approx$4.4~MeV, (LL) spectrum of $(e_l-e_r)$, where $e_{l,r}$ are 
+the energies measured from the two sides of the counter, (LR) mean value of 
+$(e_l-e_r)$ vs. $\beta$-particle energy.}}
+\label{mcpnppe85011}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{Measurements of the MCP Gain:}
+
+The MCP gain ($G$) was determined using the measured $N_{ppe}$ and the
+$\beta$-particle spectra measured with the ADCs as:
+
+\begin{equation}
+G = \frac{2 \times \alpha \times A_{0}}{f \times e \times N_{ppe} \times G_a},
+\label{gain}
+\end{equation}
+
+\noindent
+where $A_0$ is the pedestal-subtracted ADC value corresponding to the upper 
+edge of the $\beta$-spectrum, $E_0$=2.28~MeV, $\alpha$ is the ADC channel 
+width (0.25~pC), $G_a$ is the amplification factor of the preamplifier (50), 
+$f$ is the aforementioned spitting factor, and $e$ is the charge of the
+electron.  The factor of 2 in the numerator is from the number of 
+photocathodes.  A plot of the determined gain as a function of the MCP 
+voltage is shown in Fig.~\ref{hvvsgain85011}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{hvvsgain_picture85011.ps}
+\caption{\small{High voltage vs. MCP gain.  Curves (1) and (2) are fits to 
+a power law form.  (1)-left PMT, (2)-right PMT.}}
+\label{hvvsgain85011}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph*{Time Resolution vs. MCP Gain:}
+
+We have measured the effective time resolution of a Burle 85011 PMT at 
+different high voltage settings.  The resolution yielded by the coordinate 
+method is shown in Fig.~\ref{sigmamip85011} as a function of the MCP gain. 
+One can see that at a gain of $0.5\times10^5$, where the MCP can operate 
+at a 1~MHz counting rate~\cite{Baturin:2005}, the effective time resolution 
+with a 3-cm thick scintillator is only $86.6 \pm 1$~ps.  With this value we 
+are 20\% away from our goal of 72~ps.  Thus a further significant 
+improvement of $N_{ppe}$ is required.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.62\textwidth]{res85011vsgain_picture85011.ps}
+\caption{\small{Resolution of the Burle 85011 PMT vs. the MCP gain ($G$).  
+The circles are for $\sigma$ at $\Delta E$=2.28~MeV.  The squares are for 
+$\Delta E$=6.6~MeV (which corresponds to MIPs in a 3-cm thick scintillator). 
+The curves are fits to the $G^{-2}$ dependence.  The amplification factor 
+of the PMT signals is 50.}}
+\label{sigmamip85011}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Measurements with Fine-Mesh Photomultipliers}
+\label{secfinemesh}
+
+Using the same triplet technique as for the R2083 PMTs, we have measured 
+$\sigma_{PMT}$ of the fine-mesh PMTs.  In our standard counter triplet
+\cite{Baturin:2005,llg} the ordinary PMTs in the middle counter were 
+replaced with 27-mm Hamamatsu R7761 fine-mesh PMTs.  All PMTs were in 
+direct contact with the scintillators.  The corresponding 
+$\sigma_{R7761}$=64~ps is shown in Fig.~\ref{finemesh01} in comparison to 
+the Hamamatsu R2083 PMTs.  It was further improved to $\approx$60~ps 
+with cuts in the central region of the triplet instrumented with R7761 
+PMTs and identical discriminators~\cite{kuznetsov}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=tau041007.eps hscale=45 vscale=45 hoffset=0 voffset=-15}
+\special{psfile=tau0117a.eps hscale=45 vscale=45 hoffset=235 voffset=-15}
+\caption{\small{Spectra of the 6 PMT time residuals scaled by $2/\sqrt{3}$.
+Left panel: distribution with two R7761-70 PMTs and four R2083 PMTs (right).  
+Right panel: distribution obtained with six R2083 PMTs.  The actual effective
+$\sigma_{R7761}$=64~ps is derived from the RMS width of the left panel.  The  
+reference $\sigma_{R2083}=52 \pm 1$~ps from the right panel coincides with 
+the previously reported value from Table~\ref{crt}.}}
+\label{finemesh01}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The time residual spectrum  at the center of the reference counter
+instrumented with two R7761-70 PMTs is shown in Fig.~\ref{finemesh02}.  
+It was obtained with the 45-MeV proton beam at an $\approx10^5s^{-1}$ 
+counting rate \footnote{For details see KNU presentation 
+http://www.jlab.org/$\sim$baturin/KNUpresentation0208.pdf.}.  Protons completely 
+stop in the bulk of the scintillator, therefore the deposited energy is 
+$\approx$10 times higher than the reference MIP energy deposition.  The standard 
+deviation $\sigma$=24~ps of this distribution translates into 
+$\sigma_{R7761}\approx 34$~ps for a single PMT.  In order to compare this result 
+to our reference from Table~\ref{crt} (line 5), this value has to be scaled to 
+the reference energy 6.6MeV by a factor of $\sqrt{(45~{\rm MeV}/6.6~{\rm MeV})}$.  The 
+additional  factor of $\sqrt{0.77}
+$\footnote{This number was obtained from 
+the paper\\
+T.J. Gooding and H.G. Pugh. Nucl. Instr. and Meth. 7 (1960), p. 189.\\
+see also \\
+R.L. Craun and D.L. Smith. Nucl. Instr. and Meth. 80 (1970), p. 239.}
+accounts for the reduced light output of 45-MeV protons due to Birks effect.
+Since PMTs were attached directly to the scintillator, the effective PMT area was reduced by a 
+factor of $\approx$0.8. All of this results in the following preliminary  
+resolution of:
+
+\begin{equation}
+\sigma_{R7761} \approx 34~{\rm ps} \times \sqrt{\frac{45}{6.6} \times 0.77 \times 0.8 }
+= 70~{\rm ps}.
+\label{eq776}
+\end{equation}
+
+\noindent
+However, the uncertainty on this value has to be determined experimentally. 
+This result was obtained in direct contact to the scintillator and the proton 
+beam hit the center of the counter, where the left and right signals are almost 
+identical.  Therefore, effects related to the signal shapes cancel out.
+
+In this test, one PMT signal was used as a TDC ``start'', while another provided
+the TDC ``stop''.  Therefore, all events were concentrated within a few TDC channels. 
+In this situation, the differential nonlinearity of the TDC, which may be as high as 
+15\%, directly affects the measured time resolution.   
+     
+Therefore, further studies of differential nonlinearity effects, as well as of 
+coordinate and angular dependence with realistic light guides, are required in order 
+to establish the ultimate effective time resolution of the fine-mesh PMTs.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{8.0cm}
+\special{psfile=KNU45MEV.eps hscale=100 vscale=100 hoffset=110 voffset=-15}
+\caption{\small{The time residual spectrum at the center of the reference 
+counter obtained with R7761 fine mesh PMTs with a 45-MeV proton beam.  The 
+standard deviation is $24.2\pm0.6$~ps.}}
+\label{finemesh02}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Review of Modern Photo-Detectors}
+\label{phdrev}
+
+Different possible approaches to the design of the {\tt CLAS12} CTOF
+counter are considered below in relation to the advantages and disadvantages 
+of different photo-detectors. 
+
+\subsection{Ordinary Dynode PMTs}
+
+Following our conservative strategy, we will maintain our effort to achieve 
+the desired timing resolution with ordinary Hamamatsu R2083 PMTs.  The gain 
+and timing characteristics of R2083 PMTs are very good for this purpose (see 
+Table~\ref{table1PMTS}).  However, for ordinary PMTs there is no other option 
+than to be placed outside of the region of high magnetic field.  Therefore, 
+$\approx$1.5-m long light guides are required to deliver the light to an area 
+with $B \le 30$~mT.  Shorter light guides will require a heavy magnetic shield 
+composed of 3 concentric cylinders.  In addition, according to the preliminary 
+design shown in Fig.~\ref{barrel2}, the light guides on the downstream side 
+will have to be bent by $139^\circ$.  This reduces the net light at the PMT,
+the ultimate limit of which is dictated by the desired time resolution.  
+Therefore significant progress is required in the light guide design and 
+manufacturing technique.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|r|r|r|r|r|r|}   \hline
+PMT Model Characteristics       & R2083      &  H8500     & R6504 & R5924  & R7761   & 85011        \\ 
+                                & Dynode     &   MC       & FM    &  --    &   --    &  MCP         \\ \hline  
+Photocathode sizes, mm         & $d$=46     &$49\times49$& $d$=51& $d$=39 & $d$=27  & $49\times49$ \\ \hline
+Anode configuration             & 1          & $8\times8$ &   1   &  --    &   --    & $8\times8$   \\ \hline
+Area ratio PMT/SC (9.6~cm$^2)$  & 1.77       &  2.19      & 2.14  & 1.24   & 0.6     & 2.19         \\ \hline
+Wavelength max. response, nm    & 420$\pm$80 &    --      & --    & --     & --      & 400$\pm$80   \\ \hline
+-//-  at 10\% of max. QE, nm    & $300-650$  &    --      & --    &  --    & --      & --           \\ \hline
+Window thickness, mm            &  1         &    1.5     &  1    &   --   &  --     &  2           \\ \hline
+Number of stages                & 8 dyn.     &  12dyn.    & 19 fm &   --   &  --     & 2MCP         \\ \hline
+Photocathode material          & Bi-alk.    &    --      &  --   &   --   &  --     & --           \\ \hline
+Photocathode radius, mm        & 55         &   flat     &  --   &   --   &  --     & --           \\ \hline
+Sensitivity@420nm, $\mu$A/lm    & 80         &   55       &  70   &   --   &  --     & 55           \\ \hline
+Sensitivity in blue, $\mu$A/lm  & 10         &   8        &  9    &  --    &  --     & 8            \\ \hline
+Quantum efficiency@420mn        & .22        &   0.2      &  0.22 &  0.22  & 0.22    & 0.12         \\ \hline
+Anode rise time, ns             & 0.7        &   0.8      &  2.7  & 2.5    & 2.3     & 0.3          \\ \hline
+Transit time ($t_T$), ns        & 16         &   6        &  11   & 9.5    &  7.5    & 4            \\ \hline
+$t_T$ spread (FWHM), ps         & 370        &   400      & 470   &  440   &  350    & 80           \\ \hline
+Gain$\times$10$^{-6}$           & 2.5        &   1        &  10   &   --   &   --    & 0.5          \\ \hline
+Dark current, nA                & 100        &    32      &    50 &   50   &  30     & 1            \\ \hline
+\end{tabular}
+\end{center}
+\caption{\small{Technical data of the R2083 PMT from Hamamatsu in comparison with 
+other candidates.}}
+\label{table1PMTS}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Micro-Channel Plate Photomultipliers}
+
+An alternative solution with micro-channel plate (MCP) PMTs is very attractive
+for the following reason.  Due to the immunity of MCPs to magnetic fields, 
+proven up to $\leq 2$~T\cite{kich}, micro-channel plate PMTs could be 
+attached directly to the scintillators.  Therefore, the mechanical design of 
+the barrel may be significantly simpler.  The intrinsic timing properties of 
+MCP PMTs are perfect.  The properties of one such photomultiplier (Burle 
+85011) are shown in Table~\ref{table1PMTS}.
+  
+The single photon timing resolution (see Fig.~\ref{mcpt}) remains below  
+$\sigma_{TTS}$=35~ps up to $\approx$2~T and perhaps higher fields.  The 
+gain (see Fig.~\ref{mcpg}) also does not degrade in such high magnetic 
+fields~\cite{kich}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{fig02MC.ps}
+\caption{\small{Transition time spread of the MCP PMT vs. magnetic field.}}
+\label{mcpt}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{fig01MC.ps}
+\caption{\small{Gain of the MCP PMT vs. magnetic field at different 
+orientations.}} 
+\label{mcpg}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Unfortunately, the quantum efficiency of MCP PMTs is about one-half that of 
+ordinary PMTs, which has a direct adverse effect on the TOF resolution.
+However, very good resolution of a MCP photo-detector was already shown in 
+Fig.~\ref{mcpt}.  In addition, it was shown~\cite{vavra} recently that the 
+effective $\sigma_{PMT}$ of a Burle 85011 may be as good as 70~ps in a 
+magnetic field up to 1.5~T.  In our aforementioned measurements, we have   
+achieved a resolution of $\approx$75~ps, which is almost sufficient for our 
+goals.  
+
+Hence, the two approaches look almost equivalent with respect to the timing 
+resolution.  The advantage of a R2083 PMT with its higher quantum efficiency 
+is compensated by the loss of about half of the light in the light guides.
+Almost nothing can be done with the quantum efficiency of MCP PMTs unless the 
+PMT design is completely changed.
+
+In the design with long light guides, we can try to optimize the light guides 
+via Monte Carlo simulations for a maximum possible $LTE$, including the 
+solution with PMTs capable of operating in moderate magnetic fields of 
+$\approx$0.5~T.  In addition, we can use more refractive materials, such as 
+Lexan.  It has a refractive index equal to that of the scintillators.  However, 
+its attenuation length is higher.  Thus the gain in resolution may be achieved 
+with relatively short light guides (0.5~m -- 1~m).
+
+\subsection{Fine-Mesh and Metal-Channel Photomultipliers}
+\label{fimemech}
+
+The light deficiency problem may be solved with fine-mesh (FM) PMTs, 
+which have been shown to operate at $\leq 1$~T or metal-channel (MC) PMTs,
+provided they can be shown to operate well in fields up to 0.2~T with a proper 
+shield.  The light guides can be about a factor of two shorter and we can use 
+all of the experience that we have obtained with the design implementing the 
+long light guides (see Section~\ref{design2083}). 
+
+\paragraph{Fine-Mesh PMTs:}
+
+In fine-mesh PMTs, the conventional dynode system is replaced with a ladder  
+of fine-grade metal mesh at a certain potential.  The gain and resolution
+\cite{kich} of a fine-mesh PMT vs. magnetic field are shown in 
+Figs.~\ref{fmg} and \ref{fmt}, respectively.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{fig03MC.ps}
+\caption{\small{Gain of the R2490-05 fine-mesh PMT vs. magnetic field at 
+different orientations.}} 
+\label{fmg}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.65\textwidth]{fig04MC.ps}
+\caption{\small{Transition time spread of the R2490-05 fine-mesh PMT vs. 
+magnetic field.}}
+\label{fmt}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The behavior of modern FM PMTs R5505, R7761, and R5924 from Hamamatsu has 
+been recently studied in magnetic fields up to 1.2~T~\cite{fmtr01}.  The 
+generic time resolution of the 2-in R5924 PMT ($\approx$60~ps) was found 
+unchanged up to a field of $\approx$0.8~T.  This characteristic was measured 
+with light pulses equivalent to $\approx$300 photoelectrons.  In our recent
+measurements, in which Hamamatsu R7761 FM PMTs were in direct contact with 
+the scintillator, we also have achieved a similar time resolution~\cite{kuznetsov}. 
+
+The counter instrumented with two fine-mesh PMTs attached to a 1-m long 
+scintillator was tested in Ref.~\cite{foucher}.  This counter may be 
+considered as a rough approximation a single element of the CTOF system.  
+For this setup with a 6-cm thick Bicron-408 scintillator, we estimated 
+$\sigma_{TOF}\approx 70$~ps.  The effective timing resolution of fine-mesh 
+PMTs of $\sigma_{FM} \approx 63$~ps may be extracted from the data obtained
+\cite{csn1} with  $50 \times 2 \times 5$~cm$^3$ Bicron-408 and 
+$\approx$50-cm long light guides.
+
+The closest in size to the R2083 PMT is the R6504 fine-mesh PMT (see
+Table~\ref{table1PMTS}) from Hamamatsu with a QE $\approx$ 20\% at 420~nm.  
+We emphasize that with expanding light guides (toward the PMTs), we gain 
+about a factor of two in light collected at the PMT~\cite{llg}.  Therefore, 
+PMTs with wide enough photocathodes are required to accommodate this design.  
+Unfortunately, this PMT is already discontinued.  The timing characteristics 
+of the R5924 PMT are almost the same, but it has a two times smaller sensitive 
+area.  However, it is still larger than the scintillator cross section, therefore 
+we plan to test it.  The R7761 PMT has almost a twice smaller sensitive area
+(5.6~cm$^2$) compared to the size of the scintillator cross-section (9.6~cm$^2$). 
+Therefore, it is  unlikely to collect enough light with realistically long light 
+guides of 0.7--0.8~m length.  The reason is that even without attenuation, the 
+transmittance of a light guide cannot exceed 0.58.\footnote{This is the ratio of 
+the PMT area to the input area, which limits the acceptance due to phase space 
+conservation.}
+
+Unfortunately, the rise time of the R6504/R5924 PMT signal is $\approx$4 
+times longer than that of the R2083 PMT.  In addition, the transition time 
+spread is 100~ps higher than the 370~ps for the R2083.  We plan to measure 
+the resolution of the R5924 PMT in addition to smaller FM tubes, metal-channel 
+PMTs, the R2083 PMT, and MCP PMTs, using the same test setup and methods.
+
+\paragraph{Metal-Channel Photomultipliers:}
+
+Another interesting photo-detector worthwhile to investigate as a 
+component of the CTOF counter is the metal-channel PMT, such as the
+H8500 or R7400 PMTs from Hamamatsu.  The H8500 is a 64-channel PMT with a 
+square photocathode.  The dynode system is formed by channels in  
+precisely machined metal sheets.  Such PMTs have excellent timing 
+characteristics, which are very close to that of the R2083 PMT, i.e. 
+$\sigma_{TTS} \approx$400~ps, QE$\approx$ 20\%, and they have a high gain 
+(see Table~\ref{table1PMTS}).
+
+In our future tests we are going to verify whether such PMTs can operate at 
+fields of $\leq$0.2~T with appropriate shielding.  This photo-detector may 
+be a good candidate for further consideration in combination with light guides 
+of moderate length.  
+
+\subsection{Silicon Photomultipliers}
+
+In recent years a variety of semiconductor devices (see Table~\ref{apd}) have 
+been developed for light detection.  Their advantage of operating in high 
+magnetic fields and with a small size detecting element is very attractive for 
+designers of TOF systems.  A matrix of such detectors, with arbitrary dimensions, 
+could be attached directly to the scintillators inside the magnetic field.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|} \hline
+APD name      & Size         & Drift dist.   & FWHM & $\sigma_t$ & Rate & QE \\ 
+              &   mm         & $\mu$m & ps   & ps       &    s$^{-1}$       & 420 nm \\ \hline
+5343          & $d$=1        & 10     & 82   & 35  & $10^7$ & 1-5\%  \\ \hline
+5344~LC       & $d$=3        & 20     & 160  & 68  &        & 1-5\%  \\ \hline
+SPL~2625      & $d$=3        & 120    & 1300 & 550 & $10^7$ & 1-5\%  \\ \hline
+Beveled Edge  &              &        &      &     &        & 1-5\%  \\
+LAAPD         & $d$=16       & 40     & 400  & 115 &        & 1-5\%  \\ \hline
+30719         & $5\times5$   & 10     & 170  & 72  &        & 1-5\%  \\ \hline
+C~30626       & $5\times5$   & 100    & 800  & 340 &$10^7$  & 1-5\%  \\ \hline
+C~30703       & $10\times10$ & 180    & 1600 & 680 &        & 1-5\%  \\ \hline
+SiPM          & $3\times3$   & 0      & 155  & 66  &$10^7$  &14-20\% \\ \hline
+MPPC S10362-33-10C& $3\times3$   & 0  & 200  & 85  &$10^7$  &70\% \\ \hline
+\end{tabular}
+\caption{\small{Semiconductor device characteristics.}}
+\label{apd}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A silicon photomultiplier~\cite{dolgo} is a $3 \times 3$~mm$^2$ matrix of 
+5625 pixel photodiodes ($30 \times 30$~$\mu$m$^2$) with a common output. 
+The photodiodes operate in the Geiger regime of bulk carrier amplification.  
+Therefore, an almost immediate (no drift required) signal from a single 
+photon may be seen with a standard shape and amplitude ($\approx$2.5~mV).  
+The time resolution of a SiPM may be as high as 66~ps~\cite{dolgo} with 
+3-mm thick BC-418 scintillator.  It is very important that the output may 
+be triggered by the first arriving ``direct'' photons.  However, the noise 
+at the nominal operating voltage is as high as $10^5-10^6$. 
+
+The QE is a product of the pixel packing efficiency ($\approx$0.5) and the
+Geiger mode efficiency ($\approx$0.6).  At 420~nm, the quantum efficiency
+is $\approx$14\%, and it is likely that this may be improved to reach the 
+QE of ordinary photo-detectors.  In addition, the signal has a tail 
+$\approx$5~$\mu$s long.  Thus the recovery time may be as high as 5~$\mu$s.  
+However, due to the large number of pixels, the SiPM count rate capability 
+of light flashes with $\approx$500 photons, for example, is limited by a
+rate of $\approx 10^7$~s$^{-1}$, which is typical for conventional PMTs.  
+Nevertheless the optical cross-talk may significantly reduce its count rate 
+capability.  For use in {\tt CLAS12}, the SiPMs would have to reside in a  
+high radiation environment.  Therefore, their radiation hardness has to be 
+addressed.  Due to all of the above reasons, SiPMs may be considered as a
+candidate for future studies and an upgrade possibility for the {\tt CLAS12} 
+CTOF system.
+ 
+\subsection{Avalanche PhotoDiodes}
+
+In the avalanche photodiode~\cite{apd}, the carriers are drifting with a 
+velocity of 0.1~$\mu$m/ps toward the narrow region in which the avalanche 
+develops. In such a device, the single photon time resolution is determined 
+by the drift distance $x$, thus, roughly, $\sigma_{APD}\propto x$.  In 
+addition, the dependence on the sizes is quite significant.  For example, 
+the $x$=10-$\mu$m thick device 5343, roughly 1~mm in diameter, manifested a 
+time resolution $\sigma \approx 35$~ps, while the $5\times5$~mm$^2$ 30719 
+$x$=10-$\mu$m thick device shows $\sigma\approx$72~ps.  The thicker the 
+device the higher is its QE, but the worse its time resolution.  The related 
+parameters of available APDs are listed in Table~\ref{apd}.  The quantum 
+efficiency of such a photo-detector is roughly 2\% -- 5\% in the region of 
+BC-408 emittance, while for longer wavelengths, it may be as high as 70\%. 
+In addition, their gain is quite low ($\approx10^4$) and amplification is 
+required.  The behavior in a high radiation environment is not determined yet.
+Therefore, at the present time, such photo-detectors may be considered as 
+unlikely candidates for use in the {\tt CLAS12} CTOF system.
+
+\section{Pilot Design with Conventional R2083 PMTs}
+\label{design2083}
+
+This design is based on a traditional and well-established approach of using 
+ordinary photomultipliers coupled to scintillators via long light guides.
+Hamamatsu R2083 PMTs have excellent timing characteristics.  In order to 
+approach our goal for the effective $\sigma_{R2083}$=72~ps, we have been 
+developing long (1~m) light guides of non-trivial shape with significantly 
+improved light transmission efficiency ($\approx$44\%).  Also we are thinking 
+about implementing a better light guide manufacturing approach using cast Acrylic,
+which is a widespread technology for commercial applications.  The advantage of 
+cast Acrylic is that the product has a near-perfect surface.  Thus, time-consuming 
+polishing is not required.  In addition, we will keep an eye on the progress in 
+organic materials with a refractive index close to that of scintillators, such as 
+commercially available Lexan.   
+
+\subsection{Detector Specification and Design Criteria}
+\label{sbasval}
+
+The nominal CTOF design, which starts with ordinary R2083 phototubes, may 
+accommodate other types of photo-detectors, such as magnetic-field-immune 
+micro-channel, fine-mesh, or more sensitive metal-channel phototubes of 
+similar sizes.  The only thing that would have to be done in the design is
+to change the lengths (cross section) of the corresponding light guide at 
+the PMT side.  However, the space reserved for the light guides in the 
+design has to be wide enough to accommodate these PMTs.  The independent 
+parameters that determine the design of a single CTOF counter, including its 
+light guides, are listed in Table~\ref{basval}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|c|} \hline
+Diameter of PMT in $\mu$-metal case        & 60~mm       \\
+Diameter of the PMT photocathode          & 46~mm       \\
+Number of scintillators                    & 50          \\
+Thickness of scintillator along $r$-axis   & 31.5~mm     \\
+Inner radius of the  barrel                & 25.0~cm     \\
+Lengths of the scintillator barrel         & 66~cm       \\
+Length of Upstream light guides            & 130--140~cm \\
+Length of Downstream light guides          & 150--160~cm \\
+The downstream opening angle               & $\pm 36^\circ$ \\\hline
+\end{tabular}
+\caption{\small{Basic values determining the CTOF counter design.}}
+\label{basval}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The CTOF barrel has to be as hermetic as possible.  Therefore, due to the 
+cylindrical symmetry of the setup, all elements of a single counter, 
+including the scintillator, both downstream and upstream light guides, and 
+PMTs, all have to fit into a $\phi$ range of 7.2$^\circ$ in the 
+$(r,\phi)$-plane.  A schematic view of such a counter is shown in 
+Figs.~\ref{bentlg03} and \ref{bentlgud03}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{JLABt0R2083-2.ps}
+\caption{\small{The pilot design of the {\tt CLAS12} CTOF counter.
+(1) R2083 PMT from Hamamatsu, (2) Acrylic light guides, (3) scintillators,
+and (4) supporting cones and rings. The magnetic field is shown by the
+vectors.}}
+\label{bentlg03}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{bentlgupdownstream.ps}
+\caption{\small{Upstream (1) and downstream (2) view of the CTOF detector.}}
+\label{bentlgud03}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Scintillator Dimensions}
+
+The length of the scintillators is predefined to be 50~cm.  Other dimensions  
+of the scintillator are determined by the total number of counters 
+(predefined as 50) and the inner radius of the scintillating barrel 
+(predefined as 25~cm).  The scintillator cannot be a rectangular bar due to 
+the cylindrical geometry of the setup.  The cross section of the scintillator 
+is shown in Fig.~\ref{sccross}.  Since a single counter has to fit into a 
+sector $2\gamma=7.2^\circ$, the cross section of the scintillator has to be a 
+symmetric trapezoid with the sizes 31.46~mm and 35.4~mm for the bottom and 
+top sides, respectively, and 31.5~mm high.  In this figure the trapezoid is 
+inscribed into the cross section of the photocathode of the R2083 PMT.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{t0sccross.ps}
+\caption{\small{The cross section of the scintillator inscribed into the 
+photocathode of the R2083 PMT from Hamamatsu.  Light guides will join the
+PMTs via the cylindrical side of the same diameter as the R2083 photocathode,
+i.e. 46~mm.}} 
+\label{sccross}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Dimensions of the PMT Housing}
+
+In this design we assume that R2083 PMTs from Hamamatsu will be used, and 
+that they will be housed in a metal case 60~mm in diameter.  This 
+determines the divergence of the upstream light guides.  It is clear that 
+50 adjacent PMTs with the specified diameter will form a ring of 
+$\approx 50\times (60+10)~{\rm mm}/\pi = 111.4$~cm in diameter (we add 
+10~mm to the diameter of the PMT case as tolerance).  With this number we set 
+the radius of the ``PMT area'' $R_{PMT}$=55~cm.  Note, that it is not possible 
+to place 50 adjacent PMTs, mounted on the ends of 1-m long light guides, 
+at an $r$-coordinate below $R_{PMT}$. 
+
+\subsubsection{Dimensions of the PMT Photocathode}
+
+In the hermetic configuration, the expanding light guide has to match the 
+cross section of the scintillator from one side.  At the PMT end, it has 
+to match the photocathode of the PMT.  Therefore, it is natural to 
+manufacture the ``pyramid'' light guides from Acrylic cylinders with a 
+diameter of 46~mm, corresponding to the diameter of the R2083 PMT
+photocathode.
+
+\subsection{Light Guides} 
+
+From the PMT-end, the 1-m long light guide has to match the circular 
+photocathode of the PMT.  Therefore, light guides will be manufactured 
+from Acrylic cylinders $\ge 46$~mm in diameter, which is the specified diameter 
+of the R2083 PMT photocathode.  From the opposite side, it has to match 
+the trapezoidal cross section of the scintillator.
+
+It was shown via Monte Carlo calculations~\cite{mutch} that the light 
+transportation efficiency depends significantly on the length of the 
+cylindrical part of the light guide.  The corresponding dependence upon 
+the length of the non-cylinder part of a 1-m long light guide is shown in 
+Fig.~\ref{plgef}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.6\textwidth]{transitionvscyl.ps}
+\caption{\small{The light transportation efficiency (vertical scale) of the 
+``pyramid'' light guide vs. the length (horizontal scale) of the milled 
+surface.}}
+\label{plgef}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The design of the upstream light guide is shown in Fig.~\ref{lgupstream}. 
+The sides of the cylinder will be milled to form a wedge up to a radius of 
+36.55~cm in the $(r,\phi)$-plane in order to fit into the 
+$\Delta \phi=7.2^\circ$ sector.  The straight cylindrical parts will be longer
+in order to deliver light to the area of $B<30$~mT.  Therefore at the nominal 
+field $B$=5~T, the total length of the light guide will be $\approx$1.5~m.
+ 
+The scintillator ends of the light guides will be further machined in order 
+to form focusing mirrors on the inner and outer surfaces, respectively. 
+Such machining is also necessary to form a trapezoid at this end for coupling 
+to the scintillator.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{t0lgupstr.ps}
+\caption{\small{The design of the upstream light guide.}}
+\label{lgupstream}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{t0lgdown.ps}
+\caption{\small{The design of the downstream 1-m long light guide.}}
+\label{lgdownstream}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Downstream Light Guides}
+
+From the PMT-end, the light guide will match the circular photocathode of 
+the PMT.  Therefore, the light guides will be manufactured from bent Acrylic 
+rods of corresponding diameter.  From the opposite side, it has to match the 
+trapezoidal cross section of the scintillator.  In addition, these light 
+guides have a pitch of 45$^\circ$ relative to the scintillator to provide an 
+immediate opening for forward-going particles.  Another complication is that 
+these light guides have to be bent twice by 45$^\circ$ and 90$^\circ$, 
+respectively.
+ 
+The pilot design of the downstream light guide is shown in Fig.~\ref{lgdownstream}. 
+The mirrors at the scintillator end will be milled similarly to the upstream 
+light guide.  The minimum length of this light guide will be $\approx$1.6~m, 
+provided the magnetic field at the PMT end will be $\le$50~mT at a nominal 
+field $B$=5~T.
+
+\section{PMT Magnetic Shields}
+ 
+The main CTOF design is based on using ordinary PMTs coupled to the 
+scintillators via $\approx$1.5-m-long light guides of a complex 
+design\footnote{We anticipate that at the final design stage, regular 
+PMTs may be replaced with fine-mesh PMTs with two times shorter light 
+guides.  These PMTs are insensitive to fields up to 5000~G.}.  Our reference  
+PMT is the 51-mm R2083 PMT from Hamamatsu.  It has a spherical photocathode 
+in order to equalize the travel distances of the primary photoelectrons and 
+is quite similar to the Phillips XP4312 PMT, which is 76~mm in diameter, hence 
+it is less sensitive to magnetic fields.  The XP4312 PMT was thoroughly studied 
+in 1993 by J.~Flint and E.~Smith as a candidate for the {\tt CLAS} TOF detectors
+\footnote{J.~Flint and E.~Smith, ``Tests of Phillips XP4312/D1 PMTs in a Magnetic 
+Field'', CLAS-Note-94-008.}.  It manifests an additional time smearing of 
+$\sigma \approx 30$~ps at fields of 0.25--0.4~G at the photocathode, which 
+corresponds to an external field of 30~G, reduced by the 1-mm thick $\mu$-metal 
+shield that is 80~mm in diameter\footnote{See the corresponding field map in Fig.~13 
+of CLAS-Note-94-008.}.  Since our PMT is similar in design, we can estimate that
+the maximum field at the photocathode would be 0.2--0.4~G.
+
+Two kinds of PMT shielding are possible in principle: passive and active shielding. 
+Active shielding means using a solenoid around the PMT to cancel the internal field.  
+We do not plan on using active shielding because, firstly, in our case, the fringe  
+fields are not solenoidal, and secondly, such shields would be more complex and more 
+costly, and thirdly, it may be a source of additional electronic noise.
+
+With passive shielding, a diamagnetic superconducting cylinder could be used to 
+block the magnetic field inside the cylinder.  Such shielding would be very complex 
+and expensive, as well as requiring cryogenics for cooling.
+
+Therefore, we plan to study a traditional approach based on the properties of 
+ferromagnetic cylinders.  In such shielding, the magnetic field lines are 
+concentrated in the bulk of a ferromagnet, reducing the fringe fields inside the 
+cylinder.  However, the efficiency of such shielding at high fields is limited by 
+the effect of saturation.
+
+We plan to achieve field reduction to the 0.25-G level with a shield composed of 
+three concentric ferromagnetic cylinders.  The important parameter in the CTOF 
+design, is the external diameter $D_{s}$ of the magnetic shield.  This parameter
+is determined by the radial coordinate $r_{50}$ of the 50 adjacent shields:
+
+\begin{equation}
+\label{dsmax}
+D_{s} = 2\frac{r_{50}}{\sin(3.6^\circ)} = 134.277 \times r_{50}.
+\end{equation}
+
+The characteristics of the PMTs relevant to the design of the magnetic shields
+are given in Table~\ref{PMT_char}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}  \hline 
+PMT     & $D_{pm}$ & $S_a$  & $L_{m}$ & $B_{t}$  & $M$         & $r_{50}$ & $D_{sm}$ & $L_{LG}$ & $B_{o}$   \\
+        & mm       & mm$^2$ &  mm     & G        & kg          & mm      &          &  mm       & G         \\ \hline
+R2083-u & 54       & 1662   & 120     & 0.25     & $\approx$5  & 826     &  88.     & 1400      & $\le500$  \\ \hline
+R2083-d & --       &  --    & --      & --       & $\approx$10 & 1090    & 146.4    & 1600      & $\le1000$ \\ \hline
+H8500-u & 72       & 2400   & 15      & $\le500$ & $\approx$10 &  596    &  80.1    & 945       & 2000      \\ \hline 
+H8500-d & --       &  --    & --      &  --      & $\approx$10 & 890     & 119.5    & 945       & 3000      \\ \hline
+\end{tabular}
+\end{center}
+\caption{\small{Characteristics of the PMTs relevant to the CTOF magnetic
+shield design.}}
+\label{PMT_char}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent
+Here,
+
+\begin{itemize} 
+\item $D_{pm}$ - nominal diameter of the PMT; 
+\item $S_a$    - PMT sensitive area;
+\item $L_{m}$  - maximum length to protect against the magnetic field;
+\item $B_{t}$  - maximum tolerated field by the ``naked'' PMT;
+\item $M$      - expected shield mass; 
+\item $r_{50}$ - radial coordinate according to the current design;
+\item $D_{sm}$ - maximum possible diameter of the PMT shield via Eq.(\ref{dsmax});
+\item $L_{LG}$ - shortest possible light guide length in current design;
+\item $B_{o}$  - magnetic field at the PMT location at the specified light guide length.
+\end{itemize}
+
+According to this table, the upstream R2083 PMTs have to withstand against 
+a field $\leq 500$~G, provided the light guide length is 1400~mm.  In this case, 
+the diameter of the magnetic shield has to be below 88~mm.  The downstream 
+R2083 PMT meets a significantly higher non-uniform magnetic field.  Provided 
+the downstream light guide length is 1600~mm, the maximum field would be 
+$\leq 1000$~G, while the magnetic shield diameter may be as high as 146~mm. 
+
+The metal-channel H8500 PMT may operate at 200~G without magnetic shielding.
+However, with a powerful enough shield,  both kinds of PMTs could operate at  
+higher fields.  In such a situation, shorter light guides could be used,
+which would lead to an improved resolution. 
+
+R2083 PMTs will be used in the assembly H2431, enclosed into the 200-mm long,
+0.8-mm thick $\mu$-metal of 60~mm external diameter.  However, we plan to 
+change the H2431 design in order to arrange a overhang of 50--60~mm from the 
+photocathode side.  This is required for a more efficient shielding design
+\footnote{The internal field drops significantly at a depth of one radius of 
+the shield.}.
+
+\subsection{Ferromagnetic Shielding}
+
+In ferromagnetic shields, the field lines are concentrated in the bulk of 
+the ferromagnetic, thus reducing the fringe fields inside the protecting  
+area.  The problem with infinite hollow ferromagnetic cylinders in uniform 
+transverse magnetic fields may be solved analytically\footnote{See E.~Smith,
+GlueX-doc-843.}, as well as the problem of ellipsoids in axial fields.  
+Therefore, the following practical formulas are recommended by the Magnetic 
+Shield Corporation for rough estimates of magnetic shield parameters:
+
+\begin{equation}
+S = \frac{B_o}{B_{in}}\approx \mu({B_m})\frac{t}{D_+}~~~;
+~~~B_m \approx B_o\frac{D_+}{0.8t}~~~;
+~~~t\approx B_o\frac{D_+}{0.8B_m},
+\label{eq000}
+\end{equation}
+
+\noindent
+where $S$ is the shielding factor of a cylinder, $\mu(B_m)$ is the 
+permeability as a function of the field $B_m$ in the shielding material,
+$B_o$ is the external field, $B_{in}$ is the field inside the 
+ferromagnet, $t$ is the thickness of the shielding material, and $D_+$ 
+is the external diameter of the cylinder.  For a set of separated coaxial 
+cylinders, the shielding factor may be estimated as the product of 
+the individual factors.
+
+\subsubsection{Finite Element Analysis}
+
+Two external layers are the most important element for shield performance.  
+Therefore, we have analyzed a double-layer magnetic shield against 3000~G.  The 
+parameters of such a pilot shield are listed in Table~\ref{ca001}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|} \hline
+Cyl & $B_{o}$  & $D_+$ & $D_-$ & $t$ & $B_m$ & $\approx\mu$ & $S$  & $B_{in}$ & $Fm$      \\ 
+$n$ &  G       & mm    & mm    & mm  & G     &              &      & G        &           \\ \hline  
+1   & 3000     & 136   &   86  & 25  & 20000 & 600          & 40   & 80       & Netic     \\ \hline
+2   & 80       &  84   &   80.8& 1.6 & 5300  & 150000       & 2850 & 0.03     & Hiperm-49 \\ \hline
+\end{tabular}                                                      
+\end{center}
+\caption{\small{Two-layer shield design parameters. $n$ - layer number starting 
+from the external layer, $B_{o}$ - external field, $D_+$ - external diameter, 
+$t$ - ferromagnetic thickness from Eq.(\ref{eq000}), $B_m$ - field in the 
+ferromagnetic from Eq.(\ref{eq000}), $\mu$ - permeability from the magnetization 
+curve, $S$ - shielding factor, $B_{in}$ - field inside the shielding or the external 
+field for a next layer, and $Fm$ - ferromagnetic material.}}
+\label{ca001}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+
+The result of the finite element analysis (FEA) calculations\footnote{Calculations 
+were performed by the Mu-shield Company (D.~Grilli).} in a perpendicular field is 
+shown in Fig.~\ref{GRILLI}.  According to this plot, the minimum field inside 
+the shield is 0.23~G, which is 15 times higher than the naive estimate from  
+Table~\ref{ca001}.  This means that the interaction between layers is 
+important and has to be analyzed via more advanced FEA calculations.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.8\textwidth]{magshieldGrilli-1.ps}
+\caption{\small{Sample of a field map for the 2-layer PMT shield in the 
+3000~G external field.  The field in the center is 0.23~G.}}
+\label{GRILLI}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Fig.~\ref{VBT3CY}, the pilot design of a 3-layer shield is shown.  A very high 
+permeability Netic will be used for the external layer.  For the middle layer, 
+Hiperm-49 may be used, since it has higher permeability at lower fields.  For the 
+inner shielding, a very soft Co-Netic may be considered.  The dimensions will be 
+further optimized via FEA calculations. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=1.0\textwidth]{R2083-3000-ph.eps}
+\caption{\small{Pilot design of the PMT magnetic shield.}}
+\label{VBT3CY}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Fig.~\ref{VBT3CYFM} we show a sample of the shield performance in a
+1000~G axial field.  This field map was obtained with the POISSON-Superfish  
+program,  which performs two-dimensional net calculations in limited space.
+The boundary conditions applied enforced that the field lines be parallel to 
+the axis at the borders.  An axial uniform field inside the area has been  
+created with a current running over a thin cylinder.  The resulting field in 
+the center is determined to be 0.5~G.  Further optimization is required in order 
+to achieve 0.25~G in the region of the PMT dynodes.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{VBT3CYLSHIELDNUB02.eps}
+\caption{\small{Sample of a field map for the 3-layer PMT shield in the 
+1000~G external field.  The field in the center is 0.5~G.}}
+\label{VBT3CYFM}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsubsection{Hybrid Magnetic Shield with Compensating Coil}
+
+The inner magnetic field strongly depends on the ferromagnetic properties, which 
+are very sensitive to the fabrication technology.  Therefore, we are looking for 
+more robust protection of the PMTs.  For this purpose, we can consider use of a   
+combination of passive and active elements of shielding.  In Fig.~\ref{VBT3CYUS1} 
+we present the novel design of a magnetic shield with a compensating coil inside the 
+shield assembly.  A small current on the order of 0.1~A running through a 1-mm thick 
+wire, is enough to reduce the inner PMT field to the desired values below 0.1~G.
+The detailed magnetic field map inside the PMT is shown in Fig.~\ref{VBT3CYUS2}.
+As seen from this figure, the internal field is below 0.1~G, while the external field 
+is 400~G.
+
+The total current running through the compensating coil is  $\approx$50~A, while the 
+coil is $\approx$200-mm long.  Thus it may contain 200 turns of 1-mm thick wire with 
+a current of only 0.25~A.  Certainly, higher fields may be exterminated with a higher 
+currents in the compensation coil.  Thus, hybrid magnetic shields are very promising. 
+We plan further developments and prototyping of this type of shielding.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{VBTUPST3CY1COREF0001.eps}
+%\includegraphics[width=.6\textwidth]{HyMagSh400G.eps}
+\caption{\small{Hybrid magnetic shield for the R2083 PMT with the compensating coil
+wound around the H2431 assembly.  At in the 400~G external field, the inner PMT field  
+is below 0.1~G.}}
+\label{VBT3CYUS1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=.6\textwidth]{VBTUPST3CY1COREF0002.eps}
+\caption{\small{Hybrid magnetic shield for the R2083 PMT with the compensating 
+solenoid around the H2431 assembly in a 400~G external field. ``Zoomed in'' field 
+map inside the PMT.  The length of arrows indicate the magnetic field.  The maximum 
+field, corresponding to the longest arrow, is 1~G.  As seen from this figure, in the 
+region of the PMT photocathode at an axial coordinate of $\approx$4~cm, the field is 
+0.1~G.}}
+\label{VBT3CYUS2}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Optical Tests of Acrylic}
+  
+In our studies of Acrylic light guides~\cite{r1,llg}, we have almost doubled 
+the transmittance of our 1-m-long Acrylic light guides, fashioning it as a 
+pyramid at the scintillator side and as a cylinder at the PMT end.  In order 
+to achieve the desired  $\sigma_{TOF}\approx 50$~ps, a further $\approx$50\%  
+improvement of the light guide transmittance is necessary.  Since the light 
+guide geometry is almost optimized, a sensible gain may be achieved via modest  
+improvement of several factors, e.g. we need shorter and more transparent 
+Acrylic with better surface properties, more reflective wrapping, and better 
+coupling to the PMTs. 
+
+First we concentrated on the optical properties of commercial cast Acrylic 
+rods, which are of special interest for use as our light guides.  Our primary 
+motivation was a confusion with manufacturer's specifications for the Acrylic 
+transparency.  In their reference measurements, the transparency (92\%--94\%) 
+has been determined as a percentage of the radiance passed through a $\approx$3-mm 
+thick Acrylic film.  Thus surface reflections are included into the specified 
+numbers, which appears to be almost irrelevant to the bulk attenuation. 
+Otherwise, the attenuation length would be unrealistically low.  Moreover, a 
+better reflection from surfaces is an advantage for light guiding.  Hence, using 
+the manufacturer's specifications, one may even neglect what could be a good 
+guiding material. 
+
+With this purpose, we have developed simple hand-held tools and methods for 
+the express evaluation of Acrylic optical properties.  Such methods are very 
+desirable for the detector quality assurance during development and construction.  
+We briefly describe these methods in the following sections.
+
+\subsection{Practical Transmittance Measurements}
+\label{PTM}
+
+We define the practical transmittance of Acrylic light guides as the ratio of 
+the light guide output radiation to the input radiation.  These values are 
+the main subject of our efforts, and therefore, we need to measure it quickly 
+and precisely, with an accuracy of $\approx$1\%.  This allows us to monitor 
+all steps of development and fabrication.
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[clip=true,angle=-90,width=0.7\textwidth]{LGTEMEASUREMENT.ps}
+\end{center}
+\caption{\small{Transmittance measurements. (1) Acrylic rod, (2) light source,
+(3) Acrylic piece, (4) silicon photodetector, (5) Teflon film as a diffuser, 
+(6) mount units, and (7) digital voltmeter.}}
+\label{pratra}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We measure the practical transmittance in the following way (see Fig.~\ref{pratra}).
+Diffuse light is injected into the Acrylic rod (light guide) along its axis from 
+one side.  At the opposite end we mount a IL1400 radiometer, which functions as a 
+photodetector.  In order to determine the transmittance $T$ we compare two 
+measurements of the transmitted radiation $R$.  The first value has been measured  
+with a very short reference rod and the second value has been measured with a long 
+Acrylic rod.  The difference between the two measurements is due to the transmittance 
+of the Acrylic light guide.  This has been estimated as:  
+
+\begin{equation}
+T = \frac{R(l_x)}{R(l_s)},
+\label{trans}
+\end{equation}
+
+\noindent
+where $l_x$ is the length of the long rod under test (141.5~cm), $l_s$ is the length 
+of the short rod (2.52~cm), and $R(l)$ is the radiation measured with a sample of
+length $l$.  We also determine a more ``practical'' attenuation length $\lambda_p$ 
+using:
+
+\begin{equation}
+\lambda_p= \frac{(l_s-l_x)}{ln(T)},
+\label{pracat}
+\end{equation}
+
+\noindent
+assuming an exponential attenuation along the light guide.
+ 
+For monitoring the luminosity we have developed a method based on precise 
+measurements of the consuming power.  For this purpose we record the voltage 
+and current of the light source power supply.  We observe a strong correlation 
+between the precise voltage and the radiometer's readout.  This correlation has 
+been used to bring it to the same voltage, thus to the same radiation power. 
+
+In our first tests, the surface of the Acrylic rod remained as it was processed  
+at the factory.  We then had it polished and remeasured the transmittance.
+A sample of the measured radiance vs. voltage is shown in Fig.~\ref{leds8}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=13.8cm,clip=true,bb=20 150 620  720]{8ledsalmir2fil071107_picture.ps.gz}
+\end{center}
+\caption{\small{Practical transmittance measurements.  Top panel: radiance 
+of short reference sample.  Bottom panel: radiance of the Acrylic rod under test.
+Vertical axis: radiometer readout.  Horizontal axis: power supply voltage ($V$).}}
+\label{leds8}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+From this figure we conclude that the practical transmittance of this Acrylic 
+rod is 55.6\%.  In order to test the reproducibility, we repeated measurements 
+a second time and measured 58.8\%.   After changing to a stabilized power
+supply for the lamp, we measured 58.9\%.  Thus, we have approached the desired 
+$\approx$1\% level of accuracy in the transmittance measurement.  Note that
+re-polishing the Acrylic rod at the JLab mechanical shop resulted in slightly 
+reduced transmittance of 54.4\%.
+  
+\subsection{Bulk Attenuation Length and Surface Quality}
+\label{BAL}
+
+We assume that attenuation of light in the bulk Acylic rod is proportional to 
+the inhomogeneity and foreign inclusions.  That is the reason for a luminous line 
+in the bulk Acylic irradiated with a strong laser beam ($\approx$1~W).  Therefore, 
+we assume that one can estimate the light attenuation length via precise measurement 
+of the luminosity of this line.  
+
+\subsubsection{Absolute Measurements}
+\label{absmea}
+
+With a narrow laser beam one can determine the absolute value of the bulk 
+attenuation length.  The setup and method is similar to that shown in 
+Fig.~\ref{pratra}.  As in the former method, we compare two successive 
+measurements performed with short and long samples, respectively. The only 
+difference is that the laser beam is now axial.  However, the sensitive area 
+of the IL1400 photodetector (1$\times$1~cm$^2$) is wide enough to cover the 
+transmitted beam, which is just slightly wider than the original beam at the 
+same distance.  The bulk attenuation length was then determined using  
+Eq.(\ref{pracat}).  The obtained values for various setups and monitoring 
+methods are listed in Table~\ref{attlen}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|c|c|c|} \hline
+Light (nm) & Power Supply & Monitor & $\lambda$ (m) \\ \hline
+Laser 475  & $\approx$3 V & light   & $5.4\pm0.7$ \\ \hline
+Laser 532  & $\approx$3 V & light   & $5.5\pm0.7$ \\ \hline
+Laser 532  & 3.0 V        & current & $6.7\pm0.2$ \\ \hline
+Laser 532  & 3.0 V        & current & $6.6\pm0.2$ \\ \hline
+\end{tabular}
+\end{center}
+\caption{\small{Bulk attenuation length ($\lambda$) of the reference 
+Acrylic rod.}}
+\label{attlen}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have convinced ourselves that the measurements with a monitored voltage
+(current) of the power supply are more reliable than monitoring of the laser  
+luminosity.  Therefore, we determine the bulk attenuation length of the 
+Acylic rods from our manufacturer as $\approx 6.65\pm0.5$~m, from the last 
+two lines of Table~\ref{attlen}.
+
+\subsection{Relative Measurements}
+
+We have developed a simple express method for relative measurements of  
+attenuation in Acylic rods.  For this purpose we detect the light scattered 
+at large angles from the area exposed to the laser beam.  A special hand-held  
+tool provides a certain acceptance for the radiometer.  The laser beam creates 
+a luminous line across the rod.  The radiometer reads the light scattered in 
+transverse directions; the surface is excluded from the acceptance.  We have 
+checked 2-in rods from several distributors.  The results are listed in 
+Table~\ref{samatt}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|c|c|r|r|} \hline
+ Purchased     & Technology  & Comment,        & Radiance    & $\lambda(m)$ \\
+    from       &             &  status         & (nW/cm$^2$) &              \\ \hline
+Prof. Plastic-0& cast,1.41 m & reference       & 17.7        & $6.65\pm0.2$  \\ \hline
+Plast. Craft-1 & cast,148 mm & pol. butt-ends  & 16.1        & $7.31\pm0.3$ \\ \hline
+Plast. Craft-2 & cast,153 mm &unpol.butt-ends  & 21.6        & $5.44\pm0.3$ \\ \hline
+Plast. Craft-3 & cast,200 mm &unpol.butt-ends  & 32.1        & $3.66\pm0.2$ \\ \hline
+KNU sample     & cast,205 mm & pol. butt-ends  & $\ge18.2$   & $\leq 6.1$    \\ \hline  
+McMaster-Carr Supp.Cmp.& extr.,400 mm & unpol. butt-ends & 48.7 & $2.42\pm0.2$ \\ \hline
+\end{tabular}
+\end{center}
+\caption{\small{Bulk attenuation length ($\lambda$ (532 nm)) of 2-in Acrylic 
+rods from different manufacturers.}}
+\label{samatt}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The dispersal of the radiometer readout is significant.  These values are 
+calibrated in units of attenuation length, as was described in the previous 
+section.  The samples vary in attenuation length\footnote{The readout values 
+are calibrated in units of attenuation length as described in Section~\ref{absmea}.} 
+by almost a factor of three.  The 2-in Acylic rods from Professional Plastic Inc.
+gives $\approx$18~nW/cm$^2$ in our hand-held tool.  This value will be our future 
+reference.  The best readout (over the length) for the Acylic sample from South 
+Korea is about the same.  However, this sample has numerous local inclusions 
+separated by a few mm.  These inclusions manifest themselves as a reduced 
+practical transmittance ($\lambda_p \approx$1.5-2~m) of the sample.  In addition, 
+due to the fact that this rod was machined (with a lathe) from a flat piece of  
+Acylic, its surface was damaged, perhaps to the depth of a few microns, which 
+resulted in a hazy view from the end of the rod.    
+
+We have selected Professional Plastic Inc. as our provider of Acylic for the 
+{\tt CTOF} project.  However, we plan further casting for better Acylic samples.
+
+\subsection{Surface Quality Measurements}
+
+We have developed an express method for estimating the quality of a polished surface.  
+This method is based on measuring the scattered light from the light guide surface 
+illuminated with a laser beam.  A special hand-held tool provides a certain surface 
+impact angle and acceptance for the IL1400 radiometer.   Note that in this case some 
+part of the bulk scattered light is also accepted by the radiometer.  However, it may 
+be subtracted from the readout.  The method has been calibrated with the reference 
+Acrylic rod.  The typical reference readout of the IL1400 with this rod was 
+20~nW/cm$^2$.  
+
+\paragraph{Practical Transmittance After Polishing:}
+Unfortunately, after we had the JLab mechanical shop polish our Acrylic samples, 
+the surface readout increased by 50\%.  The scratches on the polished surface
+indicate that this problem was caused by the environment in the shop.
+
+\paragraph{Practical Transmittance After Painting with Lacquer:}
+The technique of vapor polishing is very close to painting.  Therefore, we have 
+checked the effect of painting on the practical transmittance of a previously 
+buffed 20-cm long Acylic rod.  The result is quite confusing.  The surface readout 
+dropped almost by a factor of two after painting with Acylic lacquer.  The 
+surface looks quite smooth.  However, the practical transmittance of a 205-mm long 
+sample dropped by $\approx$10\%.  The possible reasons for this unexpected effect  
+are firstly, the higher refractive index, secondly, surface cracks due to aggressive 
+solvents, and thirdly, worse transmission spectrum of the laser.  All of this
+has to be carefully investigated in future.
+
+\subsection{Future Applications}
+\label{CAO}
+
+We have developed express hand-held methods for measuring both the bulk and the 
+surface attenuation of light guides.  Our basic assumption on the proportionality 
+of the attenuation to the scattering has to be verified.  The developed methods 
+allow us the following:
+
+\begin{itemize}
+\item to assure a proper attenuation length of Acylic in the light guides;
+\item to monitor the surface quality of light guides;
+\item to perform R\&D for better light guide transmittance.
+\end{itemize} 
+
+The immediate practical results of these methods include:
+
+\begin{itemize}
+\item we have selected the manufacturer of Acylic rods with the lowest attenuation;
+\item customer buffing does not necessarily improve the surface quality; other 
+methods should be used;
+\item manufacturer's specifications should be interpreted with care.
+\end{itemize}
+
+We plan to use these methods for comparison of Acylic surfaces after  
+ordinary buffing, flame polishing, and, perhaps, vapor polishing.
+
+\section{Studies with Monte Carlo Calculations}
+\label{mutchler}
+
+We have calculated the transport efficiency of the light guides using the 
+code BARTIM described in the Appendix of Ref.~\cite{mutch}.  In this 
+Monte Carlo program, a photon is either totally internally reflected or 
+reflected or refracted according to the Fresnel equations.  Imperfections 
+on the surface are modeled by reducing the total internal reflection 
+co-efficient, IR, below 100\%.  The light that escapes the scintillator (or 
+light guide) is specularly reflected with the appropriate reflection 
+co-efficient $R$.  The calculations were performed for the light guide 
+configuration shown in Fig.~\ref{bentlg03}.  The dimensions given in 
+Figs.~\ref{lgupstream} and \ref{lgdownstream} for the upstream and downstream 
+light guides, respectively, were used.  The beam was taken to be incident 
+normally at the center of the scintillator.  The transmission and loss of 
+light at various positions are tabulated in Table~\ref{mud1}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table} [htbp]
+\begin{center}
+\begin{tabular}{|l|c|c|} \hline
+Percentage lost at a given position  & Upstream & Downstream \\ \hline
+Scintillator - light guide interface & 5.9      & 16.9       \\ \hline 
+Absorption (all sections)            & 20.7	& 16.8 	     \\ \hline
+Lost in straight sections  	     & 25.0	& 17.6 	     \\ \hline
+Lost in bends  	                     & --	& 10.2       \\ \hline
+Lost at PMT  	                     & 3.8 	& 2.9        \\ \hline \hline 
+Transmitted  	                     & 44.6	& 35.5 	     \\ \hline
+\end{tabular}
+\caption{\small{Calculated values of the light guide transmission efficiency 
+and losses for the two sides.}}
+\label{mud1}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The parameters used in this calculation were $R$=0.9, IR=0.99, and a bulk 
+attenuation length of 4~m in the Acrylic.  It was assumed that the wrapping 
+was a radiant mirror film VM-2000 from 3M as described and measured in 
+Ref.~\cite{mutch}.
+
+\subsection{Effect of Trapezoidal Shape of Scintillator on Light Propagation}
+\label{mu1}
+
+The effect of the scintillator's trapezoidal cross section was investigated.  
+It was found that only about 7.2\% of the light generated in the center of the 
+scintillator was lost, compared with a rectangular scintillator bar.  The 
+sloped sides of the light guide, that allowed the 46-mm cylinder to mesh with 
+the smaller scintillator, may actually improve the light transport efficiency. 
+It directs the light upward, which is needed to match the direction of the 
+light guide. 
+
+\subsection{Effect of Coupling Angles Between Light Guides and Scintillators}
+\label{mu2}
+
+The effect of changing the pitch angle of the upstream light guide from 
+18$^\circ$ to 30$^\circ$ was investigated.  The transmission varied by less 
+than 1\%.  Varying the downstream angle is more difficult as it would impinge 
+on the forward acceptance.  Therefore we did not investigate this.
+
+\subsection{Effect of Bending}
+\label{mu3}
+
+The effect of varying the bend radius of the upstream light guide was examined.
+The radius was varied from 10.0, 11.75, 13.3 to 14.3~cm.  Surprisingly, the 
+results were insensitive to the radius of the bend.  The smaller the radius, 
+the smaller the losses in the bend, but this was compensated for by increased 
+losses in the straight sections, which were now longer.  This seems 
+counterintuitive, but the bend radius appears to be sufficiently large that the 
+losses are dominated by the length of a given section.  
+
+\subsection{Effect of Up and Down Mirrors of Light Guides}
+\label{mu4}
+
+The effect of the angle and the quality of the polish, IR value, are shown in 
+the top and bottom panels of Fig.~\ref{trans1}.  There is a weak dependence on 
+the lower angle, with a broad maximum at about 9$^\circ$.  This angle was used 
+in the calculations shown in Table~\ref{mud1}.  The dependence on the upper 
+angle is even weaker.  We took it to be 9$^\circ$ also, but any angle between 
+7$^\circ$ and 15$^\circ$ is acceptable. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{trans.ps}
+\caption{\small{Light transmission vs. 1). the ``down mirror'' orientation 
+angle (left panel) and 2). the reflectivity of the light guide surface (right 
+panel).}}
+\label{trans1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Light Guide Transmission Efficiency vs. Refractive Index}
+\label{mu5}
+
+We compared the light guide transmission efficiency for two materials -- 
+Acrylic ($n$=1.49) and Lexan ($n$=1.58) -- to estimate the benefit of using
+a more optically dense material for the light guides.  If we assume equal 
+attenuation lengths, Lexan transmits 10\% more light, primarily by 
+eliminating the losses at the scintillator -- light guide interface. 
+Unfortunately the transparency of Lexan is about half that of Acrylic.
+Taking this into account, the Lexan transmits only 93\% of the light. 
+However, we have to consider this option, keeping in mind possible  
+progress in the plastic industry.
+
+\subsection{Matching of the Light Guide to the PMT Entrance Window}
+\label{mu6}
+
+The photocathode of the R2083 PMT is $\approx$1-mm thick in the center.  
+According to the information obtained from the Hamamatsu experts, the 
+shape of the photocathode is a sphere of 55~mm in radius with 
+$\approx \pm 25^\circ$ polar opening.  On the other hand, the entrance 
+window is flat.  Therefore, the distance between the flat end of the light 
+guide and the photocathode ranges from 1~mm in the center to 6~mm at the 
+edge of the photocathode.  That may cause significant loss of light through 
+the edges of the PMT entrance window.  If the scintillator is directly 
+coupled to the PMT, 32\% of the light output is lost.  However after the 
+light has been transported through the light guide, the phase space has 
+been restricted to mostly forward angles. In this case the loss is only 8-9\%.
+
+\subsection{Effect of the Photocathode Diameter}
+\label{mu7}
+
+The number of reflections drops if the light guide has a larger diameter in 
+its cylindrical part.  The downstream light guide was modeled with a 52.0-mm 
+diameter light guide.  This transported about 6\% more light to the PMT, but 
+it was then lost.  A larger diameter tube could collect most of this light, 
+giving a net gain in the signal.
+
+Another possibility that we have investigated is the use of a reducing cone 
+at the end coupled to the PMT.  The length of the cone was varied, keeping 
+the overall length of the cone plus the last straight section constant at 
+250~mm.  In accordance with Fig.~\ref{plgef}, the optimum length of the cone 
+was found to be about 50~mm.  However this did not improve the light guide 
+transmission.  Once again the extra light was lost at the PMT. (Note, the 
+effect of the curvature of the photocathode was taken into account in these 
+calculations).
+
+\subsection{Effect of Light Guide Length}
+\label{mu8}
+
+We investigated the effect of decreasing the light guide length by about 
+250~mm.  This yields a transport efficiency of 48.8\% for the upstream 
+light guide and 37.8\% for the downstream light guide.  This is an 
+$\approx$10\% and 6\% improvement over the numbers quoted in Table~\ref{mud1} 
+for 1-m long light guides, respectively.  This result may be used for further 
+estimations of longer light guides.
+
+\subsection{Light Guides to Metal-Channel Photomultipliers}
+\label{mu9}
+
+Finally, we investigated the possibility of using rectangular Hamamatsu 
+metal-channel tubes with shorter light guides.  If a tandem of such PMTs  
+and on-board preamplifiers can tolerate magnetic fields up to $\approx$0.3~T, 
+then it may be placed closer to the scintillator.
+
+A tube that might be suitable is the Hamamatsu H8500 that has a photocathode 
+$49\times49$~mm$^2$.  The minimum light guide length is constrained by the 
+requirement that the tubes ($52\times52$~mm$^2$ external size) are at a radius 
+sufficient to provide clearance between the tubes.  This would be about 
+70~cm for the upstream light guide and 50~cm for the downstream one.
+
+For preliminary estimations the light guides were taken to be straight guides 
+40-mm wide by 47.5-mm thick.  The transmission and loss of light at various 
+positions are tabulated in Table~\ref{mud2}.  The loss at the PMT was not 
+estimated since the light guide is smaller than the photocathode and the 
+photocathode is flat.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table} [htbp]
+\begin{center}
+\begin{tabular}{|l|c|c|} \hline
+Percentage lost at a given position  & Upstream & Downstream \\ \hline
+Scintillator - light guide interface & 5.9      & 16.9       \\ \hline 
+Absorption                           & 15.9	& 10.4 	     \\ \hline
+Lost from sides  	             & 19.9 	& 16.0 	     \\ \hline
+Lost at PMT  	                     & N/A 	& N/A 	     \\ \hline \hline 
+Transmitted  	                     & 58.3 	& 56.7 	     \\ \hline
+\end{tabular}
+\end{center}
+\caption{\small{Calculated values of the light guide transmission efficiency 
+and losses for rectangular light guides.  The upstream side guide is 70-cm 
+long angled at 22$^\circ$ and the downstream guide is 50-cm long angled at 
+45$^\circ$.  There are no other bends in the light guides.  The light guides 
+are coupled to rectangular Hamamatsu H8500 tubes $49\times 49$~mm$^2$.  The 
+light guides are 40-mm wide and 47.5-mm thick.}}
+\label{mud2}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This is a 30\% and 58\% increase in the light transmission efficiency, 
+respectively, over the results in Table~\ref{mud1}.  However these gains 
+will be offset by the reduced photocathode efficiency of a metal-channel 
+tube, which is typically 20--22\% vs. the 26--28\% of regular tubes.  However, 
+there will be a net gain on the downstream side and the pulse height on the 
+two ends will be approximately equal. 
+
+\section{Estimations of $\sigma_{TOF}$ for Different CTOF Designs}
+\label{estimates}
+
+According to Table~\ref{mud1}, the light transport efficiency of an optimized 
+straight light guide is $LTE$=44.6\%.  This value is in agreement with the 
+previous experimentally determined value $44.2 \pm 4$\%.  The $LTE$ of the 
+bent light guide is lower, 35.5\% (see Table~\ref{mud1}).
+
+Using the previously measured $\sigma_{PMT}$=77.9~ps (see Table~\ref{crt}), 
+obtained with a symmetric counter and 1-m long straight ``pyramid'' light 
+guides, we can estimate the time-of-flight resolution of optimized 
+asymmetric counters in the following way.  As was shown in Ref.~\cite{r4} 
+for asymmetric light collection, the best timing is achieved by using a 
+weighted average of the two PMTs with $\sigma_A$ and $\sigma_B$ respectively:
+
+\begin{equation}
+\label{eq0}
+\sigma_{TOF}=\sqrt{\frac{(A\sigma_A)^2+(B\sigma_B)^2}{(A+B)^2}},
+\end{equation}
+
+\noindent
+where $A$ and $B$ are proportional to the pulse heights (amount of light) 
+of the two tubes, attached to straight ($A$) and bent ($B$) light guides, 
+respectively.  Note that $A \propto LTE_A$, as well as  $B \propto LTE_B$.
+If we define $f = A/B$ and $\sigma_{PMT}=\sigma_A= \frac{1}{\sqrt{f}}\sigma_B$,
+then
+
+\begin{equation}
+\label{eq1}
+\sigma_{TOF}=\sigma_{PMT}\sqrt{\frac{f}{1+f}}.
+\end{equation}
+
+\paragraph{Resolution with 1-m Long Light Guides:}
+
+Using data from Table~\ref{mud1} we find:  
+
+\begin{equation}
+\label{eq2}
+f = \frac{A}{B}=\frac{LTE_A}{LTE_B}=44.6/35.5=1.256.
+\end{equation}
+
+\noindent
+Thus for an asymmetric counter with 1-m long light guides we estimate:
+
+\begin{equation}
+\label{eq3}
+\sigma_{TOF} = 0.746\times\sigma_{PMT} = 0.746\times77.9~{\rm ps} =
+58.1~{\rm ps},
+\end{equation} 
+
+\noindent
+which is only 16\% worse of the desired value 50~ps. However, that means 
+that the amount of light would have to be increased by a factor of
+1.16$^2$=1.346.
+
+\paragraph{Resolution with 1.5-m Long Light Guides:}
+
+If the total length of the light guides is 1.5~m, the amount of light will 
+drop by $\approx$22\% (see Ref.~\ref{mu8}), thus the resolution will be 
+$\approx$64~ps, which is 28\% worse than the desired value.  In this
+regard, we hope that improving the surface quality up to IR-0.995 using  
+cast Acylic for the light guides and wrapping them with VM2000, may gain us
+a factor of $\approx$1.2 in the number of photons at the PMT window.
+Thus we may gain a total factor of $\approx$1.1$^{-1}$ in the resolution, 
+i.e. $\sigma_{TOF}\approx$58~ps.  In a pessimistic scenario we may 
+simply increase the thickness of the scintillator to 4~cm to get an 
+additional factor of $\approx1.15^{-1}$.
+
+\paragraph{Resolution with Metal-Channel PMTs H8500 and Light Guides:}
+
+Below we consider a counter with two H8500 MC PMTs viewing the scintillator 
+via light guides $700 \times 40 \times 47$~mm$^3$ and 
+$500 \times 40 \times 47$~mm$^3$ in size.  In this estimation we assumed 
+that in direct contact to the scintillator the resolution of the H8500 is 
+the same as for the R2083.  This is a reasonable assumption since the timing 
+characteristics of these PMTs are almost identical.  The estimate was done 
+in the same way as above for the R2083 PMT, using the calculated parameters 
+of the light guides given in Table~\ref{mud2}.  The resulting estimate for 
+$\sigma_{TOF}\approx$49~ps is listed in Table~\ref{table4}, row~5.  Of 
+course, we plan to measure the resolution of the H8500 PMT in the environment 
+of a high magnetic field.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|} \hline
+                        &     &               &                      & RF reference      & Light  \\ 
+Counter design          & $f$ & $LTE_l/LTE_r$ & $\sqrt\frac{f}{1+f}$ & $\sigma_{TOF}$/ps & deficiency  \\ 
+LG $\leftrightarrow$ LG &     &               &                      &                   & factor  \\ \hline
+Pyr. $\leftrightarrow$ Pyr. & 1.00 & .44/.44  & 0.71 & \textbf{55}   & 1.21   \\
+1~m, 2$\times$ R2083    &     &               &      &  ref. measur. &         \\ \hline
+Pyr. $\leftrightarrow \supset$ Pyr.& 1.25     & .446/.355   & 0.75 & 58 &  1.35      \\
+1~m, 2$\times$ R2083    &      &     &     &  $estimate$  &           \\ \hline
+Pyr. $\leftrightarrow \supset$ Pyr.& 1.19  & .372/.313   & 0.737 & 63 &  1.58      \\
+1.5~m, 2$\times$ R2083  &      &     &     &    $estimate$    &           \\ \hline
+Bar $\leftrightarrow $ Bar & 1.03 & .583/.567 & 0.712 & 49  & 0.94         \\
+0.7~m, 2$\times$ H8500  &      &     &     &   $estimate$   &           \\ \hline
+MCP PMT$\leftrightarrow $MCP~PMT & 1. & 1./1. & 0.71& 61 at 1.0~MHz & 1.5 \\
+2$\times$ Burle~85011   &      &     &     & 50 at 0.1~MHz  &           \\ \hline
+CTOF counter       & 1.33   & .4/.3& 0.76 & 60    & 1.4     \\
+(1.4m \& 1.6m)     &       &      &      &    $estimate$     &       \\ \hline
+\end{tabular}    
+\caption{\small{TOF resolution for different CTOF counter designs.  The 
+measured reference values from lines 6, 9, and 10 of Table~\ref{crt} were 
+used to evaluate $\sigma_{TOF}$.}}
+\label{table4}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Pilot Design with FM/MC Photomultipliers}
+
+In parallel we will develop the design with PMTs capable of operating in high  
+magnetic fields.  In addition to measurements with fine-mesh PMTs, we plan  
+to measure the time resolution with metal-channel PMTs.  Unlike fine-mesh 
+PMTs, such photo-detectors are sensitive to magnetic fields.  However, the 
+signal rise time of metal-channel PMTs is significantly shorter compared to 
+fine-mesh PMTs (0.8~ns vs. 2.7~ns).  We plan to test H8500 PMTs, with a magnetic 
+shield, up to fields of 0.2~T, most probably with amplification to the PMT signals, 
+as was done in our studies with MCP PMTs.
+
+In the low-field area of $\leq$0.3~T, fine-mesh/metal-channel PMTs may be used 
+with light guides $\leq$0.8-m long.  In addition, their sensitive surface is 
+wider ($49\times49$~mm$^2$), therefore an expanding light guide may deliver 
+more light to the photocathodes.  
+
+The pilot design, utilizing advantages of fine-mesh/metal-channel PMTs, is 
+shown in Fig.~\ref{JLABt0H8500}.  The scintillators are of the same shape 
+as in the design with conventional R2083 PMTs.  The upstream and downstream 
+light guides, delivering light to the area of tolerable magnetic fields  
+are 86-cm and 50-cm long, respectively, with corresponding pitch angles of  
+21$^\circ$ and 45$^\circ$.  These parameters provide room for the 50 adjacent 
+H8500 PMTs at $r\approx$55~cm.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{JLABt0H8500.ps}
+\caption{\small{The design of the {\tt CLAS12} CTOF counter with H8500 
+PMTs from Hamamatsu.  Acrylic light guides may be rectangular in cross 
+section at the photocathode ($49\times49$~mm$^2$). The length of the 
+upstream/downstream light guides is 863/441~mm, respectively.  At the 
+scintillator end, the light guides and the Bicron-408 are trapezoids in 
+cross section.  Magnetic fields are shown with vectors.}}
+\label{JLABt0H8500}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The light guides will be rectangular in cross section at the PMT side for 
+the metal-channel H8500 PMTs.  At the scintillator side, they will have a 
+trapezoidal cross section of variable size, which couples to the cross section 
+of the scintillator at the corresponding end.  Up to a certain radius of 
+$\approx$39~cm, the light guides are in close contact to each other, thus 
+forming a body enclosed between two cones. Above this radius the light guides 
+form a ``fan''.  Similar to the light guides for the R2083 PMT design, they 
+have ``focusing mirrors'' at the scintillator side.  These relatively short 
+straight scintillators may be easily machined or casted.  The expected 
+resolution ($\approx$49~ps) of counters with metal-channel PMTs is listed in 
+Table~\ref{table4}.
+
+In the design with fine-mesh PMTs, the light guides may be even shorter.
+We plan future resolution tests with fine-mesh PMTs of large sensitive area, 
+such as the R5924, instrumented with realistic light guides.
+
+\section{Pilot Design with Micro-Channel Plate PMTs}
+\label{des85011}
+
+A general view of the pilot {\tt CLAS12} CTOF counter with 85011 MCP PMTs 
+from Burle is shown in Fig.~\ref{JLABt0H85011}.  A detailed view is shown in  
+Fig.~\ref{JLABH85011}.  One multi-anode PMT is supposed to convert the light 
+from two scintillators, left and right.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{JLABt0H85011.ps}
+\caption{\small{General view of the {\tt CLAS12} CTOF counter with 
+Burle 85011 MCP PMTs.  (1) Mirror film, (2) two adjacent scintillators,
+and (3) Burle 85011 multi-anode assembly.}}
+\label{JLABt0H85011}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} [htbp]
+\centering
+\includegraphics[width=0.7\textwidth]{JLABH85011.ps}
+\caption{\small{A closer view of the {\tt CLAS12} CTOF counter with Burle
+85011 MCP PMTs.}}
+\label{JLABH85011}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The outputs of the corresponding anodes will be assembled to produce a common 
+signal for each scintillator.  The scintillators, Bicron-408, are machined 
+with a trapezoidal cross section.  We note that the inner radius can be 
+reduced in two different ways, provided that the sizes of the PMT housings 
+remain the same $(72\times72$~mm$^2$).  The first way is via implementing  
+staggered counters, as shown in Fig.~\ref{JLABH85011-1}.  In this case 
+$r_{min}$=206~mm, but the length of scintillators has to be increased by 
+52~mm (the thickness of the 85011 PMT assembly).  The second option is to 
+reduce the number of counters from 50 with $r_{min}$=275~mm to 44 with 
+$r_{min}$=250.4~mm.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure} [htbp]
+\vspace{7.7cm}
+\special{psfile=JLABH85011-1.ps hscale=57 vscale=57 hoffset=10 voffset=0}
+\caption{\small{Staggering the CTOF counters with Burle 85011 MCP PMTs.}}
+\label{JLABH85011-1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Outlook}
+
+We have experimentally verified that the resolution of our test 
+installation is mostly dictated by the statistics of the primary photons.  
+We have measured a reference resolution for the setup of three counters with 
+long light guides.  With this reference value we have estimated the 
+time-of-flight resolution (relative to the RF signal of the accelerator) for 
+different counter designs.  Estimations were done using Eq.(\ref{eq0}) and  
+Eq.(\ref{eq1}).  The resulting values are listed in Table~\ref{table4} 
+together with the deficiency factors in the amount of light.
+
+\paragraph{CTOF Counter with Conventional R2083 PMTs:}
+
+For the current design with 1.3--1.5m long light guides (row-7) the resolution 
+is likely to be improved to the desired value with better technology for
+the light guide production and further optimization of the design, including 
+bent and thicker scintillators ($\approx$4~cm).  The desired increase of 
+total transmittance is about 40\%, i.e. the transmittance has to be 50\% 
+and 60\% for the downstream and upstream light guides, respectively.
+
+\paragraph{CTOF Counter with MCP PMTs:}
+
+Recently we found a way to form a dense barrel with MCP PMTs from Burle, 
+or similar PMTs from Hamamatsu.  The design with MCPs looks promising. 
+According to our recent measurements with Burle 85011 PMTs, the timing 
+resolution may be as good as 61~ps (see Table~\ref{table4}, row-6 ) at a
+1~MHz rate. It may even be as good as 50~ps at a 0.1~MHz rate.  Thus this 
+approach may be an alternative to the counters with 1.5-m long light guides 
+at fields below 1.5~T.  In order to operate at higher fields, short light 
+guides ($\approx$50~cm) have to be implemented, but in combination with 
+the reduced QE, this will have a significant adverse effect on the resolution. 
+
+The main disadvantage of MCP PMTs is that their counting rate capability is 
+significantly lower compared to ordinary PMTs.  This is an effect of a 
+positive charge, created by the avalanche on the inner surface of the 
+micro-channels, which leaks out slowly through the resistive material of 
+the micro-channel plate.  This effect has been reduced with a combination of 
+a MCP PMT operating at low high voltage and a preamplifier~\cite{Baturin:2005}.  
+We hope that progress on the design with MCP PMTs may be achieved via further 
+development of the on-board preamplifier.  In addition, a new MCP PMT from 
+Burle with 10 and 5~$/mu$m may be available in the future.  With their smaller 
+capillaries, they may withstand higher magnetic fields and higher counting rates. 
+
+\paragraph{CTOF Counter with Fine-Mesh/Metal-Channel PMTs:}
+
+As seen from Table~\ref{table4}, the design with the H8500 PMT (row-5) looks 
+promising.  We hope that the actual light transmission efficiency will be 
+better for light guides shaped as ``pyramids'' with focusing mirrors.  However, 
+a strong magnetic shield is required in order to use 1-m long light guides. 
+We plan a further study of light guides with Monte Carlo simulations and Finite 
+Element Analysis of multi-layer magnetic shields.
+
+The advantages of metal-channel PMTs are as follows: 3.5 times lower signal 
+rise time compared to fine-mesh PMTs and higher counting rate capability 
+compared to micro-channel plate PMTs.  We plan to make a CTOF counter 
+prototype with magnetic field shielding and perform resolution tests in 
+magnetic fields $\leq$0.2~T.
+
+Fine-mesh PMTs have an advantage of experimentally confirmed immunity of 
+their time resolution to magnetic fields up to 0.6~T~\cite{fmtr01}.  However, 
+due to $\approx$3.5 times longer signal rise time, their resolution has to be  
+worse.  In the near future we plan to perform resolution tests of fine-mesh 
+R5924 PMTs as a component of a realistic CTOF counter with 0.8-m long light 
+guides.  
+
+\section{Construction}
+ 
+The steps involved in the construction of the CTOF scintillators are listed 
+below along with general quality assurance guidelines.
+
+\begin{enumerate}
+
+\item \textbf{Wrapping the light guides with reflecting \& opaque materials:} 
+The reflecting material will be procured in sheets of size
+$14'' \times 18' \times 65 \mu$m.  The sheets must be precisely assembled to 
+avoid gaps that could introduce light leaks.  Sheets of Enhanced Specular 
+Reflector (ESR) from 3M-Vikuity will be glued to the inner surface of the 
+opaque plastic (Tedlar from DuPont).  Therefore, the opaque plastic will be 
+shipped with adhesive on one side.
+
+The thickness of the reflecting wrapping (65~$\mu$m) of the scintillators and 
+light guides has to be uniformly equal, otherwise the radius of the 
+scintillating barrel becomes larger.  No double layers are allowed.
+
+All wrapping materials must be handled with gloves to avoid deposits.  A 
+clean work area should prevent dust and debris from adhering to the surfaces, 
+especially to the adhesive side of the opaque plastic.  All wrapping steps 
+must ensure that no wrinkles or air pockets are introduced.
+
+The bent part of the long light guides cannot be wrapped with the ESR sheets. 
+Instead, a narrow customer-made tape of ESR may be used for the helix-like 
+wrapping.  All seams have to be at the outer surface of the cones formed by 
+the light guides.  The wrapping has to stop at $\approx$1~mm from the ends.
+
+\item \textbf{Scintillators:}
+The scintillators will be procured by EJ Technologies with diamond cut 
+surfaces according to our specifications.  During the wrapping process care
+must be taken that all seams are at the outer surface of the barrel, i.e. at 
+the wide side of the scintillator.  All wrapping has to stop $\approx$1~mm 
+away from the ends.
+
+\item \textbf{Scintillating barrel mounting:} 
+Careful visual inspection of the rubber foam tape that is being employed to 
+protect the scintillators from direct contact to the metallic backing 
+structure.  Also procedures must be carefully followed to be sure that any 
+tape employed has good adhesion to all contact surfaces.  Sufficient 
+measurements must be made when positioning the scintillators on the support 
+structure to ensure that all alignment tolerances are met.
+
+\item \textbf{Boot attachment:}
+Light tight boots must be attached prior to mounting the light guides.  The 
+light tight boots must be individually inspected for holes, seams, and proper 
+joining.  Any boots with noticeable defects should be discarded.
+
+\item  \textbf{Mounting light guides to the supporting cones:} 
+Care must be taken to avoid any damage to the light guides.  The light guides 
+will be spring-loaded along their axis in order to provide good optical 
+contact to the scintillators.  This load has to be carefully adjusted for 
+each light guide after final assembly of the CTOF.  Careful visual inspection 
+must be made of the rubber foam tape that is being employed to protect the 
+light guides from direct contact to the backing structures.  Also
+procedures must be carefully followed to be sure that any tape employed
+has good adhesion to all contact surfaces.
+
+\item \textbf{Optical contact:}
+Procedures to eliminate air bubbles in the optical grease between 
+the scintillators and light guides must be followed.
+
+\item \textbf{Joining the barrel to the light guide cones:}
+Care should be taken to ensure proper orientation of the three parts in 
+radius, azimuth, and the $z$ direction.  The stagger structure of the 
+scintillators and light guides must ensure precise compliance between the
+scintillators and light guides.  The final alignment will be guaranteed by 
+conic flanges.  Prior to doing this, all optical contacts must be inspected. 
+  
+\item \textbf{PMT mounting:}
+The PMT and magnetic shield will be first assembled together to form a single 
+unit.  The PMT inside will be spring-loaded in the axial direction for good 
+and gentle mechanical/optical contact to the light guide.  These 100 units 
+have to be mounted on two supporting rings at the upstream and downstream
+ends of the CTOF.  Care must be taken to provide good optical contact with 
+the light guides and to ensure proper orientation along the axial axis.
+The units must be secured from any possible future displacements under 
+magnetic forces from the solenoid.
+
+\item \textbf{Workmanship:} 
+Accuracy in workmanship is very important as mishandling and poor 
+construction procedures can reduce the detector resolution noticeably.  All 
+measurements have to be precise and all construction procedures and 
+tolerances have to be rigidly followed.
+
+\end{enumerate}
+
+\section{CTOF System Quality Assurance Procedures}
+
+This section provides a list of quality assurance (QA) steps prior to
+the construction of the CTOF system. 
+
+\paragraph{Scintillators, light guides, and reflecting materials:} 
+
+Upon arrival of the scintillator material and light guides from the 
+manufacturer, all pieces should be visually inspected with UV light 
+for scratches, marks, and defects.  All pieces should be measured for 
+tolerances.  The light transmission efficiency of each light guide must 
+be measured with a radiometer and compared to the reference samples.
+Any product outside of acceptable size, light transmission, or condition 
+should be shipped back to the manufacturer.  The all-plastic pieces have 
+to be packed properly for storage until the assembly period.
+
+In all steps of handling the scintillators and light guides, white gloves 
+and lab coats should be worn.  Wrapping with reflective films has to be 
+performed in the clean room.  Any naked plastic should be covered if it 
+needs to be left exposed for any period of time.  The scintillator material 
+is very susceptible to damage from scratches, heat, cold, shock, and alcohol.
+Care must be taken at each step of the construction process to monitor
+the environmental conditions.
+
+\paragraph{Magnetic shields and light guide handling:} 
+
+The PMTs and magnetic shielding are susceptible to damage from shock, and 
+care must be taken to handle them with care both before and after they are 
+mounted.  Care must be taken to avoid any damage on the light guides and 
+PMTs during handling and installation.  The magnetic shielding has to be 
+reliably secured in order to avoid even small displacements due to magnetic 
+forces induced by the solenoid.  The magnetic forces may be very strong and 
+the forces applied to the magnetic materials have to be estimated and taken 
+into account.
+
+\paragraph{Detector testing:} 
+
+HV checks of the detectors should be performed and the dark current should 
+be measured for each PMT.  Any measured dark current more than 100~nA is 
+an indication of a possible light leak.  Attempts to find light leaks should 
+continue to ensure that the measured currents are the same in the testing 
+area with the lights on and off.  Light guide transmission measurements 
+should be performed on all light guides to ensure that they are within 
+specifications.
+
+\paragraph{Installation:} 
+
+Quality assurance during installation must involve procedures for proper 
+and safe handling of the detector structures to be sure that they are not 
+subject to any shocks or stresses, as well as to ensure that support 
+frames and lifting structures do not put any stresses on the light guides, 
+scintillators, or PMTS.  Care must be taken so that the installation 
+procedure does not affect the integrity of the surface wrapping.  Finally, 
+procedures must be followed regarding voltage and signal connections to the 
+detectors to be sure that all cables are labeled and sufficient strain-relief 
+or slack is allowed so that no stresses are put on the detectors or readout 
+electronics. 
+
+\section{Personnel Safety Issues}
+
+There are several important areas of personnel safety concern:
+
+\begin{enumerate}
+
+\item \textbf{Chemical injury:} The construction procedure involves the 
+use of glues and epoxies that can cause irritation if they come in contact 
+with skin or eyes.  Safety precautions dictate the requirements to use 
+gloves when mixing or handling glues, epoxies, or paints, as well as 
+appropriate eye protection.
+
+\item \textbf{Cutting tool injury:} A sizeable number of construction tasks 
+involve the use of scissors and Exacto blades.  Extreme care must be taken 
+when undertaking activities using these instruments to avoid personal injury 
+and cuts.
+
+\item \textbf{Fall protection:} During construction the light guide and 
+scintillator assemblies will have to be handled and manipulated.  Personnel 
+protecting shoes and helmets must be used when lifting or supporting loads. 
+Operators will employ appropriate harnessing and fall protection.  Signage
+and personnel barriers will be installed to prevent trip and fall hazards.
+
+\item \textbf{Magnetic fields:} High magnetic field environments require that 
+only non-magnetic tools and hardware should be used for assembly in order to 
+avoid potential damage to the detector components or injuries to personnel.
+\end{enumerate}
+
+\section{CTOF System Safety Issues}
+
+The main areas of the detector safety concern are the following:
+
+\begin{enumerate}
+
+\item Grounding scheme - necessary to prevent electrical shock.
+
+\item Elevated work areas - access to the CTOF system for installation
+and repairs will be via man-lifts and crane lifts.  
+
+\item Staging and installation - special procedures will have to be 
+detailed for the installation of light guides and PMTs, as well as of the
+upstream and downstream assemblies.
+
+\item Cable installation - floor grating will be removed and care should be 
+taken to prevent personnel injury and damage to unprotected cables.
+
+\item Magnetic shielding - in addition to gravity, the force induced by a 
+very high magnetic field has to be taken into account in the design of 
+the detector supports.
+
+\end{enumerate}
+
+It is expected that the safety issues involved with this work involve
+low risk for personnel injury or equipment damage, especially with the
+use of appropriately planned and supervised work activities.
+
+\section{Conclusions}
+
+The development of the prototype detector is attributed to the Nuclear 
+Physics Group of Kyungpook National University.  Two experienced researchers 
+and four students are engaged in this R\&D work. KNU provides infrastructure
+for this project: there are mechanical, computer, and administrative 
+services.  Generous private workshops situated around the University
+are available as well.
+
+The R\&D is done in connection with the Hall~B staff physicists at JLab. 
+The significant support of the JLab Detector Group made it possible to 
+perform resolution measurements with a novel micro-channel plate PMT. 
+Monte-Carlo simulations were performed at Bonner Nuclear Laboratory at Rice 
+University.  A NIM paper and 5 CLAS-Notes describing the R\&D results
+have been completed.
+
+The Korean Advanced Institute of Science and Technology will provide  
+expertise and assistance in testing the prototype counters in a 
+magnetic-field environment.  Test measurements will be carried out at the 
+50-MeV proton beam of the M-50 cyclotron of Seoul University.  The approval 
+for such measurements and the appropriate funding have been obtained.  The 
+test measurements of the timing resolution in the magnetic field are 
+scheduled to begin in the second half of 2007.  The results of these 
+measurements will be the basis for the construction of the first real 
+counter, which will take place in the fall of 2008.  However, prior to 
+launching this program, measurements with long light guides will be 
+performed.

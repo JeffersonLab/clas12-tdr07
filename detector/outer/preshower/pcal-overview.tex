@@ -1,0 +1,99 @@
+\section{Overview and Physics Requirements}
+
+The primary goal of experiments using the {\tt CLAS12} detector at energies
+up to 11~GeV is the study of internal nucleon dynamics by accessing the 
+nucleon's generalized parton distributions (GPDs).  This is accomplished 
+through the measurement of deeply virtual Compton scattering (DVCS), deeply 
+virtual meson production (DVMP), and single spin asymmetries (SSA). Towards 
+this end, the detector has been tuned for studies of exclusive and 
+semi-inclusive reactions in a wide kinematic range. 
+
+The {\tt CLAS12} program of experiments goes further than just GPDs and 
+includes experiments such as the space-time characteristics of 
+hadronization. Detection of $\pi^0$s and $K^0$s is important to 
+complement the measurements of nuclear attenuation seen for charged pions
+and kaons.  These experiments depend on the ability to detect neutral and
+charged pions at high momentum.
+
+Copious amounts of high-energy particles, both charged and neutral, will be 
+produced at experiments to be done at {\tt CLAS12}.  Electromagnetic
+calorimeters for the {\tt CLAS12} detector should have sufficient radiation
+length to absorb the full energy of the electromagnetic showers produced by 
+high-energy electrons and photons.  High-energy neutral pions present a 
+challenge as well, as they decay immediately into two photons with an 
+opening angle that decreases as the $\pi^0$ momentum increases.  Unless 
+there is sufficient position resolution in the electromagnetic calorimeter 
+of the {\tt CLAS12} detector, the two photons from $\pi^0$ decay could be 
+seen as a single high-energy photon.
+
+The separation of single high-energy photons from the photons of $\pi^0$ 
+decay is very important to the deeply virtual Compton scattering (DVCS) 
+experiments that represents a major physics program planned for {\tt CLAS12}.
+A single high-energy photon is produced in the reaction $ep \to ep\gamma$
+and the largest background to this process is from single $\pi^0$ 
+production, $ep \to ep\pi^0$.  Clearly, good $\pi^0$ detection is crucial 
+to separate these two processes.  In addition, direct $\pi^0$ production 
+complements the DVCS measurements by accessing GPDs at low and high 
+momentum transfer $|t|$.
+
+Simulations have shown that the existing electromagnetic calorimeter (EC)
+of {\tt CLAS}~\cite{ec} will not be able to absorb the full energy of the
+electromagnetic showers produced by electrons and photons with momenta 
+above 5~GeV.  The leakage from the back of the calorimeter will diminish 
+the energy resolution, see Fig.~\ref{fig:ecsim}a.  For the simple 
+kinematics of $\pi^0$ decay, above a momentum of 5.5~GeV the opening angle 
+of the decay photons becomes too small to be resolved with the existing 
+EC system, which is at a distance of about 6~m from the target.  The readout 
+segmentation of the EC is only $\sim$10~cm.  Simulations with the GEANT 
+software for the {\tt CLAS12} geometry show that these pions would be seen 
+as a single cluster (i.e., one photon) by the event reconstruction 
+software, see Fig.~\ref{fig:ecsim}b.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{70mm}
+\special{psfile=../preshower/ecres.eps hscale=45 vscale=45 hoffset=30 
+voffset=-15}
+\special{psfile=../preshower/2clusteff.eps hscale=45 vscale=45 hoffset=245 
+voffset=-15}
+\mbox{
+\begin{picture}(-10,-10)(350,0)
+\put(520,170){\large {\bf (a)}}
+\put(740,170){\large {\bf (b)}}
+\end{picture}}
+\caption{\small{Performance of the EC at high energies. a) The energy 
+resolution of the EC as a function of the inverse square root of energy. 
+b) The efficiency of reconstruction of two clusters from $\pi^0$ decay
+photons as a function of pion momentum, filled red squares.  The open
+symbols correspond to the probability that a single cluster is 
+reconstructed with the same energy as the simulated pion.}} 
+\label{fig:ecsim} 
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To reconstruct the energy of high-energy showering particles and to
+separate high-energy $\pi^0$s and photons, a pre-shower detector (PCAL), 
+with finer granularity, will be built and installed in front of the 
+current EC.  The PCAL will have a similar geometry as the current EC.  It 
+will consist of a lead-scintillator sandwich with three stereo readout planes. 
+Initial simulations have shown~\cite{natalia,whitlow} that 15 layers of 
+1-cm thick scintillator layers, segmented into 4.5-cm wide strips, 
+sandwiched between lead sheets of 2.2-mm thickness, corresponds to about 
+5.5 radiation lengths, and will be sufficient to address issues arising at 
+high energies.
+
+In summary, accurate reconstruction of high-energy electromagnetic showers 
+and detection of $\pi^0$s, and in particular the ability to distinguish 
+single high-energy photons from the two-photon clusters from $\pi^0$ decay, 
+is essential to the experimental program using the {\tt CLAS12} detector at 
+high energies that will be part of the GPD program.  Efficient detection of 
+high-momentum $\pi^0$s is also needed for a variety of other {\tt CLAS12} 
+proposals.  The physics dictates the need for a pre-shower calorimeter to 
+be placed in front of the existing EC.  Simulations show that good $\pi^0$ 
+identification can be obtained with full coverage of the EC front surface. 
+In addition to the improved performance in the reconstruction of 
+electromagnetic showers, the increase of the overall scintillator thickness 
+in the {\tt CLAS12} forward electromagnetic calorimeters will increase the 
+detection efficiency for neutrons. 
+
+

@@ -1,0 +1,136 @@
+\section{Overview and Requirements}
+
+\subsection{Requirements}
+
+The following parameters are required for the {\tt CLAS12} Data 
+Acquisition (DAQ) System: at least 10~kHz event rate, at least 100~MB/s 
+data rate at the Event Recorder level, and not more than a 15\% dead 
+time under the above listed conditions.
+
+\subsection{Current DAQ System Analysis}
+
+Currently the {\tt CLAS} DAQ system runs at an 8-10~kHz 
+event rate and a 25-35~MB/s data rate at a dead time of not more than 
+15\%.  Since it will be partially re-used in {\tt CLAS12}, we will 
+discuss its main features and limitations, along with improvements 
+necessary to achieve the {\tt CLAS12} requirements.
+
+\subsubsection{Front-End Electronics: ADCs}
+
+The currently used FASTBUS 1881M ADCs set a limit for the entire DAQ 
+system: 12~$\mu$s conversion time projected into 12\% dead time at 10~kHz 
+event rate.  It can be improved by switching to the low-resolution mode of
+these units, which sets a 9~$\mu$s conversion time.  In this case the 
+event rate limit can be pushed up to about 15~kHz.  This means that from 
+a performance point of view, the 1881M ADCs can be re-used, however, the 
+number of FASTBUS ADCs must be doubled to equip all new detectors, and 
+delay cables and pretrigger discriminators must be purchased as well.
+
+We have decided to replace all existing ADCs and equip all new detectors with
+Flash ADC boards. That decision provides higher performance for the traditional
+DAQ system and free-running DAQ compatibility for future upgrades.  Flash ADC
+boards with on-board processing units will be used as the first stage of the
+Level-1 trigger, so no pretrigger discriminators are required (as in the
+current {\tt CLAS} DAQ system.  The delay cables will be eliminated as well.
+
+It should be mentioned that removing the 1881Ms will increase the Level-1 
+trigger decision time from hundreds of nanoseconds to at least 3~$\mu$s, 
+making it more powerful.  In addition, Flash ADCs can deliver more 
+detailed information to the trigger logic than the pretrigger discriminators.
+
+\subsubsection{Front-End Electronics: TDCs and Discriminators}
+
+All fast detectors in {\tt CLAS} are already equipped with new pipeline TDC
+boards, both low (85~ps) and high (35~ps) resolution, and they will be
+re-used in {\tt CLAS12}.  All new detectors will be equipped with the same
+types of boards.  We are planning to purchase new VME-based JLAB-made
+discriminators to equip all channels, eliminating the existing CAMAC-based 
+LeCroy discriminators.
+
+\subsubsection{Front-End Electronics: TDCs and ADBs in Drift Chambers}
+
+The drift chamber readout is equipped with FASTBUS 1877 TDCs, and according 
+to our plan, they will be re-used in {\tt CLAS12}.  All FASTBUS crates
+needed to accommodate those TDCs were recently equipped with new remotely 
+controllable power supplies and fan units, which will extend their lifetime. 
+The LeCroy 1877 TDC board has the following basic parameters: 500~ns
+resolution, 20~ns double-pulse resolution, up to 32~$\mu$s full scale, 
+1 to 512~$\mu$s fast clear window with 250~ns fast clear settling time, 
+conversion time 750~ns + 50~ns/hit (1.6~$\mu$s minimum). The conversion time
+and readout speed of the 1877s will not limit the DAQ performance until about 
+15~kHz, however, we may see aging effects and the necessity to increase the 
+event rate beyond 15~kHz in the future.  In that case, all FASTBUS 1877
+TDC boards can be replaced with pipeline TDCs. Replacement will not require 
+any additional changes in other subsystems such as the trigger electronics.
+
+The Amplifier-Discriminator board (ADB) electronics will be partially re-used,
+but new ADB crate backplanes, multiplexer (MUX) boards, and trigger boards 
+(segment finders) will be designed.  The number of ADB crates will be decreased 
+from 30 to 18, leaving a significant number of spare power supplies and fan units.
+
+\subsubsection{Trigger System}
+
+The current {\tt CLAS} Level-1/Level-2 trigger system will be completely 
+replaced with a new Level-1/Level-2 system capable of a few microseconds 
+decision time.  The new trigger system will include segment and track 
+finding capabilities in the drift chambers, cluster finding in the 
+calorimeters, and matching capabilities between different detectors.  In
+addition, a Level-3 trigger will be running between the Event Builder and 
+the Event Recorder for additional event rate reduction and/or data
+filtering.  Level-3 will perform full event reconstruction, including
+hit-based tracking and time-based tracking, if required.  The trigger system, 
+in general, will be flexible to accommodate different running conditions, 
+with the main goal to search for events with electrons.
+
+\subsubsection{Online Monitoring}
+
+Four practically independent monitoring systems are currently used in 
+{\tt CLAS}: Nagios-based computer and network monitoring, SmartSocket-based 
+DAQ and Online monitoring, EPICS-based slow controls monitoring, and data 
+monitoring.  In addition, a few smaller hardware-specific systems are used. 
+The data monitoring system includes visualization only, with almost no alarm 
+capabilities.
+
+{\tt CLAS12} will have one integrated monitoring system, with a standard 
+low-level interface compatible with the {\tt CLAS12} equipment.  It will 
+also be compatible with the accelerator control and monitoring system on 
+some level.  It will have not only monitoring, but also control capabilities. 
+The implementation of such a system is under discussion and concept 
+development will take at least one more year.  However, with our experience in 
+developing and maintaining such systems, we are not expecting any problems in 
+developing the new integrated system.
+
+\subsubsection{Online Calibration}
+
+The online calibration system must provide prompt information for the
+trigger system and online monitoring, and will be used for preliminary
+offline data processing.  Such a system does not exist in {\tt CLAS} and 
+will be implemented in {\tt CLAS12}.
+
+\subsection{`Free-Running' vs. Traditional DAQ Systems}
+
+Since we will employ some old FASTBUS boards in the readout, the new
+DAQ system cannot be run in `free-running' mode, however, all new components 
+will be compatible with the `free-running' concept.  This means that the
+{\tt CLAS12} DAQ system will become `free-running' after all FASTBUS boards 
+are replaced in the future.
+
+\subsection{SVT Readout}
+
+The Silicon Vertex Tracker (SVT) is not a part of the {\tt CLAS12} trigger 
+system.  The SVT readout is not included in the {\tt CLAS12} DAQ section, 
+and is described in detail in the SVT section of this document (see
+Section~\ref{svt:daq}.  However, it should be mentioned that the current SVT 
+readout design sets a limit for the Level-1 trigger decision time at 3~$\mu$s, 
+which may effect its ability to make the desired decisions.  Two solutions in 
+the SVT readout are considered to avoid that problem: new readout chips and
+a 16~$\mu$s Level-2 FIFO buffer.  More details can be found in the SVT section.
+
+
+
+
+
+
+
+
+

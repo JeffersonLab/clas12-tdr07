@@ -1,0 +1,130 @@
+43080  trigger sc-4
+43080  trigger sc-3
+43082  trigger sc-3 Change HV SC4 and CC2
+======
+43084  trigger - small cosmic telescope 2-fold coincidence
+43085  continue
+43086  pedestals
+43087  Add ADC for external trigger counters. Trigger on OR of them.
+43088  Add ADC for external trigger counters. Trigger on OR of them.
+43092 Pedestyuri_043087als
+43094 Trigger on 1st telescope
+43095 Trigger on 2nd telescope HV2=1500
+43096 Trigger on 2nd telescope HV2=1600
+43097 Trigger on 2nd telescope HV2=1600 Thr2 90 --> 40 Mv Thr1 90-->50 Mv
+43098 Trigger 1 OR 2
+43098 Trigger 1 OR 2 HV2=1700
+43099 Trigger 1 OR 2 HV2=1650Counter 2 HV trip
+43100 Trigger 1 OR 2 HV2=1650
+
+43102 Trigger 1, HV=1400 V new counters
+43103 Trigger 1, HV1=1350 HV=1400 V 
+43104 Pedestals for 43102
+43105 The same
+
+43106 pedestals new gate logic
+43107 pedestals new gate logic
+
+43109 HV1=1350 HV2=1300 Trigger 2
+43110 HV1=1350 HV2=1250 Trigger 2
+43111 HV1=1350 HV2=1250 Trigger 1
+
+      HV
+      CC1 = +1800 V 
+      CC2 = +1950 V
+      SC1 = +1200 V
+      SC2 = +1000 V
+      MM1 = -1350 V
+      MM2 = -1250 V
+
+
+43112 HV1=1350 HV2=1250 Trigger 1 OR 2
+43113 HV1=1350 HV2=1250 Trigger 1 OR 2
+
+43114 The same after rearangment of the cables.
+
+43116 CC-1  LED=4.0157
+42117 CC-1  LED=3.695
+42118 CC-1  LED=3.755
+42119 CC-1  LED=3.74
+42120 CC-1  LED=3.82
+42121 CC-1  LED=3.91
+42122 CC-1  LED=3.98
+42123 CC-1  LED=4.118
+42124 CC-1  LED=4.05
+
+42125 CC-1  LED=4.05
+42126 CC-1  LED=4.0025
+42127 CC-1  LED=3.9541
+42128 CC-1  LED=3.9063
+42129 CC-1  LED=3.8493
+42130 CC-1  LED=3.7926
+42131 CC-1  LED=3.7540
+
+43134 Cosmic trigger. 08/28/06 ~05.00PM
+      CC-1 Burle S/N: K02471 HV=2080V.
+      Other counters are the same as in the 43112-43113 runs
+43135 Continuation. 08/29/06 ~09.00AM
+43136 Continuation. 08/30/06  09.00AM.
+
+43141 08/31/06 12:30  Coincidence MM1&MM2
+
+43143 09/01/06 1300 Trgger MM1 OR MM2 
+      MM1 --> ADC1  Remove filter
+      MM2 --> ADC2  Remove filter
+
+      CC1 --> ADC5  Install filter
+      CC2 --> ADC6  Install filter
+
+43144 09/01/06 12:50  Trigger MM1 AND MM2
+                      pedestal take from 43143 !
+	09/02/06 Number of events in run 43144 is 274. Ending the run 
+
+43145 09/02/06 11:04 Started new run with the same settings as
+	             previous one.
+
+	09/03/06  10.50 Run 43145 Gathered 2 events.
+		Restarted VME crate and performed wolfram_exit/start sequence
+43146 Started run 43146
+	HV were not On
+
+	09/03/06 11:15 Started run 43148
+
+	09/04/06 10:10 Ended run 43148
+	Started run 43149
+Good runs: 43144, 43148, 43149 (Trigger MM1 & MM2)
+
+
+43152 Pedestal run
+
+43153 LED
+43154 LED V=4.02V
+43155 LED V=3.967V
+43156 LED V=3.909V
+43157 LED V=3.849V
+43158 LED V=3.802V
+43159 LED V=3.752V
+43160 LED V=4.049VV
+43162 LED V=4.072VV
+43163 LED V=4.122VV
+43164 LED V=4.166VV
+43165 LED V=4.166VV
+
+
+
+
+September 07, 1530
+Remove filter from cc1 and cc2. Ped became better.
+Install filter to mm1 and mm2. Ped became better.
+
+Install new PMT to Led stand. S/N K02473
+HV = 1950
+RUN 43168. Collect one phe signal for this PMT.
+
+PMT installed to cosmic stand.
+RUN 43169  Pedestals
+
+RUN 43170  MM1 .OR. MM2
+RUN 43171  The same.
+
+RUN 43172  MM1 .AND. MM2

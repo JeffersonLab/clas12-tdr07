@@ -1,0 +1,714 @@
+\documentclass[12pt]{article}
+\input epsf
+\usepackage{graphicx}
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+%
+\textwidth  6.5in
+\textheight 9.0in
+\topmargin -0.5 in
+\headheight 0.45in
+\headsep 0.25in
+\oddsidemargin 0in
+\evensidemargin 0in
+\parsep 0 in
+\pagenumbering{arabic}
+%\pagestyle{plain}
+%
+\begin{document}
+%
+\title{Tentative 2008 Plan for the Cooperative R\&D on the Central TOF/CAL 
+Detector}
+
+\author{F. Barbosa, V. Baturin, S. Boiarinov, V. Burkert, R. DeVita, \\
+L. Elouadrhiri, C. Cuevas, M. Guidal, W. Kim, V. Kuznetsov, \\
+M. MacCormick, S. Majewski, M. Mirazita, G.S. Mutchler, A. Ni, \\
+S. Niccolai, S. Pereira, V. Popov, M. Ripani, J. Riso, P. Rossi, \\
+A. Starostin, E. Voutier, M. Ungaro, C. Zorn}
+
+\maketitle  
+
+\noindent
+Source file: {\small {\it /12gev/TDR/TDR2007/main/detector/central/ctof/ctofworkplan291107.tex}}
+
+\nopagebreak
+
+\tableofcontents
+\listoftables
+
+\newpage
+
+\section{R\&D Overview} 
+
+The {\tt CTOF} counter, which is being designed at JLab, will be capable
+of accommodating several kinds of PMTs at the final stage of design.  Due 
+to their different sensitive areas ($S_a$) and tolerated magnetic fields 
+$(B_m)$, the corresponding light guides have various transmission lengths
+($L_t$) and diameters ($d$).  For the time being, we consider the set of
+PMTs given in Table~\ref{table1}\footnote{Unfortunately, Hamamatsu has 
+recently discontinued the most appropriate fine-mesh PMT (R6504) with a 
+photocathode diameter of 51~mm.}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htpb]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}  \hline 
+Hamamatsu & Type       & $d$   & $S_a$    & $L_t$  &  $B$   & Shield \\
+model     &            & (mm)  & (mm$^2$) & (cm)   & (mT)   & (kg)   \\ \hline
+R7761     & fine mesh  & 27    &  573     & 75     & 700    &  0  \\
+R5924     & fine mesh  & 39    & 1194     & 75     & 700    &  0 \\
+R6504     & fine mesh  & 51    & 2042     & 75     & 700    &  0 \\ 
+R2083     & ordinary   & 46    & 1662     & 160    &  50    & $\approx 5-10$ \\
+H8500     & metal channel& 49$\times$49 & 2400   & 90     & 300    & $\approx 10$ \\  \hline
+\end{tabular}
+\caption{List of the various PMTs considered for the central detector.}
+\label{table1}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to provide sufficient information for the right choice of PMT,  
+we plan to build three prototypes.  Each will consist of three counters,
+six long light guides of realistic design, and six PMTs.  These projects 
+are supposed to be performed in parallel.  Thus in a shorter research time  
+we will have extended studies of the {\tt CTOF} time resolution in realistic 
+environments.  The prototyping is also important for the JLab designers 
+working on the {\tt CTOF} mechanical design. 
+
+The R\&D projects are described briefly in the remainder of this document,
+along with the measurement plans and the cooperative research plans.  
+
+\subsection{Prototyping with 27-mm Fine-Mesh PMTs}
+
+The prototype with the fine-mesh R7761-70 PMT is being developed at 
+Kyungpook National University (KNU).  The advantage of the R7761 PMT is 
+that, due to its smaller diameter, a better acceptance for {\tt CLAS12} 
+may be achieved.
+
+This prototype will be composed of three counters, trapezoidal in cross 
+section, with a double-sided readout via straight 0.7 to 0.9~m light guides
+of a corresponding design.  Six light guides may be produced with the 
+assistance of JLab.  The optical axis of the light guides will have a 
+corresponding pitch to the axis of the scintillator.
+
+\paragraph{Current Status:}  Significant progress has been achieved in 
+2006-2007.  The triplet without light guides is already in operation, and
+an encouraging time resolution was obtained recently with this prototype.  
+However, a systematic study of coordinate, angular, and gain dependence 
+will require 10 to 20 times more statistics than have been collected to
+date.
+
+\subsection{Prototyping with Regular and Metal-Channel PMTs}
+
+This prototype is being developed at JLab.  The main advantage of the R2083 
+and H8500 PMTs is their rapid rise time of $\le$1~ns.  This system will
+contain a triplet of adjacent counters, trapezoidal in cross section, with a 
+double-sided readout via $\approx$1.6~m (for the R2083 PMT) and $\approx$1~m
+(for the H8500 PMT) long bent light guides.  $U$-shaped light guides of a 
+complex design will be coupled to the PMTs on one side and to the adjacent 
+scintillators on the other.  Magnetic shielding for the R2083 PMT against
+$\approx$30~mT and for the H8500 PMT against $\approx 300$~mT is required.
+
+\paragraph{Current Status:}  Conventional R2083 PMTs were systematically 
+studied at KNU in 2004-2006 with a triplet of counters instrumented with 
+1~m long light guides. Encouraging time resolution results were obtained 
+with high statistic under different conditions.  Another triplet without 
+light guides, but with six soft-steel magnetic shields, was assembled at 
+KNU in 2005.  This prototype is ready for tests in a magnetic field.  The 
+initial R\&D plan\footnote{The preliminary R\&D program was published as 
+CLAS-Note 2006-011.} scheduled such tests to be performed at JLab in 2007. 
+Additional advantages of the H8500 PMT is that its sensitive area is wider 
+and it can operate at $\approx$20--50~mT without shielding.  However, we plan 
+to design and fabricate the shield against 200--300~mT in order to use such 
+PMTs with shorter, $\approx$1~m long light guides.
+ 
+\subsection{Prototyping with 39-mm Fine-Mesh PMTs} 
+
+The triplet of counters with R5924-70 PMTs will be similar to the design 
+with the R2083/H8500 PMTs, but the light guides will be straight and 
+0.7 to 1~m long.  Although the diameter of the acrylic light guides will be  
+39~mm, they may be easily adopted by the R2083/H8500 prototype, without 
+changing its mechanical support, and tested for time resolution.  This work  
+is in the tentative plan of Hall B, however, in order to save research time,  
+this prototype could be sent to an outside group for assembly and testing 
+as a kit of scintillators, light guides, PMTs, and supporting drawings.
+
+\paragraph{Current Status:} The gain and resolution of different fine-mesh 
+PMTs from Hamamatsu in a magnetic field was thoroughly studied by Bonesini 
+{\it et~al.} in August 2006\footnote{See the {\tt CLAS12} Technical Design 
+Report and the paper NIM A {\bf 567}, 200 (2006).}.  In these studies, a time
+resolution of 60~ps was measured with laser flashes equivalent to 300 
+photoelectrons.  Thus the measured resolution remains unchanged up to 0.6~T.
+However, these results have to be verified with realistic scintillators 
+using the aforementioned prototype. 
+
+\subsection{Detector Simulation}
+  
+The main goal of the Monte Carlo simulations for the {\tt CTOF} is to study 
+the transmittance of the light guides and scintillators as a function of 
+their relevant parameters, such as length, pitch, diameter, etc.  These data 
+will be used for extrapolating the prototype resolutions to the final light 
+guide geometry.  Other parameters, such as machining angles, cross sections, 
+refractive indexes, surface quality, and attenuation length, may be optimized 
+via simulation.  Note that the effects of {\v C}erenkov light in the light 
+guides and its effect on the counting rates has yet to be addressed.
+
+\subsection{Optical Properties of Scintillators and PMTs}
+ 
+Another important activity is to optimize the scintillators.  The attenuation 
+length of acrylic seems to be significantly higher in blue wavelengths than
+in green.  The idea is to find a scintillator similar to BC408 in timing,
+but with greener emission spectrum, such as RP-200, BC-412, or EJ-260.
+Photomultipliers with improved spectral sensitivity for green wavelengths
+are available on the market.  
+
+\subsection{Bent Scintillators}
+
+To achieve better {\tt CTOF} acceptance, we plan to use scintillators 
+that curve upwards slightly at the downstream end of the detector.  
+Fabrication of such scintillators with traditional methods of machining 
+and/or bending may be challenging.  We will therefore study the possibility 
+for casting such scintillators against Teflon and/or glass from four sides.
+For this purpose, a Teflon-coated mold with partitions should be fabricated  
+in close cooperation with the relevant companies.  This may result in a 
+significantly higher light transmittance of the scintillators.
+
+\subsection{Optical Properties of Light Guides}
+ 
+Simple methods have been developed at JLab for optical studies
+\footnote{Results to be published soon as a CLAS-note.}. The attenuation 
+length of different acrylics has been measured at JLab.  Different reflective 
+materials will be tested in the near future, and polishing technologies 
+will also be studied.  The transmittance of the final {\tt CTOF} light 
+guides will be measured with these methods.
+
+\subsection{{\tt CTOF} Test Setup at JLab}
+ 
+During the period preceding the installation of the {\tt CTOF} detector in
+the solenoid, the fully assembled and instrumented detector will be tested 
+for its performance in the EEL building.  The detector will be tested
+extensively using cosmic ray muons.  The time resolution of each {\em logical}
+triplet will be compared with the measured reference values and optimized.  
+With this purpose in mind, we plan to develop the {\tt CTOF} test setup at 
+JLab. 
+
+As a first step, we plan to assemble a data acquisition (DAQ) setup for the
+prototypes described above.  We plan to optimize their time resolutions with 
+the new readout electronics (TDCs, ADCs) and with various discriminators
+(LEDs,CFDs) in the JLab environment.  This setup will be gradually expanded
+from testing a triplet of counters to the full-scale {\tt CTOF} detector. 
+After completion, this readout system will be incorporated into the global 
+readout system of {\tt CLAS12}.
+
+\section{Measurements and Criteria}
+\label{mescre}
+
+The primary goal of each project is to determine the counter time 
+resolutions with realistically long light guides.  The dependencies on the 
+track coordinates, angles, counting rate, and magnetic field have to be 
+addressed as well.  The time resolution, averaged over the angular and 
+coordinate span of the prototype, may be used for reference.
+
+Below we describe the methods that may be implemented for the reference 
+measurements of the various prototype characteristics. 
+
+\subsection{Time Resolution vs. Track Coordinates and Angles} 
+
+The time resolution as a function of the track coordinates and angles may 
+be studied with cosmic rays.  The experience of from {\tt CLAS} confirms 
+that cosmic rays provide adequate data for this purpose. 
+ 
+Although the measurement methods with the singlet configuration (one 
+double-sided readout counter) and radioactive source was developed at KNU 
+in 2003, the method of tracking with triplets was later selected (in 2004)
+as the main reference method\footnote{Information on the methods and the 
+drawings for the singlet and triplet configurations may be found in the 
+{\tt CLAS12} Technical Design Report.}.  Taking data with cosmic rays allows
+for a data rate of about 0.5~tracks/s and about $10^5$ events in a few days.
+ 
+Note that the technique of using the triplet configurations will be 
+extensively used for the final {\tt CTOF} detector testing and calibration
+in the assembly area.
+
+\subsection{Time Resolution vs. Counting Rate \& Gain} 
+
+Studies of scintillator timing resolution as a function of counting rate
+and gain may be addressed with an LED pulser and a singlet configuration 
+without light guides.  Such measurement methods were used at KNU in 
+2003-2004.  The gain dependence has to be addressed, as well, especially for 
+fine-mesh PMTs.
+
+\subsection{Time Resolution vs. Magnetic Field}  
+
+Studies of the timing resolution as a function of magnetic field may also
+be done with an LED pulser and a singlet configuration without light guides. 
+Enclosed into a pipe, such a setup may be placed into a solenoid or other 
+suitable magnet available at JLab.  Drawings for such setup are available.
+The real setup with six R2083 PMTs is available at KNU.
+
+\section{{\tt CTOF} Projects in Detailed Cooperative Presentation}
+\label{coopro}
+
+In order to organize the effective cooperation below, we describe the 
+projects in more detail.  A brief motivation for each project is followed 
+by a table, in which the project is divided into smaller tasks.  For each 
+task, the goal, the status, and the executive group are listed.  We suggest 
+that small research tasks may be solved by an outside group in cooperation 
+with the ``host'' group.  Some tasks may be solved with the support of JLab 
+expertise and equipment.  Any group may join any task, depending on their  
+research interests, manpower, equipment, funds, etc. 
+
+\subsection{Prototype with 27-mm Fine-Mesh PMTs at KNU} 
+
+\paragraph{Motivation:}
+The cooperative plan for this project is given in Table~\ref{table2}.  The 
+main advantages of the 27-mm fine-mesh PMTs are they can operate in magnetic 
+fields as high as 0.6~T and their small size allows for improved acceptance
+in the forward direction for {\tt CLAS12}. 
+
+\paragraph{Current Status and Future Plans:}
+The triplet with six R7761-70 PMTs directly attached to the scintillators 
+is available at KNU.  An encouraging time resolution was obtained with this 
+setup.  Magnetic field tests and counting rate tests are planned for 2008.
+In addition to studies performed without light guides, KNU is planning the 
+following:
+
+\begin{enumerate}
+ \item purchase 6 straight light guides 0.7--0.8~m long, 27~mm in diameter, 
+tapered at the scintillator side;
+ \item purchase from EJ 3 scintillators trapezoidal in cross section, 0.66~m 
+long;
+ \item assemble the triplet of counters instrumented with straight 0.7~m 
+long light guides with a corresponding pitch to the scintillators;
+ \item perform time resolution measurements with cosmic rays and other 
+studies of counting rate capability, etc.
+\end{enumerate}
+
+\paragraph{Expected Results:} 
+With this prototype we will estimate the time resolution of the {\tt CTOF} 
+detector with 27-mm fine-mesh PMTs.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|c|l|l|r|} \hline
+Component                   & Quantity  & Expenses    & Status & Exec. Groups & Comments \\ 
+or Activity                 & or Goal   & (k\$)       &        &              &          \\  \hline
+\multicolumn{6} {|l|} {Logistics} \\ \hline
+Pyramid LGs           & 6~pc  & 2.6 & planned     & JLab/KNU          & straight \\ 
+                      &       &         &             & Plastic Craft     & 0.8 mm        \\ \hline
+Scint. LJ200          & 3~pc  & 0.7   & done        & KNU               & box                \\
+                      &       &         &             &                   &                    \\ \hline
+VM2000 film           & 1m$^2$& 0.4   & done        & KNU               & wrapping           \\ 
+                      &       &         &             &                   &                    \\ \hline
+Setup-3               & 1~pc  & 7.5   & in prog. & KNU               & triplet for        \\
+                      &       &         &             &                   & $\sigma(z,\theta)$ \\ \hline
+Setup-1               & 1~pc  & 1.0   & planned     & KNU               & singlet for        \\ 
+                      &       &         &             &                   & $\sigma_t(B)$ test \\ \hline
+PMT R7761-70          & 2+4~pc& 15.0  & done        & KNU               &                    \\ 
+                      &       &         &             &                   &                    \\ \hline
+Magnet 1 T            &       &         & in prog. & KNU               &                    \\ \hline 
+DAQ  setup            &       &         & done        & KNU               &                    \\ \hline
+\multicolumn{6} {|l|} {Projects} \\ \hline
+Setup-1 in B-Field    &$\sigma_{R7761}(B)$ &   & planned & KNU    & $B_{max}$=600 mT           \\ \hline
+Setup-1 Count rate &$\sigma_{R7761}(f)$ &   & planned & KNU    & $f_{max}$=1 MHz            \\ \hline
+Setup-3 Resol.        &$\sigma_{R7761}(z,\theta)$&     & planned  & KNU    & $\theta\pm40^\circ$ \\
+                      &                          &     &          &        & $z\pm25$ cm         \\ \hline
+Detector Sim.         &LG trans &       & planned  & KNU      &           \\ \hline
+Optical tests         &LG trans &       & planned  & JLab     &           \\ \hline
+\end{tabular}
+\end{center}
+\caption{Research plans for the R7761-70 PMT.  Setup-1: single counter with 
+two unshielded PMTs attached directly to the scintillator. Setup-3: triplet 
+of counters with two PMTs coupled to the scintillator via straight 0.8~m 
+long light guides without pitch.  Approximate costs are listed for guidance.}
+\label{table2}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Prototype with R2083/H8500 PMTs at JLab}
+
+\paragraph{Motivation:}
+The tentative plan for the cooperative efforts for this project is given 
+in Table~\ref{table3}.  Long light guides are unavoidable elements of the 
+{\tt CTOF}.  In order to achieve the desired time resolution of 50~ps, the  
+transmittance of the light guides has to be improved by a factor of 
+$\approx$1.5.  The improvement has to be even higher for the case of  
+fine-mesh PMTs because of their smaller sensitive area.
+
+Cast acrylic may have an almost ideal surface for a liquid.  Therefore, we 
+plan to investigate this technology and study both optical and mechanical  
+characteristics of the manufactured light guides, regardless of what kind of 
+PMTs will be used in the final design.  The manufacturing technologies for 
+more complex light guides and their technical solutions for implementation in 
+the {\tt CTOF} have to be studied, as well. 
+
+\paragraph{Goals:} Fabricate the triplet of adjacent barrel counters,  
+trapezoidal in cross section.  Six light guides are to be constructed as
+bent cylinders with the scintillator's ends machined as pyramids.  Mounted 
+on the appropriate mechanical support, this triplet emulates a 3/50
+fraction of the {\tt CTOF} barrel.  Two PMTs in this triplet will be 
+shielded against external magnetic fields of $\approx$50~mT.
+
+With this triplet we plan to perform the following studies: 
+
+\begin{enumerate}
+  \item light guide transmittance measurements;
+  \item magnetic shield tests;
+  \item counting rate tests;
+  \item triplet resolution tests with cosmic rays and different 
+        discriminators (CFD,LED);
+  \item mechanical design tests.
+\end{enumerate}
+
+\paragraph{Current Status and Future Plans:} 
+We have selected the manufacturer of the most transparent acrylic rods in 
+the U.S., Professional Plastic Inc.  The Plastic Craft company has started  
+fabrication of the light guides.  We have also determined the company that 
+will fabricate the pilot magnetic shields.
+
+\begin{enumerate}
+  \item (in progress) Purchase 2 magnetic shields for the H8500/R2083 PMTs;
+  \item (in progress) Purchase 2+4 H8500 PMTs from Hamamatsu;
+  \item (in progress) Purchase 2+4 H2431-50 PMTs from Hamamatsu;
+  \item (in progress) Purchase 2+4 H5924-70 PMTs from Hamamatsu;
+  \item (20\% progress) Purchase six bent light guides of high optical 
+        quality from the Plastic Craft;
+  \item (20\% progress) Purchase additional cast acrylic rods from several 
+        manufacturers for attenuation length measurements. Select the best 
+        supplier for the Plastic Craft; 
+  \item (80\% progress) Design the {\tt CTOF} test bench;
+  \item (Done) Purchase 3 EJ200 scintillators shaped as trapezoids in cross 
+        section;
+  \item (90\% progress) Develop methods and tools for measuring the  
+        transmittance and optical quality of acrylic components with 1\% 
+        accuracy.
+  \item (90\% progress) Measure the bulk attenuation length of acrylic rods 
+        from various manufacturers;
+  \item (30\% progress) Measure/improve the acrylic surface quality for 
+        different polishing technologies.
+\end{enumerate}
+
+\paragraph{Expected Results:} 
+We will have three pilot samples for the {\tt CTOF} counters with cast acrylic 
+light guide(s) of complex shape with improved surface and transparency. 
+Such light guides may be used for further resolution tests with any type of 
+PMTs, including fine-mesh and metal-channel PMTs.  Resolution tests with 
+conventional H8500/R2083 PMTs will provide a final estimate of the 
+{\tt CTOF} timing resolution.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|c|l|l|r|} \hline
+Component              & Quantity       & Expenses  & Status   & Groups & Comments         \\ 
+or Activity            & or Goal        & (k\$)     &          &        &                  \\  \hline
+\multicolumn{6} {|l|} {Logistics} \\ \hline
+Pyramid LGs            & 6~pc           & 1.6       & done     & JLab,         & bent, 1.5 m long \\ 
+                       &                &           &          & Plastic Craft & for R2083        \\ \hline
+Pyramid LGs            & 6~pc           & 1.6       & planned  & JLab,         & 1.0m long        \\ 
+                       &                &           &          & Plastic Craft & for H8500        \\ \hline
+Scint. LJ200           & 3~pc           & 0.7       & done     & JLab          & trapezoid        \\ \hline
+Scint.                 & 3~pc           & 0.7       & planned  & JLab          & trapezoid        \\
+                       &                &           &          &               & bent             \\ \hline
+VM2000                 & 1 m$^2$        & 0.38      & done     & JLab          & wrapping         \\ \hline
+Magnetic shield        & 2+4~pc         & 6.0       & in prog. & JLab          & +funds           \\ \hline
+PMT H2431-50           & 2+4~pc         & 14.4      & in prog. & JLab          & +funds/equipment  \\ \hline
+PMT H8500              & 2+4~pc         & 14.4      & in prog. & JLab          &                  \\ \hline 
+PMT R5924              & 2+4~pc         & 16.4      & in prog. & JLab          &                  \\ \hline 
+Lab space              & 36 m$^2$       &           & in prog. & JLab          &                  \\ \hline
+DAQ  setup             & Table~\ref{table6}&        & in prog. & JLab          & +equip.          \\ \hline
+Setup-1                & 1~pc           & 1.0       & planned  & JLab          & singlet for      \\ 
+                       &                &           &          &               & $\sigma_t(B)$ test\\ \hline
+Setup-3                & 1~pc           & 7.5       & in prog. & JLab          & triplet for       \\
+                       &                &           &          &               & $\sigma(z,\theta)$ \\ \hline
+\multicolumn{6} {|l|} {Projects} \\ \hline
+Mag. Shield test       & $\sigma_{R2083}(B)$ &      & planned  & JLab,         & $B_{max}$=50 mT    \\
+with Setup-1           &                &           &          & KNU           &                    \\ \hline
+Mag.Shield test        & $\sigma_{H8500}(B)$ &      & planned  & JLab          & $B_{max}$=400 mT   \\
+ with Setup-1          &                &           &          &               &                    \\ \hline
+Resolution test        & $\sigma_{R2083}(z,\theta)$ & & planned & JLab,        & $\theta\pm40^\circ$ \\
+ with Setup-3          &                &           &          & KNU           & $z\pm25$ cm         \\ \hline
+Resolution test        & $\sigma_{H8500}(z,\theta)$ & & planned & JLab         & $\theta\pm40^\circ$ \\
+ with Setup-3          &                &           &          &               & $z\pm25$ cm        \\ \hline
+Resolution test        & $\sigma_{R5924}(z,\theta)$ & & planned & JLab, KNU    & $\theta\pm40^\circ$ \\
+ with Setup-3          &                &           &          &               & $z\pm25$ cm         \\ \hline
+Resolution test        & $\sigma_{R5924}(f)$        & & planned & JLab, KNU    & $f\approx1$MHz      \\
+ with Setup-3          &                &           &          &               & $z\pm25$ cm         \\ \hline
+Det. Sim.              & LG trans.      &           & planned  &               &           \\ \hline  
+Optical tests          & LG trans.      &           & in prog. & JLab          &           \\ \hline
+\end{tabular}
+\end{center}
+\caption{Research plans for the R2083/H8500 PMTs.  Setup-1: single counter 
+with two shielded PMTs attached directly to the scintillator.  Setup-3: 
+triplet of counters with two PMTs coupled to the scintillator via 1.5~m long 
+bent light guides. Approximate expenses are given for guidance.} 
+\label{table3}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Prototype with 39 mm Fine-Mesh PMTs} 
+
+\paragraph{Motivation:}  The contents of this project are listed in 
+Table~\ref{Table4}.  At a given distance from the light source, the 51-mm  
+PMTs, due to a higher solid angle, collect 3.6 times more light than the
+27-mm PMTs.  By the same reasoning, the 39-mm PMT collects twice as much light 
+as the 27-mm PMT.  Therefore, their time resolutions may be 2.0 and 1.44 
+times better, respectively.  
+
+\paragraph{Current Status and Future Plans:} 
+Unfortunately, Hamamatsu has discontinued its fine-mesh R6504 PMT with a 
+photocathode diameter of 51~mm, and they have no plans to make any more.
+However, the 39-mm PMTs are still available.  A quote on these devices
+was recently received from Hamamatsu.
+
+Although the R5924 PMT is an adequate replacement for the R6504 PMT, we 
+plan the following:
+
+\begin{enumerate}
+  \item purchase 6 39-mm fine-mesh photomultipliers; 
+  \item purchase from Plastic Craft 6 straight light guides, trapezoidal 
+        in cross section from the scintillator side, 0.7 to 0.8~m long, and
+        39~mm diameter.
+  \item purchase from EJ 3 scintillators, trapezoidal in cross section, 
+        0.66~m long;
+  \item assemble the triplet of counters instrumented with straight, 0.7-m  
+        long light guides;
+  \item perform time resolution measurements with cosmic rays and/or 
+        radioactive source at KNU.
+\end{enumerate}
+
+\paragraph{Expected Results:} 
+With such prototypes we will estimate the best possible time resolution of 
+the {\tt CTOF} detector with fine-mesh PMTs.  The total estimated time is
+2 to 3 months starting from the PMT delivery date.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|l|c|l|l|r|} \hline
+Component                   & Quantity       & Expenses  & Status   & Exec. Groups  & Comments                \\ 
+or Activity                 & or Goal        & (k\$)     &          &               &                 \\  \hline
+\multicolumn{6} {|l|} {Logistics} \\ \hline
+Pyramid LGs                 & 6~pc           & 2.6       & in prog. & JLab          & straight, 0.8 m long \\ 
+                            &                &           &          & Plastic Craft & no pitch             \\ \hline
+Scint. EJ200                & 3~pc           & 0.7       & done     & JLab          & trapezoid            \\ \hline
+VM2000 film                 & 1 m$^2$        & 0.38      & in prog. & JLab          & wrapping             \\ \hline
+PMT R5924-70                & 2+4~pc         & 15.0      & in prog. & JLab          &  + funds             \\ \hline
+Lab space                   & 36 $m^2$       &           & in prog. & JLab          &                      \\ \hline
+Magnet 1T                   &                &           & done     & JLab          & Solen (5T), PS (1T)  \\ 
+                            &                &           &          &               & Mini Torus(?)        \\ \hline
+Setup-1                     & 1~pc           & 1.0       & planned  & JLab          & singlet for          \\ 
+                            &                &           &          &               & $\sigma_t(B)$ test   \\ \hline
+Setup-3                     & 1~pc           & 7.5       & in prog. & JLab          & triplet for          \\
+                            &                &           &          &               & $\sigma(z,\theta)$   \\ \hline
+\multicolumn{6} {|l|} {Projects} \\ \hline
+Mag. Shield                 & $\sigma_{R5924}(B)$ &      & planned  & JLab          & $B_{max}$=600 mT     \\
+with Setup-1                &                &           &          & KNU           &                      \\ \hline
+Counting rate               & $\sigma_{R5924}(f)$ &      & planned  & JLab          & $f_{max}$=1 MHz      \\
+with Setup-1                &                &           &          & KNU           &                      \\ \hline
+Resolution                  & $\sigma_{R5924}(z,\theta)$ & & planned & JLab,        & $\theta\pm40^\circ$  \\
+with Setup-3                &                &           &          & KNU           & $z\pm25$ cm          \\ \hline
+\end{tabular}
+\end{center}
+\caption{Research plans for the R5924-70 PMTs.  Setup-1: single counter with 
+two unshielded PMTs attached directly to the scintillator. Setup-3: triplet 
+of counters with two PMTs coupled to the scintillator via straight 0.8-m long 
+light guides without pitch.}
+\label{Table4}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Prototype with Silicon PMTs for Timing and Calorimetry}
+
+\paragraph{Motivation:} 
+Hamamatsu Corporation is making rapid progress in the fabrication of silicon 
+photomultipliers (SiPMs), which are insensitive to magnetic fields.  The 
+S10362-11 series has an active area of 1~mm$^2$ and is available in three 
+pixel counts: 100, 400, and 1600.  The typical gain is $\approx$10$^6$.  The 
+peak photon detection efficiency at 400~nm ranges between 25\% and 70\%, 
+depending on the pixel pitch\footnote{These values were obtained via 
+measuring the output current normalized to the known light power. Thus, it 
+includes after pulses, cross talk, etc.}. 
+  
+At the current time, Hamamatsu is developing a SiPM with a 3$\times$3~mm$^2$ 
+sense area, and pilot samples are available for tests.  It may be available 
+in larger lots in 2008.  Such PMTs may be used for both timing and 
+calorimetry.  For this purpose, a space of 120 to 130~mm in radius is 
+reserved inside the {\tt CLAS12} solenoid for a future calorimeter/neutron
+detector.  Also the space for the readout communication lines is reserved.  
+  
+Due to the very high intrinsic noise of SiPMs\footnote{A common output 
+readout from the 3$\times$3~cm$^2$ scintillator requires 100 SiPMs with 100 
+times higher noise rates.} the most realistic way to implement them would
+be to attach a pair of such PMTs to a scintillating fiber of appropriate 
+cross section (3$\times$3~mm$^2$).  Thus, the amount of light may not be 
+enough for an accurate time measurement via double-sided readout.  Below we  
+estimate the number of primary avalanches, $n_{pa}$, and then $\sigma_{tof}$, 
+assuming that:
+
+\begin{equation}
+\sigma_{tof} \propto \frac{1}{\sqrt{n_{pa}}}.
+\end{equation}
+
+From our reference measurements we know that, in the R2083 PMT prototype with 
+Bicron-408 scintillators 50$\times$3$\times$2~$m^3$ in size, the number of
+ primary photoelectrons in the two PMTs is $\approx$700 for the minimum
+ionizing particles (MIPs) with a 3~cm range\footnote{As follows from our 
+CLAS notes, this number corresponds to $\sigma_{tof}\approx$40~ps.}.  This 
+value has to be scaled down by 10 times due to a correspondingly smaller 
+sensitive area, then doubled, due to the higher quantum efficiency of SiPMs
+(up to 50\% according to Hamamatsu specifications).  Thus, we obtain 
+$n_{pa}\approx 140$, which is an overestimated number of primary avalanches
+in two SiPMs.  The corresponding TOF resolution for a double-sided readout 
+yields $\sigma_{tof}\approx$90~ps.  Using 4 to 5 layers of Bicron-408 
+3$\times$3mm$^2$ fibers, we restore the TOF resolution to the desired value 
+of 50~ps.   
+
+Note that these results are in agreement with a direct estimation of $n_{pa}$
+via:
+
+\begin{equation}
+n_{pa}=n_{ph} \times t \times g \times a_{fib} \times g_{SiPM}=180,
+\end{equation}
+
+\noindent
+where $n_{ph}$=16000 photons per cm produced in BC-408, $t$=0.3~cm is the
+thickness of the fiber, $g$=0.5 is the experimental estimate for the 
+light attenuation in our scintillators,
+$a_{fib}=\frac{1}{2}\times(1-\cos\theta_{max})\approx0.15$ is the acceptance
+of the BC-408 fiber, and $g_{SiPM}$ is the effective quantum efficiency of 
+the SiPM $(\leq 0.5)$ at 420~nm. 
+
+Thus, a time resolution of $\approx$50~ns may be achieved with 10 layers 
+with a double-sided readout, provided that only the photon statistics limit 
+the time resolution.
+
+The central calorimeter/neutron detector may be a hollow, multi-layer 
+cylinder with a stereo angle between neighboring layers.  One layer will 
+have more than 500 3$\times$3mm$^2$ fibers.  Provided that 30 to 40 layers 
+form such a detector, a time resolution below 50~ps may be achieved.  
+However, up to 40000 readout channels will be required to instrument such a
+detector.   
+  
+The alternative solution of collecting the light from the 
+$\approx$30$\times$30~mm$^2$ surface of the scintillator will require a 
+complex assembly of 100 SiPMs with common readout.  For such a case, the 
+noise rate may be as high as $10^7$s$^{-1}$ per scintillating channel. 
+
+Our preliminary R\&D plan consists of the following steps:
+
+\begin{enumerate}
+  \item Develop a setup of 9 fibers with 18 SiPMs;    
+  \item Perform resolution tests with cosmic rays;
+  \item Perform SiPM life time tests.    
+\end{enumerate}
+
+\paragraph{Current Status:} Hamamatsu has been developing the 3mm SiPMs.
+
+\paragraph{Funding:} A listing of the costs associated with this R\&D
+plan are provided in Table~\ref{table5}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|l|c|r|} \hline
+Part & Amount& Price (k\$)                               \\ \hline 
+SiPM  3mm                   & 20 pc             &   2.0  \\ \hline
+Amplifier                   & 20 ch             &   6.0  \\ \hline
+Scintillating fibers        & 9  pc             &   0.2  \\ \hline
+Mechanical support          & 6  pc             &   1.0  \\ \hline
+\end{tabular}
+\end{center}
+\caption{{\tt CTOF} + calorimeter/neutron detector prototyping with SiPMs.}
+\label{table5}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Test Setup at JLab}
+
+\paragraph{Motivation:}
+The list of required components is given in Table~\ref{table6}.  This setup 
+is initially intended for the tests with the R2083/H8500/R5924 PMTs.  This
+setup will then be developed further from 3 counters to 50 counters in order 
+to create a test station for the final {\tt CTOF} detector.  The 
+assembling/testing period of about 1.5~years is required prior to the final 
+installation.  We emphasize that achieving $\sigma_{TOF}$=50~ps in the 
+environment of JLab is not a trivial task, even with successful tests at 
+outside labs.  As a third step, this setup will be included into the 
+{\tt CLAS12} DAQ system.
+
+Therefore, it would be reasonable to invest a part of the DAQ funds 
+into the test setup, keeping in mind that the most expensive equipment,
+such as VME crates and modules, high voltage power supplies, and readout
+boards will be utilized in {\tt CLAS12}.  In addition, we will gain 
+experience with the new readout electronics.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular}{|c|c|c|r|l|r|r|r|} \hline
+ Type  & Part                & Qnt.& Unit  & ($\$$)  & Cmnt. & Group\\ \hline
+NIM \\ \hline
+1      &  crate              &  2  & pc    &         &       &\\ \hline
+2      &  logic Unit         &  3  & slot  &         &       &\\ \hline
+3      &  Gate Generator     &  1  & slot  &         &       &\\ \hline
+4      &  scalar             &  1  & slot  &         &       &\\ \hline
+5      &  ORTEC  CF8000      &  1  & slot  & 8ch CFD &       &\\ \hline 
+6      &  ORTEC  935         &  2  & slot  & 4ch CFD &fast   &\\ \hline
+VME \\  \hline
+7      &  Crate              &  1  & pc    &         &       &\\ \hline
+8      &  host computer      &  1  & pc    &         &       &\\ \hline
+9      &  TDC  25ps          &  1  & slot  & avail.  &       &JLAB\\ \hline
+10     &  ADC  Gated         &  1  & slot  & avail.  &       &JLAB\\ \hline
+11     &  CAEN V812          &  1  & slot  & 16ch CFD&       &\\ \hline
+Conn.Cables\\  \hline
+12     &  LEMO  1m           & 60  & pc    &         &       &\\ \hline
+13     &  RG58  BNC          &  8  & pc    &         &       &\\ \hline
+14     &  SHV HV             &  8  & pc    &         &       &\\ \hline
+15     &  BNC-Lemo           & 10  & pc    &         &       &\\ \hline
+16     &  Lemo-Lemo, T-pc    & 10  & pc    &         &       &\\ \hline
+17     &  Lemo-Lemo, I-pc    & 10  & pc    &         &       &\\ \hline 
+Misc.Equip.\\ \hline
+18     & CAEN PS HV 3000V    &  8  & ch    & common MF &       &JLAB\\ \hline
+18     &Electr. Rack         &  3  & pc    &         & ok    &JLAB\\ \hline 
+20     &DAQ computer         &  1  & pc    &         &       &JLAB\\ \hline
+21     &Digital scope $\ge$250 MHz&  1  & pc    &         &       &JLAB \\ \hline
+\end{tabular}
+\end{center}
+\caption{{\tt CTOF} minimal test setup at JLab.}
+\label{table6}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
+
+\newpage
+\section{Further Possible Studies with Micro-Channel PMTs}
+
+\paragraph{Motivation:} Manufacturers (Burle) of the micro-channel plate 
+(MCP) PMTs are making progress in the design of these devices. This may 
+result in higher counting rates and higher magnetic field immunity.  Burle 
+is developing 5~$\mu$m and 10~$\mu$m MCP PMTs such as the 18-mm 85104
+with an increased quantum efficiency of 20-30\%.
+
+\begin{enumerate}
+  \item Develop a setup of 2 10 (5) micron MCP PMTs with on-board 
+        preamplifiers.    
+  \item Perform resolution/counting rate tests with 2 MCP PMTs.
+\end{enumerate}
+
+\paragraph{Current Status:} Preliminary discussions with the JLab Detector
+Group have taken place and a series of initial measurements have been
+carried out.  We plan to publish in NIM our recent results obtained with 
+Burle 85011 PMTs.  This paper will include a description of the on-board 
+preamplifier, resolution measurements, and the magnetic field tests performed 
+by the Detector Group.
+
+\paragraph{Labor:} 40 man-days for preamplifier/HV dividers by the  
+Detector Group.
+\paragraph{Equipment:} Electronic lab of JLab for preamplifier/HV dividers.
+\paragraph{Materials:} 2 MCP PMTs and HV components for the voltage dividers.
+\paragraph{Funding:} \$8000 (from Detector Group?) for 2 MCP PMTs and 
+electronic components.

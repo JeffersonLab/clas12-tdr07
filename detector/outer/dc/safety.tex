@@ -1,0 +1,215 @@
+\section{Drift Chamber Safety and Quality Assurance Issues}
+
+\subsection{Safety}
+There are safety issues in the construction, installation and operation
+phases of the CLAS12 drift chamber project which we address in this section.
+Table~\ref{dc-safety} briefly summarizes the issues and the mitigation
+strategies employed.
+Safety will be addressed from the start as an integral part of all activities and plans. All 
+of our workers will receive training prior to being permitted to perform any activities 
+requiring safety training.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c|c||} \hline \hline
+{\bf Operation} & {\bf Issue}     &  {\bf Mitigation} \\ \hline
+cleaning parts   & solvents & use of non-volatiles; masks \\ \hline
+box assembly & material handling, welding & standard procedures \\ \hline
+stringing & material handling & design overview, reviewed procedures \\ \hline
+installation & material handling & design overview, reviewed procedures \\ \hline
+gas delivery & flammability; ODH & non-flammable mixture, small lines \\ \hline
+gas delivery & over/under pressure & active controls, passive bubblers \\ \hline
+low-volatage power & over-heating & each line individually fused \\ \hline
+high-voltage power & shock & current-limited supplies, reviewed procedures \\ \hline
+routine operation & sparking & fast-trip supplies \\ \hline \hline
+repair $ material handling & design overview, reviewed procedures \\ \hline
+\end{tabular}
+\caption{\small{Safety issues in the CLAS12 drift chamber project.}}
+\label{dc-safety}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The only significant safety issues are in the construction, installation and
+operation of the chambers.  During the construction phase, we receive a number of
+machined parts from industry which must be cleaned thoroughly before assembly into
+a chamber.  Our anticipated cleaning strategy is to use safe, non-volatile cleaning
+agents which are friendly to the environment and to human health.  All of our
+activities are coordinated by written procedures which are reviewed by our safety
+staff at the lab.
+
+During construction of the chamber boxes we handle heavy metallic items and bolt
+or weld certain items.  All of these activities are handled by personnel with
+adequate safety training wearing suitable protective gear.  The design of all
+mechanical assemblies are reviewed by trained mechanical engineers and experiened
+technicians.
+
+During stringing of the chamber, the technicians and stringers work on elevated
+platforms.  The platform designs are reviewed in a similar fashion to the 
+chamber mechanical designs and all work is closely supervised by experienced 
+technicians.
+
+Operation of the chambers involves the use of a gas-handling system.  We use non-flammable
+gas mixtures delivered to the chambers at low pressure.  There are intermediate 
+storage tanks filled with gas at moderate (a few atmospheres) of pressure.  The 
+gas-mixing and delivery system will be the same as the present CLAS system with minor
+modifications, so we will continue to follow our present safety procedures which
+include some engineering controls in the gas-mixing shed to mitigate possible
+ODH conditions and extensive active and passive controls to mitigate over- and
+under-pressure conditions which could harm the drift chambers.
+
+
+The normal operation also involves delivery of low-voltage power to the on-chamber
+amplifiers.  Although the low voltage (less than 8 Volts) means that there is no
+electrocution hazard, there is a potential for over-heating and fire ignition because
+of the relatively high currents involved.  Each supply is capable of supplying up
+to 50 Amps of current.  Our mitigation strategy is to mot allow more than 3 Amps
+of current on any output line, enforced by the placement of individual fuses on
+every wire that leaves the supply. 
+
+The Hall B Drift Chamber Low Voltage (DCLV) supply and distribution system consists of 18 
+HP 6651A power supplies. Each power supply has a max current output of 8VDC and 50A of 
+current. The power supplies are connected to Hall Bs 120VAC clean power located in the 
+individual racks of the space frame which are protected by an electrical breaker panel. The 
+supplies have a 10A current limiting fuse for its own A.C. line protection. The DCLV system 
+supply DC power to the Drift Chamber Signal Translator Boards (STBs). The output voltage 
+can be set at the supply as well as a current limit. In Hall B the current limits are 
+individually set for each region/sector. The power is then supplied to the STBs via 
+distribution chassis. Each chassis is safety interlocked and contains 3 bus bars (Positive, 
+Negative, and Earth ground), of which the positive and negative are connected to the 
+individual STBs through current limiting fuses. The individual fuses provide the nominal 
+current draw plus 20% for transient spikes. The distribution system for region 3 was upgraded 
+in 2003 to provide segmentation of axial and stereo boards, thus reducing the damage of a 
+permanent short by half. The upgrade consisted of adding new power wires from the 
+distribution to the STBs and adding an additional break out chassis. The breakout chassis 
+provided individual fuses for the each side of the STB in front of the distribution fuse. 
+Each breakout fuse is rated for the nominal current draw of its respective channel on the STB 
+plus 40% for transient spikes.   In the event of a short on the chamber there is a written 
+procedure for changing out fuses located in the Hall B counting house and the Drift Chamber 
+expert manual. Monitoring of the supplies is done using a PC based LabView program from the 
+Hall B counting house.
+
+Operation also involves the delivery of high-voltage to the drift chamber wires.
+The operating voltages are between 1000 and 2000 Volts, depending on the section
+in question.  In all cases, the high voltage supplies are current-limited.  No
+channel can deliver more than 40 micro-Amperes of current.  Administrative procedures
+are in place to prevent accidental shocks from taking place.
+
+The Hall B Drift Chamber High Voltage (DCHV) system consists of 3 CAEN 527 supplies and each 
+containing up to 10 A934 (P/N) modules, distribution chassis, and software based monitoring 
+and control system. Each module is has a safety interlocked which controls the output of 
+power. The entire system has programmable firmware to set the current limit, voltage, and 
+ramp rate as well as system monitoring. The crate is connected to Hall Bs clean power system 
+and A.C. input power is fused at the chassis. The modules output high voltage to a 
+distribution system which consists of summation and distribution chassis for the areas of 
+the drift chamber. The current is limited to 20uA output from the modules. Monitoring and 
+control is done via the DCHV TCL/TK program which can be accessed using the CLON computer 
+system in the counting house and Hall B. The Drift Chamber Expert manual has operating 
+procedures for the software and procedures for troubleshooting and repair can be found in the 
+DC On-call manual.
+al.
+
+\subsection{Conformance with Jlab ES&H Manual}
+	
+	All activities will be analyzed in accordance with (IAW) JLAB ES&H Manual 
+Chapter 3210 - Hazard ID and Characterization http://www.jlab.org/ehs/manual/PDF/3210HazID.pdf  
+to identify any and all hazards associated with the work and any and all safety requirements 
+mandated.
+	All persons involved and all persons in the vicinity will be briefed on all potential 
+hazards involved in all activities IAW JLAB ES&H Manual Chapter 3220 - Hazard Communication - 
+http://www.jlab.org/ehs/manual/PDF/3220HazardCommunication.pdf
+	Standard operating procedures will be developed IAW JLAB ES&H Manual Chapter 3310 - 
+Standard Operating Procedures and Operational Safety Procedures - 
+http://www.jlab.org/ehs/manual/PDF/3310SOPsOSPs.pdf as all activities are considered low risk, 
+common, and routine in nature and are all fully covered by the  ES&H Manual. For example, 
+JLAB ES&H Manual Chapter 6120 - Hand and Power Tools -  
+http://www.jlab.org/ehs/manual/PDF/6120HandTools.pdf covers the use of tools, drills, etc 
+which will be used to fabricate the detectors.
+	Many operations will be performed around and in the vicinity of equipment and other 
+activities in close vicinities. All required safety practices as detailed in JLAB ES&H 
+Manual Chapter 6131 - Trip and Fall Protection -  
+http://www.jlab.org/ehs/manual/PDF/6131TripFall.pdf will be followed.
+	Much of the work will involve using ladders, work platforms, and scaffolds. 
+JLAB ES&H Manual Chapter 6132 - Ladders and Scaffolds - 
+http://www.jlab.org/ehs/manual/PDF/6132LaddersScaffolds.pdf will be followed at all times.
+	Many operations will involve material handling using cranes and hoists of varying 
+types. All such operations will be performed IAW JLAB ES&H Manual Chapter 6140 - 
+Cranes and Hoists - http://www.jlab.org/ehs/manual/PDF/6140Cranes.pdf . In addition, all 
+current Hall B techs have completed the Master Rigger course and each has a minimum of 
+10+ experience. 
+	Much of the installation will require frequent use of several types of aerial 
+work platforms. All such operations will be performed IAW JLAB ES&H Manual Chapter 6147  
+Aerial Work Platforms -  http://www.jlab.org/ehs/manual/PDF/6147AerialWorkPlatforms.pdf
+	Instrumenting, testing, and troubleshooting the detectors may require Class 1 Mode 1 
+and Class 1 Mode 2 limited testing and diagnostics and will be performed IAW
+ES&H Manual Chapter 6230 - Electronic Equipment Safety -  
+http://www.jlab.org/ehs/manual/PDF/6230ElectronicEquipment.pdf
+Work control documents and required approvals will be completed prior to performing any 
+CLAS 1 MODE 2 work.
+
+
+
+
+
+\subsection{Quality Assurance}
+	Quality Assurance begins before the procurement of components and detector 
+construction 
+and continues beyond detector installation and commissioning. Aside from the drift chambers, 
+it includes the associated high voltage system, low voltage system, gas system, and the actual 
+environment the detector lives in. There will be six identical units of each of three detector 
+regions for a total of 18 drift chambers. The challenge here will be to tightly control detector 
+fabrication, stringing, instrumentation, and testing while staying within the project's budget 
+and schedule. The following summary outlines some of the QA procedures that we will be 
+implementing.
+	The electronics components will be accepted from the vendor by the JLAB Fast Electronics 
+Group (FEG). The FEG will inspect, test, and clean all components in accordance with written 
+procedures that they will develop. All components will be sealed in anti-static bags and stored 
+in a proper environment until needed. Written certifications will be kept for all components.
+	The detector frame or box will be a mechanical assembly. This assembly will be built 
+on an alignment fixture. Precision positioning pins to locate reference points to the actual 
+wire positions will be one of the features of the fixture. The JLAB survey group will be 
+involved in this process from its inception. Each completed assembly will be surveyed to verify 
+it is within tolerance. The detector frame or box will then be cleaned before it enters the 
+clean room for final component assembly and stringing.
+	All of the components will be inspected and cleaned prior to use as it is critical for 
+maximizing detector lifetime. Written procedures will be followed and records will be kept to 
+identify the cleaning and inspection status of all components. Components will be stored in 
+sealed bags in the clean room where feasible.
+	The CLAS12 Drift Chambers will be strung in a clean room environment. Technicians will 
+wear clean room coats, gloves, shoe covers, and hair nets. Only clean gloves and clean tools 
+will come into contact with the detector and it's components. All technicians who work in the 
+clean room will be trained in proper clean room practices. Written cleaning procedures and 
+schedules will be developed to insure proper clean room maintenance. Supervisors will frequently 
+inspect all areas to verify proper practices are followed.
+	Written procedures will be developed from the prototype experience for all detector 
+assembly and stringing steps. Fabricators and stringers will be trained by experienced persons 
+in all required steps and procedures. They will be closely supervised to ensure compliance with 
+written procedures and to prevent any deviation from accepted practice. 
+	At the end of each stringing shift, the wires will be tested for proper tension using a 
+magnetic field and variable frequency oscillator. The frequency measured at the wires first 
+fundamental for that length wire will be used to determine the wires tension. Wires with out of 
+specification tension will be removed and new wires will be strung in their place. This test 
+also verifies proper continuity of the wire from pin to pin. It will also identify crossed or 
+twisted wires because those will show a decrease in signal amplitude.
+	The next tests are a redundant check for shorted or twisted wires missed during visual 
+inspection and tension testing. Prior to signal and high voltage board installation the Field 
+and Guard wire layers are wire wrapped, one side at a time, high voltage side first. Once the 
+high voltage side is wrapped, a multi-meter will be used to determine if there are any shorts 
+between layers or between and sense wires and the wire wrapped layers. A multi-meter will also 
+be used to determine shorts and twisted wires in the same layer by measuring the resistance of 
+each wire between the wire wrap side and the pin on the opposite side. Since wire lengths are 
+all known, the resistance of each wire is also known. Twisted wires will have much lower 
+resistance than would be expected from that length wire. The high voltage boards are installed 
+and connections are made. A multi meter is then used to measure the resistance between sense 
+layers. There should be infinite resistance between layers, any other result indicates a short 
+or twisted pair. The multi-meter is then used to measure the resistance from the signal side of 
+the wire to the high voltage bus. This should read ~ 1 mega ohm, which is the value of the 
+current-limiting resistor in the circuit. A reading of 0.5 mega ohms indicates a shorted or 
+twisted pair.
+	Final testing includes high a voltage test and cosmic ray tests before and then after 
+final cabling and patch panel installation. The detector will then be stored in a temperature 
+and humidity controlled area until installation. 
+	 
+
+

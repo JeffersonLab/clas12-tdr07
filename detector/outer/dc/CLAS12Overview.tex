@@ -1,0 +1,155 @@
+\section{Overview of the CLAS12 Detector}
+
+In Fig.~\ref{clas12} we show a CAD model picture of the proposed 
+{\tt CLAS12} detector highlighting each of the detector subsystems, 
+including the three forward-angle drift chambers, called Regions 1, 2, 
+and 3, as well as the central silicon vertex tracker.  
+Table~\ref{tracker-specs} provides a listing of the {\tt CLAS12} tracking 
+system design requirements.  {\tt CLAS12} is being designed to operate at 
+a luminosity of \1035.  This higher luminosity goal (the present {\tt CLAS} 
+detector operates at a maximum luminosity of 10$^{34}$~cm$^{-2}$s$^{-1}$) 
+necessitates the use of a solenoidal magnet and conical absorber to shield 
+the detector from M{\o}ller electrons.  To reduce interactions between this 
+solenoidal field and the main {\tt CLAS} toroidal field, and to facilitate 
+construction and installation of new detector elements, the torus has been 
+re-designed.  It is more compact than the present torus while providing 
+equivalent bending power for charged particles between 5$^{\circ}$ and 
+40$^{\circ}$.
+
+\vfil
+\eject
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{11.0cm}
+\special{psfile=clas12_system.eps hscale=70 vscale=70 hoffset=0 voffset=0}
+\caption{\small{A three-dimensional view of the proposed {\tt CLAS12} 
+detector highlighting the various subsystems.  The small inset on the left
+shows the same area highlighted by the dashed box on the right but with
+the solenoid removed to show the SVT system.}}
+\label{clas12}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c||} \hline \hline
+{\bf Category}      & {\bf Requirement} \\ \hline
+Angular coverage    & 5$^{\circ}$ - 135$^{\circ}$ \\ \hline
+Momentum resolution & 0.020 to 0.050~GeV          \\ \hline
+Angular resolution  & 1~mrad (electrons), few~mrads (hadrons) \\ \hline
+Luminosity     &  10$^{35}$~cm$^{-2}$s$^{-1}$ \\ \hline
+\end{tabular}
+\caption{\small{General specifications for {\tt CLAS12} tracking.}}
+\label{tracker-specs}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We have designed the tracking detectors with these external constraints: 
+a central solenoid of 5~T central field value and a radius available for 
+tracking detectors of 25~cm, a new torus with a different aspect ratio 
+but with the same number of amp-turns as the present {\tt CLAS} torus, 
+an expected background rate consistent with a luminosity of \1035, and a 
+separation between the ``forward'' and ``central'' regions defined to be 
+at about 40$^{\circ}$; specifically the forward tracking chambers are 
+designed to cover scattering angles between 5$^{\circ}$ and 40$^{\circ}$ 
+and the central tracker will cover 40$^{\circ}$ to 135$^{\circ}$.  Although 
+the torus cryostat will limit the azimuthal coverage to about 50\% at 
+5$^{\circ}$, our goal is that the inactive portion of the drift chambers 
+not further intrude into the active volume, i.e. the dead areas of the drift 
+chambers (endplates, electronics, etc.) will be located in the ``shadow'' 
+of the coil as viewed from the target. 
+
+The higher beam energies available to {\tt CLAS12} mean that tracks will 
+go more forward and have higher momentum than for the present {\tt CLAS} 
+experiments.  We thus require better resolution from the forward drift 
+chambers.  Table~\ref{dc-specs} summarizes the specifications for the
+forward tracking system.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[htbp]
+\begin{center}
+\begin{tabular} {||c|c||} \hline \hline
+{\bf Category}      & {\bf Requirement} \\ \hline
+Angular coverage    & 5$^{\circ}$ - 40$^{\circ}$ \\ \hline
+Azimuthal coverage & 50$^{\circ}$ of 2$\pi$ at 5$^{\circ}$ \\ \hline
+Momentum resolution & 1\%         \\ \hline
+Angular resolution ($\theta$)  & 1~mrad  \\ \hline
+Angular resolution (sin$\theta d\phi$)  & 2~mrad  \\ \hline
+Luminosity     &  10$^{35}$~cm$^{-2}$s$^{-1}$ \\ \hline
+\end{tabular}
+\caption{\small{Specifications for {\tt CLAS12} drift chamber system.}}
+\label{dc-specs}
+\end{center}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{6.5cm}
+\special{psfile=btoro1.ps hscale=50 vscale=40 hoffset=90 voffset=-5}
+\caption{\small{The integral of the B field times path length along
+rays from the target at various angles.}}
+\label{bdl}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Forward tracks (angles between 5$^{\circ}$ and 40$^{\circ}$) will be 
+momentum-analyzed by passing through the magnetic field of the torus.
+The magnet provides an integral Bdl of almost 3 T-m at 10$^{\circ}$, 
+falling to about 1 T-m at 30$^{\circ}$ (see Fig.~\ref{bdl}).  Such forward 
+tracks will first pass through six layers of a forward silicon vertex tracker 
+(FVT); a silicon strip tracker with a strip pitch of 150~$\mu$m arranged with 
+alternating $U$-$V$ stereo layers with a stereo angle of $\pm$9$^{\circ}$ 
+located about 20~cm from the target.  These tracks will then traverse the 
+high-threshold {\v C}erenkov counter (HTCC) before entering the Region 1 
+drift chamber at a distance of 2.1~m from the target.  The track continues 
+through the magnetic field region and its trajectory is measured in two 
+more drift chambers, denoted Regions 2 and 3, respectively.  The Region 2 
+and 3 chambers are located at 3.3 and 4.5~m from the target, respectively.  
+The FVT should localize hits with an estimated accuracy of about 40~$\mu$m 
+perpendicular to the strip direction, while the three regions of drift 
+chambers are expected to have spatial resolutions of about 200~$\mu$m per 
+layer.  The expected momentum resolution from such an assembly is a function 
+of angle, ranging from about 0.3\% at 5$^{\circ}$ to about 1.0\% at 
+30$^{\circ}$ and nearly constant as a function of momentum.  The angular 
+resolution falls rapidly with increasing momentum, but should be better than 
+2~mrad at a momentum of 1~GeV (see Section~\ref{simulation} on simulation for 
+details).
+
+The momentum and angular resolution goals for the central tracker are 
+mainly set by the requirement that we be able to positively identify a 
+single missing pion.  This translates into a 5\% fractional momentum 
+resolution for a central track with 1~GeV momentum.  A side-view of the 
+proposed {\tt CLAS12} detector (cut through the beamline) is shown in 
+Fig.~\ref{clas12side}.  A solenoidal magnet contains the target, the 
+central silicon vertex tracker (SVT), and the central time-of-flight 
+system (CTOF), as well as the M{\o}ller absorber.  Charged particles with 
+emission angles greater than 40$^{\circ}$ follow helical paths through the 
+8 layers of the SVT, which are arranged into four $U$-$V$ modules with 
+``$U$'' and ``$V$'' referring to strip orientations of $\pm$1.5$^{\circ}$, 
+respectively.  The time resolution of the CTOF ($\sim$200~ps) will enable 
+particle identification of the charged tracks, as well as allowing a very 
+efficient rejection of out-of-time accidentals.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{11.4cm}
+\special{psfile=clas12_sideview.eps hscale=60 vscale=60 hoffset=-15 voffset=350 angle=-90}
+\caption{\small{A side-view of the {\tt CLAS12} detector showing the
+different detector subsystems, and highlighting the central and forward
+vertex trackers and drift chambers.}}
+\label{clas12side}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Following the torus-drift chamber assembly is the forward detector,
+consisting of a low-threshold {\v C}erenkov counter (LTCC) for charged 
+hadron identification, the main time-of-flight (TOF) system, and the 
+pre-shower calorimeter (PCAL) and main electromagnetic calorimeter (EC).  
+The TOF is used to define the main event start time and to enhance charged 
+hadron identification, while the PCAL and EC are used for electron and
+photon detection.
+

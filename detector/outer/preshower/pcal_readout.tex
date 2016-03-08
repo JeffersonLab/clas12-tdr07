@@ -1,0 +1,51 @@
+\section{Signal Readout and Triggering}
+
+The electrical connections of the PCAL PMTs will be as follows: the
+voltage dividers for the PCAL PMTs will have high voltage (HV) as input and 
+the anode signal as an output.  Each PMT will be furnished with a separately 
+regulated HV power source.  The charge and the time of the anode signals for 
+each PMT will be measured using a flash ADC (FADC) and a multi-hit TDC (MTDC),
+respectively.  The PMT anode signal will be sent to a splitter through about 
+15~m of RG-58 cable, with approximately a $1:3$ split.  The larger portion 
+of the split, $\sim$75\%, will be sent to a discriminator input.  Outputs from 
+the discriminator will feed the MTDC and a scaler. The second output of the 
+splitter, $\sim$25\% of the signal, will go to the FADC.  The PCAL will be 
+included in the trigger system of {\tt CLAS12}.  The trigger signals from 
+the PCAL modules will be formed using the fast readout of the FADCs and the 
+FPGA programming of the mainframe controller.  This type of trigger 
+organization will allow for more sophisticated and robust trigger 
+configurations compared to the total energy sum trigger configuration that
+is available in the current {\tt CLAS} detector.  
+
+The energy uniformity of the calorimeter response is one of the important 
+aspects in the configuration of the trigger system.  The response of the 
+PCAL to electromagnetic energy deposited in the scintillator material across 
+the calorimeter front face depends upon several factors.  Assuming that the 
+same amount of energy deposited in the scintillator generates the same amount 
+of light in the scintillating fibers independent of the position across the
+calorimeter, the light attenuation along in the fiber remains the major
+factor that determines the PMT response for a given scintillator stack
+in the $U$, $V$, and $W$ views.  A typical light attenuation length for 
+green fibers is $L_0$ = 300 - 400~cm.  Depending upon the $X-Y$ position at 
+the calorimeter face, the light may travel up to nearly 500~cm before it
+reaches the photomultiplier.  Therefore, the signal may be attenuated by a 
+factor of $\sim$4 when reaching the PMT photo-cathode.  Therefore the
+response of the individual $U$, $V$, or $W$ stacks can vary by large factors,
+making the response highly non-uniform.  However, the triangular structure of 
+the PCAL with nearly equal side lengths, and with the scintillators oriented 
+approximately 120$^\circ$ relative to each other, reduces this non-uniformity 
+drastically when the signals from all strips are added together.  In fact, in 
+the case of linear attenuation, the sum of the signals from the $U$, $V$, and 
+$W$ strips is independent of the $X-Y$ position at the calorimeter face. 
+However, in a more realistic case, the signal drops like an exponential 
+function of the distance, i.e. $I(L) = I_0 \times \exp(-L/L_0)$, where $L$ is 
+the distance along the fiber from where the signal was generated.  Adding all 
+signals up will generate significantly higher sums ($\sim$40\%) at the
+edges and corners of the calorimeter than in the center.  While this effect 
+can be corrected in the offline analysis, it could, however, significantly 
+bias the calorimeter response towards lower energy deposition near the edges 
+when used in a total energy trigger.  To avoid this non-uniformity, the PCAL 
+response can be made more uniform by giving lower weight factors to the 
+shorter strips than to the longer strips in the trigger logic using the FADCs 
+and the FPGA programming.  The non-uniformity can be reduced to a few percent 
+across the entire PCAL face.  
