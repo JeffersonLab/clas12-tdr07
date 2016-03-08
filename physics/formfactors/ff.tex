@@ -1,0 +1,433 @@
+\chapter{Baryon Form Factors}
+\label{sec:title}
+
+\section{Introduction}
+\label{sec:intro}
+
+The structure of the nucleon is a defining problem for nuclear physics.  
+The most basic observables that reflect the composite nature of the 
+nucleon are its EM form factors (FFs).  Indeed, historically the first 
+direct indication that the nucleon is not elementary came from 
+measurements of these quantities in elastic $ep$ scattering~\cite{HOF}. 
+The elastic electric and magnetic FFs characterize the distributions of 
+charge and magnetization in the nucleon as a function of spatial resolving 
+power. The transition FFs reveal the nature of the excited states of the 
+nucleon.  Further, these quantities can be described and related to other 
+observables through the use of generalized parton distributions (GPDs).  
+Therefore, this topic connects strongly to other thrusts of the 12-GeV 
+program and is central to answering one of the questions in the DOE 
+Nuclear Physics Long Range Plan, `What is the structure of the nucleon?'
+\cite{scirev}.
+
+\section{Context and Motivation}
+\label{sec:motivation}
+
+The nucleon elastic FFs are defined via matrix elements of the EM current, 
+$J_{\mu} = \overline \psi \gamma_{\mu} \psi$, as:
+
+\begin{equation}
+\langle N(P') | J_{\mu}(0) | N(P) \rangle
+= \overline u(P')
+\left( \gamma_{\mu} F_1(Q^2)
+     + {i\sigma_{\mu\nu} q^{\nu} \over 2 M} F_2(Q^2)
+\right) u(P),
+\end{equation}
+
+\noindent
+where $P$ and $P'$ are the initial and final nucleon momenta, and 
+$q = P - P'$ is the 4-momentum transferred to the nucleon, with 
+$Q^2 = -q^2$.  The Sachs electric and magnetic FFs are defined in terms 
+of $F_1$ and $F_2$ as:
+\vskip -0.6cm
+\begin{eqnarray}
+G_E(Q^2) &=& F_1(Q^2) - (Q^2/4M^2)\ F_2(Q^2),	\\
+G_M(Q^2) &=& F_1(Q^2) + F_2(Q^2)\ .
+\end{eqnarray}
+\vskip -0.3cm
+\noindent
+EM transition FFs may be similarly defined.  In this case the final state 
+is no longer a nucleon, but rather may be a resonance state: 
+$\langle R(P') | J_{\mu}(0) | N(P) \rangle$.
+
+The elastic FFs at low $Q^2$ approximately follow a dipole form, 
+$G_D(Q^2) \propto 1/(1 + Q^2/Q_0^2)^2$, with $Q_0^2 \approx 0.71$~GeV$^2$.  
+This behavior can be qualitatively understood in a VMD picture where the 
+virtual photon interacts with the nucleon after fluctuation into a virtual 
+vector meson.  Deviations from this form have been observed (see 
+Fig~\ref{fig:ff_fig1}), and it is important to understand their nature.
+At asymptotically large $Q^2$, the elastic FFs can be described 
+in terms of perturbative QCD~\cite{LB}.  Here the short wavelength of the 
+highly virtual photon enables the quark substructure of the nucleon to be 
+cleanly resolved.
+
+Just where the perturbative behavior sets in is still an open question.
+Evidence from recent experiments at JLab and elsewhere suggests that 
+non-perturbative effects still dominate the FFs for $Q^2 < 10$~GeV$^2$.
+The $Q^2$ dependence of $G_E$ and $G_M$, which is expected to be the same 
+in perturbative QCD, is observed to be rather strong in the $G_E/G_M$ 
+ratio for the proton out to $Q^2 \approx 6$~GeV$^2$~\cite{GEMJL1,GEMJL2}.
+
+Understanding the transition from the low to high $Q^2$ regions is vital
+not just for determining the onset of perturbative behavior.  FFs 
+in the transition region are very sensitive to mechanisms of spin-flavor 
+symmetry breaking, which cannot be described {\em in principle} within 
+perturbation theory.  A classic example is the electric FF of the 
+neutron, $G_E^n$~\cite{GEN}, which is identically zero in a simple valence 
+quark picture, and whose non-zero value can only be understood in terms of
+non-perturbative mechanisms, such as the hyperfine interaction between
+quarks~\cite{IKS} or a pion cloud~\cite{THOMAS}.
+
+Theoretical guidance on the FFs in the transition region can
+be obtained from lattice QCD.  These calculations will have achieved a 
+high degree of accuracy by the time {\tt CLAS12} is taking data~\cite{LQCD}
+and challenging these fundamental calculations with high-precision data 
+for both the proton and the neutron out to high $Q^2$ will be an important 
+test.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{5.7cm}
+\special{psfile=../formfactors/gmn_highlight_plot.eps hscale=55 vscale=50 hoffset=85 voffset=-5}
+\caption{\small{The normalized elastic proton and neutron magnetic form
+factors (${G_M}_n/G_{D}\mu_n$, ${G_M}_p/G_{D}\mu_p$)~\cite{BOSTED95,chw1}. 
+The proton data have been shifted upward by 0.3 for clarity.  Note the lack 
+of high-quality data for the neutron at large $Q^2$.  The red circles are 
+preliminary results from the {\tt CLAS} E5 data set.  The dark green circles 
+are anticipated results for a 45-day {\tt CLAS12} measurement.}}
+\label{fig:ff_fig1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The $Q^2$ dependence of the nucleon elastic FFs reflects the dynamics of 
+the quark constituents in a region where confinement plays an important 
+role.  Because the EM current couples to the charged quark constituents, 
+one can decompose the FFs into a sum over the quark contributions 
+$G_{E,M}(Q^2) = \sum e_q\ G^{(q)}_{E,M}(Q^2)$, where $e_q$ is the quark 
+charge and the sum is over the valence quarks.  To determine 
+$G^{(q)}_{E,M}$ from each individual quark flavor requires measurement of 
+the FFs of both the proton and neutron. However, at present, precision 
+data at high $Q^2$ exists only for the proton (see Fig.~\ref{fig:ff_fig1}), 
+which extends beyond 30~GeV$^2$.  
+
+Recent work on GPDs has provided a unifying framework within which both 
+FFs and structure functions can be simultaneously embedded
+\cite{JI,Radyushkin:1997ki}.  
+GPDs hold the promise of providing a 3D image of the nucleon (two spatial, 
+one momentum), but require a variety of measurements.  The elastic and 
+transition FFs can be related to each other in dynamical quark models of 
+the nucleon, and more rigorously, in the large $N_C$ limit of QCD. 
+Therefore, within this new framework, they measure different combinations 
+of the same set of GPDs and provide an essential constraint on theory.  In 
+particular, the elastic FFs are related to the $0^{th}$ moments of the 
+GPDs, {\it e.g.} $H^q(x,\xi,t)$ is given by~\cite{JI}:
+
+\begin{equation}
+\int_{-1}^1 \sum_q H^q(x,\xi;t) dx = F_1(t),
+\end{equation}
+
+\noindent
+where $t$ is the momentum transfer, $x$ is the longitudinal momentum 
+fraction, $\xi$ is the skewness, and the sum is over the valence quarks.
+The various FF measurements accessible in {\tt CLAS12} are therefore 
+interrelated and can be interpreted within a unified analysis.  They 
+complement and support other deeply virtual exclusive reactions that 
+are part of the JLab 12-GeV program.
+
+From another perspective, the interplay between FFs and structure 
+functions is central to the phenomenon of quark-hadron duality
+\cite{BG,Niculescu:2000tk,RUJ,JU,JM}, and the transition from quark to 
+hadron degrees
+of freedom in QCD.  FFs obtained in exclusive reactions can be related 
+through local quark-hadron duality to deep-inelastic structure functions 
+measured in inclusive processes.  For elastic scattering, the FFs can be 
+used to predict the behavior of structure functions in the limit $x \to 1$
+\cite{BG,DY,WEST,MEL}, which is a difficult region to access experimentally.  
+For example, the $F_1$ structure function of the nucleon at large $Q^2$ 
+\cite{BG,MEL} is proportional to $dG_M^2(Q^2) / dQ^2$.  Conversely, from 
+data on structure functions at very large $x$, one can extract the elastic 
+FFs as a function of $Q^2$ and compare them directly with data
+\cite{Niculescu:2000tk,RUJ}.  One can similarly use quark-hadron duality 
+to study not 
+just the elastic case, but the entire spectrum of excited final states, 
+and more generally, the transition from resonance production to scaling in 
+deep-inelastic scattering~\cite{CM}.  
+
+Nucleon ground and excited states represent different eigenstates of the 
+Hamiltonian, therefore to understand the interactions behind nucleon 
+formation from the fundamental constituents, the structure of both the 
+ground and excited states should be studied. Nucleon resonances are clearly 
+seen in inelastic inclusive structure functions off nucleons.  Moreover, 
+the $Q^2$ evolution of the non-resonant parts of the inclusive structure 
+functions may be described reasonably well by QCD-based approaches
+\cite{Me05}, while the evolution of the $N^*$ excitation strength with 
+$Q^2$ strongly depends on the quantum numbers of the excited state
+\cite{Bur1}.  Therefore, $N^*$ states contain important 
+information on binding interactions, which is complementary to that 
+obtained from the studies of the ground state.  
+
+Obviously the data on the $Q^2$-evolution of $N^*$ electrocouplings offer 
+just phenomenological information.  Lattice simulations represent the most 
+straightforward way to relate this phenomenology to fundamental QCD. Lattice 
+studies of $N^*$ states are making steady progress 
+\cite{Ri05,Me03,Burc04,alexandrou03,alexandrou04}, and on the time scale for 
+the 12-GeV upgrade, we may expect lattice predictions for the $Q^2$-evolution 
+of the electrocouplings of the lightest $N^*$s in each partial wave. This is 
+an important goal in the current activity of the Theory Center at JLab.
+
+Recent QCD calculations on the lattice~\cite{ichie02} show evidence 
+for a ``Y-shape'' color-flux tube, indicating a genuine 3-body force 
+for baryons with stationary quarks as shown in Fig.~\ref{fig:mercedes}.
+This 3-body force is a unique feature of a 3-quark baryon system in QCD.
+Lattice simulations~\cite{Ta04} also relate the fundamental QCD Lagrangian 
+to quark confinement potentials, which are responsible for the formation 
+of the ground state and a variety of excited nucleon states, and determine 
+the behavior of the $N^*$ EM FFs as a function of $Q^2$.  These FFs may 
+be estimated in various models~\cite{Az90,Ca95,aiello98,CRob06,me02}, which 
+are potentially capable of relating them to the binding potential and 
+quark-quark interactions at various distance scales. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{5.1cm}
+\special{psfile=../formfactors/epsfigs/ichie_top.eps hscale=135 vscale=130 hoffset=40 voffset=-115}
+\caption{\small{Lattice QCD calculation of the 3D color-flux distribution 
+for a baryon. The calculation was carried out to study the abelian color-flux 
+distribution in a static 3-quark system. The ``Y-shape'' configuration is 
+evident, indicating the presence of a genuine 3-body force. The graph shows 
+high density at the quark locations and in the center. The $\Delta$-shaped 
+flux configuration, characteristic of 2-body forces, would have a depletion 
+in the center.}}
+\label{fig:mercedes}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The {\tt CLAS} $N^*$ program with energies up to 6~GeV has already 
+provided valuable data on resonance electrocouplings
+\cite{Bur1,Bu05}.  Further extension of this research with 
+{\tt CLAS12} in the $Q^2$ region up to 10~GeV$^2$ will open new 
+opportunities to study $N^*$ states at still unexplored distance scales, 
+where considerable contributions from the bare quark core are expected.
+
+Studies of {\tt CLAS} data on nucleon resonance transitions at increasingly 
+short distances have resulted in strong empirical evidence of large 
+meson-baryon dressing contributions to the resonance excitations at large 
+and medium distances. This is particularly evident in the region of the 
+$\gamma^*N\Delta$ transition where constituent quark models using point-like 
+$\gamma^*$-$q$ couplings are unable to explain the much larger strength of 
+the magnetic dipole transition from what is predicted from quark 
+contributions alone~\cite{Bur1}.
+
+The JLab Excited Baryon Analysis Center (EBAC) is developing an approach
+capable of evaluating contributions of meson-baryon dressings to $N^*$ 
+electrocouplings based on coupled-channels analyses of the world data 
+\cite{Lee06}.  Isolating hadronic dressing effects, we eventually get 
+information on bare quark core contributions.  Preliminary studies have 
+shown that these contributions become increasingly important as $Q^2$ 
+increases.
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{5.3cm}
+\special{psfile=../formfactors/epsfigs/asym_1.ps hscale=42 vscale=30 hoffset=115 voffset=-49}
+\caption{\small{Helicity amplitudes $A_{1/2}(Q^2)$ scaled by $Q^3$ for the 
+Roper $P_{11}(1440)$ (triangles), $S_{11}(1535)$ (circles), $D_{13}(1520)$ 
+(squares), and $F_{15}(1680)$ (stars). At the highest $Q^2$ the dependence is 
+consistent with a flat behavior.}}
+\label{fig:asym_1}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In Fig.~\ref{fig:asym_1} we show recent results from {\tt CLAS} data on 
+$\vec{e} p \rightarrow en\pi^+$ in terms of the leading, helicity-conserving 
+$A_{1/2}$ amplitudes to the excitation of the $P_{11}(1440)$, $D_{13}(1520)$, 
+$S_{11}(1535)$, and $F_{15}(1680)$.  The amplitudes are multiplied by $Q^3$, 
+the expected dependence for point-like coupling to the quarks.  The quantity 
+$Q^3 \cdot A_{1/2}(Q^2)$ is consistent with a constant for all resonances 
+above $Q^2$=3~GeV$^2$, an encouraging sign that a considerable contribution 
+from the bare quark core may be reached with the energy upgrade.
+
+This regime in $N^*$ excitations is governed by light front wave 
+functions (LFWFs)~\cite{Br04}. The data on $N^*$ electrocouplings at high 
+$Q^2$ enable us for the first time to access LFWFs for excited nucleon states. 
+Substantial progress has been made in calculations of LFWFs from first 
+principles in QCD, including lattice gauge theory~\cite{Del00}, transverse 
+lattice~\cite{MBu02}, and discretized light front quantization~\cite{Pa85}. 
+All of these developments offer promising avenues to relate data on $N^*$ 
+electrocouplings at high $Q^2$ to fundamental QCD.   
+
+The studies of $N^*$ electrocouplings at high $Q^2$ are of considerable
+interest for various 12-GeV upgrade research programs.  Data on $N^*$
+electrocouplings are needed in the studies of inclusive structure functions 
+at large $x_b$ for reliable treatment of resonant contributions. Credible 
+estimates of the resonant parts in various meson electroproduction amplitudes 
+at high $Q^2$ may allow us to extend GPD studies toward the $N^*$-excitation 
+region.
+
+\section{Form Factor Measurements}
+\label{sec:clas}
+
+The program we describe here is part of a broad assault on the nucleon
+elastic and transition FFs at JLab~\cite{chw1,GEMJL1,GEMJL2}.  All four 
+elastic FFs are needed to untangle the physics including the different 
+quark contributions.  In the upgraded {\tt CLAS12} we have proposed 
+measuring $G_M^n$ out to $Q^2$=13~GeV$^2$ using a ratio method described 
+below.  A proposal (PR12-07-104) for this experiment was approved by the 
+JLab PAC in 2007 \cite{PAC32}.  Another proposal to measure the ratio 
+$G_E^p/G_M^p$ in the upgraded Hall A (PR12-07-109) was also approved to 
+push our knowledge of $G_E^p$ out to $Q^2$=13~GeV$^2$~\cite{PAC32}.  There 
+are plans to measure $G_E^n$ in the upgraded Hall A out to $Q^2$=7.2~GeV$^2$ 
+and to explore the baryon transition FFs with {\tt CLAS12} and in Hall C.  
+The $N^*$ program in {\tt CLAS12} will measure the electrocouplings of 
+almost all the known $N^*$ states up to $Q^2$=10~GeV$^2$.  The {\tt CLAS12} 
+detector, coupled with the unprecedented quality of the upgraded CEBAF beam, 
+will be the only facility worldwide capable of accessing the $N^*$ transition 
+EM FFs in the unexplored domain of high $Q^2$, from 5 to 10~GeV$^2$.  
+
+\subsection{Nucleon Elastic Form Factors}
+\label{sec:elasff}
+
+The FF $G_M^n$ will be accessible out to $Q^2 \approx 13$~GeV$^2$
+(see Fig.~\ref{fig:ff_fig1}) by extending the method used in JLab 
+experiment E94-017~\cite{E94-017}.  An unpolarized cryogenic 
+liquid-deuterium target is employed as a ``neutron target'', and the 
+ratio of $e$-$n$ events to $e$-$p$ events off deuterium is measured.  A 
+cut on $W$ selects quasi-elastic (QE) kinematics, and in the conceptual 
+limit where the $n$ and $p$ are considered as free in the deuteron, 
+the $e$-$n$/$e$-$p$ ratio can be directly related to the free FFs of the 
+nucleons. Using the more accurately determined proton FFs and an estimate 
+of $G_E^n$, one extracts $G_M^n$ from the deuteron QE cross section.
+
+There are a number of factors that affect the accuracy of the measured
+$G_M^n$. While these are the same for low and high $Q^2$, their relative 
+importance changes. As long as $G_M^n$ is much larger than $G_E^n$, 
+uncertainty of the latter does not contribute significantly to the
+uncertainty in $G_M^n$. The proton FFs must be well known.  In QE 
+kinematics, corrections to the ratio due to the binding of the nucleons 
+within the deuteron will become increasingly smaller at high $Q^2$.  At 
+$Q^2 \approx 4$~GeV$^2$ the correction was found to be $\sim$0.2\%
+\cite{sj1,ha1,jlthesis}.
+
+The neutron detection efficiency, which must be known accurately in this 
+method, will be more stable at high $Q^2$.  The intrinsic detection 
+efficiency in the calorimeter reaches a nearly constant value for neutron 
+momenta above $\sim$1.75~GeV~\cite{jlthesis}.  The detection efficiency 
+was continuously monitored in E94-017 using a novel dual-cell 
+deuterium-hydrogen target which allowed two target cells to be 
+simultaneously in the beam.  The neutron detection efficiency was thereby 
+continuously measured using the exclusive reaction $p(e,e'\pi^+)n$ from 
+the proton target.  Our preliminary studies of this method in {\tt CLAS12} 
+are promising.  
+
+Two factors are expected to become more important at high $Q^2$.  The 
+first is the QE scattering rate becomes small relative to inelastic 
+processes nearby in the $W$ spectrum. The tails of these processes become 
+an important contamination beneath the region of QE scattering.  The 
+second effect is the kinematic broadening of the $W$ peak.  Taking these 
+two effects together will reduce the QE peak in the $W$ spectrum for 
+$Q^2>~8$~GeV$^2$, independent of experimental resolution.  Previous 
+measurements of $G_M^n$ at high $Q^2$, using inclusive electron scattering, 
+encountered this limitation~\cite{ROCK}.  These difficulties can be 
+overcome in {\tt CLAS12} using two types of cuts that do not introduce 
+bias into the ratio measurement. First, the angle between the virtual 
+photon and the detected nucleon is very small for QE kinematics. 
+Eliminating angles that are not consistent with the QE process removes 
+much of the inelastic background.  Second, the hermiticity of {\tt CLAS12}, 
+and its increased capability for detection of neutrals, means that events 
+with in-time charged particles that are inconsistent with QE scattering 
+can be vetoed with high efficiency, as can neutral hit pairs reconstructing 
+to the $\pi^0$ mass.  The events of interest can be separated from 
+inelastic events.  The expected quality of the measurements feasible is 
+seen in Fig.~\ref{fig:ff_fig1}. The errors are dominated by systematics 
+even at the highest $Q^2$ as a result of the increased luminosity limit 
+from the upgraded detectors. 
+
+\subsection{Electromagnetic Transition Form Factors}
+\label{sec:tranff}
+
+As the first step in the {\tt CLAS12} $N^*$ program, we plan to 
+determine in combined analysis of the single and double pion
+electroproduction, the electrocouplings for almost all well established 
+$N^*$ states at high $Q^2$ from 5 to 10~GeV$^2$. Together, $1\pi$ and
+$2\pi$ processes account for a major part of the total meson 
+electroproduction cross section in the $N^*$ excitation region. 
+Moreover, they are strongly coupled due to hadronic FSI~\cite{Mo06}. 
+Therefore, data on 1$\pi$ and 2$\pi$ production amplitudes are needed for 
+credible evaluation of $N^*$ electrocouplings in any meson electroproduction 
+channel.  Phenomenological studies have clearly shown that in both of these 
+major channels, the resonant/non-resonant amplitude ratio increases with 
+$Q^2$~\cite{Pr06}.
+
+The {\tt CLAS} Collaboration has already produced the most extensive,
+high quality data available for 1$\pi$ and 2$\pi$ electroproduction
+\cite{Bur1,Bu05}. Two phenomenological approaches
+\cite{Az03a,Az03b} were developed for extraction of the $N^*$ 
+electrocouplings from the single pion data.  In Ref.~\cite{Az03a} the 
+electrocouplings were determined based on almost model-independent 
+dispersion relations. The Unitary Isobar Model~\cite{Az03b} enables a 
+good description of all multipoles with $l<4$ up to $W$=2.0~GeV. In 
+Fig.~\ref{fig:p11d13states} we present the $P_{11}(1440)$ and 
+$D_{13}(1520)$ electrocouplings for the first time determined from 
+{\tt CLAS} data on single pion electroproduction. It was shown in 
+Ref.~\cite{Pr06}, that the approaches of Refs.~\cite{Az03a,Az03b} may 
+be extended for analysis of the data at high $Q^2$ available with an 
+11~GeV beam.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[ht]
+\vspace{6.0cm}
+\special{psfile=../formfactors/epsfigs/p11_1440.eps hscale=38 vscale=31 hoffset=40 voffset=0} 
+\special{psfile=../formfactors/epsfigs/d13_1520.eps hscale=38 vscale=31 hoffset=235 voffset=0} 
+\caption{\small{Helicity amplitudes for the $P_{11}(1440)$ (left) and  
+$D_{13}(1520)$ (right) states from analysis of {\tt CLAS} $1\pi$ (red 
+points) and $2\pi$ (blue points) data. Also shown are the combined 
+1$\pi$/2$\pi$ data at $Q^2$=0.65~GeV$^2$ (magenta points). The PDG
+photocouplings are in black.}}
+\label{fig:p11d13states}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The measurements of the $\pi^+\pi^-p$ exclusive channel with {\tt CLAS}  
+provided for the first time an entire set of unpolarized single-differential 
+cross sections, and consisted of 9 single-differential cross sections in each 
+($W$,$Q^2$) bin ~\cite{Mo06,clas3pi}.  The JLab-MSU collaboration has 
+developed~\cite{Mo06,Bu04} a phenomenological model (JM06) with tree-diagram 
+mechanisms and additional phenomenological terms to analyze $\pi^+\pi^-p$ 
+electroproduction data sets from the available world data. Several new 
+mechanisms were established for the first time. A reasonable description 
+of the {\tt CLAS} and world data was achieved. $P_{11}(1440)$ and 
+$D_{13}(1520)$ electrocouplings determined from analysis of recent {\tt CLAS} 
+2$\pi$ data are shown in Fig.~\ref{fig:p11d13states}.  They are consistent 
+with those extracted from the $1\pi$ data, as well as with those obtained in 
+combined 1$\pi$/2$\pi$  analysis~\cite{Az05}.  Analysis of the data on 
+2$\pi$ electroproduction allowed us for the first time to obtain accurate 
+information on electrocouplings for several high-lying states, which decay 
+preferably with 2$\pi$ emission.  The JM06 approach may be used for the 
+evaluation of $N^*$ electrocouplings in still unexplored areas of high $Q^2$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[htbp]
+\vspace{6.0cm}
+\special{psfile=../formfactors/epsfigs/d13_high.epsi hscale=37 vscale=30 hoffset=40 voffset=-40}
+\special{psfile=../formfactors/epsfigs/f15_high.epsi hscale=37 vscale=30 hoffset=225 voffset=-40} 
+\caption{\small{Projected $A_{1/2}$ electrocouplings for the $D_{13}(1520)$
+and $F_{15}(1685)$ states (open circles) expected from {\tt CLAS12} 
+1$\pi$/2$\pi$ data.  Preliminary results from {\tt CLAS} 1$\pi$ data (blue) 
+and combined 1$\pi$/2$\pi$ analysis at $Q^2$=0.65~GeV$^2$~\cite{Az05} (red) 
+are shown. Previous world data are shown in black.}}
+\label{fig:f15projection}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A combined fit of all observables in 1$\pi$/2$\pi$ exclusive channels within 
+the framework of a coupled-channels formalism would enable us to determine 
+the most reliable data on $N^*$ electrocouplings.  We are going to carry out 
+a coupled-channels analysis within the framework of the most advanced 
+approach~\cite{Lee06}, for the first time fully accounting for FSI complexity 
+both in the 2-body and 3-body final states.
+
+Extensive simulation of $1\pi$ and $2\pi$ electroproduction measurements 
+with {\tt CLAS12} were carried out in Ref.~\cite{Pr06}. It was found that 
+a 60-day measurement would provide observables of the same or better 
+quality than those measured with the {\tt CLAS} detector at lower photon
+virtuality. The expected $A_{1/2}$ electrocouplings for the $D_{13}(1520)$ 
+and $F_{15}(1685)$ states are shown in Fig.~\ref{fig:f15projection}.

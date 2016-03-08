@@ -1,0 +1,187 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=latex 2006.1.30)  2 JAN 2007 16:36
+**master_strucfunc.tex
+(master_strucfunc.tex
+LaTeX2e <2001/06/01>
+Babel <v3.7h> and hyphenation patterns for american, french, german, ngerman, i
+talian, nohyphenation, loaded.
+(/usr/share/texmf/tex/latex/base/book.cls
+Document Class: book 2001/04/21 v1.4e Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/bk12.clo
+File: bk12.clo 2001/04/21 v1.4e Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2001/07/07 v1.0n Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+\epsfxsize=\dimen105
+\epsfysize=\dimen106
+)
+(/usr/share/texmf/tex/plain/dvips/epsf.tex
+This is `epsf.tex' v2.7k <10 July 1997>
+\epsffilein=\read1
+\epsfframemargin=\dimen107
+\epsfframethickness=\dimen108
+\epsfrsize=\dimen109
+\epsftmp=\dimen110
+\epsftsize=\dimen111
+\epsfxsize=\dimen112
+\epsfysize=\dimen113
+\pspoints=\dimen114
+\epsfnoopenhelp=\toks15
+) (/usr/share/texmf/tex/latex/graphics/color.sty
+Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
+
+(/usr/share/texmf/tex/latex/config/color.cfg)
+Package color Info: Driver file: dvips.def on input line 125.
+
+(/usr/share/texmf/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+(/usr/share/texmf/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+(/usr/share/texmf/tex/latex/tools/longtable.sty
+Package: longtable 2000/10/22 v4.10 Multi-page Table package (DPC)
+\LTleft=\skip43
+\LTright=\skip44
+\LTpre=\skip45
+\LTpost=\skip46
+\LTchunksize=\count88
+\LTcapwidth=\dimen115
+\LT@head=\box26
+\LT@firsthead=\box27
+\LT@foot=\box28
+\LT@lastfoot=\box29
+\LT@cols=\count89
+\LT@rows=\count90
+\c@LT@tables=\count91
+\c@LT@chunks=\count92
+\LT@p@ftn=\toks16
+) (master_strucfunc.aux)
+\openout1 = `master_strucfunc.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+
+(../strucfunc/F2A1.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 4.
+File: largex.eps Graphic file (type eps)
+ <largex.eps>
+File: ddod99117.eps Graphic file (type eps)
+ <ddod99117.eps>)
+(../strucfunc/xpctdlargex.tex
+File: bonus_12_xpctd.eps Graphic file (type eps)
+ <bonus_12_xpctd.eps> [1
+
+]
+File: A1_xpctd.eps Graphic file (type eps)
+ <A1_xpctd.eps>
+File: ddod_xpctd.eps Graphic file (type eps)
+
+<ddod_xpctd.eps>
+Overfull \hbox (17.46393pt too wide) in paragraph at lines 67--68
+[][] 
+ []
+
+) (../strucfunc/pdf.tex [2]
+File: Delu_LSS.eps Graphic file (type eps)
+ <Delu_LSS.eps>
+File: Deld_LSS.eps Graphic file (type eps)
+ <Deld_LSS.eps>
+File: Delg_LSS.eps Graphic file (type eps)
+ <Delg_LSS.eps>
+File: Dels_LSS.eps Graphic file (type eps)
+
+<Dels_LSS.eps>) (../strucfunc/Moments.tex [3] [4] [5] [6] [7]
+File: ../strucfunc/fig_moments.ps Graphic file (type eps)
+
+<../strucfunc/fig_moments.ps>
+File: alpha_s.epsi Graphic file (type eps)
+ <alpha_s.epsi>
+Underfull \hbox (badness 1360) in paragraph at lines 165--165
+\OT1/cmr/m/n/12 QCD cou-pling con-
+ []
+
+) (../strucfunc/duality.tex
+Overfull \hbox (8.91978pt too wide) in paragraph at lines 4--29
+ \OT1/cmr/bx/n/12 Quark-hadron du-al-ity[] \OT1/cmr/m/n/12 The phe-nomenon of q
+uark-hadron du-al-ity re-lates the physics
+ []
+
+[8]) [9] [10
+
+] (../strucfunc/bibl.tex [11]
+Underfull \hbox (badness 10000) in paragraph at lines 133--135
+[]\OT1/cmr/m/n/12 K. Hel-bing. Talk given at the GDH04 sym-po-sium.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
+[]\OT1/cmr/m/n/12 SLAC ex-per-i-ment E159. P. Bosted and D. Crabb spokesper-son
+s.
+ []
+
+) [12] (master_strucfunc.aux) ) 
+Here is how much of TeX's memory you used:
+ 1035 strings out of 20880
+ 12133 string characters out of 197306
+ 61112 words of memory out of 350001
+ 3990 multiletter control sequences out of 10000+15000
+ 9208 words of font info for 32 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 32i,8n,21p,954b,478s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on master_strucfunc.dvi (12 pages, 31844 bytes).

@@ -1,0 +1,161 @@
+%
+\documentclass[12pt]{article}
+%\documentclass[12pt]{book}
+\bibliographystyle{elsevier}
+\usepackage{epsfig}
+\usepackage{bm}
+\usepackage{fancyhdr}
+\input epsf
+\usepackage[dvips]{color}
+\usepackage{lscape}
+\usepackage{longtable}
+%
+\topmargin -0.3in
+\headheight 0.0in
+\headsep 0.5in
+\textheight 9.4in
+\oddsidemargin -.0in
+\evensidemargin -.0in
+\textwidth 6.6in
+\renewcommand{\baselinestretch}{1.4}
+%
+\def\beqn{\begin{eqnarray}}
+\def\eeqn{\end{eqnarray}}
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+%
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\zh}{z}
+\newcommand{\xbj}{x_{\scriptscriptstyle B}}
+%
+\newcommand{\Epgb}{$\vec ep~\rightarrow~ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Epgl}{$\vec e\vec p~\rightarrow~ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Epgt}{$ep^T~\rightarrow~ep(p,\Delta, N^*)\gamma~$}
+\newcommand{\Thgg}{$\theta_{\gamma^*\gamma}~$}
+\newcommand{\Phgg}{$\phi_{\gamma^*\gamma}~$}
+\newcommand{\Epg}{$ep~\rightarrow~ep\gamma~$}
+\newcommand{\Eppiz}{$ep~\rightarrow~ep\pi^0~$}
+\newcommand{\Enpip}{$ep~\rightarrow~en\pi^+~$}
+\newcommand{\EppiD}{$ep~\rightarrow~e\pi \Delta~$}
+\newcommand{\Epeta}{$ep~\rightarrow~ep\eta~$}
+\newcommand{\Epr}{$ep~\rightarrow~ep\rho~$}
+\newcommand{\EpX}{$ep\rightarrow epX~$}
+\newcommand{\EpKY}{$ep~\rightarrow~eKY~$}
+\newcommand{\vEpg}{$\vec ep~\rightarrow~ep\gamma~$}
+\newcommand{\xidef}{$\xi=x_B\frac{1+\frac{Delta^2}{2Q^2}}{2-x_B+x_B\frac{Delta^2}{2Q^2}}$}
+\def\gevc2{(GeV/c)$^2$}
+\newcommand{\EpgX}{$ep~\rightarrow~ep\gamma X~$}
+\newcommand{\bfk}{\mbox{\boldmath $k$}}
+\newcommand{\bfP}{\mbox{\boldmath $P$}}
+\newcommand{\bfp}{\mbox{\boldmath $p$}}
+\def\VEC#1{\hbox{\boldmath$#1$\unboldmath}}
+\def\Vec#1{{\bf #1}}
+\def\slash{/\!\!\!}
+\def\one{1 \!\! 1}
+\def\D{{\mathrm d}}
+\def\E{{\mathrm e}}
+\def\I{{\mathrm i}}
+\renewcommand{\baselinestretch}{1.4} 
+\title{The {\tt CLAS12} Physics Program \\[0.3ex]
+Studies of Nucleon Structure}
+
+%\author{.........}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+\date{\today}
+\begin{document}
+\thispagestyle{empty}
+
+\pagenumbering{arabic}    
+\maketitle
+\vspace{2cm}
+    
+\thispagestyle{empty}
+\pagenumbering{arabic}    
+
+\newpage
+\tableofcontents
+\newpage
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-1.0cm}}
+\fancyhead[l]{\mbox{\bfseries CLAS12 Physics}}
+\fancyhead[r]{\mbox{\bfseries Version 1.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Physics}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+%%%\pagestyle{myheading}
+
+
+%
+
+\newpage
+
+\fancypagestyle{myheading}{%                % Redefining plain style
+\fancyhf{} % clear all header and footer fields
+\fancyhead[C]{\vspace{0.5cm}\line(1,0){500}\vspace{-0.5cm}}
+\fancyhead[l]{\mbox{\bfseries The CLAS12 Physics Program}}
+\fancyhead[r]{\mbox{\bfseries Version 1.1  \date{\today}}}
+\fancyfoot[C]{\mbox{\bfseries  \thepage }}
+\fancyfoot[r]{\mbox{\bfseries Physics Program}}
+\fancyfoot[l]{\vspace{-1cm}\line(1,0){500}}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\pagestyle{myheading}
+\vspace{5cm}
+\input{executive_summary.tex}
+
+\input{../der/der.tex}
+\input{../der/trans-target.tex}
+\input{../der/derconc.tex}
+%
+\input{../strucfunc/F2A1.tex}
+\input{../strucfunc/xpctdlargex.tex}
+\input{../strucfunc/pdf.tex} 
+\input{../strucfunc/Moments.tex}
+\input{../strucfunc/duality.tex}
+%
+\input{../sidis/sidis.tex}
+\input{../nuclear/nuclear.tex}
+\input{../Spectroscopy/spec.tex}
+\input{../formfactors/ff.tex}
+%
+
+\vfil
+\eject
+
+\bibliography{../der/der,../strucfunc/strucfunc,../sidis/sidis,../nuclear/nucl_ref,../formfactors/ff_ref,../Spectroscopy/spec_ref}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

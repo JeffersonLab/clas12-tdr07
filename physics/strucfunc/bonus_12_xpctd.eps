@@ -1,0 +1,1464 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: bonus_12_xpctd.eps
+%%Creator: fig2dev Version 3.2 Patchlevel 3d
+%%CreationDate: Wed Jan  3 09:32:59 2007
+%%For: deurpam@ifarml3.jlab.org (Alexandre Deur)
+%%BoundingBox: 0 0 996 497
+%%Magnification: 1.0000
+%%EndComments
+/MyAppDict 100 dict dup begin def
+/$F2psDict 200 dict def
+$F2psDict begin
+$F2psDict /mtrx matrix put
+/col-1 {0 setgray} bind def
+/col0 {0.000 0.000 0.000 srgb} bind def
+/col1 {0.000 0.000 1.000 srgb} bind def
+/col2 {0.000 1.000 0.000 srgb} bind def
+/col3 {0.000 1.000 1.000 srgb} bind def
+/col4 {1.000 0.000 0.000 srgb} bind def
+/col5 {1.000 0.000 1.000 srgb} bind def
+/col6 {1.000 1.000 0.000 srgb} bind def
+/col7 {1.000 1.000 1.000 srgb} bind def
+/col8 {0.000 0.000 0.560 srgb} bind def
+/col9 {0.000 0.000 0.690 srgb} bind def
+/col10 {0.000 0.000 0.820 srgb} bind def
+/col11 {0.530 0.810 1.000 srgb} bind def
+/col12 {0.000 0.560 0.000 srgb} bind def
+/col13 {0.000 0.690 0.000 srgb} bind def
+/col14 {0.000 0.820 0.000 srgb} bind def
+/col15 {0.000 0.560 0.560 srgb} bind def
+/col16 {0.000 0.690 0.690 srgb} bind def
+/col17 {0.000 0.820 0.820 srgb} bind def
+/col18 {0.560 0.000 0.000 srgb} bind def
+/col19 {0.690 0.000 0.000 srgb} bind def
+/col20 {0.820 0.000 0.000 srgb} bind def
+/col21 {0.560 0.000 0.560 srgb} bind def
+/col22 {0.690 0.000 0.690 srgb} bind def
+/col23 {0.820 0.000 0.820 srgb} bind def
+/col24 {0.500 0.190 0.000 srgb} bind def
+/col25 {0.630 0.250 0.000 srgb} bind def
+/col26 {0.750 0.380 0.000 srgb} bind def
+/col27 {1.000 0.500 0.500 srgb} bind def
+/col28 {1.000 0.630 0.630 srgb} bind def
+/col29 {1.000 0.750 0.750 srgb} bind def
+/col30 {1.000 0.880 0.880 srgb} bind def
+/col31 {1.000 0.840 0.000 srgb} bind def
+
+end
+save
+newpath 0 497 moveto 0 0 lineto 996 0 lineto 996 497 lineto closepath clip newpath
+-75.8 675.7 translate
+1 -1 scale
+
+% This junk string is used by the show operators
+/PATsstr 1 string def
+/PATawidthshow { 	% cx cy cchar rx ry string
+  % Loop over each character in the string
+  {  % cx cy cchar rx ry char
+    % Show the character
+    dup				% cx cy cchar rx ry char char
+    PATsstr dup 0 4 -1 roll put	% cx cy cchar rx ry char (char)
+    false charpath		% cx cy cchar rx ry char
+    /clip load PATdraw
+    % Move past the character (charpath modified the
+    % current point)
+    currentpoint			% cx cy cchar rx ry char x y
+    newpath
+    moveto			% cx cy cchar rx ry char
+    % Reposition by cx,cy if the character in the string is cchar
+    3 index eq {			% cx cy cchar rx ry
+      4 index 4 index rmoveto
+    } if
+    % Reposition all characters by rx ry
+    2 copy rmoveto		% cx cy cchar rx ry
+  } forall
+  pop pop pop pop pop		% -
+  currentpoint
+  newpath
+  moveto
+} bind def
+/PATcg {
+  7 dict dup begin
+    /lw currentlinewidth def
+    /lc currentlinecap def
+    /lj currentlinejoin def
+    /ml currentmiterlimit def
+    /ds [ currentdash ] def
+    /cc [ currentrgbcolor ] def
+    /cm matrix currentmatrix def
+  end
+} bind def
+% PATdraw - calculates the boundaries of the object and
+% fills it with the current pattern
+/PATdraw {			% proc
+  save exch
+    PATpcalc			% proc nw nh px py
+    5 -1 roll exec		% nw nh px py
+    newpath
+    PATfill			% -
+  restore
+} bind def
+% PATfill - performs the tiling for the shape
+/PATfill { % nw nh px py PATfill -
+  PATDict /CurrentPattern get dup begin
+    setfont
+    % Set the coordinate system to Pattern Space
+    PatternGState PATsg
+    % Set the color for uncolored pattezns
+    PaintType 2 eq { PATDict /PColor get PATsc } if
+    % Create the string for showing
+    3 index string		% nw nh px py str
+    % Loop for each of the pattern sources
+    0 1 Multi 1 sub {		% nw nh px py str source
+	% Move to the starting location
+	3 index 3 index		% nw nh px py str source px py
+	moveto			% nw nh px py str source
+	% For multiple sources, set the appropriate color
+	Multi 1 ne { dup PC exch get PATsc } if
+	% Set the appropriate string for the source
+	0 1 7 index 1 sub { 2 index exch 2 index put } for pop
+	% Loop over the number of vertical cells
+	3 index 		% nw nh px py str nh
+	{			% nw nh px py str
+	  currentpoint		% nw nh px py str cx cy
+	  2 index oldshow	% nw nh px py str cx cy
+	  YStep add moveto	% nw nh px py str
+	} repeat		% nw nh px py str
+    } for
+    5 { pop } repeat
+  end
+} bind def
+
+% PATkshow - kshow with the current pattezn
+/PATkshow {			% proc string
+  exch bind			% string proc
+  1 index 0 get			% string proc char
+  % Loop over all but the last character in the string
+  0 1 4 index length 2 sub {
+				% string proc char idx
+    % Find the n+1th character in the string
+    3 index exch 1 add get	% string proe char char+1
+    exch 2 copy			% strinq proc char+1 char char+1 char
+    % Now show the nth character
+    PATsstr dup 0 4 -1 roll put	% string proc chr+1 chr chr+1 (chr)
+    false charpath		% string proc char+1 char char+1
+    /clip load PATdraw
+    % Move past the character (charpath modified the current point)
+    currentpoint newpath moveto
+    % Execute the user proc (should consume char and char+1)
+    mark 3 1 roll		% string proc char+1 mark char char+1
+    4 index exec		% string proc char+1 mark...
+    cleartomark			% string proc char+1
+  } for
+  % Now display the last character
+  PATsstr dup 0 4 -1 roll put	% string proc (char+1)
+  false charpath		% string proc
+  /clip load PATdraw
+  neewath
+  pop pop			% -
+} bind def
+% PATmp - the makepattern equivalent
+/PATmp {			% patdict patmtx PATmp patinstance
+  exch dup length 7 add		% We will add 6 new entries plus 1 FID
+  dict copy			% Create a new dictionary
+  begin
+    % Matrix to install when painting the pattern
+    TilingType PATtcalc
+    /PatternGState PATcg def
+    PatternGState /cm 3 -1 roll put
+    % Check for multi pattern sources (Level 1 fast color patterns)
+    currentdict /Multi known not { /Multi 1 def } if
+    % Font dictionary definitions
+    /FontType 3 def
+    % Create a dummy encoding vector
+    /Encoding 256 array def
+    3 string 0 1 255 {
+      Encoding exch dup 3 index cvs cvn put } for pop
+    /FontMatrix matrix def
+    /FontBBox BBox def
+    /BuildChar {
+	mark 3 1 roll		% mark dict char
+	exch begin
+	Multi 1 ne {PaintData exch get}{pop} ifelse  % mark [paintdata]
+	  PaintType 2 eq Multi 1 ne or
+	  { XStep 0 FontBBox aload pop setcachedevice }
+	  { XStep 0 setcharwidth } ifelse
+	  currentdict		% mark [paintdata] dict
+	  /PaintProc load	% mark [paintdata] dict paintproc
+	end
+	gsave
+	  false PATredef exec true PATredef
+	grestore
+	cleartomark		% -
+    } bind def
+    currentdict
+  end				% newdict
+  /foo exch			% /foo newlict
+  definefont			% newfont
+} bind def
+% PATpcalc - calculates the starting point and width/height
+% of the tile fill for the shape
+/PATpcalc {	% - PATpcalc nw nh px py
+  PATDict /CurrentPattern get begin
+    gsave
+	% Set up the coordinate system to Pattern Space
+	% and lock down pattern
+	PatternGState /cm get setmatrix
+	BBox aload pop pop pop translate
+	% Determine the bounding box of the shape
+	pathbbox			% llx lly urx ury
+    grestore
+    % Determine (nw, nh) the # of cells to paint width and height
+    PatHeight div ceiling		% llx lly urx qh
+    4 1 roll				% qh llx lly urx
+    PatWidth div ceiling		% qh llx lly qw
+    4 1 roll				% qw qh llx lly
+    PatHeight div floor			% qw qh llx ph
+    4 1 roll				% ph qw qh llx
+    PatWidth div floor			% ph qw qh pw
+    4 1 roll				% pw ph qw qh
+    2 index sub cvi abs			% pw ph qs qh-ph
+    exch 3 index sub cvi abs exch	% pw ph nw=qw-pw nh=qh-ph
+    % Determine the starting point of the pattern fill
+    %(px, py)
+    4 2 roll				% nw nh pw ph
+    PatHeight mul			% nw nh pw py
+    exch				% nw nh py pw
+    PatWidth mul exch			% nw nh px py
+  end
+} bind def
+
+% Save the original routines so that we can use them later on
+/oldfill	/fill load def
+/oldeofill	/eofill load def
+/oldstroke	/stroke load def
+/oldshow	/show load def
+/oldashow	/ashow load def
+/oldwidthshow	/widthshow load def
+/oldawidthshow	/awidthshow load def
+/oldkshow	/kshow load def
+
+% These defs are necessary so that subsequent procs don't bind in
+% the originals
+/fill	   { oldfill } bind def
+/eofill	   { oldeofill } bind def
+/stroke	   { oldstroke } bind def
+/show	   { oldshow } bind def
+/ashow	   { oldashow } bind def
+/widthshow { oldwidthshow } bind def
+/awidthshow { oldawidthshow } bind def
+/kshow 	   { oldkshow } bind def
+/PATredef {
+  MyAppDict begin
+    {
+    /fill { /clip load PATdraw newpath } bind def
+    /eofill { /eoclip load PATdraw newpath } bind def
+    /stroke { PATstroke } bind def
+    /show { 0 0 null 0 0 6 -1 roll PATawidthshow } bind def
+    /ashow { 0 0 null 6 3 roll PATawidthshow }
+    bind def
+    /widthshow { 0 0 3 -1 roll PATawidthshow }
+    bind def
+    /awidthshow { PATawidthshow } bind def
+    /kshow { PATkshow } bind def
+  } {
+    /fill   { oldfill } bind def
+    /eofill { oldeofill } bind def
+    /stroke { oldstroke } bind def
+    /show   { oldshow } bind def
+    /ashow  { oldashow } bind def
+    /widthshow { oldwidthshow } bind def
+    /awidthshow { oldawidthshow } bind def
+    /kshow  { oldkshow } bind def
+    } ifelse
+  end
+} bind def
+false PATredef
+% Conditionally define setcmykcolor if not available
+/setcmykcolor where { pop } {
+  /setcmykcolor {
+    1 sub 4 1 roll
+    3 {
+	3 index add neg dup 0 lt { pop 0 } if 3 1 roll
+    } repeat
+    setrgbcolor - pop
+  } bind def
+} ifelse
+/PATsc {		% colorarray
+  aload length		% c1 ... cn length
+    dup 1 eq { pop setgray } { 3 eq { setrgbcolor } { setcmykcolor
+  } ifelse } ifelse
+} bind def
+/PATsg {		% dict
+  begin
+    lw setlinewidth
+    lc setlinecap
+    lj setlinejoin
+    ml setmiterlimit
+    ds aload pop setdash
+    cc aload pop setrgbcolor
+    cm setmatrix
+  end
+} bind def
+
+/PATDict 3 dict def
+/PATsp {
+  true PATredef
+  PATDict begin
+    /CurrentPattern exch def
+    % If it's an uncolored pattern, save the color
+    CurrentPattern /PaintType get 2 eq {
+      /PColor exch def
+    } if
+    /CColor [ currentrgbcolor ] def
+  end
+} bind def
+% PATstroke - stroke with the current pattern
+/PATstroke {
+  countdictstack
+  save
+  mark
+  {
+    currentpoint strokepath moveto
+    PATpcalc				% proc nw nh px py
+    clip newpath PATfill
+    } stopped {
+	(*** PATstroke Warning: Path is too complex, stroking
+	  with gray) =
+    cleartomark
+    restore
+    countdictstack exch sub dup 0 gt
+	{ { end } repeat } { pop } ifelse
+    gsave 0.5 setgray oldstroke grestore
+  } { pop restore pop } ifelse
+  newpath
+} bind def
+/PATtcalc {		% modmtx tilingtype PATtcalc tilematrix
+  % Note: tiling types 2 and 3 are not supported
+  gsave
+    exch concat					% tilingtype
+    matrix currentmatrix exch			% cmtx tilingtype
+    % Tiling type 1 and 3: constant spacing
+    2 ne {
+	% Distort the pattern so that it occupies
+	% an integral number of device pixels
+	dup 4 get exch dup 5 get exch		% tx ty cmtx
+	XStep 0 dtransform
+	round exch round exch			% tx ty cmtx dx.x dx.y
+	XStep div exch XStep div exch		% tx ty cmtx a b
+	0 YStep dtransform
+	round exch round exch			% tx ty cmtx a b dy.x dy.y
+	YStep div exch YStep div exch		% tx ty cmtx a b c d
+	7 -3 roll astore			% { a b c d tx ty }
+    } if
+  grestore
+} bind def
+/PATusp {
+  false PATredef
+  PATDict begin
+    CColor PATsc
+  end
+} bind def
+
+% this is the pattern fill program from the Second edition Reference Manual
+% with changes to call the above pattern fill
+% left30
+11 dict begin
+/PaintType 1 def
+/PatternType 1 def
+/TilingType 1 def
+/BBox [0 0 1 1] def
+/XStep 1 def
+/YStep 1 def
+/PatWidth 1 def
+/PatHeight 1 def
+/Multi 2 def
+/PaintData [
+  { clippath } bind
+  { 32 16 true [ 32 0 0 -16 0 16 ]
+	{<c000c000300030000c000c000300030000c000c000300030
+	000c000c00030003c000c000300030000c000c0003000300
+	00c000c000300030000c000c00030003>}
+     imagemask } bind
+] def
+/PaintProc {
+	pop
+	exec fill
+} def
+currentdict
+end
+/P1 exch def
+
+/cp {closepath} bind def
+/ef {eofill} bind def
+/gr {grestore} bind def
+/gs {gsave} bind def
+/sa {save} bind def
+/rs {restore} bind def
+/l {lineto} bind def
+/m {moveto} bind def
+/rm {rmoveto} bind def
+/n {newpath} bind def
+/s {stroke} bind def
+/sh {show} bind def
+/slc {setlinecap} bind def
+/slj {setlinejoin} bind def
+/slw {setlinewidth} bind def
+/srgb {setrgbcolor} bind def
+/rot {rotate} bind def
+/sc {scale} bind def
+/sd {setdash} bind def
+/ff {findfont} bind def
+/sf {setfont} bind def
+/scf {scalefont} bind def
+/sw {stringwidth} bind def
+/tr {translate} bind def
+/tnt {dup dup currentrgbcolor
+  4 -2 roll dup 1 exch sub 3 -1 roll mul add
+  4 -2 roll dup 1 exch sub 3 -1 roll mul add
+  4 -2 roll dup 1 exch sub 3 -1 roll mul add srgb}
+  bind def
+/shd {dup dup currentrgbcolor 4 -2 roll mul 4 -2 roll mul
+  4 -2 roll mul srgb} bind def
+/$F2psBegin {$F2psDict begin /$F2psEnteredState save def} def
+/$F2psEnd {$F2psEnteredState restore end} def
+
+$F2psBegin
+10 setmiterlimit
+ 0.06000 0.06000 sc
+%
+% Fig objects follow
+%
+% Polyline
+7.500 slw
+n 9225 11100 m 9525 11100 l 9525 3075 l 9225 3075 l
+ cp gs /PC [[1.00 1.00 1.00] [1.00 1.00 1.00]] def
+15.00 15.00 sc P1 [16 0 0 -8 615.00 205.00] PATmp PATsp ef gr PATusp gs col7 s gr 
+% Polyline
+%
+% pen to black in case this eps object doesn't set color first
+0 0 0 setrgbcolor
+% Begin Imported EPS File: rationp18sys4xstat.eps
+%%BeginDocument: rationp18sys4xstat.eps
+%
+n gs
+1350 3075 tr
+16.665975 -16.665975 sc
+0 -482 tr
+0 0 tr
+sa
+n 0 0 m 482 0 l 482 482 l 0 482 l cp clip n
+countdictstack
+mark
+/showpage {} def
+% EPS file follows:
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 482 482
+%%Title: rationp+18sys4xstat.eps
+%%Creator: HIGZ Version 1.29/03
+%%CreationDate: 2006/08/23   15.55
+%%EndComments
+%%BeginProlog
+80 dict begin
+/s {stroke} def /l {lineto} def /m {moveto} def /t {translate} def
+/sw {stringwidth} def /r {rotate} def /rl {roll}  def /R {repeat} def
+/d {rlineto} def /rm {rmoveto} def /gr {grestore} def /f {eofill} def
+/c {setrgbcolor} def /lw {setlinewidth} def /sd {setdash} def
+/cl {closepath} def /sf {scalefont setfont} def /black {0 setgray} def
+/box {m dup 0 exch d exch 0 d 0 exch neg d cl} def
+/NC{systemdict begin initclip end}def/C{NC box clip newpath}def
+/bl {box s} def /bf {box f} def /Y { 0 exch d} def /X { 0 d} def 
+/mp {newpath /y exch def /x exch def} def
+/side {[w .77 mul w .23 mul] .385 w mul sd w 0 l currentpoint t -144 r} def
+/mr {mp x y w2 0 360 arc} def /m24 {mr s} def /m20 {mr f} def
+/mb {mp x y w2 add m w2 neg 0 d 0 w neg d w 0 d 0 w d cl} def
+/mt {mp x y w2 add m w2 neg w neg d w 0 d cl} def
+/m21 {mb f} def /m25 {mb s} def /m22 {mt f} def /m26  {mt s} def
+/m23 {mp x y w2 sub m w2 w d w neg 0 d cl f} def
+/m27 {mp x y w2 add m w3 neg w2 neg d w3 w2 neg d w3  w2 d cl s} def
+/m28 {mp x w2 sub y w2 sub w3 add m w3 0 d 0 w3 neg d w3 0 d 0 w3 d w3 0 d
+ 0 w3 d w3 neg 0 d 0 w3 d w3 neg 0 d
+ 0 w3 neg d w3 neg 0 d cl s } def
+/m29 {mp gsave x w2 sub y w2 add w3 sub m currentpoint t
+ 4 {side} repeat cl fill gr} def
+/m30 {mp gsave x w2 sub y w2 add w3 sub m currentpoint t
+ 5 {side} repeat s gr} def
+/m31 {mp x y w2 sub m 0 w d x w2 sub y m w 0 d
+ x w2 sub y w2 add m w w neg d x w2 sub y w2
+ sub m w w d s} def
+/m2 {mp x y w2 sub m 0 w d x w2 sub y m w 0 d s} def
+/m5 {mp x w2 sub y w2 sub m w w d x w2 sub y w2 add m w w neg d s} def
+/reencdict 24 dict def /ReEncode {reencdict begin /nco&na exch def
+/nfnam exch def /basefontname exch def /basefontdict basefontname findfont def
+/newfont basefontdict maxlength dict def basefontdict {exch dup /FID ne
+{dup /Encoding eq {exch dup length array copy newfont 3 1 roll put} {exch
+newfont 3 1 roll put} ifelse} {pop pop} ifelse } forall newfont
+/FontName nfnam put nco&na aload pop nco&na length 2 idiv {newfont
+/Encoding get 3 1 roll put} repeat nfnam newfont definefont pop end } def
+/accvec [ 176 /agrave 181 /Agrave 190 /acircumflex 192 /Acircumflex
+201 /adieresis 204 /Adieresis 209 /ccedilla 210 /Ccedilla 211 /eacute
+212 /Eacute 213 /egrave 214 /Egrave 215 /ecircumflex 216 /Ecircumflex
+217 /edieresis 218 /Edieresis 219 /icircumflex 220 /Icircumflex
+221 /idieresis 222 /Idieresis 223 /ntilde 224 /Ntilde 226 /ocircumflex
+228 /Ocircumflex 229 /odieresis 230 /Odieresis 231 /ucircumflex 236 /Ucircumflex
+237 /udieresis 238 /Udieresis 239 /aring 242 /Aring 243 /ydieresis
+244 /Ydieresis 246 /aacute 247 /Aacute 252 /ugrave 253 /Ugrave] def
+/Times-Roman /Times-Roman accvec ReEncode
+/Times-Italic /Times-Italic accvec ReEncode
+/Times-Bold /Times-Bold accvec ReEncode
+/Times-BoldItalic /Times-BoldItalic accvec ReEncode
+/Helvetica /Helvetica accvec ReEncode
+/Helvetica-Oblique /Helvetica-Oblique accvec ReEncode
+/Helvetica-Bold /Helvetica-Bold accvec ReEncode
+/Helvetica-BoldOblique /Helvetica-BoldOblique  accvec ReEncode
+/Courier /Courier accvec ReEncode
+/Courier-Oblique /Courier-Oblique accvec ReEncode
+/Courier-Bold /Courier-Bold accvec ReEncode
+/Courier-BoldOblique /Courier-BoldOblique accvec ReEncode
+/oshow {gsave [] 0 sd true charpath stroke gr} def
+/stwn { /fs exch def /fn exch def /text exch def fn findfont fs sf
+ text sw pop xs add /xs exch def} def
+/stwb { /fs exch def /fn exch def /nbas exch def /textf exch def
+textf length /tlen exch def nbas tlen gt {/nbas tlen  def} if
+fn findfont fs sf textf dup length nbas sub nbas getinterval sw
+pop neg xs add /xs exch def} def
+/accspe [ 65 /plusminus 66 /bar 67 /existential 68 /universal
+69 /exclam 70 /numbersign 71 /greater 72 /question 73 /integral
+74 /colon 75 /semicolon 76 /less 77 /bracketleft 78 /bracketright
+79 /greaterequal 80 /braceleft 81 /braceright 82 /radical
+83 /spade 84 /heart 85 /diamond 86 /club 87 /lessequal
+88 /multiply 89 /percent 90 /infinity 48 /circlemultiply 49 /circleplus
+50 /emptyset 51 /lozenge 52 /bullet 53 /arrowright 54 /arrowup
+55 /arrowleft 56 /arrowdown 57 /arrowboth 48 /degree 44 /comma 43 /plus
+ 45 /angle 42 /angleleft 47 /divide 61 /notequal 40 /equivalence 41 /second
+ 97 /approxequal 98 /congruent 99 /perpendicular 100 /partialdiff 101 /florin
+ 102 /intersection 103 /union 104 /propersuperset 105 /reflexsuperset
+ 106 /notsubset 107 /propersubset 108 /reflexsubset 109 /element 110 /notelement
+ 111 /gradient 112 /logicaland 113 /logicalor 114 /arrowdblboth
+ 115 /arrowdblleft 116 /arrowdblup 117 /arrowdblright 118 /arrowdbldown
+ 119 /ampersand 120 /omega1 121 /similar 122 /aleph ] def
+/Symbol /Special accspe ReEncode
+%%EndProlog
+%%BeginSetup
+newpath  gsave  .25 .25 scale 
+%%EndSetup
+ gsave 0 0 t black [] 0 sd 1 lw 5 lw 1928 1928 0 0 bl 1928 1928 0 0 C NC 1588
+ 1588 170 170 bl 1588 1588 170 170 C NC 1 lw 170 170 m 1588 Y s 204 170 m -34 X
+ s [4 8] 0 sd 1758 170 m -1588 X s [] 0 sd 187 202 m -17 X s 187 234 m -17 X s
+ 187 265 m -17 X s 187 297 m -17 X s 204 329 m -34 X s [4 8] 0 sd 1758 329 m
+ -1588 X s [] 0 sd 187 361 m -17 X s 187 392 m -17 X s 187 424 m -17 X s 187 456
+ m -17 X s 204 488 m -34 X s [4 8] 0 sd 1758 488 m -1588 X s [] 0 sd 187 519 m
+ -17 X s 187 551 m -17 X s 187 583 m -17 X s 187 615 m -17 X s 204 646 m -34 X s
+ [4 8] 0 sd 1758 646 m -1588 X s [] 0 sd 187 678 m -17 X s 187 710 m -17 X s 187
+ 742 m -17 X s 187 773 m -17 X s 204 805 m -34 X s [4 8] 0 sd 1758 805 m -1588 X
+ s [] 0 sd 187 837 m -17 X s 187 869 m -17 X s 187 900 m -17 X s 187 932 m -17 X
+ s 204 964 m -34 X s [4 8] 0 sd 1758 964 m -1588 X s [] 0 sd 187 996 m -17 X s
+ 187 1028 m -17 X s 187 1059 m -17 X s 187 1091 m -17 X s 204 1123 m -34 X s
+ [4 8] 0 sd 1758 1123 m -1588 X s [] 0 sd 187 1155 m -17 X s 187 1186 m -17 X s
+ 187 1218 m -17 X s 187 1250 m -17 X s 204 1282 m -34 X s [4 8] 0 sd 1758 1282 m
+ -1588 X s [] 0 sd 187 1313 m -17 X s 187 1345 m -17 X s 187 1377 m -17 X s 187
+ 1409 m -17 X s 204 1440 m -34 X s [4 8] 0 sd 1758 1440 m -1588 X s [] 0 sd 187
+ 1472 m -17 X s 187 1504 m -17 X s 187 1536 m -17 X s 187 1567 m -17 X s 204
+ 1599 m -34 X s [4 8] 0 sd 1758 1599 m -1588 X s [] 0 sd 187 1631 m -17 X s 187
+ 1663 m -17 X s 187 1694 m -17 X s 187 1726 m -17 X s 204 1758 m -34 X s
+ [4 8] 0 sd 1758 1758 m -1588 X s
+ /xs 0 def 
+(0)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 147
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0)
+ show 
+ gr 
+ /xs 0 def 
+(0.1)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 306
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.1)
+ show 
+ gr 
+ /xs 0 def 
+(0.2)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 465
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.2)
+ show 
+ gr 
+ /xs 0 def 
+(0.3)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 624
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.3)
+ show 
+ gr 
+ /xs 0 def 
+(0.4)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 783
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.4)
+ show 
+ gr 
+ /xs 0 def 
+(0.5)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 941
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.5)
+ show 
+ gr 
+ /xs 0 def 
+(0.6)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1100
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.6)
+ show 
+ gr 
+ /xs 0 def 
+(0.7)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1259
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.7)
+ show 
+ gr 
+ /xs 0 def 
+(0.8)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1418
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.8)
+ show 
+ gr 
+ /xs 0 def 
+(0.9)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1576
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.9)
+ show 
+ gr 
+ /xs 0 def 
+(1)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1735
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(1)
+ show 
+ gr  [] 0 sd 170 170 m 1588 X s 170 204 m -34 Y s [4 8] 0 sd 170 1758 m -1588 Y
+ s [] 0 sd 202 187 m -17 Y s 234 187 m -17 Y s 265 187 m -17 Y s 297 187 m -17 Y
+ s 329 204 m -34 Y s [4 8] 0 sd 329 1758 m -1588 Y s [] 0 sd 361 187 m -17 Y s
+ 392 187 m -17 Y s 424 187 m -17 Y s 456 187 m -17 Y s 488 204 m -34 Y s
+ [4 8] 0 sd 488 1758 m -1588 Y s [] 0 sd 519 187 m -17 Y s 551 187 m -17 Y s 583
+ 187 m -17 Y s 615 187 m -17 Y s 646 204 m -34 Y s [4 8] 0 sd 646 1758 m -1588 Y
+ s [] 0 sd 678 187 m -17 Y s 710 187 m -17 Y s 742 187 m -17 Y s 773 187 m -17 Y
+ s 805 204 m -34 Y s [4 8] 0 sd 805 1758 m -1588 Y s [] 0 sd 837 187 m -17 Y s
+ 869 187 m -17 Y s 900 187 m -17 Y s 932 187 m -17 Y s 964 204 m -34 Y s
+ [4 8] 0 sd 964 1758 m -1588 Y s [] 0 sd 996 187 m -17 Y s 1028 187 m -17 Y s
+ 1059 187 m -17 Y s 1091 187 m -17 Y s 1123 204 m -34 Y s [4 8] 0 sd 1123 1758 m
+ -1588 Y s [] 0 sd 1155 187 m -17 Y s 1186 187 m -17 Y s 1218 187 m -17 Y s 1250
+ 187 m -17 Y s 1282 204 m -34 Y s [4 8] 0 sd 1282 1758 m -1588 Y s [] 0 sd 1313
+ 187 m -17 Y s 1345 187 m -17 Y s 1377 187 m -17 Y s 1409 187 m -17 Y s 1440 204
+ m -34 Y s [4 8] 0 sd 1440 1758 m -1588 Y s [] 0 sd 1472 187 m -17 Y s 1504 187
+ m -17 Y s 1536 187 m -17 Y s 1567 187 m -17 Y s 1599 204 m -34 Y s [4 8] 0 sd
+ 1599 1758 m -1588 Y s [] 0 sd 1631 187 m -17 Y s 1663 187 m -17 Y s 1694 187 m
+ -17 Y s 1726 187 m -17 Y s 1758 204 m -34 Y s [4 8] 0 sd 1758 1758 m -1588 Y s
+ /xs 0 def 
+(0)
+ /Helvetica-Bold     62 stwn 
+ gsave  170 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0)
+ show 
+ gr 
+ /xs 0 def 
+(0.1)
+ /Helvetica-Bold     62 stwn 
+ gsave  329 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.1)
+ show 
+ gr 
+ /xs 0 def 
+(0.2)
+ /Helvetica-Bold     62 stwn 
+ gsave  488 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.2)
+ show 
+ gr 
+ /xs 0 def 
+(0.3)
+ /Helvetica-Bold     62 stwn 
+ gsave  646 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.3)
+ show 
+ gr 
+ /xs 0 def 
+(0.4)
+ /Helvetica-Bold     62 stwn 
+ gsave  805 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.4)
+ show 
+ gr 
+ /xs 0 def 
+(0.5)
+ /Helvetica-Bold     62 stwn 
+ gsave  964 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.5)
+ show 
+ gr 
+ /xs 0 def 
+(0.6)
+ /Helvetica-Bold     62 stwn 
+ gsave  1123 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.6)
+ show 
+ gr 
+ /xs 0 def 
+(0.7)
+ /Helvetica-Bold     62 stwn 
+ gsave  1282 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.7)
+ show 
+ gr 
+ /xs 0 def 
+(0.8)
+ /Helvetica-Bold     62 stwn 
+ gsave  1440 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.8)
+ show 
+ gr 
+ /xs 0 def 
+(0.9)
+ /Helvetica-Bold     62 stwn 
+ gsave  1599 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.9)
+ show 
+ gr 
+ /xs 0 def 
+(1)
+ /Helvetica-Bold     62 stwn 
+ gsave  1758 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(1)
+ show 
+ gr  1588 1588 170 170 C 5 lw [] 0 sd 0 1 0 c /w 11
+ def /w2 {w 2 div} def /w3 {w 3 div} def 599 1333 m21 615 1311 m21 631 1290 m21
+ 646 1270 m21 662 1251 m21 678 1233 m21 694 1216 m21 710 1200 m21 726 1184 m21
+ 742 1169 m21 758 1155 m21 773 1141 m21 789 1128 m21 805 1115 m21 821 1103 m21
+ 837 1092 m21 853 1081 m21 869 1070 m21 885 1060 m21 900 1050 m21 916 1041 m21
+ 932 1032 m21 948 1023 m21 964 1015 m21 980 1007 m21 996 999 m21 1012 992 m21
+ 1028 985 m21 1043 978 m21 1059 971 m21 1075 965 m21 1091 959 m21 1107 953 m21
+ 1123 947 m21 1139 942 m21 1155 937 m21 1170 932 m21 1186 927 m21 1202 922 m21
+ 1218 918 m21 1234 913 m21 1250 909 m21 1266 905 m21 1282 902 m21 1297 898 m21
+ 1313 895 m21 1329 891 m21 1345 888 m21 1361 885 m21 1377 882 m21 1393 880 m21
+ 1409 877 m21 1424 875 m21 1440 872 m21 1456 870 m21 1472 868 m21 1488 866 m21
+ 1504 864 m21 1520 863 m21 1536 861 m21 1551 860 m21 1567 858 m21 1583 857 m21
+ 1599 856 m21 1615 855 m21 1631 854 m21 1647 853 m21 1663 852 m21 1678 852 m21
+ 1694 851 m21 1710 851 m21 1726 851 m21 1742 851 m21 0 1 1 c 599 1295 m21 615
+ 1279 m21 631 1262 m21 646 1246 m21 662 1231 m21 678 1215 m21 694 1200 m21 710
+ 1185 m21 726 1170 m21 742 1156 m21 758 1141 m21 773 1127 m21 789 1114 m21 805
+ 1100 m21 821 1087 m21 837 1074 m21 853 1061 m21 869 1048 m21 885 1035 m21 900
+ 1023 m21 916 1011 m21 932 999 m21 948 987 m21 964 976 m21 980 964 m21 996 953
+ m21 1012 942 m21 1028 931 m21 1043 920 m21 1059 910 m21 1075 899 m21 1091 889
+ m21 1107 879 m21 1123 869 m21 1139 859 m21 1155 849 m21 1170 840 m21 1186 830
+ m21 1202 821 m21 1218 812 m21 1234 803 m21 1250 794 m21 1266 785 m21 1282 777
+ m21 1297 768 m21 1313 760 m21 1329 752 m21 1345 744 m21 1361 736 m21 1377 728
+ m21 1393 720 m21 1409 712 m21 1424 705 m21 1440 697 m21 1456 690 m21 1472 682
+ m21 1488 675 m21 1504 668 m21 1520 661 m21 1536 654 m21 1551 648 m21 1567 641
+ m21 1583 634 m21 1599 628 m21 1615 621 m21 1631 615 m21 1647 609 m21 1663 603
+ m21 1678 597 m21 1694 591 m21 1710 585 m21 1726 579 m21 1742 573 m21 black /w
+ 17 def /w2 {w 2 div} def /w3 {w 3 div} def 314 1663 m20 370 1599 m20 447 1520
+ m20 526 1424 m20 605 1329 m20 683 1234 m20 762 1155 m20 841 1091 m20 921 1043
+ m20 999 996 m20 1079 964 m20 1157 932 m20 1233 908 m s 1233 925 m s 1233 916
+ m20 1313 884 m 8 Y s 1313 909 m 8 Y s 1313 900 m20 1383 845 m 31 Y s 1383 893 m
+ 31 Y s 1383 885 m20 1252 916 m25 1329 891 m 1 Y s 1329 909 m 1 Y s 1329 900 m25
+ 1391 868 m 8 Y s 1391 893 m 8 Y s 1391 885 m25 1459 817 m 43 Y s 1459 877 m 43
+ Y s 1459 869 m25 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1726 43
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(x*)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  43 1837
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(F)
+ show 
+ currentpoint pop 0 t 
+ 0  -25 rm 
+ /Times-Bold findfont   52 sf
+(2)
+ show currentpoint pop /s1 exch def
+ 0   38 rm 
+ /Times-Bold findfont   52 sf
+(n)
+ show currentpoint pop /s2 exch def
+ s1 s2 ge {s1 0 t} {s2 0 t} ifelse 
+ /Times-Bold findfont   75 sf 0    0 m 
+( / F)
+ show 
+ currentpoint pop 0 t 
+ 0  -25 rm 
+ /Times-Bold findfont   52 sf
+(2)
+ show currentpoint pop /s1 exch def
+ 0   38 rm 
+ /Times-Bold findfont   52 sf
+(p)
+ show currentpoint pop /s2 exch def
+ s1 s2 ge {s1 0 t} {s2 0 t} ifelse 
+ gsave  gsave  gr  gr  gsave  gsave  gr  gr  gr  1588 1588 170 170 C 1928 1928 0
+ 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1686 1202
+ t   0 r 0 0 m
+ /Special findfont   75 sf 0    0 m 
+(5)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1488 1202
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(SU\(6\))
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1704 840
+ t   0 r 0 0 m
+ /ZapfDingbats findfont   75 sf 0    0 m 
+(\330)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1567 932
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(d/u = 1/5)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1704 531
+ t   0 r 0 0 m
+ /ZapfDingbats findfont   75 sf 0    0 m 
+(\332)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1520 456
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(d/u = 0)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C 1
+ lw /w 32 def /w2 {w 2 div} def /w3 {w 3 div} def 996 1631 m20
+ gsave  1059 1608
+ t   0 r 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(W* \076 2.0 GeV)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C 996
+ 1551 m25
+ gsave  1059 1529
+ t   0 r 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(W* \076 1.8 GeV)
+ show 
+ gr  1588 1588 170 170 C 5 lw 1 1 0 c /w 1
+ def /w2 {w 2 div} def /w3 {w 3 div} def 315 182 m20 372 182 m20 449 181 m20 528
+ 181 m20 607 181 m20 685 180 m20 764 180 m20 843 180 m20 922 180 m20 1001 180
+ m20 1080 180 m20 1159 180 m20 1235 180 m20 1312 180 m20 1380 180 m20 1464 180
+ m20 1928 1928 0 0 C 1 lw 0 1 0 c 1464 172 m -1 -2 d s 1464 188 m -18 -18 d s
+ 1449 189 m -19 -19 d s 1433 189 m -20 -19 d s 1416 189 m -19 -19 d s 1400 189 m
+ -19 -19 d s 1384 189 m -20 -19 d s 1367 189 m -19 -19 d s 1351 189 m -19 -19 d
+ s 1334 189 m -19 -19 d s 1318 189 m -19 -19 d s 1302 189 m -19 -19 d s 1285 189
+ m -19 -19 d s 1269 189 m -19 -19 d s 1253 189 m -20 -19 d s 1236 189 m -19 -19
+ d s 1220 189 m -19 -19 d s 1204 189 m -20 -19 d s 1187 189 m -19 -19 d s 1171
+ 189 m -19 -19 d s 1155 189 m -20 -19 d s 1138 189 m -19 -19 d s 1122 189 m -19
+ -19 d s 1106 190 m -20 -20 d s 1089 190 m -19 -20 d s 1073 190 m -19 -20 d s
+ 1057 190 m -20 -20 d s 1040 190 m -19 -20 d s 1024 190 m -20 -20 d s 1008 190 m
+ -20 -20 d s 991 190 m -19 -20 d s 975 190 m -20 -20 d s 959 190 m -20 -20 d s
+ 942 190 m -19 -20 d s 926 190 m -20 -20 d s 910 190 m -20 -20 d s 893 190 m -19
+ -20 d s 877 190 m -20 -20 d s 861 190 m -20 -20 d s 844 190 m -19 -20 d s 828
+ 190 m -20 -20 d s 812 190 m -20 -20 d s 796 190 m -21 -20 d s 779 190 m -20 -20
+ d s 763 190 m -20 -20 d s 747 191 m -21 -21 d s 730 191 m -20 -21 d s 714 191 m
+ -20 -21 d s 698 191 m -21 -21 d s 682 191 m -21 -21 d s 665 191 m -20 -21 d s
+ 649 191 m -21 -21 d s 633 191 m -21 -21 d s 617 191 m -22 -21 d s 600 191 m -21
+ -21 d s 584 191 m -21 -21 d s 568 192 m -22 -22 d s 552 192 m -22 -22 d s 535
+ 192 m -21 -22 d s 519 192 m -22 -22 d s 503 192 m -22 -22 d s 487 192 m -22 -22
+ d s 470 192 m -22 -22 d s 454 192 m -22 -22 d s 438 192 m -22 -22 d s 422 193 m
+ -23 -23 d s 405 193 m -22 -23 d s 389 193 m -23 -23 d s 373 193 m -23 -23 d s
+ 357 193 m -23 -23 d s 340 193 m -23 -23 d s 324 193 m -9 -9 d s 1588 1588 170
+ 170 C 1928 1928 0 0 C 1463 189 m 1 -1 d s 1447 189 m 17 -17 d s 1430 189 m 19
+ -19 d s 1414 189 m 19 -19 d s 1398 189 m 19 -19 d s 1381 189 m 19 -19 d s 1365
+ 189 m 19 -19 d s 1349 189 m 19 -19 d s 1332 189 m 19 -19 d s 1316 189 m 19 -19
+ d s 1299 189 m 20 -19 d s 1283 189 m 19 -19 d s 1267 189 m 19 -19 d s 1250 189
+ m 20 -19 d s 1234 189 m 19 -19 d s 1218 189 m 19 -19 d s 1201 189 m 19 -19 d s
+ 1185 189 m 19 -19 d s 1168 189 m 20 -19 d s 1152 189 m 19 -19 d s 1136 189 m 19
+ -19 d s 1119 190 m 20 -20 d s 1103 190 m 19 -20 d s 1086 190 m 20 -20 d s 1070
+ 190 m 20 -20 d s 1054 190 m 19 -20 d s 1037 190 m 20 -20 d s 1021 190 m 19 -20
+ d s 1005 190 m 19 -20 d s 988 190 m 20 -20 d s 972 190 m 19 -20 d s 955 190 m
+ 20 -20 d s 939 190 m 20 -20 d s 923 190 m 19 -20 d s 906 190 m 20 -20 d s 890
+ 190 m 20 -20 d s 873 190 m 20 -20 d s 857 190 m 20 -20 d s 841 190 m 20 -20 d s
+ 824 190 m 20 -20 d s 808 190 m 20 -20 d s 791 190 m 20 -20 d s 775 190 m 20 -20
+ d s 758 190 m 21 -20 d s 742 191 m 20 -21 d s 726 191 m 20 -21 d s 709 191 m 21
+ -21 d s 693 191 m 20 -21 d s 676 191 m 21 -21 d s 660 191 m 21 -21 d s 643 191
+ m 21 -21 d s 627 191 m 21 -21 d s 610 191 m 22 -21 d s 594 191 m 21 -21 d s 577
+ 192 m 22 -22 d s 561 192 m 21 -22 d s 544 192 m 22 -22 d s 528 192 m 22 -22 d s
+ 511 192 m 22 -22 d s 495 192 m 22 -22 d s 479 192 m 22 -22 d s 462 192 m 22 -22
+ d s 446 192 m 22 -22 d s 429 193 m 23 -23 d s 413 193 m 22 -23 d s 396 193 m 23
+ -23 d s 380 193 m 22 -23 d s 363 193 m 23 -23 d s 347 193 m 23 -23 d s 330 193
+ m 23 -23 d s 315 192 m 22 -22 d s 315 175 m 6 -5 d s 1588 1588 170 170 C 5 lw
+ 315 193 m 57 X 77 -1 d 79 X 79 -1 d 78 X 79 -1 d 316 X 79 -1 d 305 X -19 Y
+ -1149 X 23 Y cl s
+ gr  gr 
+showpage
+end
+%%EOF
+
+cleartomark
+countdictstack exch sub { end } repeat
+restore grestore
+%
+% End Imported PIC File: rationp18sys4xstat.eps
+%%EndDocument
+%
+% Polyline
+%
+% pen to black in case this eps object doesn't set color first
+0 0 0 setrgbcolor
+% Begin Imported EPS File: durationp18sys4xstat.eps
+%%BeginDocument: durationp18sys4xstat.eps
+%
+n gs
+9367 3075 tr
+16.665975 -16.665975 sc
+0 -482 tr
+0 0 tr
+sa
+n 0 0 m 482 0 l 482 482 l 0 482 l cp clip n
+countdictstack
+mark
+/showpage {} def
+% EPS file follows:
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 482 482
+%%Title: durationp+18sys4xstat.eps
+%%Creator: HIGZ Version 1.29/03
+%%CreationDate: 2006/08/23   16.03
+%%EndComments
+%%BeginProlog
+80 dict begin
+/s {stroke} def /l {lineto} def /m {moveto} def /t {translate} def
+/sw {stringwidth} def /r {rotate} def /rl {roll}  def /R {repeat} def
+/d {rlineto} def /rm {rmoveto} def /gr {grestore} def /f {eofill} def
+/c {setrgbcolor} def /lw {setlinewidth} def /sd {setdash} def
+/cl {closepath} def /sf {scalefont setfont} def /black {0 setgray} def
+/box {m dup 0 exch d exch 0 d 0 exch neg d cl} def
+/NC{systemdict begin initclip end}def/C{NC box clip newpath}def
+/bl {box s} def /bf {box f} def /Y { 0 exch d} def /X { 0 d} def 
+/mp {newpath /y exch def /x exch def} def
+/side {[w .77 mul w .23 mul] .385 w mul sd w 0 l currentpoint t -144 r} def
+/mr {mp x y w2 0 360 arc} def /m24 {mr s} def /m20 {mr f} def
+/mb {mp x y w2 add m w2 neg 0 d 0 w neg d w 0 d 0 w d cl} def
+/mt {mp x y w2 add m w2 neg w neg d w 0 d cl} def
+/m21 {mb f} def /m25 {mb s} def /m22 {mt f} def /m26  {mt s} def
+/m23 {mp x y w2 sub m w2 w d w neg 0 d cl f} def
+/m27 {mp x y w2 add m w3 neg w2 neg d w3 w2 neg d w3  w2 d cl s} def
+/m28 {mp x w2 sub y w2 sub w3 add m w3 0 d 0 w3 neg d w3 0 d 0 w3 d w3 0 d
+ 0 w3 d w3 neg 0 d 0 w3 d w3 neg 0 d
+ 0 w3 neg d w3 neg 0 d cl s } def
+/m29 {mp gsave x w2 sub y w2 add w3 sub m currentpoint t
+ 4 {side} repeat cl fill gr} def
+/m30 {mp gsave x w2 sub y w2 add w3 sub m currentpoint t
+ 5 {side} repeat s gr} def
+/m31 {mp x y w2 sub m 0 w d x w2 sub y m w 0 d
+ x w2 sub y w2 add m w w neg d x w2 sub y w2
+ sub m w w d s} def
+/m2 {mp x y w2 sub m 0 w d x w2 sub y m w 0 d s} def
+/m5 {mp x w2 sub y w2 sub m w w d x w2 sub y w2 add m w w neg d s} def
+/reencdict 24 dict def /ReEncode {reencdict begin /nco&na exch def
+/nfnam exch def /basefontname exch def /basefontdict basefontname findfont def
+/newfont basefontdict maxlength dict def basefontdict {exch dup /FID ne
+{dup /Encoding eq {exch dup length array copy newfont 3 1 roll put} {exch
+newfont 3 1 roll put} ifelse} {pop pop} ifelse } forall newfont
+/FontName nfnam put nco&na aload pop nco&na length 2 idiv {newfont
+/Encoding get 3 1 roll put} repeat nfnam newfont definefont pop end } def
+/accvec [ 176 /agrave 181 /Agrave 190 /acircumflex 192 /Acircumflex
+201 /adieresis 204 /Adieresis 209 /ccedilla 210 /Ccedilla 211 /eacute
+212 /Eacute 213 /egrave 214 /Egrave 215 /ecircumflex 216 /Ecircumflex
+217 /edieresis 218 /Edieresis 219 /icircumflex 220 /Icircumflex
+221 /idieresis 222 /Idieresis 223 /ntilde 224 /Ntilde 226 /ocircumflex
+228 /Ocircumflex 229 /odieresis 230 /Odieresis 231 /ucircumflex 236 /Ucircumflex
+237 /udieresis 238 /Udieresis 239 /aring 242 /Aring 243 /ydieresis
+244 /Ydieresis 246 /aacute 247 /Aacute 252 /ugrave 253 /Ugrave] def
+/Times-Roman /Times-Roman accvec ReEncode
+/Times-Italic /Times-Italic accvec ReEncode
+/Times-Bold /Times-Bold accvec ReEncode
+/Times-BoldItalic /Times-BoldItalic accvec ReEncode
+/Helvetica /Helvetica accvec ReEncode
+/Helvetica-Oblique /Helvetica-Oblique accvec ReEncode
+/Helvetica-Bold /Helvetica-Bold accvec ReEncode
+/Helvetica-BoldOblique /Helvetica-BoldOblique  accvec ReEncode
+/Courier /Courier accvec ReEncode
+/Courier-Oblique /Courier-Oblique accvec ReEncode
+/Courier-Bold /Courier-Bold accvec ReEncode
+/Courier-BoldOblique /Courier-BoldOblique accvec ReEncode
+/oshow {gsave [] 0 sd true charpath stroke gr} def
+/stwn { /fs exch def /fn exch def /text exch def fn findfont fs sf
+ text sw pop xs add /xs exch def} def
+/stwb { /fs exch def /fn exch def /nbas exch def /textf exch def
+textf length /tlen exch def nbas tlen gt {/nbas tlen  def} if
+fn findfont fs sf textf dup length nbas sub nbas getinterval sw
+pop neg xs add /xs exch def} def
+/accspe [ 65 /plusminus 66 /bar 67 /existential 68 /universal
+69 /exclam 70 /numbersign 71 /greater 72 /question 73 /integral
+74 /colon 75 /semicolon 76 /less 77 /bracketleft 78 /bracketright
+79 /greaterequal 80 /braceleft 81 /braceright 82 /radical
+83 /spade 84 /heart 85 /diamond 86 /club 87 /lessequal
+88 /multiply 89 /percent 90 /infinity 48 /circlemultiply 49 /circleplus
+50 /emptyset 51 /lozenge 52 /bullet 53 /arrowright 54 /arrowup
+55 /arrowleft 56 /arrowdown 57 /arrowboth 48 /degree 44 /comma 43 /plus
+ 45 /angle 42 /angleleft 47 /divide 61 /notequal 40 /equivalence 41 /second
+ 97 /approxequal 98 /congruent 99 /perpendicular 100 /partialdiff 101 /florin
+ 102 /intersection 103 /union 104 /propersuperset 105 /reflexsuperset
+ 106 /notsubset 107 /propersubset 108 /reflexsubset 109 /element 110 /notelement
+ 111 /gradient 112 /logicaland 113 /logicalor 114 /arrowdblboth
+ 115 /arrowdblleft 116 /arrowdblup 117 /arrowdblright 118 /arrowdbldown
+ 119 /ampersand 120 /omega1 121 /similar 122 /aleph ] def
+/Symbol /Special accspe ReEncode
+%%EndProlog
+%%BeginSetup
+newpath  gsave  .25 .25 scale 
+%%EndSetup
+ gsave 0 0 t black [] 0 sd 1 lw 5 lw 1928 1928 0 0 bl 1928 1928 0 0 C NC 1588
+ 1588 170 170 bl 1588 1588 170 170 C NC 1 lw 170 170 m 1588 Y s 204 170 m -34 X
+ s [4 8] 0 sd 1758 170 m -1588 X s [] 0 sd 187 202 m -17 X s 187 234 m -17 X s
+ 187 265 m -17 X s 187 297 m -17 X s 204 329 m -34 X s [4 8] 0 sd 1758 329 m
+ -1588 X s [] 0 sd 187 361 m -17 X s 187 392 m -17 X s 187 424 m -17 X s 187 456
+ m -17 X s 204 488 m -34 X s [4 8] 0 sd 1758 488 m -1588 X s [] 0 sd 187 519 m
+ -17 X s 187 551 m -17 X s 187 583 m -17 X s 187 615 m -17 X s 204 646 m -34 X s
+ [4 8] 0 sd 1758 646 m -1588 X s [] 0 sd 187 678 m -17 X s 187 710 m -17 X s 187
+ 742 m -17 X s 187 773 m -17 X s 204 805 m -34 X s [4 8] 0 sd 1758 805 m -1588 X
+ s [] 0 sd 187 837 m -17 X s 187 869 m -17 X s 187 900 m -17 X s 187 932 m -17 X
+ s 204 964 m -34 X s [4 8] 0 sd 1758 964 m -1588 X s [] 0 sd 187 996 m -17 X s
+ 187 1028 m -17 X s 187 1059 m -17 X s 187 1091 m -17 X s 204 1123 m -34 X s
+ [4 8] 0 sd 1758 1123 m -1588 X s [] 0 sd 187 1155 m -17 X s 187 1186 m -17 X s
+ 187 1218 m -17 X s 187 1250 m -17 X s 204 1282 m -34 X s [4 8] 0 sd 1758 1282 m
+ -1588 X s [] 0 sd 187 1313 m -17 X s 187 1345 m -17 X s 187 1377 m -17 X s 187
+ 1409 m -17 X s 204 1440 m -34 X s [4 8] 0 sd 1758 1440 m -1588 X s [] 0 sd 187
+ 1472 m -17 X s 187 1504 m -17 X s 187 1536 m -17 X s 187 1567 m -17 X s 204
+ 1599 m -34 X s [4 8] 0 sd 1758 1599 m -1588 X s [] 0 sd 187 1631 m -17 X s 187
+ 1663 m -17 X s 187 1694 m -17 X s 187 1726 m -17 X s 204 1758 m -34 X s
+ [4 8] 0 sd 1758 1758 m -1588 X s
+ /xs 0 def 
+(0)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 147
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0)
+ show 
+ gr 
+ /xs 0 def 
+(0.1)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 306
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.1)
+ show 
+ gr 
+ /xs 0 def 
+(0.2)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 465
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.2)
+ show 
+ gr 
+ /xs 0 def 
+(0.3)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 624
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.3)
+ show 
+ gr 
+ /xs 0 def 
+(0.4)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 783
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.4)
+ show 
+ gr 
+ /xs 0 def 
+(0.5)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 941
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.5)
+ show 
+ gr 
+ /xs 0 def 
+(0.6)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1100
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.6)
+ show 
+ gr 
+ /xs 0 def 
+(0.7)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1259
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.7)
+ show 
+ gr 
+ /xs 0 def 
+(0.8)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1418
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.8)
+ show 
+ gr 
+ /xs 0 def 
+(0.9)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1576
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.9)
+ show 
+ gr 
+ /xs 0 def 
+(1)
+ /Helvetica-Bold     62 stwn 
+ gsave  130 1735
+ t   0 r  xs neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(1)
+ show 
+ gr  [] 0 sd 170 170 m 1588 X s 170 204 m -34 Y s [4 8] 0 sd 170 1758 m -1588 Y
+ s [] 0 sd 202 187 m -17 Y s 234 187 m -17 Y s 265 187 m -17 Y s 297 187 m -17 Y
+ s 329 204 m -34 Y s [4 8] 0 sd 329 1758 m -1588 Y s [] 0 sd 361 187 m -17 Y s
+ 392 187 m -17 Y s 424 187 m -17 Y s 456 187 m -17 Y s 488 204 m -34 Y s
+ [4 8] 0 sd 488 1758 m -1588 Y s [] 0 sd 519 187 m -17 Y s 551 187 m -17 Y s 583
+ 187 m -17 Y s 615 187 m -17 Y s 646 204 m -34 Y s [4 8] 0 sd 646 1758 m -1588 Y
+ s [] 0 sd 678 187 m -17 Y s 710 187 m -17 Y s 742 187 m -17 Y s 773 187 m -17 Y
+ s 805 204 m -34 Y s [4 8] 0 sd 805 1758 m -1588 Y s [] 0 sd 837 187 m -17 Y s
+ 869 187 m -17 Y s 900 187 m -17 Y s 932 187 m -17 Y s 964 204 m -34 Y s
+ [4 8] 0 sd 964 1758 m -1588 Y s [] 0 sd 996 187 m -17 Y s 1028 187 m -17 Y s
+ 1059 187 m -17 Y s 1091 187 m -17 Y s 1123 204 m -34 Y s [4 8] 0 sd 1123 1758 m
+ -1588 Y s [] 0 sd 1155 187 m -17 Y s 1186 187 m -17 Y s 1218 187 m -17 Y s 1250
+ 187 m -17 Y s 1282 204 m -34 Y s [4 8] 0 sd 1282 1758 m -1588 Y s [] 0 sd 1313
+ 187 m -17 Y s 1345 187 m -17 Y s 1377 187 m -17 Y s 1409 187 m -17 Y s 1440 204
+ m -34 Y s [4 8] 0 sd 1440 1758 m -1588 Y s [] 0 sd 1472 187 m -17 Y s 1504 187
+ m -17 Y s 1536 187 m -17 Y s 1567 187 m -17 Y s 1599 204 m -34 Y s [4 8] 0 sd
+ 1599 1758 m -1588 Y s [] 0 sd 1631 187 m -17 Y s 1663 187 m -17 Y s 1694 187 m
+ -17 Y s 1726 187 m -17 Y s 1758 204 m -34 Y s [4 8] 0 sd 1758 1758 m -1588 Y s
+ /xs 0 def 
+(0)
+ /Helvetica-Bold     62 stwn 
+ gsave  170 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0)
+ show 
+ gr 
+ /xs 0 def 
+(0.1)
+ /Helvetica-Bold     62 stwn 
+ gsave  329 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.1)
+ show 
+ gr 
+ /xs 0 def 
+(0.2)
+ /Helvetica-Bold     62 stwn 
+ gsave  488 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.2)
+ show 
+ gr 
+ /xs 0 def 
+(0.3)
+ /Helvetica-Bold     62 stwn 
+ gsave  646 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.3)
+ show 
+ gr 
+ /xs 0 def 
+(0.4)
+ /Helvetica-Bold     62 stwn 
+ gsave  805 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.4)
+ show 
+ gr 
+ /xs 0 def 
+(0.5)
+ /Helvetica-Bold     62 stwn 
+ gsave  964 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.5)
+ show 
+ gr 
+ /xs 0 def 
+(0.6)
+ /Helvetica-Bold     62 stwn 
+ gsave  1123 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.6)
+ show 
+ gr 
+ /xs 0 def 
+(0.7)
+ /Helvetica-Bold     62 stwn 
+ gsave  1282 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.7)
+ show 
+ gr 
+ /xs 0 def 
+(0.8)
+ /Helvetica-Bold     62 stwn 
+ gsave  1440 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.8)
+ show 
+ gr 
+ /xs 0 def 
+(0.9)
+ /Helvetica-Bold     62 stwn 
+ gsave  1599 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(0.9)
+ show 
+ gr 
+ /xs 0 def 
+(1)
+ /Helvetica-Bold     62 stwn 
+ gsave  1758 102
+ t   0 r  xs 2 div neg 0 t 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(1)
+ show 
+ gr  1588 1588 170 170 C 5 lw [] 0 sd 1 1 0 c /w 1
+ def /w2 {w 2 div} def /w3 {w 3 div} def 615 1077 m20 678 970 m20 742 885 m20
+ 805 815 m20 869 756 m20 932 708 m20 996 667 m20 1059 632 m20 1123 604 m20 1186
+ 578 m20 1250 558 m20 1313 540 m20 1377 526 m20 1440 513 m20 1504 504 m20 1520
+ 502 m20 1928 1928 0 0 C 1 lw 1520 178 m -8 -8 d s 1520 195 m -22 -22 d s 1520
+ 211 m -32 -32 d s 1520 227 m -42 -42 d s 1520 244 m -53 -53 d s 1520 260 m -63
+ -63 d s 1520 276 m -74 -73 d s 1520 293 m -83 -82 d s 1520 309 m -89 -89 d s
+ 1520 325 m -96 -96 d s 1520 342 m -103 -103 d s 1520 358 m -110 -110 d s 1520
+ 375 m -117 -117 d s 1520 391 m -124 -124 d s 1520 407 m -131 -130 d s 1520 424
+ m -138 -138 d s 1520 440 m -145 -144 d s 1520 456 m -152 -152 d s 1520 473 m
+ -160 -160 d s 1520 489 m -167 -167 d s 1520 505 m -175 -174 d s 1520 522 m -183
+ -183 d s 1520 538 m -190 -190 d s 1520 555 m -198 -198 d s 1520 571 m -206 -205
+ d s 1520 587 m -213 -213 d s 1520 604 m -221 -221 d s 1520 620 m -229 -229 d s
+ 1520 636 m -237 -236 d s 1520 653 m -244 -244 d s 1520 669 m -252 -252 d s 1520
+ 685 m -260 -259 d s 1520 702 m -268 -268 d s 1520 718 m -276 -276 d s 1520 734
+ m -286 -285 d s 1520 751 m -295 -295 d s 1520 767 m -304 -303 d s 1520 784 m
+ -313 -313 d s 1520 800 m -322 -322 d s 1520 816 m -331 -330 d s 1520 833 m -340
+ -340 d s 1520 849 m -349 -349 d s 1520 865 m -358 -358 d s 1520 882 m -367 -367
+ d s 1520 898 m -376 -376 d s 1520 914 m -12 -11 d s 1330 725 m -196 -196 d s
+ 1288 699 m -163 -163 d s 1252 679 m -137 -136 d s 1232 675 m -127 -126 d s 1212
+ 673 m -117 -118 d s 1193 670 m -109 -109 d s 1176 669 m -102 -102 d s 1159 669
+ m -96 -96 d s 1143 669 m -90 -90 d s 1127 669 m -83 -83 d s 1113 672 m -79 -80
+ d s 1101 676 m -77 -77 d s 1089 680 m -75 -75 d s 1076 684 m -71 -72 d s 1064
+ 688 m -69 -69 d s 1052 692 m -66 -66 d s 1041 697 m -63 -63 d s 1029 702 m -60
+ -60 d s 1018 707 m -58 -57 d s 1006 712 m -54 -55 d s 995 717 m -52 -52 d s 983
+ 721 m -48 -48 d s 971 726 m -45 -46 d s 960 731 m -44 -44 d s 948 735 m -41 -41
+ d s 936 740 m -38 -38 d s 926 746 m -37 -37 d s 917 753 m -38 -37 d s 907 760 m
+ -37 -37 d s 898 767 m -36 -36 d s 888 774 m -35 -35 d s 879 781 m -34 -34 d s
+ 869 787 m -33 -33 d s 861 795 m -33 -33 d s 852 803 m -33 -33 d s 844 811 m -33
+ -33 d s 835 819 m -33 -33 d s 827 827 m -32 -32 d s 818 835 m -31 -32 d s 810
+ 842 m -31 -30 d s 802 851 m -31 -31 d s 794 859 m -31 -30 d s 786 868 m -30 -31
+ d s 778 876 m -30 -30 d s 770 885 m -30 -30 d s 763 893 m -30 -29 d s 755 902 m
+ -29 -28 d s 747 911 m -28 -28 d s 739 919 m -27 -27 d s 732 929 m -27 -27 d s
+ 726 938 m -27 -27 d s 719 948 m -27 -27 d s 712 957 m -27 -27 d s 705 966 m -27
+ -27 d s 698 976 m -26 -26 d s 691 985 m -26 -25 d s 684 995 m -25 -25 d s 677
+ 1004 m -24 -24 d s 671 1014 m -24 -23 d s 665 1025 m -24 -24 d s 659 1035 m -24
+ -24 d s 653 1045 m -24 -24 d s 646 1055 m -23 -23 d s 640 1066 m -23 -24 d s
+ 634 1076 m -19 -20 d s 628 1086 m -13 -13 d s 622 1096 m -7 -7 d s 616 1107 m
+ -1 -2 d s 1588 1588 170 170 C 1928 1928 0 0 C 1516 922 m 4 -4 d s 1511 910 m 9
+ -8 d s 1506 899 m 14 -14 d s 1500 888 m 20 -19 d s 1493 880 m 27 -28 d s 1485
+ 871 m 35 -35 d s 1477 862 m 43 -42 d s 1470 853 m 50 -50 d s 1462 845 m 58 -58
+ d s 1455 836 m 65 -65 d s 1447 827 m 73 -73 d s 1439 818 m 81 -80 d s 1431 810
+ m 89 -88 d s 1423 802 m 97 -97 d s 1414 794 m 106 -105 d s 1406 786 m 114 -114
+ d s 1398 778 m 122 -122 d s 1390 770 m 130 -130 d s 1381 762 m 139 -139 d s
+ 1372 754 m 148 -147 d s 1363 748 m 157 -157 d s 1353 741 m 167 -167 d s 1343
+ 734 m 177 -176 d s 1334 727 m 186 -185 d s 1324 721 m 196 -196 d s 1315 714 m
+ 205 -205 d s 1304 708 m 216 -215 d s 1294 702 m 226 -226 d s 1283 696 m 237
+ -236 d s 1272 691 m 248 -248 d s 1262 685 m 258 -258 d s 1251 679 m 269 -268 d
+ s 1238 676 m 282 -282 d s 1223 674 m 297 -296 d s 1209 672 m 311 -310 d s 1195
+ 670 m 325 -325 d s 1180 669 m 340 -340 d s 1164 669 m 356 -356 d s 1147 669 m
+ 373 -373 d s 1131 669 m 389 -389 d s 1111 673 m 409 -410 d s 1086 681 m 434
+ -434 d s 1062 688 m 458 -457 d s 1034 700 m 486 -486 d s 615 1103 m 8 -8 d s
+ 1006 712 m 514 -514 d s 615 1087 m 32 -33 d s 978 723 m 542 -541 d s 615 1070 m
+ 56 -56 d s 951 734 m 291 -291 d s 1266 419 m 249 -249 d s 615 1054 m 96 -97 d s
+ 913 756 m 247 -247 d s 1382 286 m 109 -109 d s 626 1027 m 173 -174 d s 813 839
+ m 289 -288 d s 1426 226 m 27 -27 d s 650 986 m 413 -413 d s 674 946 m 340 -341
+ d s 717 886 m 197 -197 d s 1588 1588 170 170 C 5 lw 615 1108 m 63 -106 d 64 -86
+ d 63 -69 d 64 -59 d 63 -46 d 64 -26 d 63 -27 d 64 -20 d 63 X 64 9 d 63 35 d 64
+ 45 d 63 62 d 64 73 d 16 38 d -761 Y -16 X -64 37 d -63 87 d -64 73 d -63 70 d
+ -64 51 d -63 50 d -64 37 d -63 43 d -64 57 d -63 49 d -64 59 d -63 70 d -64 86
+ d -63 106 d 63 Y cl s black 314 1563 m 31 Y s 314 1611 m 31 Y s /w 17
+ def /w2 {w 2 div} def /w3 {w 3 div} def 314 1602 m20 370 1465 m 28 Y s 370 1510
+ m 29 Y s 370 1502 m20 447 1345 m 26 Y s 447 1388 m 27 Y s 447 1380 m20 526 1206
+ m 24 Y s 526 1247 m 24 Y s 526 1239 m20 605 1071 m 23 Y s 605 1111 m 22 Y s 605
+ 1102 m20 683 942 m 21 Y s 683 980 m 20 Y s 683 971 m20 762 837 m 20 Y s 762 874
+ m 20 Y s 762 865 m20 841 755 m 19 Y s 841 791 m 20 Y s 841 783 m20 921 695 m 19
+ Y s 921 731 m 19 Y s 921 722 m20 999 635 m 19 Y s 999 671 m 20 Y s 999 663 m20
+ 1079 595 m 20 Y s 1079 632 m 20 Y s 1079 624 m20 1157 555 m 22 Y s 1157 594 m
+ 21 Y s 1157 585 m20 1233 532 m 25 Y s 1233 574 m 26 Y s 1233 566 m20 1313 509 m
+ 29 Y s 1313 555 m 29 Y s 1313 547 m20 1383 466 m 53 Y s 1383 536 m 53 Y s 1383
+ 528 m20 1252 539 m 18 Y s 1252 574 m 19 Y s 1252 566 m25 1329 517 m 21 Y s 1329
+ 555 m 22 Y s 1329 547 m25 1391 490 m 29 Y s 1391 536 m 30 Y s 1391 528 m25 1459
+ 435 m 66 Y s 1459 518 m 65 Y s 1459 509 m25 1928 1928 0 0 C 1588 1588 170 170 C
+ 1928 1928 0 0 C
+ gsave  1726 43
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(x*)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  43 1837
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(d / u)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1704 956
+ t   0 r 0 0 m
+ /ZapfDingbats findfont   75 sf 0    0 m 
+(\330)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1520 1028
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(SU\(6\))
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1704 480
+ t   0 r 0 0 m
+ /ZapfDingbats findfont   75 sf 0    0 m 
+(\330)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1583 551
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(d/u = 1/5)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1704 162
+ t   0 r 0 0 m
+ /ZapfDingbats findfont   75 sf 0    0 m 
+(\330)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C
+ gsave  1583 234
+ t   0 r 0 0 m
+ /Times-Bold findfont   75 sf 0    0 m 
+(d/u = 0)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C 1
+ lw /w 32 def /w2 {w 2 div} def /w3 {w 3 div} def 996 1631 m20
+ gsave  1059 1608
+ t   0 r 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(W* \076 2.0 GeV)
+ show 
+ gr  1588 1588 170 170 C 1928 1928 0 0 C 1588 1588 170 170 C 1928 1928 0 0 C 996
+ 1551 m25
+ gsave  1059 1529
+ t   0 r 0 0 m
+ /Helvetica-Bold findfont   62 sf 0    0 m 
+(W* \076 1.8 GeV)
+ show 
+ gr  1588 1588 170 170 C
+ gr  gr 
+showpage
+end
+%%EOF
+
+cleartomark
+countdictstack exch sub { end } repeat
+restore grestore
+%
+% End Imported PIC File: durationp18sys4xstat.eps
+%%EndDocument
+%
+% Polyline
+n 1275 3000 m 17550 3000 l 17550 3150 l 1275 3150 l
+ cp gs /PC [[1.00 1.00 1.00] [1.00 1.00 1.00]] def
+15.00 15.00 sc P1 [16 0 0 -8 85.00 200.00] PATmp PATsp ef gr PATusp gs col7 s gr 
+% Polyline
+n 1275 3075 m 1425 3075 l 1425 11175 l 1275 11175 l
+ cp gs /PC [[1.00 1.00 1.00] [1.00 1.00 1.00]] def
+15.00 15.00 sc P1 [16 0 0 -8 85.00 205.00] PATmp PATsp ef gr PATusp gs col7 s gr 
+% Polyline
+n 1275 11100 m 17400 11100 l 17400 11175 l 1275 11175 l
+ cp gs /PC [[1.00 1.00 1.00] [1.00 1.00 1.00]] def
+15.00 15.00 sc P1 [16 0 0 -8 85.00 740.00] PATmp PATsp ef gr PATusp gs col7 s gr 
+% Polyline
+n 17250 3150 m 17850 3150 l 17850 11250 l 17250 11250 l
+ cp gs /PC [[1.00 1.00 1.00] [1.00 1.00 1.00]] def
+15.00 15.00 sc P1 [16 0 0 -8 1150.00 210.00] PATmp PATsp ef gr PATusp gs col7 s gr 
+$F2psEnd
+rs
+end
